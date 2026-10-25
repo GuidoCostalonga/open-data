@@ -1,6 +1,6 @@
 # Atlante dei dati
 
-Sito di esplorazione di tutti i valori contenuti nel repository, con sei viste sincronizzate: Mappa, Bolle, Linee, Barre, Tabella e Confronta.
+Sito di esplorazione di tutti i valori contenuti nel repository, con nove viste sincronizzate: Mappa, Bolle, Linee, Barre, Distribuzione, Pendenza, Composizione, Tabella e Confronta. La pagina `scheda-fvg.html` è la scheda "Italia e Friuli Venezia Giulia a confronto con l'Europa".
 
 ## Contenuto
 
@@ -21,6 +21,11 @@ Mappe: Natural Earth 1:50 milioni (paesi, continenti, regioni del mondo) e GISCO
 - **Confronta**: righe = indicatori di un gruppo, colonne = territori selezionati (paesi, aggregati, regioni). Un paese mostra anche i dati Eurostat nazionali.
 - **Confronti pronti**: Friuli Venezia Giulia e vicini, province del Friuli Venezia Giulia, Italia e grandi paesi europei, regioni del mondo.
 - **Archivi parziali**: ricerca fra le serie FAOSTAT e OCSE; la serie scelta si apre in tutte le viste.
+- **Distribuzione**: tutti i territori come punti su un asse, con la mediana; mostra dove si addensano i valori.
+- **Pendenza**: come cambia ogni territorio fra due anni scelti.
+- **Composizione**: fasce impilate nel tempo (popolazione per età, elettricità per fonte, prelievi d'acqua per uso), un riquadro per territorio.
+- **Mappa europea di regioni e province**: dalla voce "Europa: regioni e province (Eurostat)" dell'area della mappa, o scegliendo un indicatore Eurostat.
+- **Scheda Friuli Venezia Giulia**: `scheda-fvg.html`, testi e grafici calcolati dai file di dati al caricamento della pagina.
 
 ## Aprire il sito
 
@@ -36,6 +41,7 @@ poi aprire `http://localhost:8000`.
 | Percorso | Contenuto |
 |---|---|
 | `index.html`, `stile.css`, `app.js` | pagina, stile e logica delle viste |
+| `scheda-fvg.html`, `scheda.js` | scheda "Italia e Friuli Venezia Giulia a confronto con l'Europa" |
 | `dati/meta.json` | indicatori, territori (paesi, aggregati, regioni NUTS, codici storici FAOSTAT), regioni del mondo, catalogo degli archivi |
 | `dati/indicatori/<codice>.json` | Banca Mondiale: valori annuali per territorio; `null` = dato mancante |
 | `dati/eurostat/<codice>.json` | Eurostat: valori annuali per territorio NUTS (chiavi `EU:<codice NUTS>`) |
