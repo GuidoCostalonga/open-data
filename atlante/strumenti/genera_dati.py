@@ -12,10 +12,12 @@ Legge i fogli DATI_NAZIONALI_WB e DIZ_INDICATORI degli Excel dei lotti 1 e 2
 Uso:
   python3 genera_dati.py                       estrae dagli ZIP (circa 10 minuti)
   python3 genera_dati.py --cache grezzi.json   riusa un'estrazione già fatta
+  aggiungere --eurostat eurostat.json --parziali parziali.json per i dati NUTS e gli archivi parziali
 """
 import argparse, glob, io, json, math, os, zipfile
 import openpyxl
 from etichette import E, TEMI, AGGREGATI_IT
+import genera_extra
 
 QUI = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(os.path.dirname(QUI))
@@ -84,6 +86,8 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument('--cache')
     p.add_argument('--geo', default=os.path.join(USCITA, 'mondo.topo.json'))
+    p.add_argument('--eurostat', help='JSON prodotto da estrai_eurostat.py')
+    p.add_argument('--parziali', help='JSON prodotto da estrai_archivi_parziali.py')
     a = p.parse_args()
     if a.cache and os.path.exists(a.cache):
         d = json.load(open(a.cache))
@@ -109,7 +113,8 @@ def main():
             n_it = (g or {}).get('n') or nome
         reg = (g or {}).get('r') if k == 'paese' else None
         territori.append({'id': iso, 'n': n_it, 'en': nome, 'k': k,
-                          'r': reg if reg in nomi_reg else None, 'g': bool(g) and k == 'paese'})
+                          'r': reg if reg in nomi_reg else None, 'g': bool(g) and k == 'paese',
+                          'c': (g or {}).get('c') if k == 'paese' else None})
 
     os.makedirs(os.path.join(USCITA, 'indicatori'), exist_ok=True)
     indicatori = []
@@ -143,14 +148,24 @@ def main():
             'def': m.get('def'), 'org': m.get('org'), 'agg': m['upd'], 'url': m['url'], 'dl': m.get('dl'),
             'y0': y0, 'y1': y1, 'api0': tutti[0], 'api1': tutti[-1],
             'righe': m['rows'], 'valori': m['vals'], 'paesi': paesi_con_dati,
-            'interi': interi, 'note': bool(note), 'lotto': 1 if cod in LOTTO1 else 2,
+            'interi': interi, 'note': bool(note), 'lotto': 1 if cod in LOTTO1 else 2, 'fam': 'wb',
         })
+
+    temi = dict(TEMI)
+    archivi = []
+    if a.eurostat:
+        eu, nome_tema = genera_extra.eurostat(a.eurostat, USCITA, territori, arrotonda)
+        indicatori += eu
+        temi[genera_extra.TEMA_EU] = nome_tema
+    if a.parziali:
+        archivi = genera_extra.archivi(a.parziali, USCITA, territori, arrotonda)
 
     meta = {
         'titolo': 'Atlante dei dati',
         'fonte': 'Banca Mondiale, World Development Indicators (WDI)',
         'acquisizione': {'1': '2026-10-24', '2': '2026-10-24T21:49:29Z / 2026-10-24T21:50:09Z'},
-        'temi': TEMI,
+        'temi': temi,
+        'archivi': archivi,
         'regioni': [{'k': k, 'n': n, 'c': c, 'cs': cs} for k, n, c, cs in REGIONI],
         'indicatori': indicatori,
         'territori': territori,
