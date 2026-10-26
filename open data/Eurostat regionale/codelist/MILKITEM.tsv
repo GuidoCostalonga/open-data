@@ -1,0 +1,17 @@
+PTEN	Protein content
+PTEN_ORG	Protein content - organic
+PTEN_MC_ORG	Cows' milk protein content - organic
+PRD	Product obtained
+PRD_ORG	Product obtained - organic
+BTE	Butter equivalent
+FAT	Fat content (t)
+FAT_ORG	Fat content - organic
+USM	Utilization of skimmed milk and buttermilk (1 000 t)
+USM_ORG	Use of skimmed milk - organic
+UWM	Utilization of whole milk (1 000 t)
+UWM_ORG	Use of whole milk - organic
+WPE	Whey powder equivalent
+FCA	Fat content (% of product weight) (annual)
+PCA	Protein content (% of product weight) (annual)
+PRO	Products obtained (1 000 t)
+PAT	Protein content (t)

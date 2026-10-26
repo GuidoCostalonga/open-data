@@ -87,6 +87,7 @@ def main():
     p.add_argument('--cache')
     p.add_argument('--geo', default=os.path.join(USCITA, 'mondo.topo.json'))
     p.add_argument('--eurostat', help='JSON prodotto da estrai_eurostat.py')
+    p.add_argument('--eurostat-api', dest='eurostat_api', help='JSON prodotto da estrai_eurostat_api.py (indicatori regionali dall’API di Eurostat)')
     p.add_argument('--parziali', nargs='+', help='JSON prodotti da estrai_archivi_parziali.py (uno o più file)')
     a = p.parse_args()
     if a.cache and os.path.exists(a.cache):
@@ -153,17 +154,23 @@ def main():
 
     temi = dict(TEMI)
     archivi = []
+    acquisizione = {'1': '2026-10-24', '2': '2026-10-24T21:49:29Z / 2026-10-24T21:50:09Z'}
     if a.eurostat:
         eu, nome_tema = genera_extra.eurostat(a.eurostat, USCITA, territori, arrotonda)
         indicatori += eu
         temi[genera_extra.TEMA_EU] = nome_tema
+    if a.eurostat_api:
+        eu_api, scaricato = genera_extra.eurostat_api(a.eurostat_api, USCITA, territori, arrotonda)
+        indicatori += eu_api
+        acquisizione['api'] = scaricato
+        temi[genera_extra.TEMA_EU] = genera_extra.NOME_TEMA_EU_ESTESO
     if a.parziali:
         archivi = genera_extra.archivi(a.parziali, USCITA, territori, arrotonda)
 
     meta = {
         'titolo': 'Atlante dei dati',
         'fonte': 'Banca Mondiale, World Development Indicators (WDI)',
-        'acquisizione': {'1': '2026-10-24', '2': '2026-10-24T21:49:29Z / 2026-10-24T21:50:09Z'},
+        'acquisizione': acquisizione,
         'temi': temi,
         'archivi': archivi,
         'regioni': [{'k': k, 'n': n, 'c': c, 'cs': cs} for k, n, c, cs in REGIONI],

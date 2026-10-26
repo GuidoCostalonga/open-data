@@ -1,0 +1,12 @@
+MSHH	Medium size households
+MSIND	Non-household, medium size consumers
+HDD	Heating degree days
+CDD	Cooling degree days
+CMPY_NR	Reporting companies - number
+API_DEG	API Gravity - degree
+SULPH_PC	Sulphur content - percentage (%)
+VOL_THS_BBL	Volume - thousand barrels
+VAL_THS_USD	Value - thousand USD
+AVGPRC_USD_BBL	Average price - USD per barrel
+AVGPRC_USD_T	Average price - USD per tonne
+WT_THS_T	Weight - thousand tonnes
