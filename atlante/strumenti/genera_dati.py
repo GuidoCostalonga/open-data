@@ -12,7 +12,8 @@ Legge i fogli DATI_NAZIONALI_WB e DIZ_INDICATORI degli Excel dei lotti 1 e 2
 Uso:
   python3 genera_dati.py                       estrae dagli ZIP (circa 10 minuti)
   python3 genera_dati.py --cache grezzi.json   riusa un'estrazione già fatta
-  aggiungere --eurostat eurostat.json --parziali parziali.json per i dati NUTS e gli archivi parziali
+  aggiungere --eurostat eurostat.json --eurostat-api eurostat_api.json --regio regio.json --parziali parziali.json
+  per i dati NUTS (Eurostat e Commissione europea) e gli archivi parziali
 """
 import argparse, glob, io, json, math, os, zipfile
 import openpyxl
@@ -88,6 +89,7 @@ def main():
     p.add_argument('--geo', default=os.path.join(USCITA, 'mondo.topo.json'))
     p.add_argument('--eurostat', help='JSON prodotto da estrai_eurostat.py')
     p.add_argument('--eurostat-api', dest='eurostat_api', help='JSON prodotto da estrai_eurostat_api.py (indicatori regionali dall’API di Eurostat)')
+    p.add_argument('--regio', help='JSON prodotto da estrai_regio.py (indici e serie regionali della Commissione europea, DG REGIO)')
     p.add_argument('--parziali', nargs='+', help='JSON prodotti da estrai_archivi_parziali.py (uno o più file)')
     a = p.parse_args()
     if a.cache and os.path.exists(a.cache):
@@ -164,6 +166,10 @@ def main():
         indicatori += eu_api
         acquisizione['api'] = scaricato
         temi[genera_extra.TEMA_EU] = genera_extra.NOME_TEMA_EU_ESTESO
+    if a.regio:
+        regio, scaricato = genera_extra.eurostat_api(a.regio, USCITA, territori, arrotonda, lotto='regio')
+        indicatori += regio
+        acquisizione['regio'] = scaricato
     if a.parziali:
         archivi = genera_extra.archivi(a.parziali, USCITA, territori, arrotonda)
 

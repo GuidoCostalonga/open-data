@@ -1,0 +1,666 @@
+{
+  "id" : "krps-v2iz",
+  "name" : "EU Regional GHG - carbon intensity - 1990-2021",
+  "assetType" : "dataset",
+  "attribution" : "regio-b1-papers@ec.europa.eu",
+  "attributionLink" : "https://cohesiondata.ec.europa.eu/",
+  "averageRating" : 0,
+  "category" : "Other: Eurostat",
+  "createdAt" : 1695998236,
+  "description" : "The source data used in this analysis are :\n1. Based on EDGAR, the global GHG emissions database from the European Commission's Joint Research Centre. The reported data include emissions from energy, industry, buildings, transport, agriculture, and waste but they exclude emissions from shipping and aviation. These latter emissions cannot be assigned to individual regions. GHG include carbon dioxide, methane, nitrous oxide and fluorinated gasses. https://edgar.jrc.ec.europa.eu/  \n2. GDP and population data: https://knowledge4policy.ec.europa.eu/territorial/ardeco-database_en",
+  "diciBackend" : false,
+  "displayType" : "table",
+  "downloadCount" : 550,
+  "hideFromCatalog" : false,
+  "hideFromDataJson" : false,
+  "licenseId" : "CC0_10",
+  "locked" : false,
+  "newBackend" : true,
+  "numberOfComments" : 0,
+  "oid" : 2778132,
+  "provenance" : "official",
+  "publicationAppendEnabled" : false,
+  "publicationDate" : 1695999285,
+  "publicationGroup" : 1863838,
+  "publicationStage" : "published",
+  "rowsUpdatedAt" : 1696013835,
+  "rowsUpdatedBy" : "p5rd-ygin",
+  "tableId" : 1863840,
+  "totalTimesRated" : 0,
+  "viewCount" : 729,
+  "viewLastModified" : 1696228921,
+  "viewType" : "tabular",
+  "approvals" : [ {
+    "reviewedAt" : 1696155122,
+    "reviewedAutomatically" : false,
+    "state" : "approved",
+    "submissionId" : 1382931,
+    "submissionObject" : "public_audience_request",
+    "submissionOutcome" : "change_audience",
+    "submittedAt" : 1696155090,
+    "targetAudience" : "public",
+    "workflowId" : 133,
+    "reviewer" : {
+      "id" : "p5rd-ygin",
+      "displayName" : "John W"
+    },
+    "submissionDetails" : {
+      "permissionType" : "READ"
+    },
+    "submissionOutcomeApplication" : {
+      "endedAt" : 1696155123,
+      "failureCount" : 0,
+      "startedAt" : 1696155122,
+      "status" : "success"
+    },
+    "submitter" : {
+      "id" : "p5rd-ygin",
+      "displayName" : "John W"
+    }
+  } ],
+  "clientContext" : {
+    "clientContextVariables" : [ ],
+    "inheritedVariables" : { }
+  },
+  "columns" : [ {
+    "id" : 25186923,
+    "name" : "Country",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "country",
+    "position" : 1,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15369627,
+    "cachedContents" : {
+      "non_null" : "8640",
+      "largest" : "SK",
+      "null" : "0",
+      "top" : [ {
+        "item" : "DE",
+        "count" : "1248"
+      }, {
+        "item" : "FR",
+        "count" : "896"
+      }, {
+        "item" : "IT",
+        "count" : "704"
+      }, {
+        "item" : "ES",
+        "count" : "640"
+      }, {
+        "item" : "PL",
+        "count" : "576"
+      }, {
+        "item" : "EL",
+        "count" : "448"
+      }, {
+        "item" : "NL",
+        "count" : "416"
+      }, {
+        "item" : "BE",
+        "count" : "384"
+      }, {
+        "item" : "AT",
+        "count" : "320"
+      }, {
+        "item" : "RO",
+        "count" : "288"
+      }, {
+        "item" : "SE",
+        "count" : "288"
+      }, {
+        "item" : "HU",
+        "count" : "288"
+      }, {
+        "item" : "CZ",
+        "count" : "288"
+      }, {
+        "item" : "PT",
+        "count" : "256"
+      }, {
+        "item" : "BG",
+        "count" : "224"
+      }, {
+        "item" : "FI",
+        "count" : "192"
+      }, {
+        "item" : "DK",
+        "count" : "192"
+      }, {
+        "item" : "SK",
+        "count" : "160"
+      }, {
+        "item" : "HR",
+        "count" : "160"
+      }, {
+        "item" : "IE",
+        "count" : "128"
+      } ],
+      "smallest" : "AT",
+      "count" : "8640",
+      "cardinality" : "28"
+    },
+    "format" : { }
+  }, {
+    "id" : 25186924,
+    "name" : "Level",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "nuts_level",
+    "position" : 2,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15369634,
+    "cachedContents" : {
+      "non_null" : "8640",
+      "largest" : "NUTS 2",
+      "null" : "0",
+      "top" : [ {
+        "item" : "NUTS 2",
+        "count" : "7744"
+      }, {
+        "item" : "Country",
+        "count" : "864"
+      }, {
+        "item" : "EU",
+        "count" : "32"
+      } ],
+      "smallest" : "Country",
+      "count" : "8640",
+      "cardinality" : "3"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 25186925,
+    "name" : "NUTS code and title",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "nuts_label",
+    "position" : 3,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15369628,
+    "cachedContents" : {
+      "non_null" : "8640",
+      "largest" : "SWEDEN",
+      "null" : "0",
+      "top" : [ {
+        "item" : "EL53 - Δυτική Μακεδονία (Dytiki Makedonia)",
+        "count" : "32"
+      }, {
+        "item" : "ITC2 - Valle d'Aosta/Vallée d'Aoste",
+        "count" : "32"
+      }, {
+        "item" : "HR03 - Jadranska Hrvatska",
+        "count" : "32"
+      }, {
+        "item" : "DK01 - Hovedstaden",
+        "count" : "32"
+      }, {
+        "item" : "RO22 - Sud-Est",
+        "count" : "32"
+      }, {
+        "item" : "HU21 - Közép-Dunántúl",
+        "count" : "32"
+      }, {
+        "item" : "PT11 - Norte",
+        "count" : "32"
+      }, {
+        "item" : "ES52 - Comunidad Valenciana",
+        "count" : "32"
+      }, {
+        "item" : "DE30 - Berlin",
+        "count" : "32"
+      }, {
+        "item" : "SE21 - Småland med öarna",
+        "count" : "32"
+      }, {
+        "item" : "FRC1 - Bourgogne",
+        "count" : "32"
+      }, {
+        "item" : "BE34 - Prov. Luxembourg (BE)",
+        "count" : "32"
+      }, {
+        "item" : "ES63 - Ciudad Autónoma de Ceuta",
+        "count" : "32"
+      }, {
+        "item" : "DE25 - Mittelfranken",
+        "count" : "32"
+      }, {
+        "item" : "LATVIA",
+        "count" : "32"
+      }, {
+        "item" : "RO11 - Nord-Vest",
+        "count" : "32"
+      }, {
+        "item" : "ITH4 - Friuli-Venezia Giulia",
+        "count" : "32"
+      }, {
+        "item" : "LT01 - Sostinės regionas",
+        "count" : "32"
+      }, {
+        "item" : "FRL0 - Provence-Alpes-Côte d’Azur",
+        "count" : "32"
+      }, {
+        "item" : "FRE1 - Nord-Pas de Calais",
+        "count" : "32"
+      } ],
+      "smallest" : "AT11 - Burgenland",
+      "count" : "8640",
+      "cardinality" : "270"
+    },
+    "format" : { }
+  }, {
+    "id" : 25186926,
+    "name" : "NUTS code",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "nuts_code",
+    "position" : 4,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15369629,
+    "cachedContents" : {
+      "non_null" : "8640",
+      "largest" : "SK04",
+      "null" : "0",
+      "top" : [ {
+        "item" : "ITH2",
+        "count" : "32"
+      }, {
+        "item" : "HR02",
+        "count" : "32"
+      }, {
+        "item" : "DK",
+        "count" : "32"
+      }, {
+        "item" : "BE24",
+        "count" : "32"
+      }, {
+        "item" : "SI",
+        "count" : "32"
+      }, {
+        "item" : "CZ",
+        "count" : "32"
+      }, {
+        "item" : "PL61",
+        "count" : "32"
+      }, {
+        "item" : "DK05",
+        "count" : "32"
+      }, {
+        "item" : "NL12",
+        "count" : "32"
+      }, {
+        "item" : "DE11",
+        "count" : "32"
+      }, {
+        "item" : "FRY4",
+        "count" : "32"
+      }, {
+        "item" : "PT30",
+        "count" : "32"
+      }, {
+        "item" : "BG31",
+        "count" : "32"
+      }, {
+        "item" : "PL51",
+        "count" : "32"
+      }, {
+        "item" : "PL91",
+        "count" : "32"
+      }, {
+        "item" : "ITC4",
+        "count" : "32"
+      }, {
+        "item" : "EE",
+        "count" : "32"
+      }, {
+        "item" : "EL51",
+        "count" : "32"
+      }, {
+        "item" : "DEA3",
+        "count" : "32"
+      }, {
+        "item" : "HU33",
+        "count" : "32"
+      } ],
+      "smallest" : "AT",
+      "count" : "8640",
+      "cardinality" : "270"
+    },
+    "format" : { }
+  }, {
+    "id" : 25186927,
+    "name" : "Name",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "name",
+    "position" : 5,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15369631,
+    "cachedContents" : {
+      "non_null" : "8640",
+      "largest" : "Южен централен (Yuzhen tsentralen)",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Centre - Val de Loire",
+        "count" : "32"
+      }, {
+        "item" : "Helsinki-Uusimaa",
+        "count" : "32"
+      }, {
+        "item" : "Sicilia",
+        "count" : "32"
+      }, {
+        "item" : "Overijssel",
+        "count" : "32"
+      }, {
+        "item" : "Mayotte",
+        "count" : "32"
+      }, {
+        "item" : "Mecklenburg-Vorpommern",
+        "count" : "32"
+      }, {
+        "item" : "Luxembourg",
+        "count" : "32"
+      }, {
+        "item" : "Южен централен (Yuzhen tsentralen)",
+        "count" : "32"
+      }, {
+        "item" : "Ήπειρος (Ipeiros)",
+        "count" : "32"
+      }, {
+        "item" : "Noord-Brabant",
+        "count" : "32"
+      }, {
+        "item" : "Sostinės regionas",
+        "count" : "32"
+      }, {
+        "item" : "Lorraine",
+        "count" : "32"
+      }, {
+        "item" : "Syddanmark",
+        "count" : "32"
+      }, {
+        "item" : "Stuttgart",
+        "count" : "32"
+      }, {
+        "item" : "Niederösterreich",
+        "count" : "32"
+      }, {
+        "item" : "LATVIA",
+        "count" : "32"
+      }, {
+        "item" : "Malta",
+        "count" : "32"
+      }, {
+        "item" : "Podlaskie",
+        "count" : "32"
+      }, {
+        "item" : "Zachodniopomorskie",
+        "count" : "32"
+      }, {
+        "item" : "Campania",
+        "count" : "32"
+      } ],
+      "smallest" : "Abruzzo",
+      "count" : "8640",
+      "cardinality" : "270"
+    },
+    "format" : { }
+  }, {
+    "id" : 25186928,
+    "name" : "Indicator",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "indicator",
+    "position" : 6,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15369632,
+    "cachedContents" : {
+      "non_null" : "8640",
+      "largest" : "Carbon intensity",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Carbon intensity",
+        "count" : "8640"
+      } ],
+      "smallest" : "Carbon intensity",
+      "count" : "8640",
+      "cardinality" : "1"
+    },
+    "format" : { }
+  }, {
+    "id" : 25186929,
+    "name" : "Year",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "year",
+    "position" : 7,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15369630,
+    "cachedContents" : {
+      "non_null" : "8640",
+      "largest" : "2021",
+      "null" : "0",
+      "top" : [ {
+        "item" : "2013",
+        "count" : "270"
+      }, {
+        "item" : "1994",
+        "count" : "270"
+      }, {
+        "item" : "2011",
+        "count" : "270"
+      }, {
+        "item" : "2008",
+        "count" : "270"
+      }, {
+        "item" : "2002",
+        "count" : "270"
+      }, {
+        "item" : "2019",
+        "count" : "270"
+      }, {
+        "item" : "2012",
+        "count" : "270"
+      }, {
+        "item" : "1996",
+        "count" : "270"
+      }, {
+        "item" : "2004",
+        "count" : "270"
+      }, {
+        "item" : "2017",
+        "count" : "270"
+      }, {
+        "item" : "2018",
+        "count" : "270"
+      }, {
+        "item" : "2009",
+        "count" : "270"
+      }, {
+        "item" : "2003",
+        "count" : "270"
+      }, {
+        "item" : "1992",
+        "count" : "270"
+      }, {
+        "item" : "2020",
+        "count" : "270"
+      }, {
+        "item" : "1993",
+        "count" : "270"
+      }, {
+        "item" : "2005",
+        "count" : "270"
+      }, {
+        "item" : "1997",
+        "count" : "270"
+      }, {
+        "item" : "2014",
+        "count" : "270"
+      }, {
+        "item" : "2016",
+        "count" : "270"
+      } ],
+      "smallest" : "1990",
+      "count" : "8640",
+      "cardinality" : "32"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 25186930,
+    "name" : "Value",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "value",
+    "position" : 8,
+    "renderTypeName" : "number",
+    "tableColumnId" : 15369633,
+    "cachedContents" : {
+      "non_null" : "8640",
+      "largest" : "9.036699061039936",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0.6461055706522004",
+        "count" : "2"
+      }, {
+        "item" : "0.311895777718649",
+        "count" : "2"
+      }, {
+        "item" : "0.3065403710117402",
+        "count" : "2"
+      }, {
+        "item" : "0.28760581505915606",
+        "count" : "2"
+      }, {
+        "item" : "0.5516985055328066",
+        "count" : "2"
+      }, {
+        "item" : "1.291393504981503",
+        "count" : "2"
+      }, {
+        "item" : "2.357617837266712",
+        "count" : "2"
+      }, {
+        "item" : "0.5309055351525183",
+        "count" : "2"
+      }, {
+        "item" : "0.3599444190986519",
+        "count" : "2"
+      }, {
+        "item" : "0.16282802028075152",
+        "count" : "2"
+      }, {
+        "item" : "0.17384546924696137",
+        "count" : "2"
+      }, {
+        "item" : "0.254165864863949",
+        "count" : "2"
+      }, {
+        "item" : "0.15310930982702683",
+        "count" : "2"
+      }, {
+        "item" : "0.42113007652273526",
+        "count" : "2"
+      }, {
+        "item" : "0.8535906914007092",
+        "count" : "2"
+      }, {
+        "item" : "0.45141505910757573",
+        "count" : "2"
+      }, {
+        "item" : "0.5482098031136583",
+        "count" : "2"
+      }, {
+        "item" : "0.4693898439038096",
+        "count" : "2"
+      }, {
+        "item" : "0.5059206017538732",
+        "count" : "2"
+      }, {
+        "item" : "0.6697556048249484",
+        "count" : "2"
+      } ],
+      "smallest" : "0.014242475907494397",
+      "count" : "8640",
+      "cardinality" : "8480"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "precision" : "6",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 25186931,
+    "name" : "unit",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "unit",
+    "position" : 9,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15369643,
+    "cachedContents" : {
+      "non_null" : "8640",
+      "largest" : "tCO2eq per 1000 euro",
+      "null" : "0",
+      "top" : [ {
+        "item" : "tCO2eq per 1000 euro",
+        "count" : "8640"
+      } ],
+      "smallest" : "tCO2eq per 1000 euro",
+      "count" : "8640",
+      "cardinality" : "1"
+    },
+    "format" : { }
+  } ],
+  "grants" : [ {
+    "inherited" : false,
+    "type" : "viewer",
+    "flags" : [ "public" ]
+  } ],
+  "license" : {
+    "name" : "Creative Commons 1.0 Universal (Public Domain Dedication)",
+    "logoUrl" : "images/licenses/ccZero.png",
+    "termsLink" : "http://creativecommons.org/publicdomain/zero/1.0/legalcode"
+  },
+  "metadata" : {
+    "custom_fields" : {
+      "Stories Categories" : {
+        "High Level Themes" : "7. Statistical analyses",
+        "EU programme period" : "Not related to periods"
+      }
+    },
+    "rowLabel" : "annual indicator value for GHG carbon intensity for EU / MS / NUTS 2 region ",
+    "availableDisplayTypes" : [ "table", "fatrow", "page" ]
+  },
+  "owner" : {
+    "id" : "p5rd-ygin",
+    "displayName" : "John W",
+    "profileImageUrlLarge" : "/api/users/p5rd-ygin/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/p5rd-ygin/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/p5rd-ygin/profile_images/TINY",
+    "screenName" : "John W",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula", "mayBeStoriesCoOwner" ]
+  },
+  "query" : { },
+  "rights" : [ "read" ],
+  "tableAuthor" : {
+    "id" : "p5rd-ygin",
+    "displayName" : "John W",
+    "profileImageUrlLarge" : "/api/users/p5rd-ygin/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/p5rd-ygin/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/p5rd-ygin/profile_images/TINY",
+    "screenName" : "John W",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula", "mayBeStoriesCoOwner" ]
+  },
+  "tags" : [ "ghg", "carbon intensity" ],
+  "flags" : [ "default", "ownerMayBeContacted", "restorable", "restorePossibleForType" ]
+}

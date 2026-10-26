@@ -1,0 +1,618 @@
+{
+  "id" : "5nmd-5kax",
+  "name" : "EU Regional Social Progress Index 2024",
+  "assetType" : "dataset",
+  "attribution" : "European Commission",
+  "attributionLink" : "https://ec.europa.eu/regional_policy/assets/social-progress/index.html",
+  "averageRating" : 0,
+  "category" : "Other: RCI-SPI",
+  "createdAt" : 1715938762,
+  "description" : "The EU regional Social Progress Index (EU-SPI) aims to measure social progress for EU regions as a complement to traditional measures of economic progress, such as the Gross Domestic Product (GDP). The index follows the overall framework of the global Social Progress Index and is based on 53 socio-economic and environmental indicators, using twelve components that are further aggregated into three broader dimensions describing respectively basic, intermediate, and more subtle aspects of social progress.\nThe SPI is presented on interactive maps and charts, indexes can be compared between EU regions.\nWebsite : https://ec.europa.eu/regional_policy/assets/social-progress/index.html\nIndicators des",
+  "diciBackend" : false,
+  "displayType" : "table",
+  "downloadCount" : 134,
+  "hideFromCatalog" : false,
+  "hideFromDataJson" : false,
+  "licenseId" : "CC0_10",
+  "locked" : false,
+  "newBackend" : true,
+  "numberOfComments" : 0,
+  "oid" : 2909619,
+  "provenance" : "official",
+  "publicationAppendEnabled" : false,
+  "publicationDate" : 1715939053,
+  "publicationGroup" : 1948411,
+  "publicationStage" : "published",
+  "rowsUpdatedAt" : 1715939047,
+  "rowsUpdatedBy" : "r659-f9f9",
+  "tableId" : 1948411,
+  "totalTimesRated" : 0,
+  "viewCount" : 1484,
+  "viewLastModified" : 1718960950,
+  "viewType" : "tabular",
+  "approvals" : [ {
+    "reviewedAt" : 1715939368,
+    "reviewedAutomatically" : false,
+    "state" : "approved",
+    "submissionId" : 1435780,
+    "submissionObject" : "public_audience_request",
+    "submissionOutcome" : "change_audience",
+    "submittedAt" : 1715939053,
+    "targetAudience" : "public",
+    "workflowId" : 133,
+    "reviewer" : {
+      "id" : "r659-f9f9",
+      "displayName" : "Alain Vanden Borre"
+    },
+    "submissionDetails" : {
+      "permissionType" : "READ"
+    },
+    "submissionOutcomeApplication" : {
+      "endedAt" : 1715939368,
+      "failureCount" : 0,
+      "startedAt" : 1715939368,
+      "status" : "success"
+    },
+    "submitter" : {
+      "id" : "r659-f9f9",
+      "displayName" : "Alain Vanden Borre"
+    }
+  } ],
+  "clientContext" : {
+    "clientContextVariables" : [ ],
+    "inheritedVariables" : { }
+  },
+  "columns" : [ {
+    "id" : 25812875,
+    "name" : "REGION NAME",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "region_name",
+    "position" : 1,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15756718,
+    "cachedContents" : {
+      "non_null" : "4224",
+      "largest" : "Zuid-Holland",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Malta",
+        "count" : "32"
+      }, {
+        "item" : "Luxembourg",
+        "count" : "32"
+      }, {
+        "item" : "Sicilia",
+        "count" : "16"
+      }, {
+        "item" : "Mecklenburg-Vorpommern",
+        "count" : "16"
+      }, {
+        "item" : "Ireland",
+        "count" : "16"
+      }, {
+        "item" : "Sweden",
+        "count" : "16"
+      }, {
+        "item" : "Lorraine",
+        "count" : "16"
+      }, {
+        "item" : "Portugal",
+        "count" : "16"
+      }, {
+        "item" : "Noord-Brabant",
+        "count" : "16"
+      }, {
+        "item" : "Syddanmark",
+        "count" : "16"
+      }, {
+        "item" : "Attiki",
+        "count" : "16"
+      }, {
+        "item" : "Stuttgart",
+        "count" : "16"
+      }, {
+        "item" : "Niederösterreich",
+        "count" : "16"
+      }, {
+        "item" : "Warminsko-Mazurskie",
+        "count" : "16"
+      }, {
+        "item" : "Overijssel",
+        "count" : "16"
+      }, {
+        "item" : "Région de Bruxelles-Capitale/Brussels Hoofdstedelijk Gewest",
+        "count" : "16"
+      }, {
+        "item" : "Helsinki-Uusimaa",
+        "count" : "16"
+      }, {
+        "item" : "Peloponnisos",
+        "count" : "16"
+      }, {
+        "item" : "Podlaskie",
+        "count" : "16"
+      }, {
+        "item" : "Centre - Val de Loire",
+        "count" : "16"
+      } ],
+      "smallest" : "Abruzzo",
+      "count" : "4224",
+      "cardinality" : "262"
+    },
+    "format" : { }
+  }, {
+    "id" : 25812876,
+    "name" : "NUTS code",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "nuts_code",
+    "position" : 2,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15756719,
+    "cachedContents" : {
+      "non_null" : "4224",
+      "largest" : "SK04",
+      "null" : "0",
+      "top" : [ {
+        "item" : "HR02",
+        "count" : "16"
+      }, {
+        "item" : "DK",
+        "count" : "16"
+      }, {
+        "item" : "BE24",
+        "count" : "16"
+      }, {
+        "item" : "CZ",
+        "count" : "16"
+      }, {
+        "item" : "SI",
+        "count" : "16"
+      }, {
+        "item" : "PL61",
+        "count" : "16"
+      }, {
+        "item" : "DK05",
+        "count" : "16"
+      }, {
+        "item" : "DE11",
+        "count" : "16"
+      }, {
+        "item" : "NL12",
+        "count" : "16"
+      }, {
+        "item" : "BG31",
+        "count" : "16"
+      }, {
+        "item" : "PT30",
+        "count" : "16"
+      }, {
+        "item" : "PL51",
+        "count" : "16"
+      }, {
+        "item" : "EE",
+        "count" : "16"
+      }, {
+        "item" : "ITC4",
+        "count" : "16"
+      }, {
+        "item" : "PL91",
+        "count" : "16"
+      }, {
+        "item" : "EL51",
+        "count" : "16"
+      }, {
+        "item" : "DEA3",
+        "count" : "16"
+      }, {
+        "item" : "HU33",
+        "count" : "16"
+      }, {
+        "item" : "DE27",
+        "count" : "16"
+      }, {
+        "item" : "ITH2",
+        "count" : "16"
+      } ],
+      "smallest" : "AT",
+      "count" : "4224",
+      "cardinality" : "264"
+    },
+    "format" : { }
+  }, {
+    "id" : 25812877,
+    "name" : "Stage of development",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "stage_of_development",
+    "position" : 3,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15756720,
+    "cachedContents" : {
+      "non_null" : "3776",
+      "largest" : "TR",
+      "null" : "448",
+      "top" : [ {
+        "item" : "MD",
+        "count" : "1504"
+      }, {
+        "item" : "LD",
+        "count" : "1216"
+      }, {
+        "item" : "TR",
+        "count" : "1056"
+      } ],
+      "smallest" : "LD",
+      "count" : "4224",
+      "cardinality" : "3"
+    },
+    "format" : { }
+  }, {
+    "id" : 25812878,
+    "name" : "Rank",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "rank",
+    "position" : 4,
+    "renderTypeName" : "number",
+    "tableColumnId" : 15756721,
+    "cachedContents" : {
+      "non_null" : "3776",
+      "largest" : "236",
+      "null" : "448",
+      "top" : [ {
+        "item" : "33",
+        "count" : "16"
+      }, {
+        "item" : "204",
+        "count" : "16"
+      }, {
+        "item" : "124",
+        "count" : "16"
+      }, {
+        "item" : "172",
+        "count" : "16"
+      }, {
+        "item" : "14",
+        "count" : "16"
+      }, {
+        "item" : "3",
+        "count" : "16"
+      }, {
+        "item" : "74",
+        "count" : "16"
+      }, {
+        "item" : "232",
+        "count" : "16"
+      }, {
+        "item" : "77",
+        "count" : "16"
+      }, {
+        "item" : "37",
+        "count" : "16"
+      }, {
+        "item" : "169",
+        "count" : "16"
+      }, {
+        "item" : "84",
+        "count" : "16"
+      }, {
+        "item" : "223",
+        "count" : "16"
+      }, {
+        "item" : "166",
+        "count" : "16"
+      }, {
+        "item" : "142",
+        "count" : "16"
+      }, {
+        "item" : "112",
+        "count" : "16"
+      }, {
+        "item" : "92",
+        "count" : "16"
+      }, {
+        "item" : "18",
+        "count" : "16"
+      }, {
+        "item" : "134",
+        "count" : "16"
+      }, {
+        "item" : "117",
+        "count" : "16"
+      } ],
+      "smallest" : "1",
+      "count" : "4224",
+      "cardinality" : "236"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 25812879,
+    "name" : "Component",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "component",
+    "position" : 5,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15756722,
+    "cachedContents" : {
+      "non_null" : "4224",
+      "largest" : "Water and sanitation",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Information and communications",
+        "count" : "264"
+      }, {
+        "item" : "Inclusive society",
+        "count" : "264"
+      }, {
+        "item" : "Freedom and choice",
+        "count" : "264"
+      }, {
+        "item" : "Nutrition and medical care",
+        "count" : "264"
+      }, {
+        "item" : "EU-SPI",
+        "count" : "264"
+      }, {
+        "item" : "Advanced education",
+        "count" : "264"
+      }, {
+        "item" : "Health",
+        "count" : "264"
+      }, {
+        "item" : "Safety",
+        "count" : "264"
+      }, {
+        "item" : "Water and sanitation",
+        "count" : "264"
+      }, {
+        "item" : "Basic education",
+        "count" : "264"
+      }, {
+        "item" : "FOUNDATIONS OF WELLBEING",
+        "count" : "264"
+      }, {
+        "item" : "BASIC NEEDS",
+        "count" : "264"
+      }, {
+        "item" : "Housing",
+        "count" : "264"
+      }, {
+        "item" : "OPPORTUNITY",
+        "count" : "264"
+      }, {
+        "item" : "Trust and governance",
+        "count" : "264"
+      }, {
+        "item" : "Environmental quality",
+        "count" : "264"
+      } ],
+      "smallest" : "Advanced education",
+      "count" : "4224",
+      "cardinality" : "16"
+    },
+    "format" : { }
+  }, {
+    "id" : 25812880,
+    "name" : "Year",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "year",
+    "position" : 6,
+    "renderTypeName" : "number",
+    "tableColumnId" : 15756723,
+    "cachedContents" : {
+      "non_null" : "4224",
+      "largest" : "2024",
+      "null" : "0",
+      "top" : [ {
+        "item" : "2024",
+        "count" : "4224"
+      } ],
+      "smallest" : "2024",
+      "count" : "4224",
+      "cardinality" : "1"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 25812881,
+    "name" : "Value",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "value",
+    "position" : 7,
+    "renderTypeName" : "number",
+    "tableColumnId" : 15756724,
+    "cachedContents" : {
+      "non_null" : "4224",
+      "largest" : "205.4",
+      "null" : "0",
+      "top" : [ {
+        "item" : "100",
+        "count" : "26"
+      }, {
+        "item" : "109.9",
+        "count" : "20"
+      }, {
+        "item" : "105.1",
+        "count" : "19"
+      }, {
+        "item" : "125",
+        "count" : "18"
+      }, {
+        "item" : "108.5",
+        "count" : "17"
+      }, {
+        "item" : "110.6",
+        "count" : "17"
+      }, {
+        "item" : "106",
+        "count" : "17"
+      }, {
+        "item" : "105.3",
+        "count" : "16"
+      }, {
+        "item" : "108.4",
+        "count" : "16"
+      }, {
+        "item" : "111.8",
+        "count" : "15"
+      }, {
+        "item" : "69.4",
+        "count" : "15"
+      }, {
+        "item" : "107.7",
+        "count" : "15"
+      }, {
+        "item" : "110.2",
+        "count" : "15"
+      }, {
+        "item" : "113.1",
+        "count" : "15"
+      }, {
+        "item" : "99.8",
+        "count" : "15"
+      }, {
+        "item" : "108.1",
+        "count" : "15"
+      }, {
+        "item" : "109",
+        "count" : "15"
+      }, {
+        "item" : "103.9",
+        "count" : "15"
+      }, {
+        "item" : "108.7",
+        "count" : "15"
+      }, {
+        "item" : "123.3",
+        "count" : "14"
+      } ],
+      "smallest" : "14.8",
+      "count" : "4224",
+      "cardinality" : "988"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 25812882,
+    "name" : "EU countries",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "eu_countries",
+    "position" : 8,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15756725,
+    "cachedContents" : {
+      "non_null" : "4224",
+      "largest" : "SK: Slovakia",
+      "null" : "0",
+      "top" : [ {
+        "item" : "DE: Germany",
+        "count" : "624"
+      }, {
+        "item" : "FR: France",
+        "count" : "368"
+      }, {
+        "item" : "IT: Italy",
+        "count" : "352"
+      }, {
+        "item" : "ES: Spain",
+        "count" : "320"
+      }, {
+        "item" : "PL: Poland",
+        "count" : "288"
+      }, {
+        "item" : "EL: Greece",
+        "count" : "224"
+      }, {
+        "item" : "NL: Netherlands",
+        "count" : "208"
+      }, {
+        "item" : "BE: Belgium",
+        "count" : "192"
+      }, {
+        "item" : "AT: Austria",
+        "count" : "160"
+      }, {
+        "item" : "CZ: Czechia",
+        "count" : "144"
+      }, {
+        "item" : "SE: Sweden",
+        "count" : "144"
+      }, {
+        "item" : "HU: Hungary",
+        "count" : "144"
+      }, {
+        "item" : "RO: Romania",
+        "count" : "144"
+      }, {
+        "item" : "PT: Portugal",
+        "count" : "128"
+      }, {
+        "item" : "BG: Bulgaria",
+        "count" : "112"
+      }, {
+        "item" : "DK: Denmark",
+        "count" : "96"
+      }, {
+        "item" : "HR: Croatia",
+        "count" : "80"
+      }, {
+        "item" : "SK: Slovakia",
+        "count" : "80"
+      }, {
+        "item" : "FI: Finland",
+        "count" : "80"
+      }, {
+        "item" : "IE: Ireland",
+        "count" : "64"
+      } ],
+      "smallest" : "AT: Austria",
+      "count" : "4224",
+      "cardinality" : "28"
+    },
+    "format" : { }
+  } ],
+  "grants" : [ {
+    "inherited" : false,
+    "type" : "viewer",
+    "flags" : [ "public" ]
+  } ],
+  "license" : {
+    "name" : "Creative Commons 1.0 Universal (Public Domain Dedication)",
+    "logoUrl" : "images/licenses/ccZero.png",
+    "termsLink" : "http://creativecommons.org/publicdomain/zero/1.0/legalcode"
+  },
+  "metadata" : {
+    "availableDisplayTypes" : [ "table", "fatrow", "page" ]
+  },
+  "owner" : {
+    "id" : "r659-f9f9",
+    "displayName" : "Alain Vanden Borre",
+    "screenName" : "Alain Vanden Borre",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula", "mayBeStoriesCoOwner" ]
+  },
+  "query" : { },
+  "rights" : [ "read" ],
+  "tableAuthor" : {
+    "id" : "r659-f9f9",
+    "displayName" : "Alain Vanden Borre",
+    "screenName" : "Alain Vanden Borre",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula", "mayBeStoriesCoOwner" ]
+  },
+  "tags" : [ "social", "index" ],
+  "flags" : [ "default", "ownerMayBeContacted", "restorable", "restorePossibleForType" ]
+}

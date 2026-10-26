@@ -7,7 +7,7 @@ import json, os, re
 
 TEMA_EU = 'eur'
 NOME_TEMA_EU = 'Demografia regionale europea (Eurostat)'
-NOME_TEMA_EU_ESTESO = 'Regioni europee (Eurostat): popolazione, economia, lavoro, istruzione, salute, società, digitale, turismo, trasporti, agricoltura'
+NOME_TEMA_EU_ESTESO = 'Regioni europee (Eurostat e Commissione europea): popolazione, economia, lavoro, istruzione, salute, società, digitale, turismo, trasporti, agricoltura, ambiente, indici regionali e fondi europei'
 
 ETA = {'TOTAL': None, 'Y_LT15': 'sotto i 15 anni', 'Y15-64': 'da 15 a 64 anni', 'Y_GE65': 'di 65 anni e oltre', 'UNK': 'età non nota'}
 SESSO = {'T': None, 'M': 'uomini', 'F': 'donne'}
@@ -29,7 +29,15 @@ STATI_EU = {'b': 'interruzione della serie', 'c': 'riservato', 'd': 'definizione
 ISO3_EXTRA = {'UK': 'GBR', 'EL': 'GRC', 'BA': 'BIH', 'XK': 'XKX', 'UA': 'UKR', 'MD': 'MDA', 'GE': 'GEO', 'AM': 'ARM', 'AZ': 'AZE', 'BY': 'BLR', 'RU': 'RUS'}
 AGG_EU_IT = {'DE_TOT': 'Germania, compresa l’ex RDT (Repubblica democratica tedesca)',
              'EFTA': 'Associazione europea di libero scambio (EFTA)', 'EU27_2007': 'Unione europea a 27 (2007/2013)',
-             'EU27_2020': 'Unione europea a 27 (dal 2020)', 'EU28': 'Unione europea a 28 (2013/2020)'}
+             'EU27_2020': 'Unione europea a 27 (dal 2020)', 'EU28': 'Unione europea a 28 (2013/2020)',
+             # aree metropolitane unite nell’indice di competitività regionale (RCI) della Commissione europea
+             'AT_C': 'Area metropolitana di Vienna (regione della capitale unita al suo bacino di pendolarismo nell’indice RCI)',
+             'BE_C': 'Area metropolitana di Bruxelles (regione della capitale unita al suo bacino di pendolarismo nell’indice RCI)',
+             'CZ_C': 'Area metropolitana di Praga (regione della capitale unita al suo bacino di pendolarismo nell’indice RCI)',
+             'DE_C': 'Area metropolitana di Berlino (regione della capitale unita al suo bacino di pendolarismo nell’indice RCI)',
+             'HR_C': 'Area metropolitana di Zagabria (regione della capitale unita al suo bacino di pendolarismo nell’indice RCI)',
+             'HU_C': 'Area metropolitana di Budapest (regione della capitale unita al suo bacino di pendolarismo nell’indice RCI)',
+             'NL_C': 'Area metropolitana di Amsterdam (regione della capitale unita al suo bacino di pendolarismo nell’indice RCI)'}
 
 # Nomi italiani dei dataset degli archivi parziali (dal catalogo FAOSTAT e OCSE)
 DATASET_IT = {
@@ -176,16 +184,29 @@ def _territori_nuts(d_territori, uscita, territori):
         per_id[voce['id']] = voce
 
 
-def eurostat_api(percorso, uscita, territori, arrotonda):
-    """Indicatori regionali scaricati dall'API di Eurostat (estrai_eurostat_api.py); restituisce (indicatori, data di scarico)."""
+# indicatori Eurostat che la fonte stessa presenta come proiezioni o stime modellate
+STIME_EU = {'EU_PRJ_': 'Proiezione di Eurostat, non un dato osservato: lo scenario è indicato nella selezione.',
+            'EU_AMB_EROSIONE': 'Stima modellata (Eurostat la presenta come “estimated”), non una misurazione.'}
+
+
+def eurostat_api(percorso, uscita, territori, arrotonda, lotto='api'):
+    """Indicatori regionali nel formato intermedio di estrai_eurostat_api.py (Eurostat) o estrai_regio.py (Commissione europea,
+    DG REGIO); restituisce (indicatori, data di scarico). Le voci possono portare 'org', 'url', 'def', 'calc' e 'stima' propri."""
     d = json.load(open(percorso))
     _territori_nuts(d['territori'], uscita, territori)
     indicatori = []
     for voce in d['indicatori']:
+        titolo = voce.get('titolo', voce['ds'])
+        extra = {'def': voce.get('def') or f"Dataset Eurostat {voce['ds']}: {titolo}. Selezione: {voce.get('sel', '')}.",
+                 'sel': voce.get('sel', '')}
+        for k in ('org', 'url', 'calc', 'stima'):
+            if voce.get(k):
+                extra[k] = voce[k]
+        for prefisso, testo in STIME_EU.items():
+            if voce['c'].startswith(prefisso) and 'stima' not in extra:
+                extra['stima'] = testo
         v = _voce_eu(uscita, arrotonda, voce['c'], d['serie'].get(voce['c'], {}), voce['n'], voce['u'], voce['ds'], voce['en'],
-                     (d['agg'].get(voce['ds']) or '')[:10], voce.get('titolo', voce['ds']), 'api',
-                     {'def': f"Dataset Eurostat {voce['ds']}: {voce.get('titolo', voce['ds'])}. Selezione: {voce.get('sel', '')}.",
-                      'sel': voce.get('sel', '')})
+                     (d['agg'].get(voce['ds']) or '')[:10], titolo, lotto, extra)
         if v:
             indicatori.append(v)
     return indicatori, d.get('scaricato', '')
@@ -329,7 +350,8 @@ FLAG_WB = ['SP.POP.TOTL', 'SP.DYN.LE00.IN', 'SP.DYN.TFRT.IN', 'SP.POP.65UP.TO.ZS
            'AG.LND.FRST.ZS', 'SE.TER.ENRR', 'SH.MED.PHYS.ZS', 'SH.H2O.SMDW.ZS', 'SE.ADT.LITR.ZS', 'AG.LND.AGRI.ZS']
 FLAG_EU = ['EU_POP_T_TOTAL', 'EU_DENS', 'EU_QUOTA_Y_GE65', 'EU_STR_ETAMEDIANA', 'EU_NATI', 'EU_MORTI', 'EU_TOTFERRT', 'EU_DIN_MIGRATORIO',
            'EU_ECO_PIL_AB', 'EU_ECO_PIL_UE', 'EU_ECO_REDDITO', 'EU_LAV_OCC2064', 'EU_LAV_DIS', 'EU_LAV_NEET', 'EU_IST_LAUREATI',
-           'EU_SAL_VITA', 'EU_SOC_POVESCL', 'EU_DIG_QUOTID', 'EU_TUR_NOTTI', 'EU_TRA_MORTI', 'EU_RIC_SPESA', 'EU_IMP_ATTIVE']
+           'EU_SAL_VITA', 'EU_SOC_POVESCL', 'EU_DIG_QUOTID', 'EU_TUR_NOTTI', 'EU_TRA_MORTI', 'EU_RIC_SPESA', 'EU_IMP_ATTIVE',
+           'EU_RCI_TOT', 'EU_SPI24_TOT', 'EU_EQI_TOT', 'EU_CLI_GHG_AB']
 SPARK_ANNI = 30
 
 

@@ -1,0 +1,528 @@
+{
+  "id" : "eqnk-pu8x",
+  "name" : "EU Quality of Government Time Evolution",
+  "assetType" : "dataset",
+  "attributionLink" : "https://ec.europa.eu/regional_policy/assets/quality-of-government/index.html#/",
+  "averageRating" : 0,
+  "createdAt" : 1742159362,
+  "description" : "The European Quality of Government Index (EQI) captures average citizens’ perceptions and experiences with corruption, quality and impartiality of three essential public services – health, education and policing - in their region of residence. The index has been produced by the Quality of Government Institute at Gothenburg University for the European Commission since 2010.\n\nThe 2024 round of the EQI is also the largest survey ever undertaken to measure the perceptions and experience of EU citizens with quality of government. It collects the opinions of over 135,000 respondents in a total of 210 NUTS 1 and NUTS 2 regions in all Member States. Since the EQI builds on previous rounds of the survey (2010, 2013, 2017 and 2021) it also allows for systematic analysis of shifts over time and how both changes and inertia can be explained.\n\nMore on the European Commission website: https://ec.europa.eu/regional_policy/assets/quality-of-government/index.html#/",
+  "diciBackend" : false,
+  "displayType" : "table",
+  "downloadCount" : 899,
+  "hideFromCatalog" : false,
+  "hideFromDataJson" : false,
+  "locked" : false,
+  "newBackend" : true,
+  "numberOfComments" : 0,
+  "oid" : 3016316,
+  "provenance" : "official",
+  "publicationAppendEnabled" : false,
+  "publicationDate" : 1742159769,
+  "publicationGroup" : 2021957,
+  "publicationStage" : "published",
+  "rowsUpdatedAt" : 1742159758,
+  "rowsUpdatedBy" : "jw7c-visd",
+  "tableId" : 2021957,
+  "totalTimesRated" : 0,
+  "viewCount" : 336,
+  "viewLastModified" : 1742374069,
+  "viewType" : "tabular",
+  "approvals" : [ {
+    "reviewedAt" : 1742201301,
+    "reviewedAutomatically" : false,
+    "state" : "approved",
+    "submissionId" : 1496693,
+    "submissionObject" : "public_audience_request",
+    "submissionOutcome" : "change_audience",
+    "submittedAt" : 1742159769,
+    "targetAudience" : "public",
+    "workflowId" : 133,
+    "reviewer" : {
+      "id" : "r659-f9f9",
+      "displayName" : "Alain Vanden Borre"
+    },
+    "submissionDetails" : {
+      "permissionType" : "READ"
+    },
+    "submissionOutcomeApplication" : {
+      "endedAt" : 1742201301,
+      "failureCount" : 0,
+      "startedAt" : 1742201301,
+      "status" : "success"
+    },
+    "submitter" : {
+      "id" : "jw7c-visd",
+      "displayName" : "Hoang Ha PHAN"
+    }
+  } ],
+  "clientContext" : {
+    "clientContextVariables" : [ ],
+    "inheritedVariables" : { }
+  },
+  "columns" : [ {
+    "id" : 26714798,
+    "name" : "REGION NAME",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "region_name",
+    "position" : 1,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16159499,
+    "cachedContents" : {
+      "non_null" : "4200",
+      "largest" : "Zuid-Holland",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Região Autónoma dos Açores (PT)",
+        "count" : "20"
+      }, {
+        "item" : "Thessalia",
+        "count" : "20"
+      }, {
+        "item" : "Sterea Ellada",
+        "count" : "20"
+      }, {
+        "item" : "Tirol",
+        "count" : "20"
+      }, {
+        "item" : "Helsinki-Uusimaa",
+        "count" : "20"
+      }, {
+        "item" : "Sicilia",
+        "count" : "20"
+      }, {
+        "item" : "Galicia",
+        "count" : "20"
+      }, {
+        "item" : "Overijssel",
+        "count" : "20"
+      }, {
+        "item" : "Gelderland",
+        "count" : "20"
+      }, {
+        "item" : "Mayotte",
+        "count" : "20"
+      }, {
+        "item" : "Mecklenburg-Vorpommern",
+        "count" : "20"
+      }, {
+        "item" : "Luxembourg",
+        "count" : "20"
+      }, {
+        "item" : "Provence-Alpes-Côte d'Azur",
+        "count" : "20"
+      }, {
+        "item" : "Limburg (NL)",
+        "count" : "20"
+      }, {
+        "item" : "Attiki",
+        "count" : "20"
+      }, {
+        "item" : "Noord-Brabant",
+        "count" : "20"
+      }, {
+        "item" : "Lorraine",
+        "count" : "20"
+      }, {
+        "item" : "Syddanmark",
+        "count" : "20"
+      }, {
+        "item" : "Illes Balears",
+        "count" : "20"
+      }, {
+        "item" : "Dytiki Makedonia",
+        "count" : "20"
+      } ],
+      "smallest" : "Abruzzo",
+      "count" : "4200",
+      "cardinality" : "210"
+    },
+    "format" : { }
+  }, {
+    "id" : 26714799,
+    "name" : "REGION CODE",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "region_code",
+    "position" : 2,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16159500,
+    "cachedContents" : {
+      "non_null" : "4200",
+      "largest" : "SK04",
+      "null" : "0",
+      "top" : [ {
+        "item" : "DEC",
+        "count" : "20"
+      }, {
+        "item" : "HR02",
+        "count" : "20"
+      }, {
+        "item" : "RO32",
+        "count" : "20"
+      }, {
+        "item" : "FRY3",
+        "count" : "20"
+      }, {
+        "item" : "PL61",
+        "count" : "20"
+      }, {
+        "item" : "EL64",
+        "count" : "20"
+      }, {
+        "item" : "RO31",
+        "count" : "20"
+      }, {
+        "item" : "DK05",
+        "count" : "20"
+      }, {
+        "item" : "NL12",
+        "count" : "20"
+      }, {
+        "item" : "FRY4",
+        "count" : "20"
+      }, {
+        "item" : "PT30",
+        "count" : "20"
+      }, {
+        "item" : "BG31",
+        "count" : "20"
+      }, {
+        "item" : "PL51",
+        "count" : "20"
+      }, {
+        "item" : "DEA",
+        "count" : "20"
+      }, {
+        "item" : "PL91",
+        "count" : "20"
+      }, {
+        "item" : "ITC4",
+        "count" : "20"
+      }, {
+        "item" : "NL34",
+        "count" : "20"
+      }, {
+        "item" : "CZ08",
+        "count" : "20"
+      }, {
+        "item" : "DE9",
+        "count" : "20"
+      }, {
+        "item" : "ITH2",
+        "count" : "20"
+      } ],
+      "smallest" : "AT11",
+      "count" : "4200",
+      "cardinality" : "210"
+    },
+    "format" : { }
+  }, {
+    "id" : 26714800,
+    "name" : "Stage of development",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "stage_of_development",
+    "position" : 3,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16159501,
+    "cachedContents" : {
+      "non_null" : "4200",
+      "largest" : "TR",
+      "null" : "0",
+      "top" : [ {
+        "item" : "LD",
+        "count" : "1560"
+      }, {
+        "item" : "MD",
+        "count" : "1360"
+      }, {
+        "item" : "TR",
+        "count" : "1280"
+      } ],
+      "smallest" : "LD",
+      "count" : "4200",
+      "cardinality" : "3"
+    },
+    "format" : { }
+  }, {
+    "id" : 26714801,
+    "name" : "Rank",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "rank",
+    "position" : 4,
+    "renderTypeName" : "number",
+    "tableColumnId" : 16159502,
+    "cachedContents" : {
+      "non_null" : "4200",
+      "largest" : "999",
+      "null" : "0",
+      "top" : [ {
+        "item" : "999",
+        "count" : "4200"
+      } ],
+      "smallest" : "999",
+      "count" : "4200",
+      "cardinality" : "1"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 26714802,
+    "name" : "Component",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "component",
+    "position" : 5,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16159503,
+    "cachedContents" : {
+      "non_null" : "4200",
+      "largest" : "Quality",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Corruption",
+        "count" : "1050"
+      }, {
+        "item" : "EQI",
+        "count" : "1050"
+      }, {
+        "item" : "Impartiality",
+        "count" : "1050"
+      }, {
+        "item" : "Quality",
+        "count" : "1050"
+      } ],
+      "smallest" : "Corruption",
+      "count" : "4200",
+      "cardinality" : "4"
+    },
+    "format" : { }
+  }, {
+    "id" : 26714803,
+    "name" : "Year",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "year",
+    "position" : 6,
+    "renderTypeName" : "number",
+    "tableColumnId" : 16159504,
+    "cachedContents" : {
+      "non_null" : "4200",
+      "largest" : "2024",
+      "null" : "0",
+      "top" : [ {
+        "item" : "2024",
+        "count" : "840"
+      }, {
+        "item" : "2010",
+        "count" : "840"
+      }, {
+        "item" : "2021",
+        "count" : "840"
+      }, {
+        "item" : "2013",
+        "count" : "840"
+      }, {
+        "item" : "2017",
+        "count" : "840"
+      } ],
+      "smallest" : "2010",
+      "count" : "4200",
+      "cardinality" : "5"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 26714804,
+    "name" : "Value",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "value",
+    "position" : 7,
+    "renderTypeName" : "number",
+    "tableColumnId" : 16159505,
+    "cachedContents" : {
+      "non_null" : "4200",
+      "largest" : "3.31",
+      "null" : "0",
+      "top" : [ {
+        "item" : "-0.91",
+        "count" : "30"
+      }, {
+        "item" : "-1.12",
+        "count" : "25"
+      }, {
+        "item" : "-0.79",
+        "count" : "25"
+      }, {
+        "item" : "1.17",
+        "count" : "24"
+      }, {
+        "item" : "0.45",
+        "count" : "22"
+      }, {
+        "item" : "1.33",
+        "count" : "22"
+      }, {
+        "item" : "1.21",
+        "count" : "22"
+      }, {
+        "item" : "-0.85",
+        "count" : "21"
+      }, {
+        "item" : "-0.44",
+        "count" : "21"
+      }, {
+        "item" : "1.38",
+        "count" : "21"
+      }, {
+        "item" : "-1.05",
+        "count" : "21"
+      }, {
+        "item" : "0.44",
+        "count" : "21"
+      }, {
+        "item" : "0.77",
+        "count" : "20"
+      }, {
+        "item" : "0.61",
+        "count" : "20"
+      }, {
+        "item" : "-0.82",
+        "count" : "20"
+      }, {
+        "item" : "-0.6",
+        "count" : "19"
+      }, {
+        "item" : "0.82",
+        "count" : "19"
+      }, {
+        "item" : "0.74",
+        "count" : "19"
+      }, {
+        "item" : "-0.71",
+        "count" : "19"
+      }, {
+        "item" : "-0.84",
+        "count" : "19"
+      } ],
+      "smallest" : "-3.14",
+      "count" : "4200",
+      "cardinality" : "458"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 26714805,
+    "name" : "EU countries",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "eu_countries",
+    "position" : 8,
+    "renderTypeName" : "text",
+    "tableColumnId" : 16159506,
+    "cachedContents" : {
+      "non_null" : "4200",
+      "largest" : "SK: Slovakia",
+      "null" : "0",
+      "top" : [ {
+        "item" : "FR: France",
+        "count" : "540"
+      }, {
+        "item" : "IT: Italy",
+        "count" : "420"
+      }, {
+        "item" : "PL: Poland",
+        "count" : "340"
+      }, {
+        "item" : "ES: Spain",
+        "count" : "340"
+      }, {
+        "item" : "DE: Germany",
+        "count" : "320"
+      }, {
+        "item" : "EL: Greece",
+        "count" : "260"
+      }, {
+        "item" : "NL: Netherlands",
+        "count" : "240"
+      }, {
+        "item" : "AT: Austria",
+        "count" : "180"
+      }, {
+        "item" : "HU: Hungary",
+        "count" : "160"
+      }, {
+        "item" : "SE: Sweden",
+        "count" : "160"
+      }, {
+        "item" : "RO: Romania",
+        "count" : "160"
+      }, {
+        "item" : "CZ: Czechia",
+        "count" : "160"
+      }, {
+        "item" : "PT: Portugal",
+        "count" : "140"
+      }, {
+        "item" : "BG: Bulgaria",
+        "count" : "120"
+      }, {
+        "item" : "FI: Finland",
+        "count" : "100"
+      }, {
+        "item" : "DK: Denmark",
+        "count" : "100"
+      }, {
+        "item" : "SK: Slovakia",
+        "count" : "80"
+      }, {
+        "item" : "HR: Croatia",
+        "count" : "80"
+      }, {
+        "item" : "IE: Ireland",
+        "count" : "60"
+      }, {
+        "item" : "BE: Belgium",
+        "count" : "60"
+      } ],
+      "smallest" : "AT: Austria",
+      "count" : "4200",
+      "cardinality" : "27"
+    },
+    "format" : { }
+  } ],
+  "grants" : [ {
+    "inherited" : false,
+    "type" : "viewer",
+    "flags" : [ "public" ]
+  } ],
+  "metadata" : {
+    "availableDisplayTypes" : [ "table", "fatrow", "page" ]
+  },
+  "owner" : {
+    "id" : "jw7c-visd",
+    "displayName" : "Hoang Ha PHAN",
+    "screenName" : "Hoang Ha PHAN",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "query" : { },
+  "rights" : [ "read" ],
+  "tableAuthor" : {
+    "id" : "jw7c-visd",
+    "displayName" : "Hoang Ha PHAN",
+    "screenName" : "Hoang Ha PHAN",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "flags" : [ "default", "ownerMayBeContacted", "restorable", "restorePossibleForType" ]
+}

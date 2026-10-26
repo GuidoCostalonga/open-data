@@ -189,6 +189,133 @@ CATALOGO = [
     ('EU_IMP_CRESCITA', 'bd_size_r', {'sizeclas': 'TOTAL', 'indic_sbs': 'GRW_ENT_PC', 'nace_r2': 'B-S_X_O_S94'}, 'Crescita netta del numero di imprese', '% delle imprese attive', 'Net business population growth'),
 ]
 
+# Secondo blocco (ottobre 2026): dataset regionali individuati con la ricerca su data.europa.eu.
+# Nel filtro la chiave speciale '_geo' indica la dimensione che contiene il territorio quando non è 'geo'.
+CATALOGO += [
+    # popolazione e struttura per età
+    ('EU_POP_FAMIGLIE', 'lfst_r_lfsd2hh', {'deg_urb': 'TOTAL', 'unit': 'THS_HH'}, 'Famiglie (nuclei familiari privati)', 'migliaia di famiglie', 'Private households'),
+    ('EU_POP_T_YGE85', 'demo_r_pjangrp3', {'sex': 'T', 'unit': 'NR', 'age': 'Y_GE85'}, 'Popolazione di 85 anni e oltre al 1° gennaio', 'persone', 'Population on 1 January, aged 85 and over'),
+    ('EU_POP_T_YLT5', 'demo_r_pjangrp3', {'sex': 'T', 'unit': 'NR', 'age': 'Y_LT5'}, 'Bambini sotto i 5 anni al 1° gennaio', 'persone', 'Population on 1 January, aged under 5'),
+    ('EU_STR_ETAMEDIANA_L', 'demo_r_pjanind2', {'indic_de': 'MEDAGEPOP', 'unit': 'YR'}, 'Età mediana della popolazione, regioni (serie dal 1990)', 'anni', 'Median age of population, NUTS 2 regions (from 1990)'),
+    ('EU_STR_DIPANZ_L', 'demo_r_pjanind2', {'indic_de': 'OLDDEP1', 'unit': 'PC'}, 'Indice di dipendenza degli anziani, regioni (serie dal 1990)', '% della popolazione in età lavorativa', 'Old-age dependency ratio, NUTS 2 regions (from 1990)'),
+    ('EU_STR_Q65_L', 'demo_r_pjanind2', {'indic_de': 'PC_Y65_MAX', 'unit': 'PC'}, 'Quota di popolazione di 65 anni e oltre, regioni (serie dal 1990)', '% della popolazione', 'Proportion of population aged 65 years and more, NUTS 2 regions (from 1990)'),
+    ('EU_STR_Q014_L', 'demo_r_pjanind2', {'indic_de': 'PC_Y0_14', 'unit': 'PC'}, 'Quota di popolazione da 0 a 14 anni, regioni (serie dal 1990)', '% della popolazione', 'Proportion of population aged 0-14 years, NUTS 2 regions (from 1990)'),
+    ('EU_STR_Q2064', 'demo_r_pjanind2', {'indic_de': 'PC_Y20_64', 'unit': 'PC'}, 'Quota di popolazione in età lavorativa (20-64 anni)', '% della popolazione', 'Proportion of population aged 20-64 years'),
+    # proiezioni di popolazione (scenario di base e prova di sensibilità senza migrazioni)
+    ('EU_PRJ_POP', 'proj_25rp5', {'sex': 'T', 'age': 'TOTAL', 'projection': 'BSL', 'unit': 'PER'}, 'Popolazione proiettata al 1° gennaio, scenario di base (proiezione Eurostat)', 'persone', 'Projected population on 1 January, baseline projections'),
+    ('EU_PRJ_POP_NOMIG', 'proj_25rp5', {'sex': 'T', 'age': 'TOTAL', 'projection': 'NMIGR', 'unit': 'PER'}, 'Popolazione proiettata senza migrazioni, prova di sensibilità (proiezione Eurostat)', 'persone', 'Projected population on 1 January, sensitivity test: no migration'),
+    ('EU_PRJ_POP65', 'proj_25rp5', {'sex': 'T', 'age': 'Y_GE65', 'projection': 'BSL', 'unit': 'PER'}, 'Popolazione di 65 anni e oltre proiettata, scenario di base (proiezione Eurostat)', 'persone', 'Projected population aged 65 and over, baseline projections'),
+    ('EU_PRJ_POP_LT15', 'proj_25rp5', {'sex': 'T', 'age': 'Y_LT15', 'projection': 'BSL', 'unit': 'PER'}, 'Popolazione sotto i 15 anni proiettata, scenario di base (proiezione Eurostat)', 'persone', 'Projected population aged under 15, baseline projections'),
+    ('EU_PRJ_ETAMEDIANA', 'proj_25rpind', {'indic_de': 'MEDAGEPOP', 'projection': 'BSL'}, 'Età mediana proiettata, scenario di base (proiezione Eurostat)', 'anni', 'Projected median age of population, baseline projections'),
+    ('EU_PRJ_DIPANZ', 'proj_25rpind', {'indic_de': 'OLDDEP1', 'projection': 'BSL'}, 'Indice di dipendenza degli anziani proiettato, scenario di base (proiezione Eurostat)', '% della popolazione in età lavorativa', 'Projected old-age dependency ratio, baseline projections'),
+    ('EU_PRJ_Q65', 'proj_25rpind', {'indic_de': 'PC_Y65_MAX', 'projection': 'BSL'}, 'Quota di popolazione di 65 anni e oltre proiettata, scenario di base (proiezione Eurostat)', '% della popolazione', 'Projected proportion of population aged 65 years and more, baseline projections'),
+    ('EU_PRJ_Q80', 'proj_25rpind', {'indic_de': 'PC_Y80_MAX', 'projection': 'BSL'}, 'Quota di popolazione di 80 anni e oltre proiettata, scenario di base (proiezione Eurostat)', '% della popolazione', 'Projected proportion of population aged 80 years and more, baseline projections'),
+    # economia: valore aggiunto per provincia e settore, retribuzioni, ore, produttività
+    ('EU_ECO_VA', 'nama_10r_3gva', {'unit': 'CP_MEUR', 'nace_r2': 'TOTAL'}, 'Valore aggiunto lordo a prezzi correnti, province (NUTS 3)', 'milioni di euro', 'Gross value added at basic prices, all NACE activities'),
+    ('EU_ECO_VA_AGR', 'nama_10r_3gva', {'unit': 'CP_MEUR', 'nace_r2': 'A'}, 'Valore aggiunto in agricoltura, silvicoltura e pesca', 'milioni di euro', 'Gross value added, agriculture, forestry and fishing'),
+    ('EU_ECO_VA_IND', 'nama_10r_3gva', {'unit': 'CP_MEUR', 'nace_r2': 'B-E'}, 'Valore aggiunto nell’industria (escluse le costruzioni)', 'milioni di euro', 'Gross value added, industry (except construction)'),
+    ('EU_ECO_VA_MANIF', 'nama_10r_3gva', {'unit': 'CP_MEUR', 'nace_r2': 'C'}, 'Valore aggiunto nell’industria manifatturiera', 'milioni di euro', 'Gross value added, manufacturing'),
+    ('EU_ECO_VA_EDI', 'nama_10r_3gva', {'unit': 'CP_MEUR', 'nace_r2': 'F'}, 'Valore aggiunto nelle costruzioni', 'milioni di euro', 'Gross value added, construction'),
+    ('EU_ECO_VA_COM', 'nama_10r_3gva', {'unit': 'CP_MEUR', 'nace_r2': 'G-J'}, 'Valore aggiunto in commercio, trasporti, alloggio e ristorazione, informazione', 'milioni di euro', 'Gross value added, wholesale and retail trade, transport, accommodation and food, information and communication'),
+    ('EU_ECO_VA_FIN', 'nama_10r_3gva', {'unit': 'CP_MEUR', 'nace_r2': 'K-N'}, 'Valore aggiunto in finanza, immobiliare, servizi professionali e alle imprese', 'milioni di euro', 'Gross value added, financial, real estate, professional and administrative services'),
+    ('EU_ECO_VA_PA', 'nama_10r_3gva', {'unit': 'CP_MEUR', 'nace_r2': 'O-U'}, 'Valore aggiunto in amministrazione pubblica, istruzione, sanità e altri servizi', 'milioni di euro', 'Gross value added, public administration, education, health and other services'),
+    ('EU_ECO_RETRIB', 'nama_10r_2lp10', {'nace_r2': 'TOTAL', 'na_item': 'D1_SAL_PER', 'unit': 'EUR'}, 'Retribuzione lorda annua per dipendente (contabilità regionale)', 'euro per dipendente', 'Compensation per employee'),
+    ('EU_ECO_RETRIB_UE', 'nama_10r_2lp10', {'nace_r2': 'TOTAL', 'na_item': 'D1_SAL_PER', 'unit': 'PC_EU27_2020_MEUR_CP'}, 'Retribuzione per dipendente rispetto alla media dell’Unione europea', '% della media UE a 27 (= 100)', 'Compensation per employee, percentage of EU27 average'),
+    ('EU_ECO_RETRIB_ORA', 'nama_10r_2lp10', {'nace_r2': 'TOTAL', 'na_item': 'D1_SAL_HW', 'unit': 'EUR'}, 'Retribuzione lorda per ora lavorata', 'euro per ora', 'Compensation of employees per hour worked'),
+    ('EU_ECO_ORE_OCC', 'nama_10r_2lp10', {'nace_r2': 'TOTAL', 'na_item': 'HW_EMP', 'unit': 'HW'}, 'Ore lavorate nell’anno per occupato', 'ore per occupato', 'Hours worked per employed person'),
+    ('EU_ECO_ORE_TOT', 'nama_10r_2emhrw', {'unit': 'THS', 'wstatus': 'EMP', 'nace_r2': 'TOTAL'}, 'Ore lavorate in totale (contabilità regionale)', 'migliaia di ore', 'Employment, thousand hours worked, all NACE activities'),
+    ('EU_ECO_PRODUTT3', 'nama_10r_3nlp', {'na_item': 'NLPR_PER', 'unit': 'EUR'}, 'Produttività del lavoro per occupato, province (NUTS 3)', 'euro per occupato', 'Nominal labour productivity per person, NUTS 3 regions'),
+    ('EU_ECO_PRODUTT_UE', 'nama_10r_3nlp', {'na_item': 'NLPR_PER', 'unit': 'PC_EU27_2020_MEUR_CP'}, 'Produttività del lavoro rispetto alla media dell’Unione europea, province (NUTS 3)', '% della media UE a 27 (= 100)', 'Nominal labour productivity per person, percentage of EU27 average, NUTS 3 regions'),
+    # lavoro
+    ('EU_LAV_ORE', 'lfst_r_lfe2ehour', {'unit': 'HR', 'age': 'Y15-64', 'sex': 'T'}, 'Ore settimanali abitualmente lavorate nel lavoro principale (15-64 anni)', 'ore a settimana', 'Average usual weekly hours worked in the main job'),
+    ('EU_LAV_ORE_F', 'lfst_r_lfe2ehour', {'unit': 'HR', 'age': 'Y15-64', 'sex': 'F'}, 'Ore settimanali lavorate dalle donne (15-64 anni)', 'ore a settimana', 'Average usual weekly hours worked in the main job, females'),
+    ('EU_LAV_ORE_M', 'lfst_r_lfe2ehour', {'unit': 'HR', 'age': 'Y15-64', 'sex': 'M'}, 'Ore settimanali lavorate dagli uomini (15-64 anni)', 'ore a settimana', 'Average usual weekly hours worked in the main job, males'),
+    ('EU_LAV_SLACK', 'lfst_r_sla_ga', {'wstatus': 'SLACK', 'age': 'Y15-74', 'sex': 'T', 'unit': 'PC_ELF'}, 'Manodopera potenziale inutilizzata: disoccupati, sottoccupati e persone disponibili ma non in cerca (15-74 anni)', '% della forza lavoro estesa', 'Labour market slack'),
+    ('EU_LAV_SLACK_N', 'lfst_r_sla_ga', {'wstatus': 'SLACK', 'age': 'Y15-74', 'sex': 'T', 'unit': 'THS_PER'}, 'Manodopera potenziale inutilizzata, persone (15-74 anni)', 'migliaia di persone', 'Labour market slack, thousand persons'),
+    ('EU_LAV_DIS_STRANIERI', 'lfst_r_lfur2gan', {'unit': 'PC', 'citizen': 'FOR', 'sex': 'T', 'age': 'Y15-74'}, 'Tasso di disoccupazione dei cittadini stranieri (15-74 anni)', '% della forza lavoro straniera', 'Unemployment rate, foreign citizens'),
+    ('EU_LAV_DIS_EXTRAUE', 'lfst_r_lfur2gan', {'unit': 'PC', 'citizen': 'NEU27_2020_FOR', 'sex': 'T', 'age': 'Y15-74'}, 'Tasso di disoccupazione dei cittadini di paesi non UE (15-74 anni)', '% della forza lavoro di cittadini non UE', 'Unemployment rate, non-EU27 citizens'),
+    ('EU_LAV_DIS_NAZIONALI', 'lfst_r_lfur2gan', {'unit': 'PC', 'citizen': 'NAT', 'sex': 'T', 'age': 'Y15-74'}, 'Tasso di disoccupazione dei cittadini del paese (15-74 anni)', '% della forza lavoro nazionale', 'Unemployment rate, nationals'),
+    ('EU_LAV_OCC_STRANIERI', 'lfst_r_lfe2emprtn', {'citizen': 'FOR', 'isced11': 'TOTAL', 'age': 'Y20-64', 'sex': 'T', 'unit': 'PC'}, 'Tasso di occupazione dei cittadini stranieri (20-64 anni)', '% della popolazione straniera di 20-64 anni', 'Employment rate, foreign citizens'),
+    ('EU_LAV_OCC_NAZIONALI', 'lfst_r_lfe2emprtn', {'citizen': 'NAT', 'isced11': 'TOTAL', 'age': 'Y20-64', 'sex': 'T', 'unit': 'PC'}, 'Tasso di occupazione dei cittadini del paese (20-64 anni)', '% della popolazione nazionale di 20-64 anni', 'Employment rate, nationals'),
+    ('EU_LAV_OCC_LAUREATI', 'lfst_r_lfe2emprtn', {'citizen': 'TOTAL', 'isced11': 'ED5-8', 'age': 'Y20-64', 'sex': 'T', 'unit': 'PC'}, 'Tasso di occupazione dei laureati (20-64 anni)', '% dei laureati di 20-64 anni', 'Employment rate, tertiary education'),
+    ('EU_LAV_OCC_BASSA', 'lfst_r_lfe2emprtn', {'citizen': 'TOTAL', 'isced11': 'ED0-2', 'age': 'Y20-64', 'sex': 'T', 'unit': 'PC'}, 'Tasso di occupazione di chi ha al massimo la licenza media (20-64 anni)', '% della popolazione di 20-64 anni con titolo basso', 'Employment rate, less than primary, primary and lower secondary education'),
+    ('EU_LAV_DISGIOV_POP', 'yth_empl_140', {'sex': 'T', 'age': 'Y15-24', 'unit': 'PC'}, 'Giovani disoccupati in rapporto alla popolazione (15-24 anni)', '% della popolazione di 15-24 anni', 'Youth unemployment ratio'),
+    ('EU_LAV_PENDOLARI', 'lfst_r_lfe2ecomm', {'age': 'Y15-64', 'c_work': 'OUTR', 'sex': 'T', 'unit': 'THS_PER'}, 'Occupati che lavorano in un’altra regione del paese (pendolari interregionali)', 'migliaia di persone', 'Employed persons working in another region of the country'),
+    ('EU_LAV_FRONTALIERI', 'lfst_r_lfe2ecomm', {'age': 'Y15-64', 'c_work': 'FOR', 'sex': 'T', 'unit': 'THS_PER'}, 'Occupati che lavorano all’estero (frontalieri)', 'migliaia di persone', 'Employed persons working in a foreign country'),
+    # istruzione
+    ('EU_IST_UNIVERSITARI', 'educ_uoe_enrt06', {'unit': 'NR', 'isced11': 'ED5-8', 'sex': 'T'}, 'Studenti dell’istruzione terziaria (università e istituti equivalenti)', 'studenti', 'Students enrolled in tertiary education'),
+    ('EU_IST_UNIVERSITARI_F', 'educ_uoe_enrt06', {'unit': 'NR', 'isced11': 'ED5-8', 'sex': 'F'}, 'Studentesse dell’istruzione terziaria', 'studentesse', 'Students enrolled in tertiary education, females'),
+    ('EU_IST_DOTTORANDI', 'educ_uoe_enrt06', {'unit': 'NR', 'isced11': 'ED8', 'sex': 'T'}, 'Dottorandi (dottorato di ricerca)', 'studenti', 'Students enrolled in doctoral or equivalent level'),
+    ('EU_IST_INFANZIA', 'educ_uoe_enrp03', {'unit': 'NR', 'sex': 'T', 'isced11': 'ED0'}, 'Bambini iscritti all’educazione della prima infanzia (nido e scuola dell’infanzia)', 'bambini', 'Pupils enrolled in early childhood education'),
+    # salute
+    ('EU_SAL_RICOVERI', 'hlth_rinpat2_reg', {'_geo': 'c_resid', 'icd10': 'TOTAL', 'age': 'TOTAL', 'hospcare': 'INPAT', 'sex': 'T', 'unit': 'P_HTHAB'}, 'Dimissioni ospedaliere di pazienti ricoverati, tutte le diagnosi, per regione di residenza', 'per 100.000 abitanti', 'Hospital discharges of resident in-patients, all diagnoses'),
+    ('EU_SAL_DEGENZA', 'hlth_ralos1_reg', {'_geo': 'c_resid', 'icd10': 'TOTAL', 'age': 'TOTAL', 'hospcare': 'ALOS', 'sex': 'T', 'unit': 'NR'}, 'Degenza media dei ricoveri ospedalieri, tutte le diagnosi, per regione di residenza', 'giorni', 'In-patients average length of stay of residents, all diagnoses'),
+    ('EU_SAL_LETTI_LT', 'hlth_rs_bdsrg', {'unit': 'P_HTHAB', 'facility': 'HBEDT_LT'}, 'Posti letto ospedalieri per lungodegenza (serie storica fino al 2021)', 'per 100.000 abitanti', 'Long-term care beds in hospitals'),
+    ('EU_SAL_LETTI_PSI', 'hlth_rs_bdsrg', {'unit': 'P_HTHAB', 'facility': 'HBEDI_PSY'}, 'Posti letto ospedalieri psichiatrici (serie storica fino al 2021)', 'per 100.000 abitanti', 'Psychiatric care beds in hospitals'),
+    ('EU_SAL_LETTI_CUR', 'hlth_rs_bdsrg', {'unit': 'P_HTHAB', 'facility': 'HBEDT_CUR'}, 'Posti letto ospedalieri per cure acute (serie storica fino al 2021)', 'per 100.000 abitanti', 'Curative care beds in hospitals'),
+    ('EU_SAL_LETTI_RIAB', 'hlth_rs_bdsrg', {'unit': 'P_HTHAB', 'facility': 'HBEDT_REH'}, 'Posti letto ospedalieri per riabilitazione (serie storica fino al 2021)', 'per 100.000 abitanti', 'Rehabilitative care beds in hospitals'),
+    ('EU_SAL_LETTI_RSA', 'hlth_rs_bdsns', {'unit': 'P_HTHAB', 'facility': 'NRCBED'}, 'Posti letto nelle strutture residenziali di assistenza (case di riposo e simili, serie storica fino al 2021)', 'per 100.000 abitanti', 'Available beds in nursing and residential care facilities'),
+    ('EU_SAL_INFERMIERI', 'hlth_rs_prsrg', {'unit': 'P_HTHAB', 'isco08': 'OC222_322'}, 'Infermieri e ostetriche (serie storica fino al 2021)', 'per 100.000 abitanti', 'Nurses and midwives'),
+    ('EU_SAL_DENTISTI', 'hlth_rs_prsrg', {'unit': 'P_HTHAB', 'isco08': 'OC2261'}, 'Dentisti (serie storica fino al 2021)', 'per 100.000 abitanti', 'Dentists'),
+    ('EU_SAL_FARMACISTI', 'hlth_rs_prsrg', {'unit': 'P_HTHAB', 'isco08': 'OC2262'}, 'Farmacisti (serie storica fino al 2021)', 'per 100.000 abitanti', 'Pharmacists'),
+    ('EU_SAL_FISIOTERAPISTI', 'hlth_rs_prsrg', {'unit': 'P_HTHAB', 'isco08': 'OC2264'}, 'Fisioterapisti (serie storica fino al 2021)', 'per 100.000 abitanti', 'Physiotherapists'),
+    # condizioni di vita
+    ('EU_SOC_POV_PRETRASF', 'ilc_li10_r', {'unit': 'PC'}, 'Rischio di povertà prima dei trasferimenti sociali (pensioni escluse dai trasferimenti)', '% della popolazione', 'At-risk-of-poverty rate before social transfers (pensions excluded from social transfers)'),
+    ('EU_SOC_PASTO', 'ilc_mdes03_r', {'unit': 'PC'}, 'Persone che non possono permettersi un pasto con carne, pesce o equivalente ogni due giorni', '% della popolazione', 'Inability to afford a meal with meat, chicken, fish (or vegetarian equivalent) every second day'),
+    ('EU_SOC_IMPREVISTI', 'ilc_mdes04_r', {'unit': 'PC'}, 'Persone che non possono far fronte a spese impreviste', '% della popolazione', 'Inability to face unexpected financial expenses'),
+    ('EU_SOC_ARRETRATI', 'ilc_mdes05_r', {'unit': 'PC'}, 'Persone in arretrato con mutuo, affitto, bollette o rate', '% della popolazione', 'Arrears (mortgage or rent, utility bills or hire purchase)'),
+    ('EU_SOC_DEPRIV_MS', 'ilc_mdsd08', {'unit': 'PC'}, 'Deprivazione materiale e sociale (almeno 5 voci su 13)', '% della popolazione', 'Material and social deprivation rate'),
+    # digitale: imprese
+    ('EU_DIG_IMP_IA', 'isoc_r_eb_ain2', {'nace_r2': 'C10-S951_X_K', 'size_emp': 'GE10', 'indic_is': 'E_AI_TANY', 'unit': 'PC_ENT'}, 'Imprese che usano almeno una tecnologia di intelligenza artificiale (10 addetti e oltre)', '% delle imprese', 'Enterprises using at least one AI technology'),
+    ('EU_DIG_IMP_NUVOLA', 'isoc_r_cicce_usen2', {'nace_r2': 'C10-S951_X_K', 'size_emp': 'GE10', 'indic_is': 'E_CC', 'unit': 'PC_ENT'}, 'Imprese che acquistano servizi informatici in rete (cloud computing), 10 addetti e oltre', '% delle imprese', 'Enterprises buying cloud computing services used over the internet'),
+    ('EU_DIG_IMP_VENDITE', 'isoc_r_ec_eseln2', {'nace_r2': 'C10-S951_X_K', 'size_emp': 'GE10', 'indic_is': 'E_AWSELL', 'unit': 'PC_ENT'}, 'Imprese che vendono tramite siti, applicazioni o mercati in rete (10 addetti e oltre)', '% delle imprese', 'Enterprises with web sales'),
+    ('EU_DIG_IMP_DATI', 'isoc_r_eb_dan2', {'nace_r2': 'C10-S951_X_K', 'size_emp': 'GE10', 'indic_is': 'E_DA', 'unit': 'PC_ENT'}, 'Imprese che svolgono analisi di dati (10 addetti e oltre)', '% delle imprese', 'Enterprises performing data analytics'),
+    ('EU_DIG_IMP_SPECIALISTI', 'isoc_r_ske_itspen2', {'nace_r2': 'C10-S951_X_K', 'size_emp': 'GE10', 'indic_is': 'E_ITSP2', 'unit': 'PC_ENT'}, 'Imprese che impiegano specialisti informatici (10 addetti e oltre)', '% delle imprese', 'Enterprises that employ ICT specialists'),
+    # turismo
+    ('EU_TUR_OCC_LETTI', 'tour_occ_anor2', {'accomunit': 'BEDPL', 'unit': 'PC'}, 'Tasso netto di occupazione dei posti letto negli alberghi', '% dei posti letto disponibili', 'Net occupancy rate of bed-places in hotels and similar accommodation'),
+    ('EU_TUR_OCC_CAMERE', 'tour_occ_anor2', {'accomunit': 'BEDRM', 'unit': 'PC'}, 'Tasso netto di occupazione delle camere negli alberghi', '% delle camere disponibili', 'Net occupancy rate of bedrooms in hotels and similar accommodation'),
+    # trasporti
+    ('EU_TRA_RICARICA', 'road_if_rchden', {'acs': 'PUB', 'unit': 'P_KM2'}, 'Punti di ricarica pubblici per veicoli elettrici (statistica sperimentale)', 'punti per km²', 'Recharging points density, public access'),
+    ('EU_TRA_AEREO_MERCI', 'tran_r_avgo_nm', {'unit': 'THS_T', 'tra_meas': 'FRM_LD_NLD'}, 'Merci trasportate per via aerea (caricate e scaricate)', 'migliaia di tonnellate', 'Air transport of freight, loaded and unloaded'),
+    ('EU_TRA_MARE_MERCI', 'tran_r_mago_nm', {'tra_meas': 'FR_LD_NLD', 'unit': 'THS_T'}, 'Merci movimentate nei porti (caricate e scaricate)', 'migliaia di tonnellate', 'Maritime transport of freight, loaded and unloaded'),
+    # ambiente: impianti per i rifiuti ed erosione del suolo
+    ('EU_AMB_DISCARICHE', 'env_wasfac', {'indic_env': 'FAC', 'wst_oper': 'DSP_L'}, 'Discariche in esercizio', 'impianti', 'Landfill facilities (D1, D5, D12)'),
+    ('EU_AMB_DISCARICHE_CAP', 'env_wasfac', {'indic_env': 'CAP_RST', 'wst_oper': 'DSP_L'}, 'Capacità residua delle discariche', 'metri cubi', 'Rest capacity of landfills'),
+    ('EU_AMB_INCENERITORI', 'env_wasfac', {'indic_env': 'FAC', 'wst_oper': 'DSP_I'}, 'Impianti di incenerimento dei rifiuti senza recupero di energia', 'impianti', 'Incineration facilities (D10)'),
+    ('EU_AMB_RECUPERO_ENERGIA', 'env_wasfac', {'indic_env': 'FAC', 'wst_oper': 'RCV_E'}, 'Impianti di recupero energetico dai rifiuti', 'impianti', 'Energy recovery facilities (R1)'),
+    ('EU_AMB_RICICLO', 'env_wasfac', {'indic_env': 'FAC', 'wst_oper': 'RCV_R'}, 'Impianti di riciclo dei rifiuti', 'impianti', 'Recycling facilities'),
+    ('EU_AMB_EROSIONE', 'aei_pr_soiler', {'levels': 'SEV', 'clc18': 'CLC2_3X331_332_335', 'unit': 'PC'}, 'Superficie con erosione grave del suolo per acqua, oltre 10 tonnellate per ettaro l’anno (stima)', '% dell’area agricola, forestale e seminaturale', 'Estimated soil erosion by water, severe erosion, share of area'),
+    ('EU_AMB_EROSIONE_KM2', 'aei_pr_soiler', {'levels': 'SEV', 'clc18': 'CLC2_3X331_332_335', 'unit': 'KM2'}, 'Superficie con erosione grave del suolo per acqua (stima)', 'km²', 'Estimated soil erosion by water, severe erosion, area'),
+    ('EU_AMB_EROSIONE_TASSO', 'aei_pr_soiler', {'levels': 'TOTAL', 'clc18': 'CLC2_3X331_332_335', 'unit': 'T_HA'}, 'Tasso medio di erosione del suolo per acqua (stima)', 'tonnellate per ettaro l’anno', 'Estimated soil erosion by water, mean erosion rate'),
+    # agricoltura: struttura delle aziende, biologico, conti economici
+    ('EU_AGR_AZIENDE', 'ef_m_farmleg', {'statinfo': 'TOTAL', 'leg_form': 'TOTAL', 'farmtype': 'TOTAL', 'so_eur': 'TOTAL', 'uaarea': 'TOTAL', 'unit': 'HLD'}, 'Aziende agricole', 'aziende', 'Agricultural holdings'),
+    ('EU_AGR_AZIENDE_SAU', 'ef_m_farmleg', {'statinfo': 'TOTAL', 'leg_form': 'TOTAL', 'farmtype': 'TOTAL', 'so_eur': 'TOTAL', 'uaarea': 'TOTAL', 'unit': 'HA'}, 'Superficie agricola utilizzata delle aziende (censimenti e indagini sulla struttura)', 'ettari', 'Utilised agricultural area of holdings'),
+    ('EU_AGR_LAVORO', 'ef_m_farmleg', {'statinfo': 'TOTAL', 'leg_form': 'TOTAL', 'farmtype': 'TOTAL', 'so_eur': 'TOTAL', 'uaarea': 'TOTAL', 'unit': 'AWU'}, 'Lavoro agricolo in unità di lavoro annue (ULA)', 'unità di lavoro annue', 'Agricultural labour, annual working units'),
+    ('EU_AGR_BESTIAME', 'ef_m_farmleg', {'statinfo': 'TOTAL', 'leg_form': 'TOTAL', 'farmtype': 'TOTAL', 'so_eur': 'TOTAL', 'uaarea': 'TOTAL', 'unit': 'LSU'}, 'Bestiame in unità di bestiame adulto (UBA)', 'unità di bestiame', 'Livestock, livestock units'),
+    ('EU_AGR_PRODSTD', 'ef_m_farmleg', {'statinfo': 'TOTAL', 'leg_form': 'TOTAL', 'farmtype': 'TOTAL', 'so_eur': 'TOTAL', 'uaarea': 'TOTAL', 'unit': 'EUR'}, 'Produzione standard delle aziende agricole', 'euro', 'Standard output of holdings'),
+    ('EU_AGR_BIO', 'ef_lus_org', {'statinfo': 'TOTAL', 'so_eur': 'TOTAL', 'uaarea': 'TOTAL', 'agriprod': 'UAAXK0000_ORG', 'unit': 'HA'}, 'Superficie agricola biologica (certificata e in conversione)', 'ettari', 'Organic utilised agricultural area, fully converted and under conversion'),
+    ('EU_AGR_BIO_AZIENDE', 'ef_lus_org', {'statinfo': 'TOTAL', 'so_eur': 'TOTAL', 'uaarea': 'TOTAL', 'agriprod': 'UAAXK0000_ORG', 'unit': 'HLD'}, 'Aziende agricole con superficie biologica', 'aziende', 'Holdings with organic utilised agricultural area'),
+    ('EU_AGR_VALORE', 'aact_eaa01_r', {'am_item': 'AM160000', 'indic_agr': 'PRD_BP', 'unit': 'MIO_EUR'}, 'Valore della produzione agricola (conti economici dell’agricoltura, prezzi base)', 'milioni di euro', 'Agricultural output, production value at basic price'),
+    ('EU_AGR_VALORE_VEG', 'aact_eaa01_r', {'am_item': 'AM100000', 'indic_agr': 'PRD_BP', 'unit': 'MIO_EUR'}, 'Valore della produzione vegetale (prezzi base)', 'milioni di euro', 'Crop output, production value at basic price'),
+    ('EU_AGR_VALORE_ZOO', 'aact_eaa01_r', {'am_item': 'AM130000', 'indic_agr': 'PRD_BP', 'unit': 'MIO_EUR'}, 'Valore della produzione zootecnica (prezzi base)', 'milioni di euro', 'Animal output, production value at basic price'),
+    ('EU_AGR_VALORE_CEREALI', 'aact_eaa01_r', {'am_item': 'AM010000', 'indic_agr': 'PRD_BP', 'unit': 'MIO_EUR'}, 'Valore della produzione di cereali (prezzi base)', 'milioni di euro', 'Cereals, production value at basic price'),
+    ('EU_AGR_VALORE_VINO', 'aact_eaa01_r', {'am_item': 'AM070000', 'indic_agr': 'PRD_BP', 'unit': 'MIO_EUR'}, 'Valore della produzione di vino (prezzi base)', 'milioni di euro', 'Wine, production value at basic price'),
+    ('EU_AGR_VALORE_FRUTTA', 'aact_eaa01_r', {'am_item': 'AM060000', 'indic_agr': 'PRD_BP', 'unit': 'MIO_EUR'}, 'Valore della produzione di frutta (prezzi base)', 'milioni di euro', 'Fruit, production value at basic price'),
+    ('EU_AGR_VALORE_ORTAGGI', 'aact_eaa01_r', {'am_item': 'AM040000', 'indic_agr': 'PRD_BP', 'unit': 'MIO_EUR'}, 'Valore della produzione di ortaggi e prodotti orticoli (prezzi base)', 'milioni di euro', 'Vegetables and horticultural products, production value at basic price'),
+    # imprese: statistiche strutturali per unità locale e indagine sull’innovazione
+    ('EU_IMP_MANIF_UL', 'sbs_r_nuts2021', {'nace_r2': 'C', 'indic_sbs': 'LOC_NR'}, 'Unità locali dell’industria manifatturiera', 'unità locali', 'Local units, manufacturing'),
+    ('EU_IMP_MANIF_ADD', 'sbs_r_nuts2021', {'nace_r2': 'C', 'indic_sbs': 'EMP_LOC_NR'}, 'Addetti dell’industria manifatturiera', 'persone', 'Persons employed in local units, manufacturing'),
+    ('EU_IMP_MANIF_COSTOLAV', 'sbs_r_nuts2021', {'nace_r2': 'C', 'indic_sbs': 'LC_EMP_LOC_TEUR'}, 'Costo del lavoro per addetto nell’industria manifatturiera', 'migliaia di euro per addetto', 'Labour costs per person employed in local units, manufacturing'),
+    ('EU_IMP_COSTR_ADD', 'sbs_r_nuts2021', {'nace_r2': 'F', 'indic_sbs': 'EMP_LOC_NR'}, 'Addetti delle costruzioni', 'persone', 'Persons employed in local units, construction'),
+    ('EU_IMP_COMMERCIO_ADD', 'sbs_r_nuts2021', {'nace_r2': 'G', 'indic_sbs': 'EMP_LOC_NR'}, 'Addetti del commercio', 'persone', 'Persons employed in local units, wholesale and retail trade'),
+    ('EU_IMP_RICETT_UL', 'sbs_r_nuts2021', {'nace_r2': 'I', 'indic_sbs': 'LOC_NR'}, 'Unità locali di alloggio e ristorazione', 'unità locali', 'Local units, accommodation and food service activities'),
+    ('EU_IMP_RICETT_ADD', 'sbs_r_nuts2021', {'nace_r2': 'I', 'indic_sbs': 'EMP_LOC_NR'}, 'Addetti di alloggio e ristorazione', 'persone', 'Persons employed in local units, accommodation and food service activities'),
+    ('EU_IMP_ICT_ADD', 'sbs_r_nuts2021', {'nace_r2': 'J', 'indic_sbs': 'EMP_LOC_NR'}, 'Addetti dei servizi di informazione e comunicazione', 'persone', 'Persons employed in local units, information and communication'),
+    ('EU_IMP_INNOVATIVE', 'inn_cis13_bas_r', {'unit': 'NR', 'sizeclas': '10-249', 'nace_r2': 'B-M73_INN', 'indic_inn': 'ENT', 'enterpr': 'INN'}, 'Imprese con attività di innovazione (10-249 addetti, indagine CIS 2022)', 'imprese', 'Innovation active enterprises, 10-249 employees'),
+    ('EU_IMP_INNOV_PRODOTTO', 'inn_cis13_bas_r', {'unit': 'NR', 'sizeclas': '10-249', 'nace_r2': 'B-M73_INN', 'indic_inn': 'ENT', 'enterpr': 'PRD'}, 'Imprese con innovazione di prodotto (10-249 addetti, indagine CIS 2022)', 'imprese', 'Enterprises with product innovation, 10-249 employees'),
+    ('EU_IMP_INNOV_TOTALE', 'inn_cis13_bas_r', {'unit': 'NR', 'sizeclas': '10-249', 'nace_r2': 'B-M73_INN', 'indic_inn': 'ENT', 'enterpr': 'TOTAL'}, 'Imprese considerate dall’indagine sull’innovazione (10-249 addetti, CIS 2022)', 'imprese', 'Enterprises in the innovation survey population, 10-249 employees'),
+]
+
 AGGREGATI_TENUTI = {'EU27_2020', 'EU28', 'EU27_2007', 'EA20', 'EA19', 'EFTA'}
 
 
@@ -230,16 +357,16 @@ def estrai_dataset(cartella, ds, voci):
         testa = fh.readline().rstrip('\n').split('\t')
         dims = testa[0].split('\\')[0].split(',')
         anni = [h.strip() for h in testa[1:]]
-        i_geo = dims.index('geo')
         filtri = []
         for cod, _, filtro, *_ in voci:
-            filtri.append((cod, [(dims.index(k), v) for k, v in filtro.items()]))
-        out = {cod: {} for cod, _ in filtri}
+            i_geo = dims.index(filtro.get('_geo', 'geo'))
+            filtri.append((cod, [(dims.index(k), v) for k, v in filtro.items() if not k.startswith('_')], i_geo))
+        out = {cod: {} for cod, _, _ in filtri}
         for ln in fh:
             parti = ln.rstrip('\n').split('\t')
             chiave = parti[0].split(',')
-            geo = chiave[i_geo]
-            for cod, cond in filtri:
+            for cod, cond, i_geo in filtri:
+                geo = chiave[i_geo]
                 if all(chiave[i] == v for i, v in cond):
                     serie = {}
                     for anno, cella in zip(anni, parti[1:]):
@@ -266,7 +393,7 @@ def main():
         os.makedirs(os.path.join(cartella, 'codelist'), exist_ok=True)
         scarica(f'{API}/catalogue/toc/txt?lang=en', os.path.join(cartella, 'toc.txt'))
         scarica(f'{API}/sdmx/2.1/codelist/ESTAT/GEO?format=TSV&lang=en', os.path.join(cartella, 'codelist', 'GEO.tsv'))
-        dims = sorted({k.upper() for _, _, f, *_ in CATALOGO for k in f})
+        dims = sorted({k.upper() for _, _, f, *_ in CATALOGO for k in f if not k.startswith('_')})
         for d in dims:
             scarica(f'{API}/sdmx/2.1/codelist/ESTAT/{d}?format=TSV&lang=en', os.path.join(cartella, 'codelist', f'{d}.tsv'))
         for ds in sorted({v[1] for v in CATALOGO}):
@@ -297,6 +424,8 @@ def main():
             serie[cod] = dati
             desc = []
             for k, v in filtro.items():
+                if k.startswith('_'):
+                    continue
                 et = etichette.get(k)
                 if et is None:
                     et = etichette[k] = leggi_codelist(cartella, k.upper())

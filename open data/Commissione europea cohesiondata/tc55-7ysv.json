@@ -1,0 +1,1014 @@
+{
+  "id" : "tc55-7ysv",
+  "name" : "Historic EU payments annual timeseries - regionalised and modelled",
+  "assetType" : "dataset",
+  "attribution" : "European Commission - DG REGIONAL POLICY",
+  "attributionLink" : "http://ec.europa.eu/regional_policy/index.cfm/en/",
+  "averageRating" : 0,
+  "category" : "Other",
+  "createdAt" : 1521704550,
+  "description" : "1. PURPOSE: This data set provides, in a single source, regionalised (NUTS-2) annual EU expenditure data (in current prices) for specific EU funds - ERDF, Cohesion Fund, EAFRD/EAGGF and ESF. This data can be used, among other purposes, to facilitate analysis on the effects of the EU funds.\n\nIn terms of the regionalisation of EU payments made, this work expands and replaces data sets previous published on the ERDF and Cohesion fund with additional years and additional EU funds. \nThe following studies on ERDF and Cohesion fund expenditure are to a large extent now superseded: \n-\t\"Geography of expenditure\" Work Package 13 of the ERDF and CF ex-post evaluation 2007-2013 - http://ec.europa.eu/regional_policy/en/policy/evaluations/ec/2007-2013/#13\n-\t\"Final Report - ERDF and CF Regional Expenditure\" (2000-2006) - SWECo 2008 - http://ec.europa.eu/regional_policy/sources/docgener/evaluation/pdf/expost2006/expenditure_final.pdf\n-\t\"The Territorial Effects of the Structural Funds\" (1994-1999) - ESPON 2005, study 2.2.1 - http://www.espon.eu/main/Menu_Projects/Menu_ESPON2006Projects/Menu_PolicyImpactProjects/structuralfundsimpact.html\n\nThe dataset does not contain any identification of the thematic nature of the investments made.  This is because there was no harmonised system or information available across funds and across programme periods to estimate the thematic composition of the investments. For the ERDF and Cohesion Fund the studies cited above provided some thematic information for specific programme periods. \n\n2. SCOPE\n\n2.1\tREGIONALISATION: This dataset provides the most complete historic picture available to date on the annual EU payments made - in EUR in current prices of the year in question (not adjusted or expressed as “in 2015 prices”) -  under different shared management funds mapped to or estimated by NUTS-2 regions; \n=> presented in the column \"EU_payment_annual\".\n\nThe work undertaken to regionalise the payment data is predominantly based on the NUTS-2013 version as described in the final report of the 2016 WIIW study (link below). In case the EU funded programmes covered more than one NUTS-2 region the regionalisation of the payments was carried out using either (1) regionalised data provided by the managing authorities or (2) the application of certain apportioning rules to the payments in order to estimate the share of the payment by NUTS-2 region. \n\nIn regionalising the data, information on the specific national or regional funding programme, which were the source of the payments, was not retained in the processing of the dataset. \n  \n2.2\tMODELLING OF “REAL” EXPENDITURE: The yearly breakdown of the dataset follows the cycle of the European Commission payments to the Member States and not the date on which real expenditures took place on the ground. This characteristic may negatively affect any subsequent analytic work to carry out policy assessments. \n\nIn order to develop a more realistic estimate of the annual profile of real expenditure, the Commission tasked BERGEN to undertake work to develop a modelling of the “real” annual expenditure on the ground, and to test the robustness and sensitivity of assumptions used (see link to final report below). \n=> the modelled annual expenditure is presented in the column \"Modelled_annual_expenditure\" and it represents the mean of 100 000 simulations on the annual EU payments to estimate real expenditure.\n=> The column \"Standard_Deviation_of modelled_annual_expenditure\" provides the standard deviation of the “modelled_annual_expenditure\" which is the root mean square of the set of deviations between each estimated annual payment in 100 000 simulations and the mean of the estimations, presented in the column \"Modelled_annual_expenditure”.\n=> The column \"Standard_Error_of_modelled_annual_expenditure\" provides the Standard Error of the \"Modelled_annual_expenditure\", which is a measure of how far this mean is likely to be from its expected value; that is, its scatter in repeated experiments.\n\n3.\tCOVERAGE: The dataset currently covers the regionalisation of payments under the following programme periods and funds: \n-\t1989-1993: \tERDF-EAFRD (EAGGF)\n-\t1994-1999: \tERDF-EAFRD (EAGGF)-CF\n-\t2000-2006: \tERDF-EAFRD (EAGGF)-CF-ESF\n-\t2007-2013: \tERDF-EAFRD (EAGGF)-CF-ESF\n\nFinancial Data from Interreg programmes (ERDF) was not included in the exercise.\n\n(*UPDATE 11/2018*) The data currently covers payment made until end-2015 with partial data for 2016. An update is planned for 2019 when the Commission will add complete payment data from 2016 and payments from 2017 + 2018 (including from the programme period 2014-2020).\n\n4. DOWNLOADING\nIf downloading, check the format of financial amounts and where necessary change your regional settings and default formatting in your chosen software. You can check the results of your aggregation of the financial data by comparing results with the pre-formatted charts profiled on this metadata page under “featured content”. This guide may help to correct errors found:  https://ec.europa.eu/regional_policy/sources/esif_open_data_userguide.pdf \n\n5. REFERENCES:\n\nA. The EU Nomenclature of territorial units for statistics or \"NUTS\" system is explained in more detail here: http://ec.europa.eu/eurostat/statistics-explained/index.php/Glossary:Nomenclature_of_territorial_units_for_statistics_(NUTS) \n\nB. The WIIW study (2016) on \"the Consolidation of Financial Data 1989-2013\" on payments to programmes (including a description of regionalisation method to NUTS-2) : https://publications.europa.eu/en/publication-detail/-/publication/31c556d1-e394-11e6-ad7c-01aa75ed71a1/language-en/format-PDF/source-68135194 \n\nC. The BERGEN study (2017) on \"Regionalisation of ESIF payments 1989-2015\" (including the modelling by year of when the real expenditure underlying the EU payments may have taken place): https://publications.europa.eu/en/publication-detail/-/publication/cd2133d5-1d04-11e8-ac73-01aa75ed71a1/language-en/format-PDF/source-68135162",
+  "diciBackend" : false,
+  "displayType" : "table",
+  "downloadCount" : 16851,
+  "hideFromCatalog" : false,
+  "hideFromDataJson" : false,
+  "licenseId" : "PUBLIC_DOMAIN",
+  "locale" : "en_US",
+  "locked" : false,
+  "newBackend" : true,
+  "numberOfComments" : 0,
+  "oid" : 1733096,
+  "provenance" : "official",
+  "publicationAppendEnabled" : false,
+  "publicationDate" : 1590429968,
+  "publicationGroup" : 397081,
+  "publicationStage" : "published",
+  "rowClass" : "",
+  "rowsUpdatedAt" : 1709806180,
+  "rowsUpdatedBy" : "p5rd-ygin",
+  "tableId" : 1166279,
+  "totalTimesRated" : 0,
+  "viewCount" : 44987,
+  "viewLastModified" : 1738662218,
+  "viewType" : "tabular",
+  "approvals" : [ {
+    "reviewedAt" : 1541351344,
+    "reviewedAutomatically" : true,
+    "state" : "approved",
+    "submissionId" : 634252,
+    "submissionObject" : "public_audience_request",
+    "submissionOutcome" : "change_audience",
+    "submittedAt" : 1541351344,
+    "targetAudience" : "public",
+    "workflowId" : 133,
+    "submissionDetails" : {
+      "permissionType" : "READ"
+    },
+    "submissionOutcomeApplication" : {
+      "failureCount" : 0,
+      "status" : "success"
+    },
+    "submitter" : {
+      "id" : "p5rd-ygin",
+      "displayName" : "John W"
+    }
+  } ],
+  "clientContext" : {
+    "clientContextVariables" : [ ],
+    "inheritedVariables" : { }
+  },
+  "columns" : [ {
+    "id" : 15121245,
+    "name" : "Country",
+    "dataTypeName" : "text",
+    "description" : "2-digit ISO code for Member State",
+    "fieldName" : "country",
+    "position" : 1,
+    "renderTypeName" : "text",
+    "tableColumnId" : 3212394,
+    "width" : 184,
+    "cachedContents" : {
+      "non_null" : "41340",
+      "largest" : "UK",
+      "null" : "0",
+      "top" : [ {
+        "item" : "DE",
+        "count" : "5475"
+      }, {
+        "item" : "UK",
+        "count" : "5128"
+      }, {
+        "item" : "FR",
+        "count" : "4061"
+      }, {
+        "item" : "ES",
+        "count" : "3876"
+      }, {
+        "item" : "IT",
+        "count" : "3502"
+      }, {
+        "item" : "EL",
+        "count" : "2681"
+      }, {
+        "item" : "PL",
+        "count" : "2366"
+      }, {
+        "item" : "NL",
+        "count" : "1596"
+      }, {
+        "item" : "BE",
+        "count" : "1515"
+      }, {
+        "item" : "PT",
+        "count" : "1504"
+      }, {
+        "item" : "CZ",
+        "count" : "1199"
+      }, {
+        "item" : "AT",
+        "count" : "1097"
+      }, {
+        "item" : "SE",
+        "count" : "1083"
+      }, {
+        "item" : "HU",
+        "count" : "1012"
+      }, {
+        "item" : "RO",
+        "count" : "881"
+      }, {
+        "item" : "DK",
+        "count" : "700"
+      }, {
+        "item" : "BG",
+        "count" : "699"
+      }, {
+        "item" : "FI",
+        "count" : "632"
+      }, {
+        "item" : "SK",
+        "count" : "575"
+      }, {
+        "item" : "IE",
+        "count" : "341"
+      } ],
+      "smallest" : "AT",
+      "count" : "41340",
+      "cardinality" : "28"
+    },
+    "format" : {
+      "displayStyle" : "plain",
+      "align" : "left"
+    }
+  }, {
+    "id" : 15121246,
+    "name" : "NUTS1_ID",
+    "dataTypeName" : "text",
+    "description" : "Level 1 code from Nomenclature of territorial units for statistics",
+    "fieldName" : "nuts1_id",
+    "position" : 2,
+    "renderTypeName" : "text",
+    "tableColumnId" : 3212395,
+    "width" : 196,
+    "cachedContents" : {
+      "non_null" : "41340",
+      "largest" : "UKZ",
+      "null" : "0",
+      "top" : [ {
+        "item" : "CZ0",
+        "count" : "1199"
+      }, {
+        "item" : "PT1",
+        "count" : "1078"
+      }, {
+        "item" : "ITF",
+        "count" : "1035"
+      }, {
+        "item" : "DE2",
+        "count" : "1021"
+      }, {
+        "item" : "FR2",
+        "count" : "939"
+      }, {
+        "item" : "ES6",
+        "count" : "824"
+      }, {
+        "item" : "ES2",
+        "count" : "801"
+      }, {
+        "item" : "DEA",
+        "count" : "760"
+      }, {
+        "item" : "BE3",
+        "count" : "720"
+      }, {
+        "item" : "DK0",
+        "count" : "700"
+      }, {
+        "item" : "BE2",
+        "count" : "683"
+      }, {
+        "item" : "UKD",
+        "count" : "673"
+      }, {
+        "item" : "ITC",
+        "count" : "651"
+      }, {
+        "item" : "FR9",
+        "count" : "636"
+      }, {
+        "item" : "ES1",
+        "count" : "622"
+      }, {
+        "item" : "ES4",
+        "count" : "619"
+      }, {
+        "item" : "ITH",
+        "count" : "619"
+      }, {
+        "item" : "ES5",
+        "count" : "614"
+      }, {
+        "item" : "UKM",
+        "count" : "597"
+      }, {
+        "item" : "DE1",
+        "count" : "589"
+      } ],
+      "smallest" : "AT1",
+      "count" : "41340",
+      "cardinality" : "108"
+    },
+    "format" : {
+      "displayStyle" : "plain",
+      "align" : "left"
+    }
+  }, {
+    "id" : 15121256,
+    "name" : "NUTS2 code+name",
+    "dataTypeName" : "text",
+    "description" : "NUTS2 code + title concatenated",
+    "fieldName" : "nuts2_code_name",
+    "position" : 3,
+    "renderTypeName" : "text",
+    "tableColumnId" : 9622890,
+    "cachedContents" : {
+      "non_null" : "41340",
+      "largest" : "UKZZ Extra-Regio NUTS 2",
+      "null" : "0",
+      "top" : [ {
+        "item" : "PT11 Norte",
+        "count" : "220"
+      }, {
+        "item" : "PT18 Alentejo",
+        "count" : "215"
+      }, {
+        "item" : "PT16 Centro",
+        "count" : "215"
+      }, {
+        "item" : "PT15 Algarve",
+        "count" : "214"
+      }, {
+        "item" : "PT17 Lisboa",
+        "count" : "214"
+      }, {
+        "item" : "PT30 Região Autónoma da Madeira",
+        "count" : "214"
+      }, {
+        "item" : "ES61 Andalucía",
+        "count" : "214"
+      }, {
+        "item" : "PT20 Região Autónoma dos Açores",
+        "count" : "212"
+      }, {
+        "item" : "ES52 Comunidad Valenciana",
+        "count" : "209"
+      }, {
+        "item" : "ES41 Castilla y León",
+        "count" : "208"
+      }, {
+        "item" : "ES11 Galicia",
+        "count" : "208"
+      }, {
+        "item" : "ES12 Principado de Asturias",
+        "count" : "208"
+      }, {
+        "item" : "ES51 Cataluña",
+        "count" : "207"
+      }, {
+        "item" : "EL43 Kriti",
+        "count" : "207"
+      }, {
+        "item" : "EL42 Notio Aigaio",
+        "count" : "207"
+      }, {
+        "item" : "ES24 Aragón",
+        "count" : "207"
+      }, {
+        "item" : "ES13 Cantabria",
+        "count" : "206"
+      }, {
+        "item" : "ES42 Castilla-La Mancha",
+        "count" : "206"
+      }, {
+        "item" : "ES70 Canarias",
+        "count" : "206"
+      }, {
+        "item" : "ES43 Extremadura",
+        "count" : "205"
+      } ],
+      "smallest" : "AT11 Burgenland",
+      "count" : "41340",
+      "cardinality" : "287"
+    },
+    "format" : { }
+  }, {
+    "id" : 15121247,
+    "name" : "NUTS2_ID",
+    "dataTypeName" : "text",
+    "description" : "Level 2 code from Nomenclature of territorial units for statistics",
+    "fieldName" : "nuts2_id",
+    "position" : 4,
+    "renderTypeName" : "text",
+    "tableColumnId" : 3212396,
+    "width" : 196,
+    "cachedContents" : {
+      "non_null" : "41340",
+      "largest" : "UKZZ",
+      "null" : "0",
+      "top" : [ {
+        "item" : "PT11",
+        "count" : "220"
+      }, {
+        "item" : "PT18",
+        "count" : "215"
+      }, {
+        "item" : "PT16",
+        "count" : "215"
+      }, {
+        "item" : "PT17",
+        "count" : "214"
+      }, {
+        "item" : "PT30",
+        "count" : "214"
+      }, {
+        "item" : "PT15",
+        "count" : "214"
+      }, {
+        "item" : "ES61",
+        "count" : "214"
+      }, {
+        "item" : "PT20",
+        "count" : "212"
+      }, {
+        "item" : "ES52",
+        "count" : "209"
+      }, {
+        "item" : "ES41",
+        "count" : "208"
+      }, {
+        "item" : "ES12",
+        "count" : "208"
+      }, {
+        "item" : "ES11",
+        "count" : "208"
+      }, {
+        "item" : "ES24",
+        "count" : "207"
+      }, {
+        "item" : "EL42",
+        "count" : "207"
+      }, {
+        "item" : "EL43",
+        "count" : "207"
+      }, {
+        "item" : "ES51",
+        "count" : "207"
+      }, {
+        "item" : "ES13",
+        "count" : "206"
+      }, {
+        "item" : "ES42",
+        "count" : "206"
+      }, {
+        "item" : "ES70",
+        "count" : "206"
+      }, {
+        "item" : "ES43",
+        "count" : "205"
+      } ],
+      "smallest" : "AT11",
+      "count" : "41340",
+      "cardinality" : "287"
+    },
+    "format" : {
+      "displayStyle" : "plain",
+      "align" : "left"
+    }
+  }, {
+    "id" : 15121248,
+    "name" : "NUTS2_name",
+    "dataTypeName" : "text",
+    "description" : "Title of Level 2 code from Nomenclature of territorial units for statistics",
+    "fieldName" : "nuts2_name",
+    "position" : 5,
+    "renderTypeName" : "text",
+    "tableColumnId" : 3212397,
+    "width" : 220,
+    "cachedContents" : {
+      "non_null" : "41216",
+      "largest" : "Zuid-Holland",
+      "null" : "124",
+      "top" : [ {
+        "item" : "Zahodna Slovenija",
+        "count" : "228"
+      }, {
+        "item" : "Norte",
+        "count" : "220"
+      }, {
+        "item" : "Alentejo",
+        "count" : "215"
+      }, {
+        "item" : "Centro",
+        "count" : "215"
+      }, {
+        "item" : "Região Autónoma da Madeira",
+        "count" : "214"
+      }, {
+        "item" : "Andalucía",
+        "count" : "214"
+      }, {
+        "item" : "Algarve",
+        "count" : "214"
+      }, {
+        "item" : "Lisboa",
+        "count" : "214"
+      }, {
+        "item" : "Região Autónoma dos Açores",
+        "count" : "212"
+      }, {
+        "item" : "Ipeiros",
+        "count" : "210"
+      }, {
+        "item" : "Thessalia",
+        "count" : "210"
+      }, {
+        "item" : "Kentriki Makedonia",
+        "count" : "209"
+      }, {
+        "item" : "Dytiki Ellada",
+        "count" : "209"
+      }, {
+        "item" : "Comunidad Valenciana",
+        "count" : "209"
+      }, {
+        "item" : "Sterea Ellada",
+        "count" : "209"
+      }, {
+        "item" : "Dytiki Makedonia",
+        "count" : "209"
+      }, {
+        "item" : "Galicia",
+        "count" : "208"
+      }, {
+        "item" : "Principado de Asturias",
+        "count" : "208"
+      }, {
+        "item" : "Castilla y León",
+        "count" : "208"
+      }, {
+        "item" : "Kriti",
+        "count" : "207"
+      } ],
+      "smallest" : "Abruzzo",
+      "count" : "41340",
+      "cardinality" : "274"
+    },
+    "format" : {
+      "displayStyle" : "plain",
+      "align" : "left"
+    }
+  }, {
+    "id" : 15121249,
+    "name" : "Fund",
+    "dataTypeName" : "text",
+    "description" : "EU funds ",
+    "fieldName" : "fund",
+    "position" : 6,
+    "renderTypeName" : "text",
+    "tableColumnId" : 3212398,
+    "width" : 148,
+    "cachedContents" : {
+      "non_null" : "41340",
+      "largest" : "YEI",
+      "null" : "0",
+      "top" : [ {
+        "item" : "ERDF",
+        "count" : "13166"
+      }, {
+        "item" : "EAFRD",
+        "count" : "11328"
+      }, {
+        "item" : "ESF",
+        "count" : "8070"
+      }, {
+        "item" : "CF",
+        "count" : "3674"
+      }, {
+        "item" : "FEAD",
+        "count" : "1876"
+      }, {
+        "item" : "EMFF",
+        "count" : "1773"
+      }, {
+        "item" : "YEI",
+        "count" : "1453"
+      } ],
+      "smallest" : "CF",
+      "count" : "41340",
+      "cardinality" : "7"
+    },
+    "format" : { }
+  }, {
+    "id" : 15121250,
+    "name" : "Year",
+    "dataTypeName" : "text",
+    "description" : "Calendar Year (i.e. in which EU payments were made)",
+    "fieldName" : "year",
+    "position" : 7,
+    "renderTypeName" : "text",
+    "tableColumnId" : 5090350,
+    "cachedContents" : {
+      "non_null" : "41340",
+      "largest" : "2022",
+      "null" : "0",
+      "top" : [ {
+        "item" : "2016",
+        "count" : "2203"
+      }, {
+        "item" : "2015",
+        "count" : "2024"
+      }, {
+        "item" : "2018",
+        "count" : "1956"
+      }, {
+        "item" : "2017",
+        "count" : "1890"
+      }, {
+        "item" : "2007",
+        "count" : "1861"
+      }, {
+        "item" : "2008",
+        "count" : "1805"
+      }, {
+        "item" : "2009",
+        "count" : "1770"
+      }, {
+        "item" : "2019",
+        "count" : "1727"
+      }, {
+        "item" : "2020",
+        "count" : "1642"
+      }, {
+        "item" : "2022",
+        "count" : "1603"
+      }, {
+        "item" : "2021",
+        "count" : "1591"
+      }, {
+        "item" : "2011",
+        "count" : "1383"
+      }, {
+        "item" : "2002",
+        "count" : "1375"
+      }, {
+        "item" : "2001",
+        "count" : "1346"
+      }, {
+        "item" : "2014",
+        "count" : "1321"
+      }, {
+        "item" : "2010",
+        "count" : "1306"
+      }, {
+        "item" : "2000",
+        "count" : "1296"
+      }, {
+        "item" : "2013",
+        "count" : "1284"
+      }, {
+        "item" : "2012",
+        "count" : "1278"
+      }, {
+        "item" : "2004",
+        "count" : "1195"
+      } ],
+      "smallest" : "1986",
+      "count" : "41340",
+      "cardinality" : "37"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "noCommas" : "false",
+      "align" : "right"
+    }
+  }, {
+    "id" : 15121251,
+    "name" : "Programming_Period",
+    "dataTypeName" : "text",
+    "description" : "The EU funded programmes are multi annual. Each cycle has specific rules.",
+    "fieldName" : "programming_period",
+    "position" : 8,
+    "renderTypeName" : "text",
+    "tableColumnId" : 3212400,
+    "width" : 185,
+    "cachedContents" : {
+      "non_null" : "41340",
+      "largest" : "2014-2020",
+      "null" : "0",
+      "top" : [ {
+        "item" : "2014-2020",
+        "count" : "12218"
+      }, {
+        "item" : "2000-2006",
+        "count" : "10130"
+      }, {
+        "item" : "2007-2013",
+        "count" : "10049"
+      }, {
+        "item" : "1994-1999",
+        "count" : "5470"
+      }, {
+        "item" : "1989-1993",
+        "count" : "3473"
+      } ],
+      "smallest" : "1989-1993",
+      "count" : "41340",
+      "cardinality" : "5"
+    },
+    "format" : {
+      "displayStyle" : "plain",
+      "align" : "left"
+    }
+  }, {
+    "id" : 15121252,
+    "name" : "EU_Payment_annual",
+    "dataTypeName" : "number",
+    "description" : "Sum of all payments made in the calendar year",
+    "fieldName" : "eu_payment_annual",
+    "position" : 9,
+    "renderTypeName" : "number",
+    "tableColumnId" : 3212401,
+    "width" : 173,
+    "cachedContents" : {
+      "non_null" : "41340",
+      "largest" : "1769408384",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "4543"
+      }, {
+        "item" : "765090",
+        "count" : "11"
+      }, {
+        "item" : "42631",
+        "count" : "10"
+      }, {
+        "item" : "259750",
+        "count" : "8"
+      }, {
+        "item" : "598007",
+        "count" : "8"
+      }, {
+        "item" : "30118",
+        "count" : "7"
+      }, {
+        "item" : "657937",
+        "count" : "6"
+      }, {
+        "item" : "248897",
+        "count" : "6"
+      }, {
+        "item" : "67075",
+        "count" : "5"
+      }, {
+        "item" : "62739",
+        "count" : "5"
+      }, {
+        "item" : "1024278",
+        "count" : "4"
+      }, {
+        "item" : "3083939",
+        "count" : "4"
+      }, {
+        "item" : "452641",
+        "count" : "4"
+      }, {
+        "item" : "522372",
+        "count" : "4"
+      }, {
+        "item" : "900749",
+        "count" : "4"
+      }, {
+        "item" : "5450442",
+        "count" : "4"
+      }, {
+        "item" : "161168",
+        "count" : "4"
+      }, {
+        "item" : "177797",
+        "count" : "4"
+      }, {
+        "item" : "1430610",
+        "count" : "4"
+      }, {
+        "item" : "118531",
+        "count" : "4"
+      } ],
+      "smallest" : "-161975247",
+      "count" : "41340",
+      "cardinality" : "36406"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "noCommas" : "false",
+      "align" : "right"
+    }
+  }, {
+    "id" : 15121253,
+    "name" : "Modelled_annual_expenditure",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "modelled_annual_eu_payments",
+    "position" : 10,
+    "renderTypeName" : "number",
+    "tableColumnId" : 3212402,
+    "width" : 194,
+    "cachedContents" : {
+      "non_null" : "41340",
+      "largest" : "1709604235",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "5203"
+      }, {
+        "item" : "765090",
+        "count" : "11"
+      }, {
+        "item" : "259750",
+        "count" : "8"
+      }, {
+        "item" : "657937",
+        "count" : "6"
+      }, {
+        "item" : "190886",
+        "count" : "4"
+      }, {
+        "item" : "709095",
+        "count" : "4"
+      }, {
+        "item" : "988638",
+        "count" : "4"
+      }, {
+        "item" : "438047",
+        "count" : "4"
+      }, {
+        "item" : "279783",
+        "count" : "4"
+      }, {
+        "item" : "404236",
+        "count" : "4"
+      }, {
+        "item" : "838992",
+        "count" : "4"
+      }, {
+        "item" : "1003869",
+        "count" : "4"
+      }, {
+        "item" : "171030",
+        "count" : "4"
+      }, {
+        "item" : "5160054",
+        "count" : "3"
+      }, {
+        "item" : "2456431",
+        "count" : "3"
+      }, {
+        "item" : "3196650",
+        "count" : "3"
+      }, {
+        "item" : "1934195",
+        "count" : "3"
+      }, {
+        "item" : "251",
+        "count" : "3"
+      }, {
+        "item" : "1293519",
+        "count" : "3"
+      }, {
+        "item" : "433",
+        "count" : "3"
+      } ],
+      "smallest" : "-116193988",
+      "count" : "41340",
+      "cardinality" : "35856"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "noCommas" : "false",
+      "align" : "right"
+    }
+  }, {
+    "id" : 15121254,
+    "name" : "Standard_Deviation_of_annual_expenditure",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "standard_deviation",
+    "position" : 11,
+    "renderTypeName" : "number",
+    "tableColumnId" : 3212403,
+    "width" : 201,
+    "cachedContents" : {
+      "non_null" : "41340",
+      "largest" : "254967164",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "5572"
+      }, {
+        "item" : "111",
+        "count" : "7"
+      }, {
+        "item" : "11879",
+        "count" : "5"
+      }, {
+        "item" : "117",
+        "count" : "5"
+      }, {
+        "item" : "168",
+        "count" : "5"
+      }, {
+        "item" : "967",
+        "count" : "5"
+      }, {
+        "item" : "4070",
+        "count" : "5"
+      }, {
+        "item" : "677",
+        "count" : "5"
+      }, {
+        "item" : "22",
+        "count" : "5"
+      }, {
+        "item" : "32",
+        "count" : "5"
+      }, {
+        "item" : "7246",
+        "count" : "5"
+      }, {
+        "item" : "6819",
+        "count" : "4"
+      }, {
+        "item" : "28456",
+        "count" : "4"
+      }, {
+        "item" : "196",
+        "count" : "4"
+      }, {
+        "item" : "520",
+        "count" : "4"
+      }, {
+        "item" : "3",
+        "count" : "4"
+      }, {
+        "item" : "790",
+        "count" : "4"
+      }, {
+        "item" : "80511",
+        "count" : "4"
+      }, {
+        "item" : "621",
+        "count" : "4"
+      }, {
+        "item" : "143",
+        "count" : "4"
+      } ],
+      "smallest" : "0",
+      "count" : "41340",
+      "cardinality" : "34335"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "noCommas" : "false",
+      "align" : "right"
+    }
+  }, {
+    "id" : 15121255,
+    "name" : "Standard_Error_of_modelled_annual_expenditure",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "standard_error",
+    "position" : 12,
+    "renderTypeName" : "number",
+    "tableColumnId" : 3212404,
+    "width" : 268,
+    "cachedContents" : {
+      "non_null" : "41340",
+      "largest" : "8062769",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "5633"
+      }, {
+        "item" : "1",
+        "count" : "51"
+      }, {
+        "item" : "5",
+        "count" : "42"
+      }, {
+        "item" : "3",
+        "count" : "39"
+      }, {
+        "item" : "4",
+        "count" : "36"
+      }, {
+        "item" : "2",
+        "count" : "36"
+      }, {
+        "item" : "19",
+        "count" : "29"
+      }, {
+        "item" : "9",
+        "count" : "29"
+      }, {
+        "item" : "7",
+        "count" : "28"
+      }, {
+        "item" : "11",
+        "count" : "24"
+      }, {
+        "item" : "8",
+        "count" : "24"
+      }, {
+        "item" : "32",
+        "count" : "21"
+      }, {
+        "item" : "6",
+        "count" : "21"
+      }, {
+        "item" : "10",
+        "count" : "21"
+      }, {
+        "item" : "25",
+        "count" : "19"
+      }, {
+        "item" : "39",
+        "count" : "19"
+      }, {
+        "item" : "46",
+        "count" : "19"
+      }, {
+        "item" : "15",
+        "count" : "19"
+      }, {
+        "item" : "16",
+        "count" : "19"
+      }, {
+        "item" : "54",
+        "count" : "18"
+      } ],
+      "smallest" : "0",
+      "count" : "41340",
+      "cardinality" : "24017"
+    },
+    "format" : {
+      "precisionStyle" : "standard",
+      "noCommas" : "false",
+      "align" : "right"
+    }
+  } ],
+  "grants" : [ {
+    "inherited" : false,
+    "type" : "viewer",
+    "flags" : [ "public" ]
+  } ],
+  "license" : {
+    "name" : "Public Domain"
+  },
+  "metadata" : {
+    "rdfSubject" : "0",
+    "rdfClass" : "",
+    "rowLabel" : "Annual EU budget payments made by fund to a NUTS-2 region (2013 NUTS classification)",
+    "availableDisplayTypes" : [ "table", "fatrow", "page" ],
+    "renderTypeConfig" : {
+      "visible" : {
+        "table" : true
+      }
+    }
+  },
+  "owner" : {
+    "id" : "p5rd-ygin",
+    "displayName" : "John W",
+    "profileImageUrlLarge" : "/api/users/p5rd-ygin/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/p5rd-ygin/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/p5rd-ygin/profile_images/TINY",
+    "screenName" : "John W",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula", "mayBeStoriesCoOwner" ]
+  },
+  "query" : { },
+  "rights" : [ "read" ],
+  "tableAuthor" : {
+    "id" : "p5rd-ygin",
+    "displayName" : "John W",
+    "profileImageUrlLarge" : "/api/users/p5rd-ygin/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/p5rd-ygin/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/p5rd-ygin/profile_images/TINY",
+    "screenName" : "John W",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula", "mayBeStoriesCoOwner" ]
+  },
+  "tags" : [ "payment timeseries", "historic payments", "annual", "erdf", "esf", "eafrd", "eaggf", "cohesion fund", "cf", "nuts-2", "regionalised", "eonomometric", "modelling", "1994-1999", "1988-1993", "2000-2006", "2007-2013", "regression", "nuts2", "nuts", "timeseries" ],
+  "flags" : [ "default", "ownerMayBeContacted", "restorable", "restorePossibleForType" ]
+}

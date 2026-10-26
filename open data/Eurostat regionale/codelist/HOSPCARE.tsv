@@ -1,0 +1,8 @@
+DIS	Total discharges
+ALOS	In-patient average length of stay
+BEDDAY	In-patient hospital bed-days
+BED_OCC	Bed occupancy rate
+BED_OCC_GT80	Bed occupancy rate over 80%
+BED_OCC_GT95	Bed occupancy rate over 95%
+INPAT	In-patient discharges
+DAYCASE	Day case discharges
