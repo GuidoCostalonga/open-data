@@ -43,11 +43,34 @@ DATASET_IT = {
     'DSD_EAG_LSO_EA@DF_LSO_NEAC_DISTR_EA': 'Adulti per titolo di studio, età e sesso',
     'DSD_EAG_LSO_EA@DF_LSO_NEAC_DISTR_GENDER': 'Adulti per sesso, titolo di studio ed età',
     'DSD_EAG_UOE_NON_FIN_PERS@DF_UOE_NF_PERS_RAW_INST2': 'Assistenti degli insegnanti',
+    'RFM': 'Commercio di fertilizzanti per paese partner', 'GT': 'Emissioni totali dei sistemi agroalimentari',
+    'FO': 'Produzione e commercio forestale', 'QCL': 'Produzione di colture e prodotti zootecnici',
+    'FBS': 'Bilanci alimentari (dal 2010)', 'GLE': 'Emissioni degli allevamenti',
+    'EA': 'Flussi di sviluppo verso l’agricoltura', 'TI': 'Indici del commercio agricolo',
+    'FBSH': 'Bilanci alimentari storici (fino al 2013, vecchia metodologia)',
 }
 STORICI_IT = {'TWN': 'Taiwan', 'AIA': 'Anguilla', 'SHN': 'Ascensione, Sant’Elena e Tristan da Cunha',
               'BES': 'Bonaire, Sint Eustatius e Saba', 'COK': 'Isole Cook', 'FAO_351': 'Cina (totale FAOSTAT)',
               'FAO_357': 'Cina, esclusi Hong Kong e Macao', 'FAO_15': 'Belgio e Lussemburgo (codice storico FAOSTAT)',
-              'FAO_259': 'Isole del Canale'}
+              'FAO_259': 'Isole del Canale', 'FAO_62': 'Etiopia (Repubblica popolare democratica, codice storico FAOSTAT)',
+              # aggregati statistici FAOSTAT (archivi parziali)
+              'FAO_5100': 'Africa (aggregato FAOSTAT)', 'FAO_5101': 'Africa orientale (aggregato FAOSTAT)',
+              'FAO_5102': 'Africa centrale (aggregato FAOSTAT)', 'FAO_5207': 'America meridionale (aggregato FAOSTAT)',
+              'FAO_5300': 'Asia (aggregato FAOSTAT)', 'FAO_5301': 'Asia centrale (aggregato FAOSTAT)',
+              'FAO_5302': 'Asia orientale (aggregato FAOSTAT)', 'FAO_5303': 'Asia meridionale (aggregato FAOSTAT)',
+              'FAO_5304': 'Asia sudorientale (aggregato FAOSTAT)', 'FAO_5501': 'Australia e Nuova Zelanda (aggregato FAOSTAT)',
+              'FAO_5502': 'Melanesia (aggregato FAOSTAT)', 'FAO_5503': 'Micronesia (aggregato FAOSTAT)',
+              'FAO_5801': 'Paesi meno sviluppati (aggregato FAOSTAT)', 'FAO_5802': 'Paesi in via di sviluppo senza sbocco sul mare (aggregato FAOSTAT)',
+              'FAO_5803': 'Piccoli stati insulari in via di sviluppo (aggregato FAOSTAT)',
+              'FAO_5848': 'Paesi dell’Allegato I della Convenzione sul clima (aggregato FAOSTAT)',
+              'FAO_5849': 'Paesi non compresi nell’Allegato I della Convenzione sul clima (aggregato FAOSTAT)',
+              'FAO_5873': 'Paesi OCSE (aggregato FAOSTAT)',
+              'FAO_51010': 'Africa orientale, senza il commercio interno all’area (aggregato FAOSTAT)',
+              'FAO_51020': 'Africa centrale, senza il commercio interno all’area (aggregato FAOSTAT)',
+              'FAO_51030': 'Africa settentrionale, senza il commercio interno all’area (aggregato FAOSTAT)',
+              'FAO_51040': 'Africa australe, senza il commercio interno all’area (aggregato FAOSTAT)',
+              'FAO_613': 'Oceania, destinatari non specificati (aggregato FAOSTAT)',
+              'FAO_620': 'Europa meridionale, destinatari non specificati (aggregato FAOSTAT)'}
 UNITA_IT = {
     '1000 USD': 'migliaia di dollari USA', 't': 'tonnellate', 'mg/cap/d': 'mg per persona al giorno', 'm3': 'm³',
     'PT_POP_SEX_AGE': '% della popolazione dello stesso sesso ed età', 'PT_POP_SUB': '% del sottogruppo di popolazione',
@@ -60,8 +83,22 @@ UNITA_IT = {
     'PS': 'persone', 't CO2eq/ha': 't di CO₂ equivalente per ettaro', 'kg CO2eq/Int$': 'kg di CO₂ equivalente per dollaro internazionale',
     'kg/cap': 'kg per persona', 'g/Int$': 'g per dollaro internazionale', 'PS_FTE': 'persone equivalenti a tempo pieno',
 }
-LOTTO_ARCHIVIO = {5: 'archivio 9 di 11', 9: 'archivio 1 di 6', 11: 'archivio 1 di 5', 15: 'archivio 2 di 9', 18: 'archivio 2 di 22'}
-FONTE_LOTTO = {5: 'OCSE (Organizzazione per la cooperazione e lo sviluppo economico)', 9: 'FAOSTAT', 11: 'FAOSTAT', 15: 'FAOSTAT', 18: 'FAOSTAT'}
+LOTTO_ARCHIVIO = {
+    5: 'archivio 9 di 11', 9: 'archivio 1 di 6', 11: 'archivio 1 di 5', 15: 'archivio 2 di 9', 18: 'archivio 2 di 22',
+    19: 'archivio 10 di 26 (paesi e territori)', 22: 'archivio 3 di 6 (aggregati statistici)', 23: 'archivio 7 di 22 (paesi e territori)',
+    24: 'archivi 24 di 30 (paesi e territori) e 8 di 8 (aggregati statistici)',
+    26: 'archivi 18, 49, 67, 81, 84, 103 e 110 di 110 (paesi e territori), 7, 21, 38 e 58 di 61 (aggregati), 19 di 27 (destinatari non classificati)',
+    27: 'archivi 3, 24, 39 e 59 di 59 (paesi e territori), 2 di 17 (aggregati), 2 di 9 (aree non classificate)',
+    28: 'archivi 10, 24, 44 e 67 di 75 (paesi e territori) e 13 di 14 (aggregati)',
+}
+FONTE_LOTTO = {5: 'OCSE (Organizzazione per la cooperazione e lo sviluppo economico)'}
+UNITA_IT.update({
+    'ha': 'ettari', '100 g/An': 'ettogrammi per capo', 'hg/An': 'ettogrammi per capo', '100 g/ha': 'ettogrammi per ettaro',
+    'kg/ha': 'kg per ettaro', '1000 No': 'migliaia di capi', 'No': 'numero', '1000 m3': 'migliaia di m³', 'kg/cap/yr': 'kg per persona all’anno',
+    'g/cap/d': 'g per persona al giorno', '1000 t': 'migliaia di tonnellate', '1000 An': 'migliaia di capi', '1000 cap': 'migliaia di persone',
+    '1000 persons': 'migliaia di persone', 'kcal/cap/d': 'kcal per persona al giorno', 'million USD': 'milioni di dollari USA',
+    'kt': 'migliaia di tonnellate', 'Mt': 'milioni di tonnellate', 'g/cap/yr': 'g per persona all’anno', '': 'indice',
+})
 
 
 def _scrivi(path, obj):
@@ -175,20 +212,26 @@ def eurostat(percorso, uscita, territori, arrotonda):
     return indicatori, NOME_TEMA_EU
 
 
-def archivi(percorso, uscita, territori, arrotonda):
+def archivi(percorsi, uscita, territori, arrotonda):
     """Catalogo degli archivi parziali: un file per dataset con tutte le serie e i territori presenti."""
-    d = json.load(open(percorso))
+    d = {}
+    for percorso in percorsi:
+        d.update(json.load(open(percorso)))
     per_id = {t['id']: t for t in territori}
     catalogo = []
     for chiave, ds in sorted(d.items(), key=lambda x: (int(x[0].split('|')[0]), x[0])):
         lotto, codice = chiave.split('|')
         lotto = int(lotto)
-        terr = {}
+        terr, aggr = {}, []
+        tipo = ds.get('tipo', {})
         for c, nome in ds['terr'].items():
+            e_agg = tipo.get(c) == 'agg'
             if c not in per_id:
-                nuovo = {'id': c, 'n': STORICI_IT.get(c, nome), 'en': nome, 'k': 'storico'}
+                nuovo = {'id': c, 'n': STORICI_IT.get(c, nome), 'en': nome, 'k': 'aggf' if e_agg else 'storico'}
                 territori.append(nuovo)
                 per_id[c] = nuovo
+            if e_agg or per_id[c]['k'] in ('agg', 'aggf'):
+                aggr.append(c)
             terr[c] = nome
         # l'identità SHA256 della fonte comprende il territorio: si raggruppano le serie per descrizione e unità,
         # tenendo separate due identità diverse che cadrebbero sullo stesso territorio
@@ -197,8 +240,10 @@ def archivi(percorso, uscita, territori, arrotonda):
             # toglie dall'etichetta il nome del territorio, presente in alcune fonti (es. paese beneficiario in FA)
             nomi = {str(ds['terr'][c]) for c in s['d']}
             s['l'] = ' · '.join(x for x in s['l'].split(' · ') if x not in nomi)
-            if codice == 'FT' and s['l']:
+            if codice in ('FT', 'RFM') and s['l']:
                 s['l'] = 'Paese partner ' + s['l']
+            if codice == 'EA' and s['l']:
+                s['l'] = 'Donatore ' + s['l']
             k = (s['l'], s['u'])
             elenco = gruppi.setdefault(k, [])
             for g in elenco:
@@ -218,11 +263,133 @@ def archivi(percorso, uscita, territori, arrotonda):
             serie.append({'l': s['l'] or codice, 'u': UNITA_IT.get(s['u'], s['u'] or ''), 'uo': s['u'] or '', 'y0': y0, 'y1': y1, 'd': dati, 'i': interi})
         serie.sort(key=lambda s: (s['l'], s['u']))
         nome_file = f'L{lotto:02d}_{re.sub(r"[^A-Za-z0-9]+", "_", codice)}'
-        _scrivi(os.path.join(uscita, 'archivi', nome_file + '.json'), {'s': serie})
+        percorso_file = os.path.join(uscita, 'archivi', nome_file + '.json')
+        _scrivi(percorso_file, {'s': serie})
         catalogo.append({
+            'mb': round(os.path.getsize(percorso_file) / 1e6, 1),
             'f': nome_file, 'lotto': lotto, 'cod': codice, 'n': DATASET_IT.get(codice, ds['n']), 'en': ds['n'],
-            'fonte': FONTE_LOTTO[lotto], 'archivio': LOTTO_ARCHIVIO[lotto], 'url': ds['url'], 'agg': (ds['agg'] or '')[:10],
-            'terr': sorted(terr), 'serie': len(serie),
+            'fonte': FONTE_LOTTO.get(lotto, 'FAOSTAT'), 'archivio': LOTTO_ARCHIVIO.get(lotto, f'lotto {lotto}'), 'url': ds['url'], 'agg': (ds['agg'] or '')[:10],
+            'terr': sorted(terr), 'aggr': sorted(aggr), 'serie': len(serie),
             'y0': min(s['y0'] for s in serie), 'y1': max(s['y1'] for s in serie),
         })
     return catalogo
+
+
+# Indicatori in evidenza per i profili dei territori e la prima pagina
+FLAG_WB = ['SP.POP.TOTL', 'SP.DYN.LE00.IN', 'SP.DYN.TFRT.IN', 'SP.POP.65UP.TO.ZS', 'SH.DYN.MORT', 'SP.URB.TOTL.IN.ZS',
+           'EN.POP.DNST', 'IT.NET.USER.ZS', 'EG.ELC.ACCS.ZS', 'EG.FEC.RNEW.ZS', 'EN.GHG.ALL.PC.CE.AR5', 'EN.ATM.PM25.MC.M3',
+           'AG.LND.FRST.ZS', 'SE.TER.ENRR', 'SH.MED.PHYS.ZS', 'SH.H2O.SMDW.ZS', 'SE.ADT.LITR.ZS', 'AG.LND.AGRI.ZS']
+FLAG_EU = ['EU_POP_T_TOTAL', 'EU_DENS', 'EU_QUOTA_Y_GE65', 'EU_QUOTA_Y_LT15', 'EU_NATI', 'EU_MORTI', 'EU_TOTFERRT', 'EU_AGEMOTH']
+SPARK_ANNI = 30
+
+
+def _ultimo(d, tid):
+    a = d['d'].get(tid)
+    if not a:
+        return None
+    for i in range(len(a) - 1, -1, -1):
+        if a[i] is not None:
+            return d['y0'] + i, a[i]
+    return None
+
+
+def _in(d, tid, y):
+    a = d['d'].get(tid)
+    i = y - d['y0']
+    return a[i] if a and 0 <= i < len(a) else None
+
+
+def _spark(d, tid, sig=4):
+    a = d['d'].get(tid)
+    if not a:
+        return None
+    u = _ultimo(d, tid)
+    if not u:
+        return None
+    fine = u[0] - d['y0']
+    inizio = max(0, fine - SPARK_ANNI + 1)
+    vals = [None if v is None else float(f'{v:.{sig}g}') for v in a[inizio:fine + 1]]
+    vals = [int(v) if v is not None and v == int(v) and abs(v) < 1e15 else v for v in vals]
+    return [d['y0'] + inizio, vals]
+
+
+def _posizione(d, tid, y, ids):
+    vals = [(_in(d, t, y), t) for t in ids]
+    vals = [(v, t) for v, t in vals if v is not None]
+    if not any(t == tid for _, t in vals):
+        return None
+    vals.sort(key=lambda x: -x[0])
+    return [next(i for i, (_, t) in enumerate(vals) if t == tid) + 1, len(vals)]
+
+
+def sintesi(uscita, indicatori, territori):
+    """Scrive panoramica.json (Italia, mondo, Unione europea e FVG per ogni indicatore) e i profili per territorio."""
+    paesi = [t['id'] for t in territori if t['k'] == 'paese']
+    nuts = {}
+    for t in territori:
+        if t['k'] == 'nuts':
+            nuts.setdefault(t['l'], []).append(t['id'])
+    pano = {}
+    cache = {}
+
+    def leggi(i):
+        if i['c'] not in cache:
+            cart = 'eurostat' if i['fam'] == 'eu' else 'indicatori'
+            cache[i['c']] = json.load(open(os.path.join(uscita, cart, i['c'] + '.json')))
+        return cache[i['c']]
+
+    for i in indicatori:
+        if i['fam'] not in ('wb', 'eu'):
+            continue
+        d = leggi(i)
+        if i['fam'] == 'eu':
+            f = _ultimo(d, 'EU:ITH4')
+            pano[i['c']] = {'fvg': f, 'it': _ultimo(d, 'EU:IT'), 'eu': _ultimo(d, 'EU:EU27_2020'),
+                            'pos': _posizione(d, 'EU:ITH4', f[0], nuts.get(2, [])) if f else None,
+                            'sp': _spark(d, 'EU:ITH4'), 'spw': _spark(d, 'EU:IT')}
+        else:
+            it = _ultimo(d, 'ITA')
+            pano[i['c']] = {'it': it, 'wld': _ultimo(d, 'WLD'), 'eu': _ultimo(d, 'EUU'),
+                            'pos': _posizione(d, 'ITA', it[0], paesi) if it else None,
+                            'sp': _spark(d, 'ITA'), 'spw': _spark(d, 'WLD')}
+    _scrivi(os.path.join(uscita, 'panoramica.json'), {'ind': pano})
+
+    # profili dei paesi e degli aggregati
+    flag = [i for i in indicatori if i['c'] in FLAG_WB]
+    flag.sort(key=lambda i: FLAG_WB.index(i['c']))
+    for t in territori:
+        if t['k'] not in ('paese', 'agg'):
+            continue
+        prof = {}
+        for i in flag:
+            d = leggi(i)
+            u = _ultimo(d, t['id'])
+            if not u:
+                continue
+            pos = _posizione(d, t['id'], u[0], paesi) if t['k'] == 'paese' else None
+            sp = _spark(d, t['id'])
+            prof[i['c']] = [u[0], u[1], pos[0] if pos else None, pos[1] if pos else None, sp[0], sp[1]]
+        _scrivi(os.path.join(uscita, 'profili', t['id'] + '.json'), {'id': t['id'], 'ind': prof})
+
+    # profili delle regioni europee, un file per paese
+    flag_eu = [i for i in indicatori if i['c'] in FLAG_EU]
+    flag_eu.sort(key=lambda i: FLAG_EU.index(i['c']))
+    per_paese = {}
+    for t in territori:
+        if t['k'] == 'nuts':
+            per_paese.setdefault(t['p'], []).append(t)
+    for p, elenco in per_paese.items():
+        out = {}
+        for t in elenco:
+            prof = {}
+            for i in flag_eu:
+                d = leggi(i)
+                u = _ultimo(d, t['id'])
+                if not u:
+                    continue
+                pos = _posizione(d, t['id'], u[0], nuts.get(t['l'], []))
+                sp = _spark(d, t['id'])
+                prof[i['c']] = [u[0], u[1], pos[0] if pos else None, pos[1] if pos else None, sp[0], sp[1]]
+            out[t['id']] = prof
+        _scrivi(os.path.join(uscita, 'profili', 'nuts_' + p + '.json'), out)
+    return len(pano)
