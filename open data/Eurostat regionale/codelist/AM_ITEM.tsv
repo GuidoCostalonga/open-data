@@ -1,0 +1,276 @@
+AM010000	Cereals (including seeds)
+AM011000	Wheat and spelt
+AM011100	Common wheat and spelt
+AM011200	Durum wheat
+AM012000	Rye and winter cereal mixtures (meslin)
+AM013000	Barley
+AM013100	Fodder barley
+AM013200	Malting barley
+AM014000	Oats and summer cereal mixtures
+AM015000	Grain maize
+AM016000	Rice
+AM019000	Other cereals
+AM020000	Industrial crops
+AM021000	Oilseeds and oleaginous fruit (including seeds)
+AM021100	Rape and turnip rape seed
+AM021200	Sunflower
+AM021300	Soya
+AM021900	Other oleaginous products
+AM022000	Protein crops (including seeds)
+AM023000	Raw tobacco
+AM024000	Sugar beet
+AM029000	Other industrial crops
+AM029100	Fibre crops
+AM029200	Hops
+AM029900	Other industrial crops - others
+AM030000	Forage plants
+AM033000	Green maize
+AM032000	Fodder root crops (including forage beet)
+AM039000	Other forage plants
+AM039100	Hay
+AM039200	Straw
+AM039300	Silage
+AM039900	Other forage plants - others
+AM040000	Vegetables and horticultural products
+AM041000	Fresh vegetables (including melons)
+AM041100	Cauliflower
+AM041200	Tomatoes
+AM041900	Other fresh vegetables
+AM041910	Cabbage
+AM041920	Lettuce
+AM041930	Spinach
+AM041940	Cucumbers
+AM041950	Carrots
+AM041960	Onions
+AM041970	Fresh beans
+AM041980	Fresh pulses
+AM041990	Fresh peas
+AM041999	Other fresh vegetables - other
+AM042000	Plants and flowers
+AM042100	Nursery plants
+AM042200	Ornamental plants and flowers (including Christmas trees)
+AM042300	Plantations
+AM050000	Potatoes (including seeds)
+AM051000	Potatoes for consumption
+AM051100	Early potatoes
+AM051200	Main crop potatoes
+AM052000	Seed potatoes
+AM059000	Other potatoes
+AM060000	Fruit
+AM061000	Fresh fruit
+AM061100	Apples for fresh consumption
+AM061200	Pears for fresh consumption
+AM061300	Peaches
+AM061900	Other fresh fruit
+AM061910	Cherries
+AM061920	Plums
+AM061930	Strawberries
+AM061940	Nuts and dried fruit
+AM061941	Nuts
+AM061942	Dried fruit
+AM061990	Other fresh fruit - other
+AM062000	Citrus fruit
+AM062100	Sweet oranges
+AM062200	Mandarins
+AM062300	Lemons and acid limes
+AM062900	Other citrus fruit
+AM063000	Fruits from subtropical and tropical climate zones
+AM064000	Grapes
+AM064100	Grapes for table use
+AM064900	Other grapes, fresh
+AM065000	Olives
+AM065100	Olives for table use
+AM065900	Other olives
+AM070000	Wine
+AM078000	Other wines than PDO and PGI (table wine)
+AM073000	PDO and PGI (quality wine)
+AM073100	PDO
+AM073200	PGI
+AM080000	Olive oil
+AM090000	Other crop products
+AM091000	Vegetative materials used primarily for plaiting
+AM092000	Seeds
+AM099000	Other crop products - others
+AM100000	Total crop, including fruit and vegetables
+AM101000	Total crop, excluding fruit  and vegetables
+AM110000	Animals
+AM111000	Live cattle
+AM111100	Cattle excluding calves
+AM111200	Calves
+AM112000	Live pigs
+AM113000	Live horses, asses, mules and hinnies
+AM114000	Live sheep and goats
+AM115000	Live poultry
+AM115100	Chicken (species)
+AM115900	Other poultry
+AM119000	Other animals
+AM120000	Animal products
+AM121000	Milk or raw milk
+AM121100	Raw cows' milk
+AM121900	Other milk types
+AM122000	Eggs
+AM129000	Other animal products
+AM129100	Raw wool
+AM129200	Silkworm cocoons
+AM129300	Other animal products - others
+AM130000	Animal goods
+AM140000	Agricultural goods, including fruit and vegetables
+AM141000	Agricultural goods, excluding fruit and vegetables
+AM150000	Agricultural services output
+AM151000	Agricultural services
+AM152000	Renting of milk quota
+AM160000	Agricultural output
+AM170000	Non-agricultural secondary activities (inseparable)
+AM171000	Transformation of agricultural products
+AM171100	Transformation of agricultural products - cereals
+AM171200	Transformation of agricultural products - vegetables
+AM171300	Transformation of agricultural products - fruits
+AM171400	Transformation of agricultural products - wine
+AM171500	Transformation of agricultural products - animals
+AM171600	Transformation of agricultural products - animal products
+AM171610	Transformation of agricultural products - animal products - milk
+AM171620	Transformation of agricultural products - animal products - other animal products
+AM171900	Transformation of agricultural products - other
+AM179000	Other non-separable secondary activities (goods and services)
+AM180000	Output of the agricultural 'industry'
+AM200000	Goods and services currently consumed in agriculture (Input 1)
+AM201000	Seeds and planting stock
+AM201100	Seeds and planting stock (intermediate consumption) supplied by other agricultural holdings
+AM201200	Seeds and planting stock (intermediate consumption) purchased from outside the agricultural 'industry'
+AM202000	Energy; lubricants
+AM202100	Electricity
+AM202200	Fuels for heating
+AM202210	Heating gas oil
+AM202220	Residual fuel oil
+AM202300	Motor fuels
+AM202310	Motor spirit
+AM202320	Diesel oil
+AM202400	Lubricants
+AM202600	Lubricants and other energy products than electricity, and heating and motor fuels
+AM202700	Gas
+AM202800	Other fuels and propellants
+AM202900	Energy; lubricants, other than electricity gas, other fuels and propellants
+AM203000	Fertilisers and soil improvers
+AM203010	Fertilisers and soil improvers - fertilisers supplied by other agricultural holdings
+AM203020	Fertilisers and soil improvers - fertilisers purchased from outside the agricultural 'industry'
+AM203100	Straight fertilisers
+AM203110	Nitrogenous fertilisers
+AM203111	Ammonium sulphate 16-26% (AS) - granular
+AM203112	Ammonium sulphate 16-26% (AS) - crystalized
+AM203113	Calcium ammonium nitrate 22-32% (CAN) - all forms
+AM203114	Ammonium nitrate (AN) 28-38% - granular
+AM203115	Ammonium nitrate (AN-24S) 20-30% N+S - granular
+AM203116	Urea (AUS) 46% - granular
+AM203117	Urea (AUS) 46% - prilled
+AM203118	Urea ammonium nitrate (UAN) 27-37%
+AM203119	Urea ammonium nitrate + S (UAN-26S) 22-32% N+S
+AM203120	Phosphatic fertilisers
+AM203121	Single superphosphate (SSP) under 25% - all forms
+AM203122	Triple superphosphate (TSP) over 40% - all forms
+AM203130	Potassic fertilisers
+AM203131	Potassium chloride (KCl) 55-65% - granular/compacted
+AM203132	Potassium chloride (KCl) 55-65% - prilled
+AM203133	Potassium sulphate (K2SO4) 45-55% - all forms
+AM203200	Compound fertilisers
+AM203210	NP fertilisers
+AM203220	PK fertilisers
+AM203230	NPK fertilisers
+AM203900	Other fertilisers, soil improvers
+AM204000	Plant protection products
+AM204100	Fungicides and bactericides
+AM204200	Insecticides and acaricides
+AM204300	Herbicides, haulm destructors and moss killers
+AM204900	Other plant protection products
+AM205000	Veterinary expenses
+AM206000	Animal feedingstuffs
+AM206010	Feedingstuffs (excluding feedingstuffs produced and consumed by the same agricultural holding)
+AM206011	Feedingstuffs supplied by other agricultural holdings
+AM206012	Feedingstuffs purchased from outside the agricultural industry
+AM206020	Feedingstuffs produced and consumed by the same agricultural holding
+AM206100	Straight feedingstuffs
+AM206110	Feedingstuffs - cereals and milling by-products
+AM206111	Feedingstuffs - fodder wheat
+AM206112	Feedingstuffs - fodder barley
+AM206113	Feedingstuffs - oats
+AM206114	Feedingstuffs - grain maize
+AM206115	Feedingstuffs - wheat bran
+AM206116	Feedingstuffs - soybean meal
+AM206120	Feedingstuffs - oil-cakes
+AM206130	Feedingstuffs of animal origin
+AM206190	Other straight feedingstuffs
+AM206191	Feedingstuffs - dried sugar beet pulp
+AM206192	Feedingstuffs - meadow hay
+AM206193	Feedingstuffs - dried lucerne
+AM206194	Feedingstuffs - cereal straw
+AM206195	Feedingstuffs - triticale
+AM206196	Feedingstuffs - sunflower seed meal
+AM206197	Feedingstuffs - rapeseed meal
+AM206198	Feedingstuffs - sugar cane molasses
+AM206200	Compound feedingstuffs
+AM206210	Compound feedingstuffs for calves
+AM206220	Compound feedingstuffs for cattle excluding calves
+AM206230	Compound feedingstuffs for pigs
+AM206240	Compound feedingstuffs for poultry
+AM206290	Other compound feedingstuffs
+AM207000	Maintenance of materials
+AM208000	Maintenance of buildings
+AM209100	Agricultural services (intermediate consumption)
+AM209200	Financial intermediation services indirectly measured (FISIM)
+AM209900	Other goods and services
+AM260000	Gross value added at basic prices
+AM270000	Consumption of fixed capital (CFC)
+AM271000	CFC of equipment
+AM272000	CFC of buildings
+AM273000	CFC of plantations
+AM279000	CFC of others
+AM280000	Net value added at basic prices
+AM290000	Compensation of employees
+AM300000	Other taxes on production
+AM310000	Other subsidies on production
+AM320000	Factor income
+AM330000	Operating surplus/mixed income
+AM340000	Rents and other real estate rental charges to be paid
+AM350000	Interest paid
+AM360000	Interest received
+AM370000	Entrepreneurial income
+AM230000	Gross fixed capital formation (GFCF) in agricultural products
+AM231000	GFCF in plantations
+AM232000	GFCF in livestock
+AM210000	Goods and services contributing to agricultural investment - GFCF in non-agricultural products
+AM211000	Machinery and equipment
+AM211100	Machinery and farm equipment
+AM211110	Rotovators and other 2-wheel equipment
+AM211120	Machinery and equipment for cultivation
+AM211130	Machinery and equipment for harvesting
+AM211140	Farm machinery and installations
+AM211141	Farm machinery and installations for crop production
+AM211142	Farm machinery and installations for animal production
+AM211149	Other farm machinery and installations
+AM211200	Transport equipment
+AM211210	Tractors
+AM211290	Other vehicles
+AM212000	Buildings
+AM212100	Farm buildings (non-residential)
+AM212900	Other works except land improvements (other buildings, structures, etc)
+AM219000	Other than machinery, equipment, and buildings (other GFCF in non-agricultural products)
+AM219100	GFCF in tangible fixed assets (e.g. computer software)
+AM219200	Addition to the value of non-financial non-produced assets
+AM219210	GFCF in major land improvements
+AM219220	Costs linked to the purchase of land and production rights
+AM220000	Input total
+AM240000	Gross fixed capital formation (excluding deductible VAT)
+AM250000	Net fixed capital formation (excluding deductible VAT)
+AM380000	Changes in inventories
+AM390000	Capital transfers
+AM391000	Investment grants
+AM399000	Other capital transfers
+AM400000	Total agricultural labour input
+AM410000	Non salaried agricultural labour input
+AM420000	Salaried agricultural labour input
+AM500000	Implicit price index of GDP
+AM031000	Fodder maize
+AM071000	Table wine
+AM071100	Vin de pays or Vinho regional or Vino de la tierra
+AM071900	Other table wine
+AM072000	Quality wine
+AM079000	Other wine

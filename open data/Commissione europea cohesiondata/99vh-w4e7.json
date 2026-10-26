@@ -1,0 +1,701 @@
+{
+  "id" : "99vh-w4e7",
+  "name" : "EU Social Progress Index 2020",
+  "assetType" : "dataset",
+  "attribution" : "REGIO-B1-PAPERS@ec.europa.eu",
+  "attributionLink" : "https://ec.europa.eu/regional_policy/en/information/maps/social_progress2020",
+  "averageRating" : 0,
+  "category" : "Other: RCI-SPI",
+  "createdAt" : 1601291995,
+  "description" : "The EU Social Progress Index (EU-SPI) is a measure of societal development and quality of life at the regional level that goes beyond the Gross Domestic Product. The Index measures social progress in European regions, at the NUTS2 level, using twelve components described by a total number of fifty-five comparable social and environmental indicators, purposefully excluding economic aspects. Its components are further aggregated into three broader dimensions describing respectively basic, intermediate and more sophisticated aspects of social progress.",
+  "diciBackend" : false,
+  "displayType" : "table",
+  "downloadCount" : 617,
+  "hideFromCatalog" : false,
+  "hideFromDataJson" : false,
+  "licenseId" : "PUBLIC_DOMAIN",
+  "locked" : false,
+  "newBackend" : true,
+  "numberOfComments" : 0,
+  "oid" : 1904778,
+  "provenance" : "official",
+  "publicationAppendEnabled" : false,
+  "publicationDate" : 1605529568,
+  "publicationGroup" : 1253427,
+  "publicationStage" : "published",
+  "rowsUpdatedAt" : 1605707734,
+  "rowsUpdatedBy" : "qq3e-czsu",
+  "tableId" : 1287144,
+  "totalTimesRated" : 0,
+  "viewCount" : 1007,
+  "viewLastModified" : 1622664747,
+  "viewType" : "tabular",
+  "approvals" : [ {
+    "reviewedAt" : 1606910218,
+    "reviewedAutomatically" : false,
+    "state" : "approved",
+    "submissionId" : 783883,
+    "submissionObject" : "public_audience_request",
+    "submissionOutcome" : "change_audience",
+    "submittedAt" : 1606910176,
+    "targetAudience" : "public",
+    "workflowId" : 133,
+    "reviewer" : {
+      "id" : "qq3e-czsu",
+      "displayName" : "Yves Durinck"
+    },
+    "submissionDetails" : {
+      "permissionType" : "read"
+    },
+    "submissionOutcomeApplication" : {
+      "endedAt" : 1606910219,
+      "failureCount" : 0,
+      "startedAt" : 1606910218,
+      "status" : "success"
+    },
+    "submitter" : {
+      "id" : "qq3e-czsu",
+      "displayName" : "Yves Durinck"
+    }
+  } ],
+  "clientContext" : {
+    "clientContextVariables" : [ ],
+    "inheritedVariables" : { }
+  },
+  "columns" : [ {
+    "id" : 17400034,
+    "name" : "Region Code",
+    "dataTypeName" : "text",
+    "description" : "The NUTS classification (Nomenclature of territorial units for statistics) is a hierarchical system for dividing up the economic territory of the EU.",
+    "fieldName" : "region_code",
+    "position" : 1,
+    "renderTypeName" : "text",
+    "tableColumnId" : 10843197,
+    "cachedContents" : {
+      "non_null" : "4208",
+      "largest" : "SK04",
+      "null" : "0",
+      "top" : [ {
+        "item" : "DK",
+        "count" : "16"
+      }, {
+        "item" : "BE24",
+        "count" : "16"
+      }, {
+        "item" : "SI",
+        "count" : "16"
+      }, {
+        "item" : "CZ",
+        "count" : "16"
+      }, {
+        "item" : "PL61",
+        "count" : "16"
+      }, {
+        "item" : "DK05",
+        "count" : "16"
+      }, {
+        "item" : "NL12",
+        "count" : "16"
+      }, {
+        "item" : "DE11",
+        "count" : "16"
+      }, {
+        "item" : "FRY4",
+        "count" : "16"
+      }, {
+        "item" : "PT30",
+        "count" : "16"
+      }, {
+        "item" : "BG31",
+        "count" : "16"
+      }, {
+        "item" : "PL51",
+        "count" : "16"
+      }, {
+        "item" : "PL91",
+        "count" : "16"
+      }, {
+        "item" : "ITC4",
+        "count" : "16"
+      }, {
+        "item" : "EE",
+        "count" : "16"
+      }, {
+        "item" : "EL51",
+        "count" : "16"
+      }, {
+        "item" : "DEA3",
+        "count" : "16"
+      }, {
+        "item" : "HU33",
+        "count" : "16"
+      }, {
+        "item" : "DE27",
+        "count" : "16"
+      }, {
+        "item" : "ITH2",
+        "count" : "16"
+      } ],
+      "smallest" : "AT",
+      "count" : "4208",
+      "cardinality" : "263"
+    },
+    "format" : { }
+  }, {
+    "id" : 17400035,
+    "name" : "Region name",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "region_name",
+    "position" : 2,
+    "renderTypeName" : "text",
+    "tableColumnId" : 10843198,
+    "cachedContents" : {
+      "non_null" : "4208",
+      "largest" : "Zuid-Holland",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Limburg",
+        "count" : "32"
+      }, {
+        "item" : "Luxembourg",
+        "count" : "32"
+      }, {
+        "item" : "Sicilia",
+        "count" : "16"
+      }, {
+        "item" : "Mayotte",
+        "count" : "16"
+      }, {
+        "item" : "Brabant Wallon",
+        "count" : "16"
+      }, {
+        "item" : "Mecklenburg-Vorpommern",
+        "count" : "16"
+      }, {
+        "item" : "Sweden",
+        "count" : "16"
+      }, {
+        "item" : "Niederösterreich",
+        "count" : "16"
+      }, {
+        "item" : "Attiki",
+        "count" : "16"
+      }, {
+        "item" : "Noord-Brabant",
+        "count" : "16"
+      }, {
+        "item" : "Sostinės regionas",
+        "count" : "16"
+      }, {
+        "item" : "Lorraine",
+        "count" : "16"
+      }, {
+        "item" : "Syddanmark",
+        "count" : "16"
+      }, {
+        "item" : "Ireland",
+        "count" : "16"
+      }, {
+        "item" : "Stuttgart",
+        "count" : "16"
+      }, {
+        "item" : "Overijssel",
+        "count" : "16"
+      }, {
+        "item" : "Portugal",
+        "count" : "16"
+      }, {
+        "item" : "Malta",
+        "count" : "16"
+      }, {
+        "item" : "Podlaskie",
+        "count" : "16"
+      }, {
+        "item" : "Helsinki-Uusimaa",
+        "count" : "16"
+      } ],
+      "smallest" : "Abruzzo",
+      "count" : "4208",
+      "cardinality" : "261"
+    },
+    "format" : { }
+  }, {
+    "id" : 17400036,
+    "name" : "NUTS Name",
+    "dataTypeName" : "text",
+    "description" : "Combination of NUTS code and region name",
+    "fieldName" : "nuts_name",
+    "position" : 3,
+    "renderTypeName" : "text",
+    "tableColumnId" : 10843199,
+    "cachedContents" : {
+      "non_null" : "4208",
+      "largest" : "SK - Slovakia",
+      "null" : "0",
+      "top" : [ {
+        "item" : "HR03 - Jadranska Hrvatska",
+        "count" : "16"
+      }, {
+        "item" : "DK01 - Hovedstaden",
+        "count" : "16"
+      }, {
+        "item" : "RO22 - Sud-Est",
+        "count" : "16"
+      }, {
+        "item" : "BG - Bulgaria",
+        "count" : "16"
+      }, {
+        "item" : "HU21 - Közép-Dunántúl",
+        "count" : "16"
+      }, {
+        "item" : "PT11 - Norte",
+        "count" : "16"
+      }, {
+        "item" : "BG31 - Severozapaden",
+        "count" : "16"
+      }, {
+        "item" : "ES52 - Comunidad Valenciana",
+        "count" : "16"
+      }, {
+        "item" : "DE30 - Berlin",
+        "count" : "16"
+      }, {
+        "item" : "SE21 - Småland med öarna",
+        "count" : "16"
+      }, {
+        "item" : "EL43 - Kriti",
+        "count" : "16"
+      }, {
+        "item" : "FRC1 - Bourgogne",
+        "count" : "16"
+      }, {
+        "item" : "BE22 - Limburg",
+        "count" : "16"
+      }, {
+        "item" : "BG41 - Yugozapaden",
+        "count" : "16"
+      }, {
+        "item" : "ES63 - Ciudad Autónoma de Ceuta",
+        "count" : "16"
+      }, {
+        "item" : "ES - Spain",
+        "count" : "16"
+      }, {
+        "item" : "DE25 - Mittelfranken",
+        "count" : "16"
+      }, {
+        "item" : "RO11 - Nord-Vest",
+        "count" : "16"
+      }, {
+        "item" : "ITH4 - Friuli-Venezia Giulia",
+        "count" : "16"
+      }, {
+        "item" : "ITC2 - Valle d'Aosta/Vallée d'Aoste",
+        "count" : "16"
+      } ],
+      "smallest" : "AT11 - Burgenland",
+      "count" : "4208",
+      "cardinality" : "263"
+    },
+    "format" : { }
+  }, {
+    "id" : 17400037,
+    "name" : "Index",
+    "dataTypeName" : "text",
+    "description" : "Dimension to which each component belongs, according to the EU-SPI Framework: Basic Human Needs, Foundations of wellbeing, Opportunity",
+    "fieldName" : "index",
+    "position" : 4,
+    "renderTypeName" : "text",
+    "tableColumnId" : 10843200,
+    "cachedContents" : {
+      "non_null" : "4208",
+      "largest" : "OPPORTUNITY SUB-INDEX",
+      "null" : "0",
+      "top" : [ {
+        "item" : "FOUNDATION SUB-INDEX",
+        "count" : "1315"
+      }, {
+        "item" : "OPPORTUNITY SUB-INDEX",
+        "count" : "1315"
+      }, {
+        "item" : "BASIC SUB-INDEX",
+        "count" : "1315"
+      }, {
+        "item" : "EU_SPI",
+        "count" : "263"
+      } ],
+      "smallest" : "BASIC SUB-INDEX",
+      "count" : "4208",
+      "cardinality" : "4"
+    },
+    "format" : { }
+  }, {
+    "id" : 17400038,
+    "name" : "Component",
+    "dataTypeName" : "text",
+    "description" : "A component describes the more specific aspect of social progress, measured by the 0-100 score",
+    "fieldName" : "component",
+    "position" : 5,
+    "renderTypeName" : "text",
+    "tableColumnId" : 10843201,
+    "cachedContents" : {
+      "non_null" : "4208",
+      "largest" : "Water and Sanitation",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Advanced Education",
+        "count" : "263"
+      }, {
+        "item" : "Health and Wellness",
+        "count" : "263"
+      }, {
+        "item" : "FOUNDATION SUB-INDEX",
+        "count" : "263"
+      }, {
+        "item" : "OPPORTUNITY SUB-INDEX",
+        "count" : "263"
+      }, {
+        "item" : "Tolerance Inclusion",
+        "count" : "263"
+      }, {
+        "item" : "Personal Freedom and Choice",
+        "count" : "263"
+      }, {
+        "item" : "Shelter",
+        "count" : "263"
+      }, {
+        "item" : "Personal Security",
+        "count" : "263"
+      }, {
+        "item" : "Basic Knowledge",
+        "count" : "263"
+      }, {
+        "item" : "Personal Rights",
+        "count" : "263"
+      }, {
+        "item" : "Water and Sanitation",
+        "count" : "263"
+      }, {
+        "item" : "Nutrition and Care",
+        "count" : "263"
+      }, {
+        "item" : "Environmental Quality",
+        "count" : "263"
+      }, {
+        "item" : "ICT Access",
+        "count" : "263"
+      }, {
+        "item" : "EU SOCIAL PROGRESS INDEX",
+        "count" : "263"
+      }, {
+        "item" : "BASIC SUB-INDEX",
+        "count" : "263"
+      } ],
+      "smallest" : "Advanced Education",
+      "count" : "4208",
+      "cardinality" : "16"
+    },
+    "format" : { }
+  }, {
+    "id" : 17400039,
+    "name" : "Value",
+    "dataTypeName" : "number",
+    "description" : "score over 100",
+    "fieldName" : "value",
+    "position" : 6,
+    "renderTypeName" : "number",
+    "tableColumnId" : 10843202,
+    "cachedContents" : {
+      "non_null" : "4186",
+      "largest" : "100.0",
+      "null" : "22",
+      "top" : [ {
+        "item" : "78.3",
+        "count" : "20"
+      }, {
+        "item" : "72.2",
+        "count" : "19"
+      }, {
+        "item" : "68.7",
+        "count" : "19"
+      }, {
+        "item" : "84.7",
+        "count" : "18"
+      }, {
+        "item" : "79.5",
+        "count" : "18"
+      }, {
+        "item" : "71.6",
+        "count" : "18"
+      }, {
+        "item" : "67.8",
+        "count" : "17"
+      }, {
+        "item" : "74.1",
+        "count" : "17"
+      }, {
+        "item" : "76.1",
+        "count" : "17"
+      }, {
+        "item" : "68.2",
+        "count" : "16"
+      }, {
+        "item" : "66.7",
+        "count" : "16"
+      }, {
+        "item" : "70.5",
+        "count" : "16"
+      }, {
+        "item" : "75.2",
+        "count" : "16"
+      }, {
+        "item" : "59.4",
+        "count" : "16"
+      }, {
+        "item" : "81.9",
+        "count" : "16"
+      }, {
+        "item" : "78.8",
+        "count" : "16"
+      }, {
+        "item" : "77.9",
+        "count" : "15"
+      }, {
+        "item" : "68.1",
+        "count" : "15"
+      }, {
+        "item" : "69.4",
+        "count" : "15"
+      }, {
+        "item" : "82.0",
+        "count" : "15"
+      } ],
+      "smallest" : "7.7",
+      "count" : "4208",
+      "cardinality" : "719"
+    },
+    "format" : {
+      "precision" : "1"
+    }
+  }, {
+    "id" : 17400040,
+    "name" : "Country",
+    "dataTypeName" : "text",
+    "description" : "EU country Name",
+    "fieldName" : "country",
+    "position" : 7,
+    "renderTypeName" : "text",
+    "tableColumnId" : 10843203,
+    "cachedContents" : {
+      "non_null" : "4192",
+      "largest" : "Sweden",
+      "null" : "16",
+      "top" : [ {
+        "item" : "Germany",
+        "count" : "624"
+      }, {
+        "item" : "France",
+        "count" : "448"
+      }, {
+        "item" : "Italy",
+        "count" : "352"
+      }, {
+        "item" : "Spain",
+        "count" : "320"
+      }, {
+        "item" : "Poland",
+        "count" : "288"
+      }, {
+        "item" : "Greece",
+        "count" : "224"
+      }, {
+        "item" : "Netherlands",
+        "count" : "208"
+      }, {
+        "item" : "Belgium",
+        "count" : "192"
+      }, {
+        "item" : "Austria",
+        "count" : "160"
+      }, {
+        "item" : "Romania",
+        "count" : "144"
+      }, {
+        "item" : "Hungary",
+        "count" : "144"
+      }, {
+        "item" : "Sweden",
+        "count" : "144"
+      }, {
+        "item" : "Czechia",
+        "count" : "144"
+      }, {
+        "item" : "Portugal",
+        "count" : "128"
+      }, {
+        "item" : "Bulgaria",
+        "count" : "112"
+      }, {
+        "item" : "Finland",
+        "count" : "96"
+      }, {
+        "item" : "Denmark",
+        "count" : "96"
+      }, {
+        "item" : "Slovakia",
+        "count" : "80"
+      }, {
+        "item" : "Ireland",
+        "count" : "64"
+      }, {
+        "item" : "Lithuania",
+        "count" : "48"
+      } ],
+      "smallest" : "Austria",
+      "count" : "4208",
+      "cardinality" : "27"
+    },
+    "format" : { }
+  }, {
+    "id" : 17400041,
+    "name" : "National value",
+    "dataTypeName" : "number",
+    "description" : "Average national score",
+    "fieldName" : "national_value",
+    "position" : 8,
+    "renderTypeName" : "number",
+    "tableColumnId" : 10843204,
+    "cachedContents" : {
+      "non_null" : "4192",
+      "largest" : "98.7",
+      "null" : "16",
+      "top" : [ {
+        "item" : "68.7",
+        "count" : "81"
+      }, {
+        "item" : "68.3",
+        "count" : "58"
+      }, {
+        "item" : "49.7",
+        "count" : "57"
+      }, {
+        "item" : "62.9",
+        "count" : "53"
+      }, {
+        "item" : "66.7",
+        "count" : "52"
+      }, {
+        "item" : "78.6",
+        "count" : "51"
+      }, {
+        "item" : "47.9",
+        "count" : "51"
+      }, {
+        "item" : "70.3",
+        "count" : "50"
+      }, {
+        "item" : "71.6",
+        "count" : "49"
+      }, {
+        "item" : "50.9",
+        "count" : "48"
+      }, {
+        "item" : "70.4",
+        "count" : "48"
+      }, {
+        "item" : "84.2",
+        "count" : "48"
+      }, {
+        "item" : "80.5",
+        "count" : "47"
+      }, {
+        "item" : "90.5",
+        "count" : "46"
+      }, {
+        "item" : "89.9",
+        "count" : "46"
+      }, {
+        "item" : "78.2",
+        "count" : "43"
+      }, {
+        "item" : "56.7",
+        "count" : "42"
+      }, {
+        "item" : "86.5",
+        "count" : "42"
+      }, {
+        "item" : "77.9",
+        "count" : "40"
+      }, {
+        "item" : "84.1",
+        "count" : "40"
+      } ],
+      "smallest" : "20.6",
+      "count" : "4208",
+      "cardinality" : "307"
+    },
+    "format" : {
+      "precision" : "1"
+    }
+  }, {
+    "id" : 17400042,
+    "name" : "Country appear",
+    "dataTypeName" : "number",
+    "description" : "for internal use",
+    "fieldName" : "country_appear",
+    "position" : 9,
+    "renderTypeName" : "number",
+    "tableColumnId" : 11305776,
+    "cachedContents" : {
+      "non_null" : "4192",
+      "largest" : "1",
+      "null" : "16",
+      "top" : [ {
+        "item" : "0",
+        "count" : "3840"
+      }, {
+        "item" : "1",
+        "count" : "352"
+      } ],
+      "smallest" : "0",
+      "count" : "4208",
+      "cardinality" : "2"
+    },
+    "format" : { }
+  } ],
+  "grants" : [ {
+    "inherited" : false,
+    "type" : "viewer",
+    "flags" : [ "public" ]
+  } ],
+  "license" : {
+    "name" : "Public Domain"
+  },
+  "metadata" : {
+    "custom_fields" : {
+      "Stories Categories" : {
+        "High Level Themes" : "6. Other Stories"
+      }
+    },
+    "availableDisplayTypes" : [ "table", "fatrow", "page" ]
+  },
+  "owner" : {
+    "id" : "qq3e-czsu",
+    "displayName" : "Yves Durinck",
+    "screenName" : "Yves Durinck",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "query" : { },
+  "rights" : [ "read" ],
+  "tableAuthor" : {
+    "id" : "qq3e-czsu",
+    "displayName" : "Yves Durinck",
+    "screenName" : "Yves Durinck",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "tags" : [ "spi", "social", "progress", "index", "2020" ],
+  "flags" : [ "default", "ownerMayBeContacted", "restorable", "restorePossibleForType" ]
+}

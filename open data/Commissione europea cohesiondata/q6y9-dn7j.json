@@ -1,0 +1,1165 @@
+{
+  "id" : "q6y9-dn7j",
+  "name" : "2021 EU Regional Gender Monitor",
+  "assetType" : "dataset",
+  "attribution" : "REGIO-B1-PAPERS@ec.europa.eu",
+  "attributionLink" : "https://cohesiondata.ec.europa.eu/",
+  "averageRating" : 0,
+  "category" : "Other: RCI-SPI",
+  "createdAt" : 1630501509,
+  "description" : "This data story explains the regional gender indices of female advantage and female disadvantage: \nhttps://cohesiondata.ec.europa.eu/stories/s/Regional-gender-equality-in-the-EU/vtrw-h5vm",
+  "diciBackend" : false,
+  "displayType" : "table",
+  "downloadCount" : 1368,
+  "hideFromCatalog" : false,
+  "hideFromDataJson" : false,
+  "licenseId" : "CC0_10",
+  "locked" : false,
+  "newBackend" : true,
+  "numberOfComments" : 0,
+  "oid" : 2151232,
+  "provenance" : "official",
+  "publicationAppendEnabled" : false,
+  "publicationDate" : 1630941734,
+  "publicationGroup" : 1461727,
+  "publicationStage" : "published",
+  "rowsUpdatedAt" : 1630941727,
+  "rowsUpdatedBy" : "p5rd-ygin",
+  "tableId" : 1463652,
+  "totalTimesRated" : 0,
+  "viewCount" : 1251,
+  "viewLastModified" : 1633976777,
+  "viewType" : "tabular",
+  "approvals" : [ {
+    "reviewedAt" : 1633976823,
+    "reviewedAutomatically" : false,
+    "state" : "approved",
+    "submissionId" : 1009663,
+    "submissionObject" : "public_audience_request",
+    "submissionOutcome" : "change_audience",
+    "submittedAt" : 1633976789,
+    "targetAudience" : "public",
+    "workflowId" : 133,
+    "reviewer" : {
+      "id" : "p5rd-ygin",
+      "displayName" : "John W"
+    },
+    "submissionDetails" : {
+      "permissionType" : "read"
+    },
+    "submissionOutcomeApplication" : {
+      "endedAt" : 1633976824,
+      "failureCount" : 0,
+      "startedAt" : 1633976823,
+      "status" : "success"
+    },
+    "submitter" : {
+      "id" : "p5rd-ygin",
+      "displayName" : "John W"
+    }
+  } ],
+  "clientContext" : {
+    "clientContextVariables" : [ ],
+    "inheritedVariables" : { }
+  },
+  "columns" : [ {
+    "id" : 20003680,
+    "name" : "Index name",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "index",
+    "position" : 1,
+    "renderTypeName" : "text",
+    "tableColumnId" : 13310287,
+    "cachedContents" : {
+      "non_null" : "526",
+      "largest" : "FemDI",
+      "null" : "0",
+      "top" : [ {
+        "item" : "FemDI",
+        "count" : "263"
+      }, {
+        "item" : "FemAI",
+        "count" : "263"
+      } ],
+      "smallest" : "FemAI",
+      "count" : "526",
+      "cardinality" : "2"
+    },
+    "format" : { }
+  }, {
+    "id" : 20003681,
+    "name" : "EU/Country",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "eu_country",
+    "position" : 2,
+    "renderTypeName" : "text",
+    "tableColumnId" : 13310288,
+    "cachedContents" : {
+      "non_null" : "526",
+      "largest" : "SK",
+      "null" : "0",
+      "top" : [ {
+        "item" : "DE",
+        "count" : "78"
+      }, {
+        "item" : "FR",
+        "count" : "46"
+      }, {
+        "item" : "IT",
+        "count" : "44"
+      }, {
+        "item" : "ES",
+        "count" : "40"
+      }, {
+        "item" : "PL",
+        "count" : "36"
+      }, {
+        "item" : "EL",
+        "count" : "28"
+      }, {
+        "item" : "NL",
+        "count" : "26"
+      }, {
+        "item" : "BE",
+        "count" : "24"
+      }, {
+        "item" : "AT",
+        "count" : "20"
+      }, {
+        "item" : "CZ",
+        "count" : "18"
+      }, {
+        "item" : "SE",
+        "count" : "18"
+      }, {
+        "item" : "RO",
+        "count" : "18"
+      }, {
+        "item" : "HU",
+        "count" : "18"
+      }, {
+        "item" : "PT",
+        "count" : "16"
+      }, {
+        "item" : "BG",
+        "count" : "14"
+      }, {
+        "item" : "DK",
+        "count" : "12"
+      }, {
+        "item" : "FI",
+        "count" : "12"
+      }, {
+        "item" : "SK",
+        "count" : "10"
+      }, {
+        "item" : "IE",
+        "count" : "8"
+      }, {
+        "item" : "SI",
+        "count" : "6"
+      } ],
+      "smallest" : "AT",
+      "count" : "526",
+      "cardinality" : "28"
+    },
+    "format" : { }
+  }, {
+    "id" : 20003682,
+    "name" : "Country/region",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "country_region",
+    "position" : 3,
+    "renderTypeName" : "text",
+    "tableColumnId" : 13310289,
+    "cachedContents" : {
+      "non_null" : "526",
+      "largest" : "Region",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Region",
+        "count" : "470"
+      }, {
+        "item" : "Country",
+        "count" : "54"
+      }, {
+        "item" : "EU-27",
+        "count" : "2"
+      } ],
+      "smallest" : "Country",
+      "count" : "526",
+      "cardinality" : "3"
+    },
+    "format" : { }
+  }, {
+    "id" : 20003683,
+    "name" : "Unit Name",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "unit_name",
+    "position" : 4,
+    "renderTypeName" : "text",
+    "tableColumnId" : 13310290,
+    "cachedContents" : {
+      "non_null" : "526",
+      "largest" : "Zuid-Holland",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Helsinki-Uusimaa",
+        "count" : "2"
+      }, {
+        "item" : "Sicilia",
+        "count" : "2"
+      }, {
+        "item" : "Overijssel",
+        "count" : "2"
+      }, {
+        "item" : "Mecklenburg-Vorpommern",
+        "count" : "2"
+      }, {
+        "item" : "Luxembourg",
+        "count" : "2"
+      }, {
+        "item" : "Attiki",
+        "count" : "2"
+      }, {
+        "item" : "Noord-Brabant",
+        "count" : "2"
+      }, {
+        "item" : "Lorraine",
+        "count" : "2"
+      }, {
+        "item" : "Syddanmark",
+        "count" : "2"
+      }, {
+        "item" : "Stuttgart",
+        "count" : "2"
+      }, {
+        "item" : "Niederösterreich",
+        "count" : "2"
+      }, {
+        "item" : "Warminsko-Mazurskie",
+        "count" : "2"
+      }, {
+        "item" : "LATVIA",
+        "count" : "2"
+      }, {
+        "item" : "Malta",
+        "count" : "2"
+      }, {
+        "item" : "Podlaskie",
+        "count" : "2"
+      }, {
+        "item" : "Peloponnisos",
+        "count" : "2"
+      }, {
+        "item" : "Zachodniopomorskie",
+        "count" : "2"
+      }, {
+        "item" : "Campania",
+        "count" : "2"
+      }, {
+        "item" : "Canarias",
+        "count" : "2"
+      }, {
+        "item" : "Centre - Val de Loire",
+        "count" : "2"
+      } ],
+      "smallest" : "Abruzzo",
+      "count" : "526",
+      "cardinality" : "263"
+    },
+    "format" : { }
+  }, {
+    "id" : 20003684,
+    "name" : "Unit Code",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "unit_code",
+    "position" : 5,
+    "renderTypeName" : "text",
+    "tableColumnId" : 13310291,
+    "cachedContents" : {
+      "non_null" : "526",
+      "largest" : "SK04",
+      "null" : "0",
+      "top" : [ {
+        "item" : "ITH2",
+        "count" : "2"
+      }, {
+        "item" : "DK",
+        "count" : "2"
+      }, {
+        "item" : "BE24",
+        "count" : "2"
+      }, {
+        "item" : "SI",
+        "count" : "2"
+      }, {
+        "item" : "CZ",
+        "count" : "2"
+      }, {
+        "item" : "PL61",
+        "count" : "2"
+      }, {
+        "item" : "DK05",
+        "count" : "2"
+      }, {
+        "item" : "NL12",
+        "count" : "2"
+      }, {
+        "item" : "DE11",
+        "count" : "2"
+      }, {
+        "item" : "PT30",
+        "count" : "2"
+      }, {
+        "item" : "BG31",
+        "count" : "2"
+      }, {
+        "item" : "PL51",
+        "count" : "2"
+      }, {
+        "item" : "PL91",
+        "count" : "2"
+      }, {
+        "item" : "ITC4",
+        "count" : "2"
+      }, {
+        "item" : "EE",
+        "count" : "2"
+      }, {
+        "item" : "EL51",
+        "count" : "2"
+      }, {
+        "item" : "DEA3",
+        "count" : "2"
+      }, {
+        "item" : "HU33",
+        "count" : "2"
+      }, {
+        "item" : "DE27",
+        "count" : "2"
+      }, {
+        "item" : "PL",
+        "count" : "2"
+      } ],
+      "smallest" : "AT",
+      "count" : "526",
+      "cardinality" : "263"
+    },
+    "format" : { }
+  }, {
+    "id" : 20003685,
+    "name" : "Unit name and code",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "unit_name_and_code",
+    "position" : 6,
+    "renderTypeName" : "text",
+    "tableColumnId" : 13310292,
+    "cachedContents" : {
+      "non_null" : "526",
+      "largest" : "Zuid-Holland (NL33)",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Strední Cechy (CZ02)",
+        "count" : "2"
+      }, {
+        "item" : "Picardie (FRE2)",
+        "count" : "2"
+      }, {
+        "item" : "Friesland (NL) (NL12)",
+        "count" : "2"
+      }, {
+        "item" : "Dél-Alföld (HU33)",
+        "count" : "2"
+      }, {
+        "item" : "Bratislavský kraj (SK01)",
+        "count" : "2"
+      }, {
+        "item" : "Sterea Ellada (EL64)",
+        "count" : "2"
+      }, {
+        "item" : "Západné Slovensko (SK02)",
+        "count" : "2"
+      }, {
+        "item" : "Provincia Autonoma di Bolzano/Bozen (ITH1)",
+        "count" : "2"
+      }, {
+        "item" : "Közép-Dunántúl (HU21)",
+        "count" : "2"
+      }, {
+        "item" : "Northern and Western (IE04)",
+        "count" : "2"
+      }, {
+        "item" : "Nord-Pas de Calais (FRE1)",
+        "count" : "2"
+      }, {
+        "item" : "Düsseldorf (DEA1)",
+        "count" : "2"
+      }, {
+        "item" : "Yugozapaden (BG41)",
+        "count" : "2"
+      }, {
+        "item" : "Opolskie (PL52)",
+        "count" : "2"
+      }, {
+        "item" : "Haute-Normandie (FRD2)",
+        "count" : "2"
+      }, {
+        "item" : "Vzhodna Slovenija (SI03)",
+        "count" : "2"
+      }, {
+        "item" : "Molise (ITF2)",
+        "count" : "2"
+      }, {
+        "item" : "Castilla-la Mancha (ES42)",
+        "count" : "2"
+      }, {
+        "item" : "Salzburg (AT32)",
+        "count" : "2"
+      }, {
+        "item" : "Drenthe (NL13)",
+        "count" : "2"
+      } ],
+      "smallest" : "Abruzzo (ITF1)",
+      "count" : "526",
+      "cardinality" : "265"
+    },
+    "format" : { }
+  }, {
+    "id" : 20003686,
+    "name" : "Work",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "work",
+    "position" : 7,
+    "renderTypeName" : "number",
+    "tableColumnId" : 13310293,
+    "cachedContents" : {
+      "non_null" : "526",
+      "largest" : "90.7",
+      "null" : "0",
+      "top" : [ {
+        "item" : "42.4",
+        "count" : "5"
+      }, {
+        "item" : "41.7",
+        "count" : "5"
+      }, {
+        "item" : "38.6",
+        "count" : "5"
+      }, {
+        "item" : "80.8",
+        "count" : "4"
+      }, {
+        "item" : "63.3",
+        "count" : "4"
+      }, {
+        "item" : "67.6",
+        "count" : "4"
+      }, {
+        "item" : "83.8",
+        "count" : "4"
+      }, {
+        "item" : "74.8",
+        "count" : "4"
+      }, {
+        "item" : "28.7",
+        "count" : "4"
+      }, {
+        "item" : "40.5",
+        "count" : "4"
+      }, {
+        "item" : "36.2",
+        "count" : "4"
+      }, {
+        "item" : "67.9",
+        "count" : "4"
+      }, {
+        "item" : "65.1",
+        "count" : "3"
+      }, {
+        "item" : "38.2",
+        "count" : "3"
+      }, {
+        "item" : "75.3",
+        "count" : "3"
+      }, {
+        "item" : "59.5",
+        "count" : "3"
+      }, {
+        "item" : "29.8",
+        "count" : "3"
+      }, {
+        "item" : "54.4",
+        "count" : "3"
+      }, {
+        "item" : "65.4",
+        "count" : "3"
+      }, {
+        "item" : "41",
+        "count" : "3"
+      } ],
+      "smallest" : "14.6",
+      "count" : "526",
+      "cardinality" : "352"
+    },
+    "format" : { }
+  }, {
+    "id" : 20003687,
+    "name" : "Knowledge",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "knowledge",
+    "position" : 8,
+    "renderTypeName" : "number",
+    "tableColumnId" : 13310294,
+    "cachedContents" : {
+      "non_null" : "526",
+      "largest" : "91.5",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0",
+        "count" : "29"
+      }, {
+        "item" : "2.6",
+        "count" : "6"
+      }, {
+        "item" : "57.9",
+        "count" : "6"
+      }, {
+        "item" : "6.8",
+        "count" : "5"
+      }, {
+        "item" : "43",
+        "count" : "5"
+      }, {
+        "item" : "0.9",
+        "count" : "5"
+      }, {
+        "item" : "8.5",
+        "count" : "5"
+      }, {
+        "item" : "50.7",
+        "count" : "4"
+      }, {
+        "item" : "14",
+        "count" : "4"
+      }, {
+        "item" : "67.4",
+        "count" : "4"
+      }, {
+        "item" : "39.2",
+        "count" : "4"
+      }, {
+        "item" : "5.5",
+        "count" : "4"
+      }, {
+        "item" : "6",
+        "count" : "4"
+      }, {
+        "item" : "8.1",
+        "count" : "4"
+      }, {
+        "item" : "4.3",
+        "count" : "4"
+      }, {
+        "item" : "32.4",
+        "count" : "3"
+      }, {
+        "item" : "13.2",
+        "count" : "3"
+      }, {
+        "item" : "56",
+        "count" : "3"
+      }, {
+        "item" : "42.7",
+        "count" : "3"
+      }, {
+        "item" : "28.5",
+        "count" : "3"
+      } ],
+      "smallest" : "0",
+      "count" : "526",
+      "cardinality" : "325"
+    },
+    "format" : { }
+  }, {
+    "id" : 20003688,
+    "name" : "Time",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "time",
+    "position" : 9,
+    "renderTypeName" : "number",
+    "tableColumnId" : 13310295,
+    "cachedContents" : {
+      "non_null" : "526",
+      "largest" : "85.3",
+      "null" : "0",
+      "top" : [ {
+        "item" : "35.6",
+        "count" : "10"
+      }, {
+        "item" : "8.7",
+        "count" : "7"
+      }, {
+        "item" : "72.7",
+        "count" : "7"
+      }, {
+        "item" : "22.7",
+        "count" : "6"
+      }, {
+        "item" : "26.2",
+        "count" : "6"
+      }, {
+        "item" : "13.2",
+        "count" : "6"
+      }, {
+        "item" : "18.9",
+        "count" : "6"
+      }, {
+        "item" : "13.1",
+        "count" : "6"
+      }, {
+        "item" : "62.7",
+        "count" : "6"
+      }, {
+        "item" : "40.1",
+        "count" : "6"
+      }, {
+        "item" : "36.8",
+        "count" : "6"
+      }, {
+        "item" : "37.5",
+        "count" : "5"
+      }, {
+        "item" : "39.2",
+        "count" : "5"
+      }, {
+        "item" : "48.2",
+        "count" : "5"
+      }, {
+        "item" : "18",
+        "count" : "5"
+      }, {
+        "item" : "34.6",
+        "count" : "5"
+      }, {
+        "item" : "34.2",
+        "count" : "5"
+      }, {
+        "item" : "57.1",
+        "count" : "5"
+      }, {
+        "item" : "29.1",
+        "count" : "5"
+      }, {
+        "item" : "16.9",
+        "count" : "5"
+      } ],
+      "smallest" : "1.6",
+      "count" : "526",
+      "cardinality" : "268"
+    },
+    "format" : { }
+  }, {
+    "id" : 20003689,
+    "name" : "Power",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "power",
+    "position" : 10,
+    "renderTypeName" : "number",
+    "tableColumnId" : 13310296,
+    "cachedContents" : {
+      "non_null" : "526",
+      "largest" : "92.3",
+      "null" : "0",
+      "top" : [ {
+        "item" : "47.4",
+        "count" : "9"
+      }, {
+        "item" : "43.3",
+        "count" : "7"
+      }, {
+        "item" : "47.5",
+        "count" : "7"
+      }, {
+        "item" : "17.2",
+        "count" : "6"
+      }, {
+        "item" : "44.8",
+        "count" : "6"
+      }, {
+        "item" : "75.1",
+        "count" : "6"
+      }, {
+        "item" : "73.7",
+        "count" : "6"
+      }, {
+        "item" : "50.8",
+        "count" : "6"
+      }, {
+        "item" : "31.8",
+        "count" : "5"
+      }, {
+        "item" : "50",
+        "count" : "5"
+      }, {
+        "item" : "60.9",
+        "count" : "5"
+      }, {
+        "item" : "44.3",
+        "count" : "5"
+      }, {
+        "item" : "18.8",
+        "count" : "5"
+      }, {
+        "item" : "54.6",
+        "count" : "5"
+      }, {
+        "item" : "44.1",
+        "count" : "5"
+      }, {
+        "item" : "82.3",
+        "count" : "5"
+      }, {
+        "item" : "50.7",
+        "count" : "4"
+      }, {
+        "item" : "81.6",
+        "count" : "4"
+      }, {
+        "item" : "50.2",
+        "count" : "4"
+      }, {
+        "item" : "51.1",
+        "count" : "4"
+      } ],
+      "smallest" : "2.8",
+      "count" : "526",
+      "cardinality" : "336"
+    },
+    "format" : { }
+  }, {
+    "id" : 20003690,
+    "name" : "Health",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "health",
+    "position" : 11,
+    "renderTypeName" : "number",
+    "tableColumnId" : 13310297,
+    "cachedContents" : {
+      "non_null" : "526",
+      "largest" : "91",
+      "null" : "0",
+      "top" : [ {
+        "item" : "4.4",
+        "count" : "9"
+      }, {
+        "item" : "26.5",
+        "count" : "7"
+      }, {
+        "item" : "9.3",
+        "count" : "7"
+      }, {
+        "item" : "43",
+        "count" : "6"
+      }, {
+        "item" : "12.7",
+        "count" : "5"
+      }, {
+        "item" : "10.4",
+        "count" : "5"
+      }, {
+        "item" : "45.3",
+        "count" : "5"
+      }, {
+        "item" : "37.6",
+        "count" : "5"
+      }, {
+        "item" : "15.6",
+        "count" : "5"
+      }, {
+        "item" : "34.6",
+        "count" : "5"
+      }, {
+        "item" : "17",
+        "count" : "5"
+      }, {
+        "item" : "19.6",
+        "count" : "4"
+      }, {
+        "item" : "76.3",
+        "count" : "4"
+      }, {
+        "item" : "20.1",
+        "count" : "4"
+      }, {
+        "item" : "15.4",
+        "count" : "4"
+      }, {
+        "item" : "25.5",
+        "count" : "4"
+      }, {
+        "item" : "84.2",
+        "count" : "4"
+      }, {
+        "item" : "32",
+        "count" : "4"
+      }, {
+        "item" : "34.7",
+        "count" : "4"
+      }, {
+        "item" : "0.9",
+        "count" : "4"
+      } ],
+      "smallest" : "0",
+      "count" : "526",
+      "cardinality" : "325"
+    },
+    "format" : { }
+  }, {
+    "id" : 20003691,
+    "name" : "Safety",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "safety",
+    "position" : 12,
+    "renderTypeName" : "number",
+    "tableColumnId" : 13310298,
+    "cachedContents" : {
+      "non_null" : "526",
+      "largest" : "94.1",
+      "null" : "0",
+      "top" : [ {
+        "item" : "58.6",
+        "count" : "9"
+      }, {
+        "item" : "60.4",
+        "count" : "8"
+      }, {
+        "item" : "30.3",
+        "count" : "7"
+      }, {
+        "item" : "29.2",
+        "count" : "7"
+      }, {
+        "item" : "28.3",
+        "count" : "7"
+      }, {
+        "item" : "21.4",
+        "count" : "7"
+      }, {
+        "item" : "41.5",
+        "count" : "7"
+      }, {
+        "item" : "76.2",
+        "count" : "7"
+      }, {
+        "item" : "52.6",
+        "count" : "6"
+      }, {
+        "item" : "47.6",
+        "count" : "6"
+      }, {
+        "item" : "25.6",
+        "count" : "6"
+      }, {
+        "item" : "14.9",
+        "count" : "6"
+      }, {
+        "item" : "31.7",
+        "count" : "6"
+      }, {
+        "item" : "29.5",
+        "count" : "6"
+      }, {
+        "item" : "61.6",
+        "count" : "5"
+      }, {
+        "item" : "53.9",
+        "count" : "5"
+      }, {
+        "item" : "30.9",
+        "count" : "5"
+      }, {
+        "item" : "49.9",
+        "count" : "5"
+      }, {
+        "item" : "63.5",
+        "count" : "5"
+      }, {
+        "item" : "65.4",
+        "count" : "5"
+      } ],
+      "smallest" : "4.4",
+      "count" : "526",
+      "cardinality" : "242"
+    },
+    "format" : { }
+  }, {
+    "id" : 20003692,
+    "name" : "Life satisfaction",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "life_satisf",
+    "position" : 13,
+    "renderTypeName" : "number",
+    "tableColumnId" : 13310286,
+    "cachedContents" : {
+      "non_null" : "526",
+      "largest" : "88.1",
+      "null" : "0",
+      "top" : [ {
+        "item" : "22.6",
+        "count" : "11"
+      }, {
+        "item" : "40.6",
+        "count" : "8"
+      }, {
+        "item" : "17.4",
+        "count" : "7"
+      }, {
+        "item" : "57.5",
+        "count" : "7"
+      }, {
+        "item" : "57.1",
+        "count" : "7"
+      }, {
+        "item" : "17.3",
+        "count" : "6"
+      }, {
+        "item" : "7.4",
+        "count" : "6"
+      }, {
+        "item" : "1",
+        "count" : "6"
+      }, {
+        "item" : "30.1",
+        "count" : "6"
+      }, {
+        "item" : "42.2",
+        "count" : "6"
+      }, {
+        "item" : "76.9",
+        "count" : "5"
+      }, {
+        "item" : "58.5",
+        "count" : "5"
+      }, {
+        "item" : "10.3",
+        "count" : "5"
+      }, {
+        "item" : "55.2",
+        "count" : "5"
+      }, {
+        "item" : "28.9",
+        "count" : "5"
+      }, {
+        "item" : "19.3",
+        "count" : "5"
+      }, {
+        "item" : "54.1",
+        "count" : "5"
+      }, {
+        "item" : "19.8",
+        "count" : "5"
+      }, {
+        "item" : "77",
+        "count" : "5"
+      }, {
+        "item" : "72.8",
+        "count" : "5"
+      } ],
+      "smallest" : "0.3",
+      "count" : "526",
+      "cardinality" : "235"
+    },
+    "format" : { }
+  }, {
+    "id" : 20003693,
+    "name" : "Index score",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "index_score",
+    "position" : 14,
+    "renderTypeName" : "number",
+    "tableColumnId" : 13310285,
+    "cachedContents" : {
+      "non_null" : "526",
+      "largest" : "78.8",
+      "null" : "0",
+      "top" : [ {
+        "item" : "62.7",
+        "count" : "6"
+      }, {
+        "item" : "23.8",
+        "count" : "5"
+      }, {
+        "item" : "17.8",
+        "count" : "4"
+      }, {
+        "item" : "45.9",
+        "count" : "4"
+      }, {
+        "item" : "62.6",
+        "count" : "4"
+      }, {
+        "item" : "33.7",
+        "count" : "4"
+      }, {
+        "item" : "24.1",
+        "count" : "4"
+      }, {
+        "item" : "38.3",
+        "count" : "4"
+      }, {
+        "item" : "63.9",
+        "count" : "4"
+      }, {
+        "item" : "74.3",
+        "count" : "4"
+      }, {
+        "item" : "27.5",
+        "count" : "4"
+      }, {
+        "item" : "27.8",
+        "count" : "3"
+      }, {
+        "item" : "19.2",
+        "count" : "3"
+      }, {
+        "item" : "62.3",
+        "count" : "3"
+      }, {
+        "item" : "33.6",
+        "count" : "3"
+      }, {
+        "item" : "31.6",
+        "count" : "3"
+      }, {
+        "item" : "69.5",
+        "count" : "3"
+      }, {
+        "item" : "63.8",
+        "count" : "3"
+      }, {
+        "item" : "22.2",
+        "count" : "3"
+      }, {
+        "item" : "17.4",
+        "count" : "3"
+      } ],
+      "smallest" : "13.1",
+      "count" : "526",
+      "cardinality" : "343"
+    },
+    "format" : { }
+  }, {
+    "id" : 20003695,
+    "name" : "category of region",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "category_of_region",
+    "position" : 15,
+    "renderTypeName" : "text",
+    "tableColumnId" : 13329288,
+    "cachedContents" : {
+      "non_null" : "470",
+      "largest" : "TR",
+      "null" : "56",
+      "top" : [ {
+        "item" : "MD",
+        "count" : "190"
+      }, {
+        "item" : "LD",
+        "count" : "148"
+      }, {
+        "item" : "TR",
+        "count" : "132"
+      } ],
+      "smallest" : "LD",
+      "count" : "526",
+      "cardinality" : "3"
+    },
+    "format" : { }
+  }, {
+    "id" : 20003694,
+    "name" : "category of region code",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "category_of_region_code",
+    "position" : 16,
+    "renderTypeName" : "text",
+    "tableColumnId" : 13329287,
+    "cachedContents" : {
+      "non_null" : "470",
+      "largest" : "transition",
+      "null" : "56",
+      "top" : [ {
+        "item" : "more developed",
+        "count" : "190"
+      }, {
+        "item" : "less developed",
+        "count" : "148"
+      }, {
+        "item" : "transition",
+        "count" : "132"
+      } ],
+      "smallest" : "less developed",
+      "count" : "526",
+      "cardinality" : "3"
+    },
+    "format" : { }
+  } ],
+  "grants" : [ {
+    "inherited" : false,
+    "type" : "viewer",
+    "flags" : [ "public" ]
+  } ],
+  "license" : {
+    "name" : "Creative Commons 1.0 Universal (Public Domain Dedication)",
+    "logoUrl" : "images/licenses/ccZero.png",
+    "termsLink" : "http://creativecommons.org/publicdomain/zero/1.0/legalcode"
+  },
+  "metadata" : {
+    "custom_fields" : {
+      "Stories Categories" : {
+        "High Level Themes" : "3. Inclusive Growth"
+      }
+    },
+    "availableDisplayTypes" : [ "table", "fatrow", "page" ]
+  },
+  "owner" : {
+    "id" : "p5rd-ygin",
+    "displayName" : "John W",
+    "profileImageUrlLarge" : "/api/users/p5rd-ygin/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/p5rd-ygin/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/p5rd-ygin/profile_images/TINY",
+    "screenName" : "John W",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula", "mayBeStoriesCoOwner" ]
+  },
+  "query" : { },
+  "rights" : [ "read" ],
+  "tableAuthor" : {
+    "id" : "p5rd-ygin",
+    "displayName" : "John W",
+    "profileImageUrlLarge" : "/api/users/p5rd-ygin/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/p5rd-ygin/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/p5rd-ygin/profile_images/TINY",
+    "screenName" : "John W",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula", "mayBeStoriesCoOwner" ]
+  },
+  "tags" : [ "gender equality", "gender", "female advantage", "female disadvantage", "glass ceiling", "gender monitor" ],
+  "flags" : [ "default", "ownerMayBeContacted", "restorable", "restorePossibleForType" ]
+}

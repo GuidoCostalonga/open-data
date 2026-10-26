@@ -1,0 +1,352 @@
+EUR	Europe
+EU	European Union (EU6-1958, EU9-1973, EU10-1981, EU12-1986, EU15-1995, EU25-2004, EU27-2007, EU28-2013, EU27-2020)
+EU27_2020	European Union - 27 countries (from 2020)
+EU28	European Union - 28 countries (2013-2020)
+EU27_2007	European Union - 27 countries (2007-2013)
+EU25	European Union - 25 countries (2004-2006)
+EU15	European Union - 15 countries (1995-2004)
+EA	Euro area (EA11-1999, EA12-2001, EA13-2007, EA15-2008, EA16-2009, EA17-2011, EA18-2014, EA19-2015, EA20-2023, EA21-2026)
+EA21	Euro area – 21 countries (from 2026)
+EA20	Euro area – 20 countries (2023-2025)
+BE	Belgium
+BG	Bulgaria
+CZ	Czechia
+DK	Denmark
+DE	Germany
+DEW	Federal Republic of Germany (former territory of the FRG only)
+EX_DD	German Democratic Republic
+EE	Estonia
+IE	Ireland
+EL	Greece
+ES	Spain
+FR	France
+YT	Mayotte (FR - part of EU as of 01.01.2014)
+HR	Croatia
+IT	Italy
+CY	Cyprus
+LV	Latvia
+LT	Lithuania
+LU	Luxembourg
+HU	Hungary
+MT	Malta
+NL	Netherlands
+AT	Austria
+PL	Poland
+PT	Portugal
+RO	Romania
+SI	Slovenia
+SK	Slovakia
+FI	Finland
+SE	Sweden
+EU_OTH	Other EU countries
+EU27_2020_EFTA_FOR	EU27 countries (from 2020) or EFTA countries except reporting country
+EU28_EFTA_FOR	EU28 countries (2013-2020) or EFTA countries except reporting country
+EU_FOR	EU-countries except reporting country
+EU27_2020_FOR	EU27 countries (from 2020) except reporting country
+EU28_FOR	EU28 countries (2013-2020) except reporting country
+EU27_2007_FOR	EU27 countries (2007-2013) except reporting country
+EU25_FOR	EU25 countries (2004-2006) except reporting country
+EU15_FOR	EU15 countries (1995-2004) except reporting country
+EEA	European Economic Area (EEA18-1995, EEA28-2004, EEA30-2007, EEA31-2013, EEA30-2020)
+EFTA	European Free Trade Association
+IS	Iceland
+LI	Liechtenstein
+NO	Norway
+CH	Switzerland
+EFTA_FOR	European Free Trade Association except reporting country
+EFTA_OTH	Other European Free Trade Association countries
+UK	United Kingdom
+UK_OCT	British overseas countries and territories
+CC9_23_FOR	Candidate countries from 2023 (9 countries) except reporting country
+CC8_22_FOR	Candidate countries from 2022 (8 countries) except reporting country
+CC5_15_FOR	Candidate countries from 2015 (5 countries) except reporting country
+CC5_13_FOR_X_IS	Candidate countries in 2013 (5 countries) except reporting country and Iceland
+CC4_10	Candidate countries in 2010 (4 countries)
+CC3_07	Candidate countries in 2007 (3 countries)
+BA	Bosnia and Herzegovina
+ME	Montenegro
+MD	Moldova
+MK	North Macedonia
+GE	Georgia
+AL	Albania
+RS	Serbia
+TR	Türkiye
+UA	Ukraine
+XK	Kosovo*
+EUR_C_E	Central and Eastern Europe
+EUR_C_E_OTH	Other Central and Eastern European countries
+AD	Andorra
+BY	Belarus
+GG	Guernsey
+JE	Jersey
+FO	Faroes
+GI	Gibraltar
+VA	Holy See
+IM	Isle of Man
+MC	Monaco
+RU	Russia
+SM	San Marino
+CZ_SK	Czechoslovakia
+RS_ME	Serbia and Montenegro
+EX_YU	Yugoslavia
+EX_SU	Soviet Union
+EX_SU_EUR	European Republics of the former Soviet Union
+EXT	Countries other than EU, EFTA and Candidate countries
+HDC_EXT	Highly developed countries (other than EU, EFTA and Candidate countries)
+MDC_EXT	Medium developed countries (other than EU, EFTA and Candidate countries)
+LDC_EXT	Less developed countries (other than EU, EFTA and Candidate countries)
+EXT_EU27_2020	Extra-EU27 (from 2020)
+EXT_EU28	Extra-EU28 (2013-2020)
+EXT_EU27_2007	Extra-EU27 (2007-2013)
+EXT_EU15	Extra-EU15 (1995-2004)
+EXT_FOR_HDI	Countries other than EU, EFTA and Candidate countries with Human Development Index (HDI) ranking
+EXT_FOR_HDI_VH	Countries other than EU, EFTA and Candidate countries with very high Human Development Index (HDI)
+EXT_FOR_HDI_H	Countries other than EU, EFTA and Candidate countries with high Human Development Index (HDI)
+EXT_FOR_HDI_M	Countries other than EU, EFTA and Candidate countries with medium Human Development Index (HDI)
+EXT_FOR_HDI_L	Countries other than EU, EFTA and Candidate countries with low Human Development Index (HDI)
+NEU	Non-EU countries (aggregate changing according to the context)
+NEU_HDI_H	Non-EU countries with high Human Development Index (HDI)
+NEU_HDI_M	Non-EU countries with medium Human Development Index (HDI)
+NEU_HDI_L	Non-EU countries with low Human Development Index (HDI)
+NEU_NHDI	Non-EU countries with no Human Development Index (HDI) ranking
+NEU27_2020_NEFTA	Non-EU27 countries (from 2020) nor EFTA countries
+NEU28_NEFTA	Non-EU28 countries (2013-2020) nor EFTA countries
+NEU27_2020	Non-EU27 countries (from 2020)
+NEU_FOR	Non-EU countries nor reporting country (aggregate changing according to the context)
+NEU27_2020_FOR	Non-EU27 countries (from 2020) nor reporting country
+NEU28_FOR	Non-EU28 countries (2013-2020) nor reporting country
+NEU27_2007_FOR	Non-EU27 countries (2007-2013) nor reporting country
+NEU27_2007_FOR_STLS	Non-EU27 countries (2007-2013) nor reporting country and stateless
+NEU15_FOR	Non-EU15 countries (1995-2004) nor reporting country
+EUR_NEU	European non-EU countries (aggregate changing according to the context)
+EUR_NEU15	European non-EU15 countries (1995--2004)
+EUR_OTH	Other European countries (aggregate changing according to the context)
+AFR	Africa
+AFR_C	Central Africa
+AO	Angola
+CM	Cameroon
+CF	Central African Republic
+TD	Chad
+CG	Congo
+CD	Democratic Republic of the Congo
+GQ	Equatorial Guinea
+GA	Gabon
+ST	São Tomé and Príncipe
+AFR_E	Eastern Africa
+BI	Burundi
+KM	Comoros
+DJ	Djibouti
+ER	Eritrea
+ET	Ethiopia
+KE	Kenya
+MG	Madagascar
+MW	Malawi
+MU	Mauritius
+MZ	Mozambique
+RW	Rwanda
+SC	Seychelles
+SO	Somalia
+UG	Uganda
+TZ	Tanzania
+ZM	Zambia
+ZW	Zimbabwe
+AFR_N	Northern Africa
+DZ	Algeria
+EG	Egypt
+LY	Libya
+MA	Morocco
+SS	South Sudan
+SD	Sudan
+TN	Tunisia
+EH	Western Sahara
+AFR_S	Southern Africa
+BW	Botswana
+LS	Lesotho
+NA	Namibia
+ZA	South Africa
+SZ	Eswatini
+AFR_W	Western Africa
+BJ	Benin
+BF	Burkina Faso
+CV	Cabo Verde
+CI	Côte d’Ivoire
+GM	Gambia, The
+GH	Ghana
+GN	Guinea
+GW	Guinea-Bissau
+LR	Liberia
+ML	Mali
+MR	Mauritania
+NE	Niger
+NG	Nigeria
+SH	Saint Helena, Ascension and Tristan da Cunha
+SN	Senegal
+SL	Sierra Leone
+TG	Togo
+AFR_OTH	Other African countries (aggregate changing according to the context)
+AME	America
+AME_N	Northern America
+BM	Bermuda
+CA	Canada
+GL	Greenland
+PM	Saint Pierre and Miquelon
+US	United States
+AME_N_OTH	Other Northern American countries
+AME_X_N	Caribbean, Central and South America
+CRB	Caribbean
+AI	Anguilla
+AG	Antigua and Barbuda
+AW	Aruba
+BS	Bahamas
+BB	Barbados
+BQ	Bonaire, Saint Eustatius and Saba
+VG	British Virgin Islands
+KY	Cayman Islands
+CU	Cuba
+CW	Curaçao
+DM	Dominica
+DO	Dominican Republic
+GD	Grenada
+HT	Haiti
+JM	Jamaica
+MS	Montserrat
+AN	Netherlands Antilles
+PR	Puerto Rico
+BL	Saint Barthélemy
+KN	Saint Kitts and Nevis
+LC	Saint Lucia
+MF	Saint Martin
+VC	Saint Vincent and the Grenadines
+SX	Sint Maarten
+TT	Trinidad and Tobago
+TC	Turks and Caicos Islands
+CRB_OTH	Other Caribbean countries
+AME_C_S	Central and South America
+AME_C	Central America
+BZ	Belize
+CR	Costa Rica
+SV	El Salvador
+GT	Guatemala
+HN	Honduras
+MX	Mexico
+NI	Nicaragua
+PA	Panama
+AME_C_OTH	Other Central American countries
+AME_S	South America
+AR	Argentina
+BO	Bolivia
+BR	Brazil
+CL	Chile
+CO	Colombia
+EC	Ecuador
+FK	Falkland Islands
+GY	Guyana
+PY	Paraguay
+PE	Peru
+SR	Suriname
+UY	Uruguay
+VE	Venezuela
+AME_S_OTH	Other South American countries
+AME_X_N_OTH	Other Caribbean, Central and South American countries
+AME_OTH	Other American countries (aggregate changing according to the context)
+ASI	Asia
+ASI_C	Central Asia
+KZ	Kazakhstan
+KG	Kyrgyzstan
+TJ	Tajikistan
+TM	Turkmenistan
+UZ	Uzbekistan
+ASI_E	Eastern Asia
+CN	China
+CN_X_HK	China except Hong Kong
+HK	Hong Kong
+MO	Macao
+JP	Japan
+MN	Mongolia
+KP	North Korea
+KR	South Korea
+TW	Taiwan
+ASI_S	Southern Asia
+AF	Afghanistan
+BD	Bangladesh
+BT	Bhutan
+IN	India
+IR	Iran
+MV	Maldives
+NP	Nepal
+PK	Pakistan
+LK	Sri Lanka
+ASI_S_E	South-Eastern Asia
+BN	Brunei Darussalam
+KH	Cambodia
+ID	Indonesia
+LA	Laos
+MY	Malaysia
+MM	Myanmar/Burma
+PH	Philippines
+SG	Singapore
+TH	Thailand
+TL	Timor-Leste
+VN	Viet Nam
+ASI_W	Western Asia
+AM	Armenia
+AZ	Azerbaijan
+BH	Bahrain
+IQ	Iraq
+IL	Israel
+JO	Jordan
+KW	Kuwait
+LB	Lebanon
+PS	Palestine*
+OM	Oman
+QA	Qatar
+SA	Saudi Arabia
+SY	Syria
+AE	United Arab Emirates
+YE	Yemen
+EX_YE	Former North Yemen (before 1990)
+EX_YD	Former South Yemen (before 1990)
+ASI_NME	Near and Middle East Asia (aggregate changing according to the context)
+ASI_W_OTH	Other Western Asian countries
+EX_SU_ASI	Asian Republics of the former Soviet Union
+ASI_OTH	Other Asian countries (aggregate changing according to the context)
+OCE	Oceania
+AU_NZ	Australia and New Zealand
+AU	Australia
+NZ	New Zealand
+MEL	Melanesia
+FJ	Fiji
+NC	New Caledonia
+PG	Papua New Guinea
+SB	Solomon Islands
+VU	Vanuatu
+MIC	Micronesia
+KI	Kiribati
+MH	Marshall Islands
+FM	Federated States of Micronesia
+NR	Nauru
+PW	Palau
+POL	Polynesia
+CK	Cook Islands
+PF	French Polynesia
+NU	Niue
+PN	Pitcairn Islands
+WS	Samoa
+TK	Tokelau
+TO	Tonga
+TV	Tuvalu
+WF	Wallis and Futuna
+OCE_OTH	Other Oceanian countries (aggregate changing according to the context)
+TF	French Southern and Antarctic Lands
+FOR_STLS	Foreign country and stateless
+FOR	Foreign country
+NAT	Reporting country
+RNC	Recognised non-citizens
+STLS	Stateless
+TOTAL	Total
+OTH	Others
+NAL	Not allocated
+NAP	Not applicable
+NRP	No response
+NSP	Not specified
+UNK	Unknown

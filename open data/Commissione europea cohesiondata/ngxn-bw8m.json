@@ -1,0 +1,550 @@
+{
+  "id" : "ngxn-bw8m",
+  "name" : "EU RCI 2.0 - 2022: Time Evolution",
+  "assetType" : "dataset",
+  "attribution" : "European Commission",
+  "averageRating" : 0,
+  "category" : "Other",
+  "createdAt" : 1675847661,
+  "description" : "The current edition of the RCI, while maintaining the structure of the previous editions, uses an updated methodological framework, to facilitate comparison over time. To highlight the change in methodology, this new edition is referred to as RCI 2.0. In addition, starting from the original data used in 2016 and 2019, the scores have been re-calculated using the new methodology, and labelled as RCI 2.0, 2016 edition, and RCI 2.0, 2019 edition, and are available for download on this website. The resulting rankings do not replace the RCI rankings published in 2016 and 2019, produced with the old methodology. This is why the scores for RCI 2.0 2019 and RCI 2.0 2016 are published without rankings.\n\nThe 2022 edition of RCI 2.0 shows large differences in regional competitiveness in the EU. In line with previous editions, it show a polycentric pattern, with a strong performance of regions hosting large urban areas in the EU. The gap between the capital city region and the rest, however, varies among EU Member States, with more competitive countries tending to have a smaller gap between their capital city region and its other regions, as well as lower internal variation. Between 2016 and 2022, regional competitiveness has improved in the less developed regions, while the performance of transition regions has been more mixed. More developed regions continued to have the highest scores, but they have converged on the EU average.",
+  "diciBackend" : false,
+  "displayType" : "table",
+  "downloadCount" : 187,
+  "hideFromCatalog" : false,
+  "hideFromDataJson" : false,
+  "licenseId" : "PUBLIC_DOMAIN",
+  "locked" : false,
+  "newBackend" : true,
+  "numberOfComments" : 0,
+  "oid" : 2574086,
+  "provenance" : "official",
+  "publicationAppendEnabled" : false,
+  "publicationDate" : 1675849383,
+  "publicationGroup" : 1741983,
+  "publicationStage" : "published",
+  "rowsUpdatedAt" : 1683710403,
+  "rowsUpdatedBy" : "qq3e-czsu",
+  "tableId" : 1741983,
+  "totalTimesRated" : 0,
+  "viewCount" : 1011,
+  "viewLastModified" : 1683710399,
+  "viewType" : "tabular",
+  "approvals" : [ {
+    "reviewedAt" : 1675849418,
+    "reviewedAutomatically" : false,
+    "state" : "approved",
+    "submissionId" : 1290006,
+    "submissionObject" : "public_audience_request",
+    "submissionOutcome" : "change_audience",
+    "submittedAt" : 1675849384,
+    "targetAudience" : "public",
+    "workflowId" : 133,
+    "reviewer" : {
+      "id" : "qq3e-czsu",
+      "displayName" : "Yves Durinck"
+    },
+    "submissionDetails" : {
+      "permissionType" : "READ"
+    },
+    "submissionOutcomeApplication" : {
+      "endedAt" : 1675849419,
+      "failureCount" : 0,
+      "startedAt" : 1675849418,
+      "status" : "success"
+    },
+    "submitter" : {
+      "id" : "qq3e-czsu",
+      "displayName" : "Yves Durinck"
+    }
+  } ],
+  "clientContext" : {
+    "clientContextVariables" : [ ],
+    "inheritedVariables" : { }
+  },
+  "columns" : [ {
+    "id" : 23606779,
+    "name" : "REGION NAME",
+    "dataTypeName" : "text",
+    "description" : "NUTS name",
+    "fieldName" : "nuts_name",
+    "position" : 1,
+    "renderTypeName" : "text",
+    "tableColumnId" : 14862682,
+    "cachedContents" : {
+      "non_null" : "11690",
+      "largest" : "Zuid-Holland",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Malta",
+        "count" : "90"
+      }, {
+        "item" : "Luxembourg",
+        "count" : "90"
+      }, {
+        "item" : "Overijssel",
+        "count" : "45"
+      }, {
+        "item" : "Helsinki-Uusimaa",
+        "count" : "45"
+      }, {
+        "item" : "Syddanmark",
+        "count" : "45"
+      }, {
+        "item" : "Sweden",
+        "count" : "45"
+      }, {
+        "item" : "Lorraine",
+        "count" : "45"
+      }, {
+        "item" : "Attiki",
+        "count" : "45"
+      }, {
+        "item" : "Mecklenburg-Vorpommern",
+        "count" : "45"
+      }, {
+        "item" : "Noord-Brabant",
+        "count" : "45"
+      }, {
+        "item" : "Sicilia",
+        "count" : "45"
+      }, {
+        "item" : "Ireland",
+        "count" : "45"
+      }, {
+        "item" : "Stuttgart",
+        "count" : "45"
+      }, {
+        "item" : "Portugal",
+        "count" : "45"
+      }, {
+        "item" : "Zachodniopomorskie",
+        "count" : "45"
+      }, {
+        "item" : "Peloponnisos",
+        "count" : "45"
+      }, {
+        "item" : "Podlaskie",
+        "count" : "45"
+      }, {
+        "item" : "Prague and its commuting zone",
+        "count" : "45"
+      }, {
+        "item" : "Latvia",
+        "count" : "45"
+      }, {
+        "item" : "Campania",
+        "count" : "45"
+      } ],
+      "smallest" : "Abruzzo",
+      "count" : "11690",
+      "cardinality" : "265"
+    },
+    "format" : { }
+  }, {
+    "id" : 23606778,
+    "name" : "NUTS code",
+    "dataTypeName" : "text",
+    "description" : "The NUTS classification (Nomenclature of territorial units for statistics) is a hierarchical system for dividing up the economic territory of the EU.",
+    "fieldName" : "nuts_code_2016",
+    "position" : 2,
+    "renderTypeName" : "text",
+    "tableColumnId" : 14862681,
+    "cachedContents" : {
+      "non_null" : "11690",
+      "largest" : "SK04",
+      "null" : "0",
+      "top" : [ {
+        "item" : "NL11",
+        "count" : "45"
+      }, {
+        "item" : "DK",
+        "count" : "45"
+      }, {
+        "item" : "PL",
+        "count" : "45"
+      }, {
+        "item" : "ITH2",
+        "count" : "45"
+      }, {
+        "item" : "PL61",
+        "count" : "45"
+      }, {
+        "item" : "DK05",
+        "count" : "45"
+      }, {
+        "item" : "CZ",
+        "count" : "45"
+      }, {
+        "item" : "DE11",
+        "count" : "45"
+      }, {
+        "item" : "SI",
+        "count" : "45"
+      }, {
+        "item" : "BG31",
+        "count" : "45"
+      }, {
+        "item" : "PT30",
+        "count" : "45"
+      }, {
+        "item" : "PL51",
+        "count" : "45"
+      }, {
+        "item" : "EE",
+        "count" : "45"
+      }, {
+        "item" : "ITC4",
+        "count" : "45"
+      }, {
+        "item" : "NL12",
+        "count" : "45"
+      }, {
+        "item" : "EL51",
+        "count" : "45"
+      }, {
+        "item" : "DEA3",
+        "count" : "45"
+      }, {
+        "item" : "HU33",
+        "count" : "45"
+      }, {
+        "item" : "DE27",
+        "count" : "45"
+      }, {
+        "item" : "ITG1",
+        "count" : "45"
+      } ],
+      "smallest" : "AT",
+      "count" : "11690",
+      "cardinality" : "267"
+    },
+    "format" : { }
+  }, {
+    "id" : 23606780,
+    "name" : "Stage of development",
+    "dataTypeName" : "text",
+    "description" : "EU regions are divided into three development stages, based on GDP per head.",
+    "fieldName" : "stage_of_development",
+    "position" : 3,
+    "renderTypeName" : "text",
+    "tableColumnId" : 14862683,
+    "cachedContents" : {
+      "non_null" : "10430",
+      "largest" : "TR",
+      "null" : "1260",
+      "top" : [ {
+        "item" : "MD",
+        "count" : "4140"
+      }, {
+        "item" : "LD",
+        "count" : "3485"
+      }, {
+        "item" : "TR",
+        "count" : "2805"
+      } ],
+      "smallest" : "LD",
+      "count" : "11690",
+      "cardinality" : "3"
+    },
+    "format" : { }
+  }, {
+    "id" : 23606781,
+    "name" : "Rank",
+    "dataTypeName" : "number",
+    "description" : "ranking amongst all EU regions",
+    "fieldName" : "rank",
+    "position" : 4,
+    "renderTypeName" : "number",
+    "tableColumnId" : 14862684,
+    "cachedContents" : {
+      "non_null" : "10430",
+      "largest" : "234",
+      "null" : "1260",
+      "top" : [ {
+        "item" : "46",
+        "count" : "90"
+      }, {
+        "item" : "171",
+        "count" : "90"
+      }, {
+        "item" : "50",
+        "count" : "90"
+      }, {
+        "item" : "69",
+        "count" : "90"
+      }, {
+        "item" : "98",
+        "count" : "75"
+      }, {
+        "item" : "213",
+        "count" : "75"
+      }, {
+        "item" : "125",
+        "count" : "75"
+      }, {
+        "item" : "103",
+        "count" : "75"
+      }, {
+        "item" : "174",
+        "count" : "75"
+      }, {
+        "item" : "60",
+        "count" : "75"
+      }, {
+        "item" : "153",
+        "count" : "75"
+      }, {
+        "item" : "84",
+        "count" : "60"
+      }, {
+        "item" : "88",
+        "count" : "60"
+      }, {
+        "item" : "86",
+        "count" : "60"
+      }, {
+        "item" : "76",
+        "count" : "60"
+      }, {
+        "item" : "12",
+        "count" : "60"
+      }, {
+        "item" : "80",
+        "count" : "60"
+      }, {
+        "item" : "55",
+        "count" : "60"
+      }, {
+        "item" : "67",
+        "count" : "60"
+      }, {
+        "item" : "33",
+        "count" : "60"
+      } ],
+      "smallest" : "1",
+      "count" : "11690",
+      "cardinality" : "234"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 23606782,
+    "name" : "Component",
+    "dataTypeName" : "text",
+    "description" : "Part of the 11 different pillars and 3 sub-indices",
+    "fieldName" : "component",
+    "position" : 5,
+    "renderTypeName" : "text",
+    "tableColumnId" : 14862685,
+    "cachedContents" : {
+      "non_null" : "11690",
+      "largest" : "Technological readiness",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Technological readiness",
+        "count" : "780"
+      }, {
+        "item" : "BASIC SUB-INDEX",
+        "count" : "780"
+      }, {
+        "item" : "Business sophistication",
+        "count" : "780"
+      }, {
+        "item" : "EFFICIENCY SUB-INDEX",
+        "count" : "780"
+      }, {
+        "item" : "Health",
+        "count" : "780"
+      }, {
+        "item" : "Innovation",
+        "count" : "780"
+      }, {
+        "item" : "INNOVATION SUB-INDEX",
+        "count" : "780"
+      }, {
+        "item" : "Labour market",
+        "count" : "780"
+      }, {
+        "item" : "Market size",
+        "count" : "780"
+      }, {
+        "item" : "Basic education",
+        "count" : "780"
+      }, {
+        "item" : "Institutions",
+        "count" : "778"
+      }, {
+        "item" : "Macroeconomic",
+        "count" : "778"
+      }, {
+        "item" : "Higher education and LLL",
+        "count" : "778"
+      }, {
+        "item" : "Infrastructure",
+        "count" : "776"
+      }, {
+        "item" : "RCI 2.0 - 2022",
+        "count" : "262"
+      }, {
+        "item" : "RCI 2.0 - 2019",
+        "count" : "261"
+      }, {
+        "item" : "RCI 2.0 - 2016",
+        "count" : "257"
+      } ],
+      "smallest" : "Basic education",
+      "count" : "11690",
+      "cardinality" : "17"
+    },
+    "format" : { }
+  }, {
+    "id" : 23606784,
+    "name" : "Year",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "year",
+    "position" : 6,
+    "renderTypeName" : "number",
+    "tableColumnId" : 14862687,
+    "cachedContents" : {
+      "non_null" : "11690",
+      "largest" : "2022",
+      "null" : "0",
+      "top" : [ {
+        "item" : "2022",
+        "count" : "3930"
+      }, {
+        "item" : "2019",
+        "count" : "3915"
+      }, {
+        "item" : "2016",
+        "count" : "3845"
+      } ],
+      "smallest" : "2016",
+      "count" : "11690",
+      "cardinality" : "3"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "noCommas" : "true",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 23606783,
+    "name" : "Value",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "value",
+    "position" : 7,
+    "renderTypeName" : "number",
+    "tableColumnId" : 14862686,
+    "cachedContents" : {
+      "non_null" : "11690",
+      "largest" : "281.7",
+      "null" : "0",
+      "top" : [ {
+        "item" : "117.2",
+        "count" : "56"
+      }, {
+        "item" : "100",
+        "count" : "53"
+      }, {
+        "item" : "121.6",
+        "count" : "50"
+      }, {
+        "item" : "110.4",
+        "count" : "50"
+      }, {
+        "item" : "108.2",
+        "count" : "49"
+      }, {
+        "item" : "143.7",
+        "count" : "44"
+      }, {
+        "item" : "98",
+        "count" : "43"
+      }, {
+        "item" : "147.5",
+        "count" : "41"
+      }, {
+        "item" : "136.7",
+        "count" : "41"
+      }, {
+        "item" : "75.8",
+        "count" : "39"
+      }, {
+        "item" : "80.7",
+        "count" : "38"
+      }, {
+        "item" : "92.9",
+        "count" : "38"
+      }, {
+        "item" : "105",
+        "count" : "38"
+      }, {
+        "item" : "91.3",
+        "count" : "37"
+      }, {
+        "item" : "89.2",
+        "count" : "37"
+      }, {
+        "item" : "92.5",
+        "count" : "32"
+      }, {
+        "item" : "66.8",
+        "count" : "30"
+      }, {
+        "item" : "93.6",
+        "count" : "30"
+      }, {
+        "item" : "95.1",
+        "count" : "30"
+      }, {
+        "item" : "77.5",
+        "count" : "29"
+      } ],
+      "smallest" : "0",
+      "count" : "11690",
+      "cardinality" : "1645"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  } ],
+  "grants" : [ {
+    "inherited" : false,
+    "type" : "viewer",
+    "flags" : [ "public" ]
+  } ],
+  "license" : {
+    "name" : "Public Domain"
+  },
+  "metadata" : {
+    "custom_fields" : {
+      "Stories Categories" : {
+        "High Level Themes" : "7. Statistical analyses"
+      }
+    },
+    "availableDisplayTypes" : [ "table", "fatrow", "page" ]
+  },
+  "owner" : {
+    "id" : "qq3e-czsu",
+    "displayName" : "Yves Durinck",
+    "screenName" : "Yves Durinck",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "query" : { },
+  "rights" : [ "read" ],
+  "tableAuthor" : {
+    "id" : "qq3e-czsu",
+    "displayName" : "Yves Durinck",
+    "screenName" : "Yves Durinck",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula" ]
+  },
+  "flags" : [ "default", "ownerMayBeContacted", "restorable", "restorePossibleForType" ]
+}

@@ -1,0 +1,1241 @@
+{
+  "id" : "dau5-jiss",
+  "name" : "UntappedPotentialRenewableEnergy",
+  "assetType" : "dataset",
+  "attribution" : "REGIO-B1-PAPERS@ec.europa.eu",
+  "averageRating" : 0,
+  "category" : "Other",
+  "createdAt" : 1709539877,
+  "description" : "This dataset contains the current production and the untapped potential of renewable energy from solar and wind by EU NUTS3 region. The current production is based on data for the year 2019. The untapped potential estimates how much renewable energy can be generated on available land. \n\nSource:  \"Renewable Energy production and potential in EU Rural Areas\" (2024), Perpiña Castillo, C., Hormigos Feliu, C., Dorati, C., Kakoulaki, G., Peeters, L., Quaranta, E., Taylor, N., Uihlein, A., Auteri, D. and Dijkstra, L. (2024), Publications Office of the European Union, Luxembourg, doi:10.2760/458970 (online), JRC135612.\n\nCheck the user guide for tips on connecting to this open dataset: https://cohesiondata.ec.europa.eu/stories/s/Cohesion-Open-Data-User-Guide/cf5w-2b26",
+  "diciBackend" : false,
+  "displayType" : "table",
+  "downloadCount" : 159,
+  "hideFromCatalog" : false,
+  "hideFromDataJson" : false,
+  "licenseId" : "CC0_10",
+  "locked" : false,
+  "newBackend" : true,
+  "numberOfComments" : 0,
+  "oid" : 2889320,
+  "provenance" : "official",
+  "publicationAppendEnabled" : false,
+  "publicationDate" : 1709540020,
+  "publicationGroup" : 1934080,
+  "publicationStage" : "published",
+  "rowsUpdatedAt" : 1709540014,
+  "rowsUpdatedBy" : "rfdz-pjy4",
+  "tableId" : 1934080,
+  "totalTimesRated" : 0,
+  "viewCount" : 477,
+  "viewLastModified" : 1719257733,
+  "viewType" : "tabular",
+  "approvals" : [ {
+    "reviewedAt" : 1719238587,
+    "reviewedAutomatically" : false,
+    "state" : "approved",
+    "submissionId" : 1442365,
+    "submissionObject" : "public_audience_request",
+    "submissionOutcome" : "change_audience",
+    "submittedAt" : 1719238390,
+    "targetAudience" : "public",
+    "workflowId" : 133,
+    "reviewer" : {
+      "id" : "p5rd-ygin",
+      "displayName" : "John W"
+    },
+    "submissionDetails" : {
+      "permissionType" : "read"
+    },
+    "submissionOutcomeApplication" : {
+      "endedAt" : 1719238587,
+      "failureCount" : 0,
+      "startedAt" : 1719238587,
+      "status" : "success"
+    },
+    "submitter" : {
+      "id" : "p5rd-ygin",
+      "displayName" : "John W"
+    }
+  } ],
+  "clientContext" : {
+    "clientContextVariables" : [ ],
+    "inheritedVariables" : { }
+  },
+  "columns" : [ {
+    "id" : 25694356,
+    "name" : "Country",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "country",
+    "position" : 1,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15672062,
+    "cachedContents" : {
+      "non_null" : "1161",
+      "largest" : "SK",
+      "null" : "0",
+      "top" : [ {
+        "item" : "DE",
+        "count" : "401"
+      }, {
+        "item" : "IT",
+        "count" : "107"
+      }, {
+        "item" : "FR",
+        "count" : "96"
+      }, {
+        "item" : "PL",
+        "count" : "73"
+      }, {
+        "item" : "ES",
+        "count" : "59"
+      }, {
+        "item" : "EL",
+        "count" : "52"
+      }, {
+        "item" : "BE",
+        "count" : "44"
+      }, {
+        "item" : "RO",
+        "count" : "42"
+      }, {
+        "item" : "NL",
+        "count" : "40"
+      }, {
+        "item" : "AT",
+        "count" : "34"
+      }, {
+        "item" : "BG",
+        "count" : "28"
+      }, {
+        "item" : "PT",
+        "count" : "25"
+      }, {
+        "item" : "HR",
+        "count" : "21"
+      }, {
+        "item" : "SE",
+        "count" : "21"
+      }, {
+        "item" : "HU",
+        "count" : "20"
+      }, {
+        "item" : "FI",
+        "count" : "19"
+      }, {
+        "item" : "CZ",
+        "count" : "14"
+      }, {
+        "item" : "SI",
+        "count" : "12"
+      }, {
+        "item" : "DK",
+        "count" : "11"
+      }, {
+        "item" : "LT",
+        "count" : "10"
+      } ],
+      "smallest" : "AT",
+      "count" : "1161",
+      "cardinality" : "27"
+    },
+    "format" : { }
+  }, {
+    "id" : 25694357,
+    "name" : "NUTS2 ID",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "nuts2_id",
+    "position" : 2,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15672063,
+    "cachedContents" : {
+      "non_null" : "1161",
+      "largest" : "SK04",
+      "null" : "0",
+      "top" : [ {
+        "item" : "DEG0",
+        "count" : "23"
+      }, {
+        "item" : "DE21",
+        "count" : "23"
+      }, {
+        "item" : "DEB3",
+        "count" : "20"
+      }, {
+        "item" : "DE40",
+        "count" : "18"
+      }, {
+        "item" : "DE94",
+        "count" : "17"
+      }, {
+        "item" : "DEF0",
+        "count" : "15"
+      }, {
+        "item" : "DEA1",
+        "count" : "15"
+      }, {
+        "item" : "DEE0",
+        "count" : "14"
+      }, {
+        "item" : "DE71",
+        "count" : "14"
+      }, {
+        "item" : "DE27",
+        "count" : "14"
+      }, {
+        "item" : "DE24",
+        "count" : "13"
+      }, {
+        "item" : "DE11",
+        "count" : "13"
+      }, {
+        "item" : "ITC4",
+        "count" : "12"
+      }, {
+        "item" : "DE12",
+        "count" : "12"
+      }, {
+        "item" : "DE25",
+        "count" : "12"
+      }, {
+        "item" : "DE26",
+        "count" : "12"
+      }, {
+        "item" : "DE22",
+        "count" : "12"
+      }, {
+        "item" : "DEA5",
+        "count" : "12"
+      }, {
+        "item" : "DEB1",
+        "count" : "11"
+      }, {
+        "item" : "DE93",
+        "count" : "11"
+      } ],
+      "smallest" : "AT11",
+      "count" : "1161",
+      "cardinality" : "237"
+    },
+    "format" : { }
+  }, {
+    "id" : 25694358,
+    "name" : "Level of development",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "level_of_development",
+    "position" : 3,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15672064,
+    "cachedContents" : {
+      "non_null" : "1161",
+      "largest" : "Transition regions",
+      "null" : "0",
+      "top" : [ {
+        "item" : "More developed regions",
+        "count" : "538"
+      }, {
+        "item" : "Less developed regions",
+        "count" : "322"
+      }, {
+        "item" : "Transition regions",
+        "count" : "301"
+      } ],
+      "smallest" : "Less developed regions",
+      "count" : "1161",
+      "cardinality" : "3"
+    },
+    "format" : { }
+  }, {
+    "id" : 25694359,
+    "name" : "NUTS3 ID",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "nuts3_id",
+    "position" : 4,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15672065,
+    "cachedContents" : {
+      "non_null" : "1161",
+      "largest" : "SK042",
+      "null" : "0",
+      "top" : [ {
+        "item" : "DEG04",
+        "count" : "1"
+      }, {
+        "item" : "NL412",
+        "count" : "1"
+      }, {
+        "item" : "AT321",
+        "count" : "1"
+      }, {
+        "item" : "ITF22",
+        "count" : "1"
+      }, {
+        "item" : "DEB12",
+        "count" : "1"
+      }, {
+        "item" : "DE936",
+        "count" : "1"
+      }, {
+        "item" : "ITI44",
+        "count" : "1"
+      }, {
+        "item" : "AT124",
+        "count" : "1"
+      }, {
+        "item" : "PT170",
+        "count" : "1"
+      }, {
+        "item" : "ES422",
+        "count" : "1"
+      }, {
+        "item" : "SE213",
+        "count" : "1"
+      }, {
+        "item" : "PT11D",
+        "count" : "1"
+      }, {
+        "item" : "FI1D1",
+        "count" : "1"
+      }, {
+        "item" : "NL342",
+        "count" : "1"
+      }, {
+        "item" : "DEG0K",
+        "count" : "1"
+      }, {
+        "item" : "DE239",
+        "count" : "1"
+      }, {
+        "item" : "DE21C",
+        "count" : "1"
+      }, {
+        "item" : "ITI16",
+        "count" : "1"
+      }, {
+        "item" : "DEB17",
+        "count" : "1"
+      }, {
+        "item" : "ITF14",
+        "count" : "1"
+      } ],
+      "smallest" : "AT111",
+      "count" : "1161",
+      "cardinality" : "1161"
+    },
+    "format" : { }
+  }, {
+    "id" : 25694360,
+    "name" : "Name of the region",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "name_of_the_region",
+    "position" : 5,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15672066,
+    "cachedContents" : {
+      "non_null" : "1161",
+      "largest" : "Żyrardowski",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Indre-et-Loire",
+        "count" : "1"
+      }, {
+        "item" : "Altötting",
+        "count" : "1"
+      }, {
+        "item" : "Heidenheim",
+        "count" : "1"
+      }, {
+        "item" : "Schwäbisch Hall",
+        "count" : "1"
+      }, {
+        "item" : "Wesermarsch",
+        "count" : "1"
+      }, {
+        "item" : "Pardubický kraj",
+        "count" : "1"
+      }, {
+        "item" : "Tenerife",
+        "count" : "1"
+      }, {
+        "item" : "Border",
+        "count" : "1"
+      }, {
+        "item" : "Groot-Rijnmond",
+        "count" : "1"
+      }, {
+        "item" : "Splitsko-dalmatinska županija",
+        "count" : "1"
+      }, {
+        "item" : "Nordfriesland",
+        "count" : "1"
+      }, {
+        "item" : "Imperia",
+        "count" : "1"
+      }, {
+        "item" : "Kainuu",
+        "count" : "1"
+      }, {
+        "item" : "Dresden, Kreisfreie Stadt",
+        "count" : "1"
+      }, {
+        "item" : "Prignitz",
+        "count" : "1"
+      }, {
+        "item" : "Yonne",
+        "count" : "1"
+      }, {
+        "item" : "Ourense",
+        "count" : "1"
+      }, {
+        "item" : "Heinsberg",
+        "count" : "1"
+      }, {
+        "item" : "Vicenza",
+        "count" : "1"
+      }, {
+        "item" : "Krośnieński",
+        "count" : "1"
+      } ],
+      "smallest" : "Achaia",
+      "count" : "1161",
+      "cardinality" : "1161"
+    },
+    "format" : { }
+  }, {
+    "id" : 25694361,
+    "name" : "Code and name of the region",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "code_and_name_of_the_region",
+    "position" : 6,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15672067,
+    "cachedContents" : {
+      "non_null" : "1161",
+      "largest" : "SK042-Košický kraj",
+      "null" : "0",
+      "top" : [ {
+        "item" : "DK042-Østjylland",
+        "count" : "1"
+      }, {
+        "item" : "DE40F-Prignitz",
+        "count" : "1"
+      }, {
+        "item" : "DE937-Rotenburg (Wümme)",
+        "count" : "1"
+      }, {
+        "item" : "DE276-Augsburg, Landkreis",
+        "count" : "1"
+      }, {
+        "item" : "FRK24-Isère",
+        "count" : "1"
+      }, {
+        "item" : "PL922-Ciechanowski",
+        "count" : "1"
+      }, {
+        "item" : "ITI14-Firenze",
+        "count" : "1"
+      }, {
+        "item" : "RO313-Dâmboviţa",
+        "count" : "1"
+      }, {
+        "item" : "PT16D-Região de Aveiro",
+        "count" : "1"
+      }, {
+        "item" : "ITC41-Varese",
+        "count" : "1"
+      }, {
+        "item" : "DE925-Hildesheim",
+        "count" : "1"
+      }, {
+        "item" : "DEA12-Duisburg, Kreisfreie Stadt",
+        "count" : "1"
+      }, {
+        "item" : "DE252-Erlangen, Kreisfreie Stadt",
+        "count" : "1"
+      }, {
+        "item" : "ITC47-Brescia",
+        "count" : "1"
+      }, {
+        "item" : "DEA56-Ennepe-Ruhr-Kreis",
+        "count" : "1"
+      }, {
+        "item" : "DE94B-Grafschaft Bentheim",
+        "count" : "1"
+      }, {
+        "item" : "DE131-Freiburg im Breisgau, Stadtkreis",
+        "count" : "1"
+      }, {
+        "item" : "ITC4A-Cremona",
+        "count" : "1"
+      }, {
+        "item" : "DE91B-Wolfenbüttel",
+        "count" : "1"
+      }, {
+        "item" : "FRF34-Vosges",
+        "count" : "1"
+      } ],
+      "smallest" : "AT111-Mittelburgenland",
+      "count" : "1161",
+      "cardinality" : "1161"
+    },
+    "format" : { }
+  }, {
+    "id" : 25694362,
+    "name" : "URBN_TYPE",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "urbn_type",
+    "position" : 7,
+    "renderTypeName" : "number",
+    "tableColumnId" : 15672068,
+    "cachedContents" : {
+      "non_null" : "1161",
+      "largest" : "3",
+      "null" : "0",
+      "top" : [ {
+        "item" : "2",
+        "count" : "509"
+      }, {
+        "item" : "3",
+        "count" : "412"
+      }, {
+        "item" : "1",
+        "count" : "240"
+      } ],
+      "smallest" : "1",
+      "count" : "1161",
+      "cardinality" : "3"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 25694363,
+    "name" : "Urban-rural typology",
+    "dataTypeName" : "text",
+    "description" : "",
+    "fieldName" : "urban_rural_typology",
+    "position" : 8,
+    "renderTypeName" : "text",
+    "tableColumnId" : 15672069,
+    "cachedContents" : {
+      "non_null" : "1161",
+      "largest" : "Predominantly urban regions",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Intermediate regions",
+        "count" : "509"
+      }, {
+        "item" : "Predominantly rural regions",
+        "count" : "412"
+      }, {
+        "item" : "Predominantly urban regions",
+        "count" : "240"
+      } ],
+      "smallest" : "Intermediate regions",
+      "count" : "1161",
+      "cardinality" : "3"
+    },
+    "format" : { }
+  }, {
+    "id" : 25694364,
+    "name" : "Total untapped potential (terawatt-hours)",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "total_untapped_potential",
+    "position" : 9,
+    "renderTypeName" : "number",
+    "tableColumnId" : 15672070,
+    "cachedContents" : {
+      "non_null" : "1161",
+      "largest" : "295.1085377",
+      "null" : "0",
+      "top" : [ {
+        "item" : "15.30905081",
+        "count" : "1"
+      }, {
+        "item" : "0.6949169208",
+        "count" : "1"
+      }, {
+        "item" : "0.6808526387999999",
+        "count" : "1"
+      }, {
+        "item" : "37.60103119",
+        "count" : "1"
+      }, {
+        "item" : "23.807920199999998",
+        "count" : "1"
+      }, {
+        "item" : "1.078666313",
+        "count" : "1"
+      }, {
+        "item" : "6.09574742",
+        "count" : "1"
+      }, {
+        "item" : "2.7906659279999997",
+        "count" : "1"
+      }, {
+        "item" : "3.041435434",
+        "count" : "1"
+      }, {
+        "item" : "7.5765013770000005",
+        "count" : "1"
+      }, {
+        "item" : "0.364713194",
+        "count" : "1"
+      }, {
+        "item" : "11.01940093",
+        "count" : "1"
+      }, {
+        "item" : "16.99263819",
+        "count" : "1"
+      }, {
+        "item" : "0.36508653490000004",
+        "count" : "1"
+      }, {
+        "item" : "151.13877440000002",
+        "count" : "1"
+      }, {
+        "item" : "111.9875426",
+        "count" : "1"
+      }, {
+        "item" : "6.777109436",
+        "count" : "1"
+      }, {
+        "item" : "0.5435053123",
+        "count" : "1"
+      }, {
+        "item" : "0.2125734082",
+        "count" : "1"
+      }, {
+        "item" : "0.6296751278",
+        "count" : "1"
+      } ],
+      "smallest" : "0.00008001234657",
+      "count" : "1161",
+      "cardinality" : "1161"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 25694365,
+    "name" : "Total technical potential  (terawatt-hours)",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "total_technical_potential",
+    "position" : 10,
+    "renderTypeName" : "number",
+    "tableColumnId" : 15672071,
+    "cachedContents" : {
+      "non_null" : "1161",
+      "largest" : "295.2031939",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0.2255616851",
+        "count" : "1"
+      }, {
+        "item" : "0.2072031911",
+        "count" : "1"
+      }, {
+        "item" : "0.9981681302000001",
+        "count" : "1"
+      }, {
+        "item" : "0.45198059830000004",
+        "count" : "1"
+      }, {
+        "item" : "14.07349985",
+        "count" : "1"
+      }, {
+        "item" : "0.9260669009",
+        "count" : "1"
+      }, {
+        "item" : "0.4292931582",
+        "count" : "1"
+      }, {
+        "item" : "33.99710253",
+        "count" : "1"
+      }, {
+        "item" : "3.1511478339999996",
+        "count" : "1"
+      }, {
+        "item" : "0.7567703440000001",
+        "count" : "1"
+      }, {
+        "item" : "1.621929986",
+        "count" : "1"
+      }, {
+        "item" : "10.9058443",
+        "count" : "1"
+      }, {
+        "item" : "9.635816046",
+        "count" : "1"
+      }, {
+        "item" : "0.2081200141",
+        "count" : "1"
+      }, {
+        "item" : "2.649802305",
+        "count" : "1"
+      }, {
+        "item" : "0.3962153506",
+        "count" : "1"
+      }, {
+        "item" : "0.4147817186",
+        "count" : "1"
+      }, {
+        "item" : "2.2869156860000004",
+        "count" : "1"
+      }, {
+        "item" : "6.112785995",
+        "count" : "1"
+      }, {
+        "item" : "0.8232658179",
+        "count" : "1"
+      } ],
+      "smallest" : "0.00008001234657",
+      "count" : "1161",
+      "cardinality" : "1161"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 25694366,
+    "name" : "Total current production  (terawatt-hours)",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "total_current_production",
+    "position" : 11,
+    "renderTypeName" : "number",
+    "tableColumnId" : 15672072,
+    "cachedContents" : {
+      "non_null" : "1161",
+      "largest" : "18.82047014",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0.000111",
+        "count" : "2"
+      }, {
+        "item" : "0.4628764795",
+        "count" : "1"
+      }, {
+        "item" : "0.1467811529",
+        "count" : "1"
+      }, {
+        "item" : "1.388346614",
+        "count" : "1"
+      }, {
+        "item" : "0.010769",
+        "count" : "1"
+      }, {
+        "item" : "6.826694858",
+        "count" : "1"
+      }, {
+        "item" : "0.1218359451",
+        "count" : "1"
+      }, {
+        "item" : "0.3802484687",
+        "count" : "1"
+      }, {
+        "item" : "0.26472479969999996",
+        "count" : "1"
+      }, {
+        "item" : "0.3381050537",
+        "count" : "1"
+      }, {
+        "item" : "1.517871143",
+        "count" : "1"
+      }, {
+        "item" : "3.67641256",
+        "count" : "1"
+      }, {
+        "item" : "0.11933089549999999",
+        "count" : "1"
+      }, {
+        "item" : "3.227131951",
+        "count" : "1"
+      }, {
+        "item" : "0.143048",
+        "count" : "1"
+      }, {
+        "item" : "0.018057",
+        "count" : "1"
+      }, {
+        "item" : "0.159374",
+        "count" : "1"
+      }, {
+        "item" : "0.5997607672",
+        "count" : "1"
+      }, {
+        "item" : "0.588271",
+        "count" : "1"
+      }, {
+        "item" : "0.3439824138",
+        "count" : "1"
+      } ],
+      "smallest" : "0.000073",
+      "count" : "1161",
+      "cardinality" : "1160"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 25694367,
+    "name" : "Area (km2)",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "area_km2",
+    "position" : 12,
+    "renderTypeName" : "number",
+    "tableColumnId" : 15672073,
+    "cachedContents" : {
+      "non_null" : "1161",
+      "largest" : "105208",
+      "null" : "0",
+      "top" : [ {
+        "item" : "71",
+        "count" : "3"
+      }, {
+        "item" : "1449",
+        "count" : "3"
+      }, {
+        "item" : "293",
+        "count" : "3"
+      }, {
+        "item" : "695",
+        "count" : "3"
+      }, {
+        "item" : "4465",
+        "count" : "3"
+      }, {
+        "item" : "77",
+        "count" : "3"
+      }, {
+        "item" : "1230",
+        "count" : "3"
+      }, {
+        "item" : "1168",
+        "count" : "3"
+      }, {
+        "item" : "105",
+        "count" : "3"
+      }, {
+        "item" : "815",
+        "count" : "2"
+      }, {
+        "item" : "1249",
+        "count" : "2"
+      }, {
+        "item" : "273",
+        "count" : "2"
+      }, {
+        "item" : "738",
+        "count" : "2"
+      }, {
+        "item" : "1515",
+        "count" : "2"
+      }, {
+        "item" : "88",
+        "count" : "2"
+      }, {
+        "item" : "1828",
+        "count" : "2"
+      }, {
+        "item" : "63",
+        "count" : "2"
+      }, {
+        "item" : "818",
+        "count" : "2"
+      }, {
+        "item" : "968",
+        "count" : "2"
+      }, {
+        "item" : "2030",
+        "count" : "2"
+      } ],
+      "smallest" : "14",
+      "count" : "1161",
+      "cardinality" : "1059"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 25694368,
+    "name" : "Total untapped potential (megawatt-hours/km2)",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "total_untapped_potential_1",
+    "position" : 13,
+    "renderTypeName" : "number",
+    "tableColumnId" : 15672074,
+    "cachedContents" : {
+      "non_null" : "1161",
+      "largest" : "50986.27119903248",
+      "null" : "0",
+      "top" : [ {
+        "item" : "1195.8605593419504",
+        "count" : "1"
+      }, {
+        "item" : "0.06320474451807229",
+        "count" : "1"
+      }, {
+        "item" : "672.0574957006369",
+        "count" : "1"
+      }, {
+        "item" : "537.5609272727273",
+        "count" : "1"
+      }, {
+        "item" : "848.4085560224089",
+        "count" : "1"
+      }, {
+        "item" : "751.5586189389619",
+        "count" : "1"
+      }, {
+        "item" : "2750.201433774834",
+        "count" : "1"
+      }, {
+        "item" : "558.0426893095769",
+        "count" : "1"
+      }, {
+        "item" : "668.5722981504315",
+        "count" : "1"
+      }, {
+        "item" : "24933.725411203814",
+        "count" : "1"
+      }, {
+        "item" : "40316.33693169093",
+        "count" : "1"
+      }, {
+        "item" : "1934.1710705669482",
+        "count" : "1"
+      }, {
+        "item" : "13387.170885167463",
+        "count" : "1"
+      }, {
+        "item" : "4839.005612722171",
+        "count" : "1"
+      }, {
+        "item" : "876.5733956521739",
+        "count" : "1"
+      }, {
+        "item" : "862.2129049773756",
+        "count" : "1"
+      }, {
+        "item" : "711.9249111524163",
+        "count" : "1"
+      }, {
+        "item" : "733.3429623924942",
+        "count" : "1"
+      }, {
+        "item" : "4179.0317813225065",
+        "count" : "1"
+      }, {
+        "item" : "2112.362879474754",
+        "count" : "1"
+      } ],
+      "smallest" : "0.06320474451807229",
+      "count" : "1161",
+      "cardinality" : "1161"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 25694369,
+    "name" : "Total technical potential (megawatt-hours/km2)",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "total_technical_potential_1",
+    "position" : 14,
+    "renderTypeName" : "number",
+    "tableColumnId" : 15672075,
+    "cachedContents" : {
+      "non_null" : "1161",
+      "largest" : "174746.06651879346",
+      "null" : "0",
+      "top" : [ {
+        "item" : "105.63021044556514",
+        "count" : "1"
+      }, {
+        "item" : "667.818177081189",
+        "count" : "1"
+      }, {
+        "item" : "9271.961597754535",
+        "count" : "1"
+      }, {
+        "item" : "2416.5140827217924",
+        "count" : "1"
+      }, {
+        "item" : "1452.4779516737995",
+        "count" : "1"
+      }, {
+        "item" : "2920.528015999021",
+        "count" : "1"
+      }, {
+        "item" : "2946.685156416206",
+        "count" : "1"
+      }, {
+        "item" : "8273.57186228963",
+        "count" : "1"
+      }, {
+        "item" : "6855.7427714250625",
+        "count" : "1"
+      }, {
+        "item" : "586.6859851558124",
+        "count" : "1"
+      }, {
+        "item" : "1911.5149392659155",
+        "count" : "1"
+      }, {
+        "item" : "8204.418477716528",
+        "count" : "1"
+      }, {
+        "item" : "3100.3748404736803",
+        "count" : "1"
+      }, {
+        "item" : "3328.25094920351",
+        "count" : "1"
+      }, {
+        "item" : "4047.7114210993027",
+        "count" : "1"
+      }, {
+        "item" : "2454.98330596409",
+        "count" : "1"
+      }, {
+        "item" : "3716.468325376261",
+        "count" : "1"
+      }, {
+        "item" : "5817.807872571587",
+        "count" : "1"
+      }, {
+        "item" : "239.0367088581088",
+        "count" : "1"
+      }, {
+        "item" : "931.0218193316288",
+        "count" : "1"
+      } ],
+      "smallest" : "14.000000000000002",
+      "count" : "1161",
+      "cardinality" : "1161"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 25694370,
+    "name" : "Total current production (megawatt-hours/km2)",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "total_current_production_1",
+    "position" : 15,
+    "renderTypeName" : "number",
+    "tableColumnId" : 15672076,
+    "cachedContents" : {
+      "non_null" : "1161",
+      "largest" : "15658.416913423769",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0.15729512088543218",
+        "count" : "1"
+      }, {
+        "item" : "443.03286948486976",
+        "count" : "1"
+      }, {
+        "item" : "21.657863292495115",
+        "count" : "1"
+      }, {
+        "item" : "44.34332121429375",
+        "count" : "1"
+      }, {
+        "item" : "75.56829493298925",
+        "count" : "1"
+      }, {
+        "item" : "60.942516159736115",
+        "count" : "1"
+      }, {
+        "item" : "251.78495258459145",
+        "count" : "1"
+      }, {
+        "item" : "305.39555013493504",
+        "count" : "1"
+      }, {
+        "item" : "32.578217520350904",
+        "count" : "1"
+      }, {
+        "item" : "517.2591903922846",
+        "count" : "1"
+      }, {
+        "item" : "15.622563715247631",
+        "count" : "1"
+      }, {
+        "item" : "158.557941569286",
+        "count" : "1"
+      }, {
+        "item" : "34.419948810671784",
+        "count" : "1"
+      }, {
+        "item" : "117.41244513675595",
+        "count" : "1"
+      }, {
+        "item" : "225.88410678204912",
+        "count" : "1"
+      }, {
+        "item" : "382.85529952079355",
+        "count" : "1"
+      }, {
+        "item" : "198.28052913899467",
+        "count" : "1"
+      }, {
+        "item" : "166.46256091226698",
+        "count" : "1"
+      }, {
+        "item" : "256.779951100506",
+        "count" : "1"
+      }, {
+        "item" : "130.5709015743936",
+        "count" : "1"
+      } ],
+      "smallest" : "0.011670560223295871",
+      "count" : "1161",
+      "cardinality" : "1161"
+    },
+    "format" : {
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  }, {
+    "id" : 25694371,
+    "name" : "Contribution to the total untapped potential",
+    "dataTypeName" : "number",
+    "description" : "",
+    "fieldName" : "contribution_to_the_total",
+    "position" : 16,
+    "renderTypeName" : "number",
+    "tableColumnId" : 15672077,
+    "cachedContents" : {
+      "non_null" : "1161",
+      "largest" : "0.023637",
+      "null" : "0",
+      "top" : [ {
+        "item" : "0.000044",
+        "count" : "16"
+      }, {
+        "item" : "0.000006",
+        "count" : "16"
+      }, {
+        "item" : "0.000011",
+        "count" : "13"
+      }, {
+        "item" : "0.000027",
+        "count" : "12"
+      }, {
+        "item" : "0.000028",
+        "count" : "12"
+      }, {
+        "item" : "0.00003",
+        "count" : "12"
+      }, {
+        "item" : "0.000025",
+        "count" : "11"
+      }, {
+        "item" : "0.000048",
+        "count" : "11"
+      }, {
+        "item" : "0.000045",
+        "count" : "10"
+      }, {
+        "item" : "0.00002",
+        "count" : "10"
+      }, {
+        "item" : "0.000043",
+        "count" : "10"
+      }, {
+        "item" : "0.000037",
+        "count" : "10"
+      }, {
+        "item" : "0.000051",
+        "count" : "10"
+      }, {
+        "item" : "0.000024",
+        "count" : "10"
+      }, {
+        "item" : "0.000015",
+        "count" : "10"
+      }, {
+        "item" : "0.0000",
+        "count" : "9"
+      }, {
+        "item" : "0.000059",
+        "count" : "9"
+      }, {
+        "item" : "0.000018",
+        "count" : "9"
+      }, {
+        "item" : "0.000014",
+        "count" : "9"
+      }, {
+        "item" : "0.000036",
+        "count" : "8"
+      } ],
+      "smallest" : "0.0000",
+      "count" : "1161",
+      "cardinality" : "591"
+    },
+    "format" : {
+      "precisionStyle" : "percentage",
+      "percentScale" : "1",
+      "decimalSeparator" : ".",
+      "groupSeparator" : ","
+    }
+  } ],
+  "grants" : [ {
+    "inherited" : false,
+    "type" : "viewer",
+    "flags" : [ "public" ]
+  } ],
+  "license" : {
+    "name" : "Creative Commons 1.0 Universal (Public Domain Dedication)",
+    "logoUrl" : "images/licenses/ccZero.png",
+    "termsLink" : "http://creativecommons.org/publicdomain/zero/1.0/legalcode"
+  },
+  "metadata" : {
+    "custom_fields" : {
+      "Stories Categories" : {
+        "High Level Themes" : "7. Statistical analyses",
+        "EU programme period" : "Not related to periods"
+      }
+    },
+    "availableDisplayTypes" : [ "table", "fatrow", "page" ]
+  },
+  "owner" : {
+    "id" : "rfdz-pjy4",
+    "displayName" : "Joachim Maes",
+    "screenName" : "Joachim Maes",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula", "mayBeStoriesCoOwner" ]
+  },
+  "query" : { },
+  "rights" : [ "read" ],
+  "tableAuthor" : {
+    "id" : "rfdz-pjy4",
+    "displayName" : "Joachim Maes",
+    "screenName" : "Joachim Maes",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula", "mayBeStoriesCoOwner" ]
+  },
+  "flags" : [ "default", "ownerMayBeContacted", "restorable", "restorePossibleForType" ]
+}
