@@ -87,7 +87,7 @@ def main():
     p.add_argument('--cache')
     p.add_argument('--geo', default=os.path.join(USCITA, 'mondo.topo.json'))
     p.add_argument('--eurostat', help='JSON prodotto da estrai_eurostat.py')
-    p.add_argument('--parziali', help='JSON prodotto da estrai_archivi_parziali.py')
+    p.add_argument('--parziali', nargs='+', help='JSON prodotti da estrai_archivi_parziali.py (uno o più file)')
     a = p.parse_args()
     if a.cache and os.path.exists(a.cache):
         d = json.load(open(a.cache))
@@ -172,7 +172,8 @@ def main():
     }
     with open(os.path.join(USCITA, 'meta.json'), 'w') as f:
         json.dump(meta, f, separators=(',', ':'), ensure_ascii=False)
-    print(len(indicatori), 'indicatori;', len(territori), 'territori')
+    n = genera_extra.sintesi(USCITA, indicatori, territori)
+    print(len(indicatori), 'indicatori;', len(territori), 'territori;', n, 'voci di panoramica')
 
 
 # Indicatori del lotto 1 (gli altri 100 sono del lotto 2), dal foglio INDICATORI_WB dell'indice 1
