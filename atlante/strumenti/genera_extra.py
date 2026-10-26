@@ -7,6 +7,7 @@ import json, os, re
 
 TEMA_EU = 'eur'
 NOME_TEMA_EU = 'Demografia regionale europea (Eurostat)'
+NOME_TEMA_EU_ESTESO = 'Regioni europee (Eurostat): popolazione, economia, lavoro, istruzione, salute, società, digitale, turismo, trasporti, agricoltura'
 
 ETA = {'TOTAL': None, 'Y_LT15': 'sotto i 15 anni', 'Y15-64': 'da 15 a 64 anni', 'Y_GE65': 'di 65 anni e oltre', 'UNK': 'età non nota'}
 SESSO = {'T': None, 'M': 'uomini', 'F': 'donne'}
@@ -25,7 +26,7 @@ DATASET_EU = {
 STATI_EU = {'b': 'interruzione della serie', 'c': 'riservato', 'd': 'definizione diversa', 'e': 'stimato',
             'f': 'previsione', 'n': 'non significativo', 'p': 'provvisorio', 'r': 'rivisto', 's': 'stima di Eurostat',
             'u': 'bassa affidabilità', 'z': 'non applicabile', ':': 'non disponibile'}
-ISO3_EXTRA = {'UK': 'GBR', 'EL': 'GRC'}
+ISO3_EXTRA = {'UK': 'GBR', 'EL': 'GRC', 'BA': 'BIH', 'XK': 'XKX', 'UA': 'UKR', 'MD': 'MDA', 'GE': 'GEO', 'AM': 'ARM', 'AZ': 'AZE', 'BY': 'BLR', 'RU': 'RUS'}
 AGG_EU_IT = {'DE_TOT': 'Germania, compresa l’ex RDT (Repubblica democratica tedesca)',
              'EFTA': 'Associazione europea di libero scambio (EFTA)', 'EU27_2007': 'Unione europea a 27 (2007/2013)',
              'EU27_2020': 'Unione europea a 27 (dal 2020)', 'EU28': 'Unione europea a 28 (2013/2020)'}
@@ -120,6 +121,76 @@ def _serie_annuale(per_terr, arrotonda, interi):
     return y0, y1, dati
 
 
+def _voce_eu(uscita, arrotonda, ident, per_terr, nome, unita, ds, en, agg, nome_ds, lotto, extra=None):
+    """Scrive il file di un indicatore Eurostat (chiavi territoriali con prefisso EU:) e ne restituisce la voce di catalogo."""
+    pt = {'EU:' + c: t for c, t in per_terr.items()}
+    interi = all(float(v[0]).is_integer() for t in pt.values() for v in t.values() if v[0] is not None)
+    y = _serie_annuale(pt, arrotonda, interi)
+    if not y:
+        return None
+    y0, y1, dati = y
+    _scrivi(os.path.join(uscita, 'eurostat', ident + '.json'), {'c': ident, 'y0': y0, 'y1': y1, 'd': dati})
+    note = {}
+    for c, t in pt.items():
+        for anno, v in t.items():
+            if v[1]:
+                testo = ', '.join(STATI_EU.get(x, x) for x in v[1].strip())
+                note.setdefault(c, {})[anno] = [testo, None]
+    if note:
+        _scrivi(os.path.join(uscita, 'note', ident + '.json'), note)
+    voce = {'c': ident, 'fam': 'eu', 't': TEMA_EU, 'n': nome, 'u': unita, 'en': en,
+            'def': f'Dataset Eurostat {ds}: {nome_ds}.', 'org': 'Eurostat',
+            'agg': agg, 'url': f'https://ec.europa.eu/eurostat/databrowser/view/{ds}/default/table?lang=it',
+            'y0': y0, 'y1': y1, 'righe': sum(len(t) for t in pt.values()),
+            'valori': sum(1 for t in pt.values() for v in t.values() if v[0] is not None),
+            'interi': interi, 'note': bool(note), 'lotto': lotto, 'ds': ds}
+    if extra:
+        voce.update(extra)
+    return voce
+
+
+def _territori_nuts(d_territori, uscita, territori):
+    """Aggiunge ai territori i codici NUTS e gli aggregati non ancora presenti (nomi dalla fonte)."""
+    geo = json.load(open(os.path.join(uscita, 'nuts.topo.json')))
+    iso3 = {}
+    geometrie = geo['objects'][next(iter(geo['objects']))]['geometries']
+    for g in geometrie:
+        p = g['properties']
+        if p['l'] == 0:
+            iso3[p['id']] = p['c']
+    iso3.update(ISO3_EXTRA)
+    per_id = {t['id']: t for t in territori}
+    con_geo = {g['properties']['id'] for g in geometrie}
+    for cod, nome in sorted(d_territori.items()):
+        if 'EU:' + cod in per_id:
+            continue
+        paese = iso3.get(cod[:2])
+        if not re.match(r'^[A-Z]{2}[0-9A-Z]{0,3}$', cod) or not paese:
+            voce = {'id': 'EU:' + cod, 'n': AGG_EU_IT.get(cod, nome), 'en': nome, 'k': 'agg_eu', 'cod': cod}
+        else:
+            l = len(cod) - 2
+            base = per_id.get(paese)
+            voce = {'id': 'EU:' + cod, 'n': base['n'] if (l == 0 and base) else nome, 'en': nome, 'k': 'nuts', 'l': l,
+                    'p': paese, 'cod': cod, 'r': base.get('r') if base else None, 'g': cod in con_geo}
+        territori.append(voce)
+        per_id[voce['id']] = voce
+
+
+def eurostat_api(percorso, uscita, territori, arrotonda):
+    """Indicatori regionali scaricati dall'API di Eurostat (estrai_eurostat_api.py); restituisce (indicatori, data di scarico)."""
+    d = json.load(open(percorso))
+    _territori_nuts(d['territori'], uscita, territori)
+    indicatori = []
+    for voce in d['indicatori']:
+        v = _voce_eu(uscita, arrotonda, voce['c'], d['serie'].get(voce['c'], {}), voce['n'], voce['u'], voce['ds'], voce['en'],
+                     (d['agg'].get(voce['ds']) or '')[:10], voce.get('titolo', voce['ds']), 'api',
+                     {'def': f"Dataset Eurostat {voce['ds']}: {voce.get('titolo', voce['ds'])}. Selezione: {voce.get('sel', '')}.",
+                      'sel': voce.get('sel', '')})
+        if v:
+            indicatori.append(v)
+    return indicatori, d.get('scaricato', '')
+
+
 def eurostat(percorso, uscita, territori, arrotonda):
     """Aggiunge territori NUTS e indicatori Eurostat; restituisce l'elenco degli indicatori."""
     d = json.load(open(percorso))
@@ -144,31 +215,8 @@ def eurostat(percorso, uscita, territori, arrotonda):
                           'r': base.get('r') if base else None, 'g': cod in con_geo})
 
     def scrivi(ident, per_terr, nome, unita, ds, en, extra=None):
-        # chiavi territoriali con prefisso EU:
-        pt = {'EU:' + c: t for c, t in per_terr.items()}
-        interi = all(float(v[0]).is_integer() for t in pt.values() for v in t.values() if v[0] is not None)
-        y = _serie_annuale(pt, arrotonda, interi)
-        if not y:
-            return None
-        y0, y1, dati = y
-        _scrivi(os.path.join(uscita, 'eurostat', ident + '.json'), {'c': ident, 'y0': y0, 'y1': y1, 'd': dati})
-        note = {}
-        for c, t in pt.items():
-            for anno, v in t.items():
-                if v[1]:
-                    note.setdefault(c, {})[anno] = [STATI_EU.get(v[1].strip(), v[1]), None]
-        if note:
-            _scrivi(os.path.join(uscita, 'note', ident + '.json'), note)
         nome_ds, lotto = DATASET_EU[ds]
-        voce = {'c': ident, 'fam': 'eu', 't': TEMA_EU, 'n': nome, 'u': unita, 'en': en,
-                'def': f'Dataset Eurostat {ds}: {nome_ds}.', 'org': 'Eurostat',
-                'agg': (d['agg'].get(ds) or '')[:10], 'url': f'https://ec.europa.eu/eurostat/databrowser/view/{ds}/default/table?lang=it',
-                'y0': y0, 'y1': y1, 'righe': sum(len(t) for t in pt.values()),
-                'valori': sum(1 for t in pt.values() for v in t.values() if v[0] is not None),
-                'interi': interi, 'note': bool(note), 'lotto': lotto, 'ds': ds}
-        if extra:
-            voce.update(extra)
-        return voce
+        return _voce_eu(uscita, arrotonda, ident, per_terr, nome, unita, ds, en, (d['agg'].get(ds) or '')[:10], nome_ds, lotto, extra)
 
     indicatori = []
     S = d['serie']
@@ -279,7 +327,9 @@ def archivi(percorsi, uscita, territori, arrotonda):
 FLAG_WB = ['SP.POP.TOTL', 'SP.DYN.LE00.IN', 'SP.DYN.TFRT.IN', 'SP.POP.65UP.TO.ZS', 'SH.DYN.MORT', 'SP.URB.TOTL.IN.ZS',
            'EN.POP.DNST', 'IT.NET.USER.ZS', 'EG.ELC.ACCS.ZS', 'EG.FEC.RNEW.ZS', 'EN.GHG.ALL.PC.CE.AR5', 'EN.ATM.PM25.MC.M3',
            'AG.LND.FRST.ZS', 'SE.TER.ENRR', 'SH.MED.PHYS.ZS', 'SH.H2O.SMDW.ZS', 'SE.ADT.LITR.ZS', 'AG.LND.AGRI.ZS']
-FLAG_EU = ['EU_POP_T_TOTAL', 'EU_DENS', 'EU_QUOTA_Y_GE65', 'EU_QUOTA_Y_LT15', 'EU_NATI', 'EU_MORTI', 'EU_TOTFERRT', 'EU_AGEMOTH']
+FLAG_EU = ['EU_POP_T_TOTAL', 'EU_DENS', 'EU_QUOTA_Y_GE65', 'EU_STR_ETAMEDIANA', 'EU_NATI', 'EU_MORTI', 'EU_TOTFERRT', 'EU_DIN_MIGRATORIO',
+           'EU_ECO_PIL_AB', 'EU_ECO_PIL_UE', 'EU_ECO_REDDITO', 'EU_LAV_OCC2064', 'EU_LAV_DIS', 'EU_LAV_NEET', 'EU_IST_LAUREATI',
+           'EU_SAL_VITA', 'EU_SOC_POVESCL', 'EU_DIG_QUOTID', 'EU_TUR_NOTTI', 'EU_TRA_MORTI', 'EU_RIC_SPESA', 'EU_IMP_ATTIVE']
 SPARK_ANNI = 30
 
 

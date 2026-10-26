@@ -1,0 +1,24 @@
+AR_THS_HA	Area (sown/harvested/production) - thousand hectares
+HPRD_THS_T	Harvested production - thousand tonnes
+MAR_THS_HA	Main area - thousand hectares
+HUMD_PC	Humidity - percentage
+SUG_SB_PC	Sugar content of sugar beet - percentage
+HUMD_EU_PC	EU standard humidity - percentage
+HPRD_HUMD_EU_THS_T	Harvested production in EU standard humidity - thousand tonnes
+YLD_T_HA	Yield - tonnes per hectare
+YLD_HUMD_EU_T_HA	Yield in EU standard humidity - tonnes per hectare
+AR_ORGC_HA	Certified organic area (sown/harvested/production) - hectare
+HPRD_ORGC_T	Certified organic harvested production - tonne
+MAR_ORGC_HA	Main certified organic area - hectare
+MAR_UCONV_ORG_HA	Main area under conversion to organic - hectare
+MAR_ORGC_UCONV_HA	Main area certified or under conversion to organic - hectare
+HPRD_ORGC_HUMD_EU_T	Certified organic harvested production in EU standard humidity - tonne
+YLD_ORGC_T_HA	Certified organic yield - tonnes per hectare
+YLD_ORGC_HUMD_EU_T_HA	Certified organic yield in EU standard humidity - tonnes per hectare
+AR_ORGC_PC	Certified organic area - percentage of total area
+MAR_ORGC_PC	Main certified organic area - percentage of main area
+MAR_UCONV_ORG_PC	Main area under conversion to organic - percentage of main area
+MAR_ORGC_UCONV_PC	Main area certified or under conversion to organic - percentage of main area
+HPRD_ORGC_PC	Certified organic harvested production - percentage of total harvested production
+HOL	Number of holders (1000)
+ANI	Number of animals (1000)

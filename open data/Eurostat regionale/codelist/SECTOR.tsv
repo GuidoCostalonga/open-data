@@ -1,0 +1,78 @@
+S1_S2	Total economy and rest of the world
+S1	Total economy
+S1D	Non-educational private sector
+S1D_OTH	Other non-educational private entities
+S1N	Not sectorised
+S11_S12_S14_S15_S2	Other domestic sectors than general government and rest of the world
+S11_S14_S15	Non-financial corporations; households; non-profit institutions serving households
+S1V	Non-financial corporations, households and non-profit institutions serving households
+S11_S12	Corporations
+S11	Non-financial corporations
+S11DO	Domestically controlled non-financial corporations
+S11001	Public non-financial corporations
+S110011	Public non-financial corporations, which are part of domestic multinationals
+S11002	National private non-financial corporations
+S110021	National private non-financial corporations, which are part of domestic multinationals
+S11003	Foreign controlled non-financial corporations
+S124-S129	Other financial corporations (ESA 2010 subsectors S.124 + S.125 + S.126 + S.127 + S.128 + S.129)
+S12	Financial corporations
+S12DO	Domestically controlled financial corporations
+S12001	Public financial corporations
+S120011	Public financial corporations, which are part of domestic multinationals
+S12002	National private financial corporations
+S120021	National private financial corporations, which are part of domestic multinationals
+S12003	Foreign controlled financial corporations
+S121_S122_S123	Monetary financial institutions
+S12K	Monetary financial institutions (MFI)
+S121	Central bank
+S122	Deposit taking corporations, except the central bank
+S122_S123	Deposit-taking corporations except the central bank and money market funds
+S12T	Monetary Financial Institutions (MFI) other than central bank
+S125_S126_S127	Other financial intermediaries (except ICPFs), financial auxiliaries, CFIs, and money lenders
+S123	Money market funds
+S124	Non-MMF investment funds
+S124_TO_S127	Other financial institutions (financial corporations other than MFIs, insurance corporations and pension funds)
+S125	Other financial intermediaries, except insurance corporations and pension funds
+S126	Financial auxiliaries
+S127	Captive financial institutions and money lenders
+S128	Insurance corporations
+S128_S129	Insurance corporations and pension funds
+S12Q	Insurance corporations and pension funds
+S129	Pension funds
+S12M	Financial corporations other than MFIs
+S12R	Other financial corporations
+S12O	Other financial institutions
+S13_S212	General government; institutions of the EU
+S13	General government
+S1311	Central government
+S13111	Budgetary central government
+S13112	Central government other than budgetary central government
+S1312_S1313	State and local government
+S1312	State government
+S1313	Local government
+S1314	Social security funds
+S1315	European institutions and bodies
+S13_S15	General government; non-profit institutions serving households
+S13_BC	Base case
+S13_SC1	Base case minus 1% change in discount rate
+S13_SC2	Base case plus 1% change in discount rate
+S1X	Monetary authorities
+S14_S15	Households; non-profit institutions serving households
+S14	Households
+S15	Non-profit institutions serving households
+S1M	Households and non-profit institutions serving households
+S1P	Other sectors than MFIs and general government
+S1A	Affiliates
+S1W	Other sectors than general government
+S1Z	Sectors other than deposit-taking corporations and general government
+S2	Rest of the world
+S2I	Rest of the world - of which: intra Euro area
+S21	European Union
+S212	Institutions and bodies of the European Union
+S22	Third countries and international organisations
+ORG_INTL	International organisations
+TOT_SEC	Total
+PUB	Public institutions
+PRV	Private institutions
+PRV_DEP	Private government dependant institutions
+PRV_IND	Private government independent institutions
