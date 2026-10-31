@@ -48,3 +48,15 @@ Aprire `index.html` nel browser, oppure:
 ```bash
 cd sito-scoccimarro && python3 -m http.server 8000
 ```
+
+## Pubblicazione protetta su costalonga.org/scocci
+
+L'anteprima è pubblicata nel repository `GuidoCostalonga/GuidoCostalonga.github.io`, cartella `scocci/`. GitHub Pages non consente password lato server: ogni pagina viene quindi cifrata (AES-GCM a 256 bit, chiave ricavata dalla parola chiave con PBKDF2-SHA256, 600.000 iterazioni) e decifrata nel browser. La parola chiave non è scritta in nessun file. Fogli di stile e immagini restano in chiaro.
+
+Per ripubblicare dopo una modifica:
+
+```bash
+PAROLA_CHIAVE='...' node strumenti/proteggi.mjs . ../../GuidoCostalonga.github.io/scocci
+```
+
+Poi registrare e caricare la cartella `scocci/` nel repository del sito.
