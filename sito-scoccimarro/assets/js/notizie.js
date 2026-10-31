@@ -47,7 +47,7 @@ window.NOTIZIE = [
     galleria: [
       { src: "assets/img/mare-giovani.svg", didascalia: "Studenti in mare" },
       { src: "assets/img/ia-mare.svg", didascalia: "Monitoraggio con intelligenza artificiale" },
-      { src: "assets/img/barcola.svg", didascalia: "Il Golfo di Trieste" }
+      { src: "assets/img/barcola.jpg", didascalia: "Il Golfo di Trieste" }
     ]
   },
   {
@@ -95,7 +95,7 @@ window.NOTIZIE = [
     verificato: true,
     fonte: "https://intrieste.com/?p=22207",
     fonteNome: "InTrieste, 16 novembre 2023",
-    immagine: "assets/img/barcola.svg",
+    immagine: "assets/img/barcola.jpg",
     sintesi: "Un progetto in due parti, lato mare e linea di costa, da realizzare per fasi senza togliere ai triestini l’uso della spiaggia durante l’estate.",
     testo: [
       "L’assessore regionale Fabio Scoccimarro ha illustrato a istituzioni e associazioni di categoria il progetto “La nuova costa di Barcola: progetti, idee e futuro”, elaborato dallo studio Metroarea con l’architetto Giulio Paladini.",
@@ -104,7 +104,7 @@ window.NOTIZIE = [
       "L’iter prevede l’adozione di una variante al Piano regolatore comunale, la redazione dei progetti esecutivi, le gare d’appalto e l’attuazione graduale dei lavori, con un orizzonte complessivo di circa vent’anni."
     ],
     galleria: [
-      { src: "assets/img/barcola.svg", didascalia: "La costa di Barcola" },
+      { src: "assets/img/barcola.jpg", didascalia: "La costa di Barcola" },
       { src: "assets/img/mare-giovani.svg", didascalia: "Sport acquatici" },
       { src: "assets/img/conferenza.svg", didascalia: "Presentazione del progetto" }
     ]

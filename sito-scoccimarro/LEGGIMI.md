@@ -23,11 +23,7 @@ Sito statico (HTML, CSS e JavaScript senza dipendenze) per l'Assessore alla Dife
 
 ## Cosa completare prima della messa in linea
 
-1. **Fotografie** in `assets/img/`: le immagini attuali sono segnaposto in formato SVG. Sostituire con foto reali mantenendo il nome del file oppure aggiornando il percorso nelle pagine:
-   - `ritratto.svg` → foto istituzionale a mezzo busto (verticale 4:5, almeno 800×1000 px)
-   - `barcola.svg` → panoramica di Barcola e del Golfo (orizzontale 16:10, almeno 1600×1000 px)
-   - `conferenza.svg` → conferenza stampa o tavolo regionale
-   - `bonifiche.svg`, `energia.svg`, `mare-giovani.svg`, `comunita.svg`, `ia-mare.svg`, `sopralluogo.svg` → foto di contesto
+1. **Fotografie** in `assets/img/`: inserite `ritratto.jpg` (alla scrivania, 678×452 px), `ritratto-primo-piano.jpg` (347×288 px) e `barcola.jpg` (365×273 px). Sono a bassa risoluzione: sostituirle con file da almeno 1600 px di lato lungo mantenendo lo stesso nome. Restano segnaposto `conferenza.svg` (serve una foto di conferenza stampa o di un tavolo regionale) e le illustrazioni delle altre notizie.
 2. **`assets/js/configurazione.js`**: indirizzo della segreteria, pagine Facebook, Instagram, LinkedIn, YouTube. Finché un campo è vuoto in pagina compare *DA VERIFICARE* in rosso.
 3. **Voci in rosso *DA VERIFICARE***: 40+ progetti comunali, 14 lotti di Barcola, anni di presidenza della Provincia, attribuzione della citazione, testi delle notizie senza fonte, titolare del trattamento dati.
 4. **Notizie**: si aggiungono in `assets/js/notizie.js` (istruzioni in testa al file). Impostare `verificato: true` e `fonte` solo dopo il controllo.
