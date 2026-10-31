@@ -2,6 +2,14 @@
 
 Sito statico (HTML, CSS e JavaScript senza dipendenze) per l'Assessore alla Difesa dell'Ambiente, Energia e Sviluppo sostenibile della Regione Autonoma FVG (Friuli Venezia Giulia).
 
+## Identità visiva
+
+- Colori (token in `assets/css/stile.css`): blu `#084270` e `#062E4F`, giallo di accento `#F8F06D` (solo dettagli e azione principale, sempre con testo blu), superfici `#FFFFFF` e `#F7F7F2`, testo `#18232D`, bordi `#DCE3E8`.
+- Caratteri: Montserrat ExtraBold per nome e titoli, Source Sans 3 per il testo (Google Fonts).
+- Simbolo: `assets/img/simbolo-fdi.svg`, convertito senza modifiche dal PDF ufficiale fornito; proporzioni originali, sempre secondario rispetto al nome.
+- Tricolore: sottile filetto in cima al piè di pagina.
+- Contrasti verificati: testo almeno 4,5:1, bordi dei campi 3,5:1.
+
 ## Pagine
 
 | File | Sezione |

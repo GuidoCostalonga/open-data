@@ -47,7 +47,7 @@
     var fine = parseFloat(el.getAttribute("data-valore"));
     if (isNaN(fine)) return;
     if (riduciMovimento) { el.textContent = fine.toLocaleString("it-IT"); return; }
-    var durata = 1800, inizio = null;
+    var durata = 700, inizio = null;
     function passo(t) {
       if (!inizio) inizio = t;
       var p = Math.min((t - inizio) / durata, 1);
