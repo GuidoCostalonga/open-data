@@ -39,8 +39,9 @@ const chiave = await cripto.subtle.deriveKey(
 fs.rmSync(uscita, { recursive: true, force: true });
 fs.mkdirSync(uscita, { recursive: true });
 
-// Copia fogli di stile e immagini (gli script finiscono dentro le pagine cifrate)
-for (const sotto of ["assets/css", "assets/img"]) {
+// Copia fogli di stile, immagini e PDF del notiziario (gli script finiscono dentro le pagine cifrate)
+for (const sotto of ["assets/css", "assets/img", "assets/notiziario"]) {
+  if (!fs.existsSync(path.join(origine, sotto))) continue;
   fs.cpSync(path.join(origine, sotto), path.join(uscita, sotto), { recursive: true });
 }
 
