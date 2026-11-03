@@ -57,3 +57,18 @@ PAROLA_CHIAVE='...' node strumenti/proteggi.mjs . ../../GuidoCostalonga.github.i
 ```
 
 Poi registrare e caricare la cartella `scocci/` nel repository del sito.
+
+## Varianti grafiche
+
+| Variante | Anteprima | Stile |
+|---|---|---|
+| A | costalonga.org/scocci | istituzionale FdI (commit `0bd0da4`) |
+| B | costalonga.org/scocci-b | Editorial Pop nei colori FdI (stile principale di questa cartella) |
+| C | costalonga.org/scocci-c | ripresa dello stile del sito di Manuel Pil8 (Cordenons 2027), rosso sostituito dal blu FdI `#084270` |
+
+La variante C vive in `varianti/c/` e non modifica le pagine. Per prepararla e pubblicarla:
+
+```bash
+strumenti/variante.sh c /tmp/scocci-c
+PAROLA_CHIAVE='...' node strumenti/proteggi.mjs /tmp/scocci-c ../../GuidoCostalonga.github.io/scocci-c
+```
