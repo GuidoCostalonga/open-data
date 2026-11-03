@@ -60,15 +60,23 @@ Poi registrare e caricare la cartella `scocci/` nel repository del sito.
 
 ## Varianti grafiche
 
-| Variante | Anteprima | Stile |
-|---|---|---|
-| A | costalonga.org/scocci | istituzionale FdI (commit `0bd0da4`) |
-| B | costalonga.org/scocci-b | Editorial Pop nei colori FdI (stile principale di questa cartella) |
-| C | costalonga.org/scocci-c | ripresa dello stile del sito di Manuel Pil8 (Cordenons 2027), rosso sostituito dal blu FdI `#084270`; apertura con la foto in Vespa (`assets/img/apertura-vespa.jpg`) |
+Le tre versioni condividono pagine, testi, notizie e immagini; cambia solo il foglio di stile. In tutte le scritte sono nel blu di Fratelli d'Italia `#084270`.
 
-La variante C vive in `varianti/c/` e non modifica le pagine. Per prepararla e pubblicarla:
+| Variante | Anteprima | Stile | Foglio di stile |
+|---|---|---|---|
+| A | costalonga.org/scocci | istituzionale FdI | `varianti/a/stile.css` |
+| B | costalonga.org/scocci-b | Editorial Pop nei colori FdI | `assets/css/stile.css` |
+| C | costalonga.org/scocci-c | stile del sito di Manuel Pil8 (Cordenons 2027) con il blu FdI al posto del rosso; apertura con la foto in Vespa | `varianti/c/stile.css` |
+
+Per preparare e pubblicare una variante (A o C):
 
 ```bash
 strumenti/variante.sh c /tmp/scocci-c
 PAROLA_CHIAVE='...' node strumenti/proteggi.mjs /tmp/scocci-c ../../GuidoCostalonga.github.io/scocci-c
 ```
+
+## Notizie dal notiziario «La passione di sempre»
+
+Le 43 notizie di maggio, estate e settembre 2026 sono in testa a `assets/js/notizie.js` (`NOTIZIE_NOTIZIARIO`), con il campo `periodo` al posto della data esatta e le foto in `assets/img/notizie/`. Le foto sono state estratte dai PDF e ingrandite fino a 1400 px di lato lungo (ricampionamento Lanczos con leggera maschera di contrasto). Non sono state riprese le parti del notiziario di polemica personale, il cruciverba e i testi di altri autori (lettera di Giorgia Meloni, intervento di Luca Ciriani).
+
+Anche `barcola.jpg`, `ritratto.jpg` e `ritratto-primo-piano.jpg` sono stati ingranditi: per una resa davvero nitida servono comunque gli originali ad alta risoluzione.
