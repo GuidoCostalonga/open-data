@@ -15,6 +15,11 @@
     var p = d.split("-");
     return '<time datetime="' + d + '">' + parseInt(p[2], 10) + " " + MESI[parseInt(p[1], 10) - 1] + " " + p[0] + "</time>";
   }
+  /* Le notizie tratte dal notiziario hanno solo il periodo di uscita (es. "Maggio 2026") */
+  function dataNotizia(n) {
+    if (n.periodo) return '<time datetime="' + n.data.slice(0, 7) + '">' + esc(n.periodo) + "</time>";
+    return data(n.data);
+  }
   function etichetta(cat) {
     var c = CATEGORIE[cat] || { nome: cat, classe: "" };
     return '<span class="etichetta ' + c.classe + '">' + esc(c.nome) + "</span>";
@@ -22,7 +27,7 @@
   function scheda(n, i) {
     return '<article class="scheda comparsa ritardo-' + ((i % 3) + 1) + '" data-categoria="' + n.categoria + '" data-id="' + n.id + '">' +
       '<div class="scheda__immagine"><img src="' + n.immagine + '" alt="" loading="lazy" width="1600" height="1000">' + etichetta(n.categoria) + "</div>" +
-      '<div class="scheda__corpo"><div class="scheda__meta">' + data(n.data) + (n.verificato ? "" : ' · <span class="da-verificare">Testo DA VERIFICARE</span>') + "</div>" +
+      '<div class="scheda__corpo"><div class="scheda__meta">' + dataNotizia(n) + (n.verificato ? "" : ' · <span class="da-verificare">Testo DA VERIFICARE</span>') + "</div>" +
       "<h3>" + esc(n.titolo) + "</h3><p>" + esc(n.sintesi) + "</p>" +
       '<a class="scheda__link" href="notizie.html#' + n.id + '" data-apri="' + n.id + '">Leggi la notizia ' + FRECCIA + "</a></div></article>";
   }
@@ -90,11 +95,13 @@
     }).join("");
     var fonte = n.fonte
       ? '<p class="scheda__meta">Fonte: <a href="' + n.fonte + '" target="_blank" rel="noopener">' + esc(n.fonteNome || n.fonte) + "</a></p>"
-      : '<p class="nota-verifica">Fonte ufficiale DA VERIFICARE prima della pubblicazione.</p>';
+      : n.fonteNome
+        ? '<p class="scheda__meta">Fonte: ' + esc(n.fonteNome) + "</p>"
+        : '<p class="nota-verifica">Fonte ufficiale DA VERIFICARE prima della pubblicazione.</p>';
     finestra.querySelector(".finestra__contenuto").innerHTML =
       '<button class="finestra__chiudi" type="button" aria-label="Chiudi la notizia">×</button>' +
       '<div class="finestra__copertina"><img src="' + n.immagine + '" alt=""></div>' +
-      '<div class="finestra__corpo"><div class="scheda__meta">' + etichetta(n.categoria) + " " + data(n.data) + "</div>" +
+      '<div class="finestra__corpo"><div class="scheda__meta">' + etichetta(n.categoria) + " " + dataNotizia(n) + "</div>" +
       '<h2 id="titolo-finestra">' + esc(n.titolo) + "</h2>" +
       '<p style="font-size:1.12rem;color:var(--blu);font-weight:500">' + esc(n.sintesi) + "</p>" +
       n.testo.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("") +
