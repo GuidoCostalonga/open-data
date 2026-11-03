@@ -80,3 +80,11 @@ PAROLA_CHIAVE='...' node strumenti/proteggi.mjs /tmp/scocci-c ../../GuidoCostalo
 Le 43 notizie di maggio, estate e settembre 2026 sono in testa a `assets/js/notizie.js` (`NOTIZIE_NOTIZIARIO`), con il campo `periodo` al posto della data esatta e le foto in `assets/img/notizie/`. Le foto sono state estratte dai PDF e ingrandite fino a 1400 px di lato lungo (ricampionamento Lanczos con leggera maschera di contrasto). Non sono state riprese le parti del notiziario di polemica personale, il cruciverba e i testi di altri autori (lettera di Giorgia Meloni, intervento di Luca Ciriani).
 
 Anche `barcola.jpg`, `ritratto.jpg` e `ritratto-primo-piano.jpg` sono stati ingranditi: per una resa davvero nitida servono comunque gli originali ad alta risoluzione.
+
+## Notiziario da scaricare
+
+I tre numeri di «La passione di sempre» (maggio, estate, settembre 2026) sono in `assets/notiziario/`, con le copertine in `assets/img/notiziario/`. La sezione «La passione di sempre: il notiziario» sta nella pagina Notizie (`notizie.html#notiziario`) e ha un collegamento nel piè di pagina di tutte le pagine.
+
+I PDF originali (17–26 MB) sono stati alleggeriti a 3,5–6 MB ricomprimendo soltanto le fotografie senza trasparenza (lato lungo massimo 1600 px, qualità JPEG 80): testi, grafica e immagini trasparenti restano identici. Attenzione: le pagine del sito sono cifrate, i PDF invece no. Chi conosce l'indirizzo esatto può scaricarli anche senza parola chiave.
+
+Per aggiungere un nuovo numero: copiare il PDF in `assets/notiziario/`, creare la copertina con `pdftoppm -r 90 -f 1 -l 1 -jpeg -singlefile` e duplicare una scheda nella sezione di `notizie.html`.
