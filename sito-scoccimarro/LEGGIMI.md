@@ -64,8 +64,8 @@ Le tre versioni condividono pagine, testi, notizie e immagini; cambia solo il fo
 
 | Variante | Anteprima | Stile | Foglio di stile |
 |---|---|---|---|
-| A | costalonga.org/scocci | istituzionale FdI | `varianti/a/stile.css` |
-| B | costalonga.org/scocci-b | Editorial Pop nei colori FdI | `assets/css/stile.css` |
+| A | costalonga.org/scocci | istituzionale FdI; apertura con la foto in Vespa | `varianti/a/stile.css` |
+| B | costalonga.org/scocci-b | Editorial Pop nei colori FdI; apertura con la foto in Vespa | `assets/css/stile.css` |
 | C | costalonga.org/scocci-c | stile del sito di Manuel Pil8 (Cordenons 2027) con il blu FdI al posto del rosso; apertura con la foto in Vespa | `varianti/c/stile.css` |
 
 Per preparare e pubblicare una variante (A o C):
