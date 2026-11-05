@@ -20,7 +20,7 @@ Due dashboard in HTML, che si aprono con un doppio clic e funzionano anche senza
 - **Filtri**: ricerca libera (nome, iniziativa, codice fiscale, decreto), provincia, Comune della sede, settore, forma giuridica, fascia e intervallo di importo, mese della domanda, mese del decreto, intervallo di date del decreto, giorni fra protocollo e decreto.
 - **Grafici** cliccabili: settore, forma giuridica, decreti per mese, domande per mese, fasce di importo, tempi, Comuni con più contributi.
 - **Tabella** con pagine, ordinabile, esportabile in CSV con i soli beneficiari filtrati.
-- Collegamento diretto a un Comune: `beneficiari-2026.html#c-<codice ISTAT>` (es. `#c-093035` per Roveredo in Piano).
+- Collegamento diretto a un Comune: `beneficiari-2026.html#c-<codice ISTAT>` (es. `#c-093036` per Roveredo in Piano).
 
 ## Fonti e verifiche
 
