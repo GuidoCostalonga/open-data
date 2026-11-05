@@ -1,0 +1,383 @@
+<div class="wrap impianto">
+  <aside class="filtri" aria-label="Filtri">
+    <h2>Filtri <button type="button" class="pulsante" id="b-azzera" style="min-height:34px;padding:4px 10px;font-size:13px">Azzera</button></h2>
+    <div class="campo">
+      <label for="b-cerca">Cerca</label>
+      <input type="search" id="b-cerca" placeholder="beneficiario, iniziativa, codice fiscale, decreto" autocomplete="off">
+    </div>
+    <div class="campo">
+      <span class="etichetta" id="b-et-prov">Provincia</span>
+      <div class="chips" role="group" aria-labelledby="b-et-prov" id="b-prov">
+        <button type="button" class="chip" data-v="GO" aria-pressed="false">Gorizia</button>
+        <button type="button" class="chip" data-v="PN" aria-pressed="false">Pordenone</button>
+        <button type="button" class="chip" data-v="TS" aria-pressed="false">Trieste</button>
+        <button type="button" class="chip" data-v="UD" aria-pressed="false">Udine</button>
+        <button type="button" class="chip" data-v="VE" aria-pressed="false">Fuori regione</button>
+      </div>
+    </div>
+    <div class="campo">
+      <label for="b-comune">Comune della sede</label>
+      <select id="b-comune"><option value="">Tutti i Comuni</option></select>
+    </div>
+    <div class="campo">
+      <label for="b-ty">Settore (stimato dal nome)</label>
+      <select id="b-ty"><option value="">Tutti i settori</option></select>
+    </div>
+    <div class="campo">
+      <label for="b-fg">Forma giuridica (dal nome)</label>
+      <select id="b-fg"><option value="">Tutte le forme</option></select>
+    </div>
+    <div class="campo">
+      <label for="b-fe">Fascia di importo</label>
+      <select id="b-fe"><option value="">Tutti gli importi</option></select>
+    </div>
+    <div class="campo">
+      <span class="etichetta">Importo (€)</span>
+      <div class="affianca">
+        <input type="number" id="b-min" min="0" step="100" placeholder="da" aria-label="Importo minimo">
+        <input type="number" id="b-max" min="0" step="100" placeholder="a" aria-label="Importo massimo">
+      </div>
+    </div>
+    <div class="campo">
+      <label for="b-md">Mese di trasmissione della domanda</label>
+      <select id="b-md"><option value="">Tutti i mesi</option></select>
+    </div>
+    <div class="campo">
+      <label for="b-mc">Mese del decreto di impegno</label>
+      <select id="b-mc"><option value="">Tutti i mesi</option></select>
+    </div>
+    <div class="campo">
+      <span class="etichetta">Data del decreto</span>
+      <div class="affianca">
+        <input type="date" id="b-dda" aria-label="Decreto dal" style="min-height:40px;border:1px solid var(--line);border-radius:8px;padding:6px;background:var(--surface)">
+        <input type="date" id="b-dda2" aria-label="Decreto al" style="min-height:40px;border:1px solid var(--line);border-radius:8px;padding:6px;background:var(--surface)">
+      </div>
+    </div>
+    <div class="campo">
+      <label for="b-tempi">Giorni fra protocollo e decreto</label>
+      <select id="b-tempi"><option value="">Qualsiasi durata</option></select>
+    </div>
+    <div class="attivi" id="b-attivi" aria-live="polite"></div>
+    <p class="piccolo">Settore e forma giuridica sono ricavati automaticamente dalla denominazione: servono a orientarsi, non sono una classificazione ufficiale.</p>
+  </aside>
+
+  <main class="contenuto">
+    <section class="kpi" id="b-kpi" aria-label="Indicatori principali"></section>
+
+    <div class="griglia2">
+      <section class="scheda">
+        <header>
+          <h2 id="b-tit-mappa">Mappa dei beneficiari</h2>
+          <div class="segmenti" role="group" aria-label="Indicatore sulla mappa" id="b-ind">
+            <button type="button" data-v="imp" aria-pressed="true">Importo</button>
+            <button type="button" data-v="num">Numero</button>
+            <button type="button" data-v="ab">Per abitante</button>
+          </div>
+        </header>
+        <div class="mappa-box" id="b-mappa"></div>
+        <div class="legenda" id="b-legenda"></div>
+        <label class="spunta" style="margin-top:6px"><input type="checkbox" id="b-bolle" checked> Cerchi con il numero di contributi</label>
+        <p class="suggerimento">Tocca un Comune per filtrare i beneficiari con sede in quel Comune; toccalo di nuovo per togliere il filtro.</p>
+      </section>
+      <section class="scheda">
+        <header><h2>Per settore</h2></header>
+        <div class="segmenti" role="group" aria-label="Misura" id="b-mis-ty" style="margin-bottom:8px">
+          <button type="button" data-v="num" aria-pressed="true">Numero</button>
+          <button type="button" data-v="imp">Importo</button>
+        </div>
+        <div class="grafico" id="b-g-ty"></div>
+        <h3 style="margin-top:14px">Per forma giuridica</h3>
+        <div class="grafico" id="b-g-fg"></div>
+      </section>
+    </div>
+
+    <div class="griglia2b">
+      <section class="scheda">
+        <header><h2>Decreti di impegno per mese</h2></header>
+        <div class="serie-leg"><span><i style="background:var(--s5)"></i>importo impegnato</span><span>sopra: numero di contributi</span></div>
+        <div class="grafico" id="b-g-mesi"></div>
+      </section>
+      <section class="scheda">
+        <header><h2>Domande trasmesse per mese</h2></header>
+        <div class="serie-leg"><span><i style="background:var(--s3)"></i>contributi poi concessi, per mese di invio della domanda</span></div>
+        <div class="grafico" id="b-g-dom"></div>
+      </section>
+    </div>
+
+    <div class="griglia2b">
+      <section class="scheda">
+        <header><h2>Fasce di importo</h2></header>
+        <div class="grafico" id="b-g-fe"></div>
+      </section>
+      <section class="scheda">
+        <header><h2>Tempi dal protocollo al decreto</h2></header>
+        <div class="grafico" id="b-g-tempi"></div>
+        <p class="piccolo" id="b-nota-tempi"></p>
+      </section>
+    </div>
+
+    <section class="scheda">
+      <header><h2>Comuni con più contributi</h2></header>
+      <div class="grafico" id="b-g-com"></div>
+    </section>
+
+    <section class="scheda">
+      <div class="barra-tab">
+        <h2 id="b-tit-tab">Beneficiari</h2>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <label for="b-perpag" class="piccolo">Righe</label>
+          <select id="b-perpag" style="min-height:40px;border:1px solid var(--line);border-radius:8px;padding:6px;background:var(--surface)">
+            <option>25</option><option selected>50</option><option>100</option><option value="0">tutte</option>
+          </select>
+          <button type="button" class="pulsante pieno" id="b-csv">Scarica i beneficiari filtrati (CSV)</button>
+        </div>
+      </div>
+      <div class="tab-box"><table class="dati" id="b-tab"><thead></thead><tbody></tbody></table></div>
+      <div class="pagine" id="b-pagine"></div>
+    </section>
+  </main>
+</div>
+<footer class="piede"><div class="wrap" id="b-piede"></div></footer>
+<script>
+(function () {
+  const D = window.DATI;
+  const B = D.ben;
+  const COM = Object.fromEntries(D.comuni.map((c) => [c.c, c]));
+  const P = "b-";
+  const $ = (id) => document.getElementById(P + id);
+  const giorni = (a, b) => (a && b ? Math.round((new Date(b) - new Date(a)) / 864e5) : null);
+  B.forEach((b) => { b.gg = giorni(b.dp, b.dd); b.chiave = b.c || "X-" + b.cm; });
+
+  const FE = [
+    { id: "1", et: "fino a 2.000 €", f: (e) => e <= 2000 },
+    { id: "2", et: "2.000,01 – 4.000 €", f: (e) => e > 2000 && e <= 4000 },
+    { id: "3", et: "4.000,01 – 6.000 €", f: (e) => e > 4000 && e <= 6000 },
+    { id: "4", et: "6.000,01 – 6.999,99 €", f: (e) => e > 6000 && e < 7000 },
+    { id: "5", et: "7.000 € esatti", f: (e) => e === 7000 },
+  ];
+  const TEMPI = [
+    { id: "a", et: "fino a 15 giorni", f: (g) => g <= 15 },
+    { id: "b", et: "16 – 30", f: (g) => g > 15 && g <= 30 },
+    { id: "c", et: "31 – 45", f: (g) => g > 30 && g <= 45 },
+    { id: "d", et: "46 – 60", f: (g) => g > 45 && g <= 60 },
+    { id: "e", et: "61 – 90", f: (g) => g > 60 && g <= 90 },
+    { id: "f", et: "oltre 90", f: (g) => g > 90 },
+  ];
+  const mese = (iso) => (iso ? iso.slice(0, 7) : null);
+  const nomeMese = (m) => { const [a, mm] = m.split("-"); return `${MESI[+mm - 1]} ${a}`; };
+  const meseBreve = (m) => { const [a, mm] = m.split("-"); return `${MESI_B[+mm - 1]} ${a.slice(2)}`; };
+  const elencoMesi = (k) => [...new Set(B.map((b) => mese(b[k])).filter(Boolean))].sort();
+  const MD = elencoMesi("dt"), MC = elencoMesi("dd");
+  const TY = [...new Set(B.map((b) => b.ty))].sort((a, b) => (a.startsWith("Altro") ? 1 : b.startsWith("Altro") ? -1 : a.localeCompare(b, "it")));
+  const FG = [...new Set(B.map((b) => b.fg))].sort((a, b) => (a.startsWith("Forma") ? 1 : b.startsWith("Forma") ? -1 : a.localeCompare(b, "it")));
+  const COLORI_TY = ["--s6", "--s5", "--s4", "--s3", "--amber", "--d2", "--d5", "--ink-3"];
+
+  const opz = (id, voci) => voci.forEach(([v, t]) => $(id).appendChild(el("option", { value: v }, F.esc(t))));
+  const comuniSede = [...new Map(B.map((b) => [b.chiave, { k: b.chiave, n: b.c ? COM[b.c].n : b.cm + " (" + b.pv + ")" }])).values()].sort((a, b) => a.n.localeCompare(b.n, "it"));
+  opz("comune", comuniSede.map((c) => [c.k, c.n]));
+  opz("ty", TY.map((t) => [t, t])); opz("fg", FG.map((t) => [t, t]));
+  opz("fe", FE.map((f) => [f.id, f.et])); opz("tempi", TEMPI.map((f) => [f.id, f.et + (f.id === "a" ? "" : " giorni")]));
+  opz("md", MD.map((m) => [m, nomeMese(m)])); opz("mc", MC.map((m) => [m, nomeMese(m)]));
+
+  const S0 = () => ({ cerca: "", prov: new Set(), comune: "", ty: "", fg: "", fe: "", min: "", max: "", md: "", mc: "", da: "", a: "", tempi: "", ind: "imp", bolle: true, misTy: "num", ord: { k: "dd", d: 1 }, pag: 0, perpag: 50 });
+  const S = S0();
+
+  function passa(b, salta) {
+    if (S.prov.size && !S.prov.has(b.pv)) return false;
+    if (salta !== "comune" && S.comune && b.chiave !== S.comune) return false;
+    if (salta !== "ty" && S.ty && b.ty !== S.ty) return false;
+    if (salta !== "fg" && S.fg && b.fg !== S.fg) return false;
+    if (salta !== "fe" && S.fe && !FE.find((f) => f.id === S.fe).f(b.e)) return false;
+    if (S.min !== "" && b.e < +S.min) return false;
+    if (S.max !== "" && b.e > +S.max) return false;
+    if (salta !== "md" && S.md && mese(b.dt) !== S.md) return false;
+    if (salta !== "mc" && S.mc && mese(b.dd) !== S.mc) return false;
+    if (S.da && b.dd < S.da) return false;
+    if (S.a && b.dd > S.a) return false;
+    if (salta !== "tempi" && S.tempi && (b.gg == null || !TEMPI.find((f) => f.id === S.tempi).f(b.gg))) return false;
+    if (S.cerca) {
+      const q = S.cerca.toLowerCase();
+      const t = (b.d + " " + b.t + " " + b.cf + " " + b.dn + " " + b.cm + " " + b.i + " " + b.np).toLowerCase();
+      if (!q.split(/\s+/).every((p) => t.includes(p))) return false;
+    }
+    return true;
+  }
+
+  /* controlli */
+  $("prov").querySelectorAll("button").forEach((x) => x.addEventListener("click", () => { const v = x.dataset.v; S.prov.has(v) ? S.prov.delete(v) : S.prov.add(v); S.pag = 0; aggiorna(); }));
+  $("ind").querySelectorAll("button").forEach((x) => x.addEventListener("click", () => { S.ind = x.dataset.v; aggiorna(); }));
+  $("mis-ty").querySelectorAll("button").forEach((x) => x.addEventListener("click", () => { S.misTy = x.dataset.v; aggiorna(); }));
+  const lega = (id, k, ev = "change") => $(id).addEventListener(ev, (e) => { S[k] = e.target.type === "checkbox" ? e.target.checked : e.target.value.trim(); S.pag = 0; aggiorna(); });
+  lega("cerca", "cerca", "input"); lega("comune", "comune"); lega("ty", "ty"); lega("fg", "fg"); lega("fe", "fe");
+  lega("min", "min", "input"); lega("max", "max", "input"); lega("md", "md"); lega("mc", "mc"); lega("dda", "da"); lega("dda2", "a");
+  lega("tempi", "tempi"); lega("bolle", "bolle");
+  $("perpag").addEventListener("change", (e) => { S.perpag = +e.target.value; S.pag = 0; aggiorna(); });
+  $("azzera").addEventListener("click", () => {
+    Object.assign(S, S0());
+    ["cerca", "comune", "ty", "fg", "fe", "min", "max", "md", "mc", "dda", "dda2", "tempi"].forEach((i) => ($(i).value = ""));
+    $("bolle").checked = true; $("perpag").value = "50"; mappa.reset(); history.replaceState(null, "", "#beneficiari"); aggiorna();
+  });
+
+  const aggCom = (lista) => {
+    const m = {};
+    for (const b of lista) { const a = (m[b.chiave] = m[b.chiave] || { n: 0, e: 0 }); a.n++; a.e += b.e; }
+    return m;
+  };
+  let AGG = {};
+  const vMap = (c) => { const a = AGG[c.c]; if (!a) return 0; return S.ind === "num" ? a.n : S.ind === "ab" ? (c.pop ? a.e / c.pop : null) : a.e; };
+  const fmtInd = (v) => (S.ind === "num" ? F.num(v) : S.ind === "ab" ? F.euro(v, 2) : F.euroBreve(v));
+
+  const mappa = new Mappa($("mappa"), D.geo, D.prov, D.comuni, {
+    etichetta: "Mappa dei Comuni sede dei beneficiari 2026",
+    tip: (c) => {
+      const a = AGG[c.c] || { n: 0, e: 0 };
+      const nomi = BF.filter((b) => b.c === c.c).slice(0, 4).map((b) => "· " + F.esc(b.d)).join("<br>");
+      return `<b>${F.esc(c.n)}</b> (${c.p})<br>${F.num(a.n)} contributi · ${F.euro(a.e, 2)}<br>${c.pop ? F.euro(a.e / c.pop, 2) + " per abitante" : ""}${nomi ? `<div style="margin-top:4px;font-size:12px;color:var(--ink-2)">${nomi}${a.n > 4 ? "<br>…" : ""}</div>` : ""}`;
+    },
+    click: (k) => { if (!k) return; S.comune = S.comune === k ? "" : k; $("comune").value = S.comune; S.pag = 0; aggiorna(); },
+  });
+
+  let BF = [];
+  function aggiorna() {
+    $("prov").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(S.prov.has(x.dataset.v))));
+    $("ind").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.v === S.ind)));
+    $("mis-ty").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.v === S.misTy)));
+    BF = B.filter((b) => passa(b));
+    kpi();
+    // mappa: tutti i filtri tranne il Comune, così il Comune scelto resta evidenziato nel suo contesto
+    const perMappa = B.filter((b) => passa(b, "comune"));
+    AGG = aggCom(perMappa);
+    const valori = D.comuni.map(vMap);
+    const br = classiQuantili(valori), col = scala(br);
+    const bolle = {}; for (const k in AGG) bolle[k] = AGG[k].n;
+    mappa.disegna({ colore: (k) => col(vMap(COM[k])), filtro: S.prov.size ? new Set(D.comuni.filter((c) => S.prov.has(c.p)).map((c) => c.c)) : null, bolle: S.bolle ? bolle : null, sel: S.comune });
+    legenda($("legenda"), br, col, fmtInd, { bolle: S.bolle ? `numero di contributi (max ${F.num(mappa.maxBolla || 0)})` : "" });
+    $("tit-mappa").textContent = { imp: "Importo per Comune della sede", num: "Numero di contributi per Comune della sede", ab: "Importo per abitante" }[S.ind];
+    grafici();
+    tabella();
+    filtriAttivi();
+  }
+
+  function kpi() {
+    const e = BF.reduce((a, b) => a + b.e, 0), n = BF.length;
+    const imp = BF.map((b) => b.e).sort((a, b) => a - b);
+    const med = n ? (n % 2 ? imp[(n - 1) / 2] : (imp[n / 2 - 1] + imp[n / 2]) / 2) : null;
+    const tetto = BF.filter((b) => b.e === 7000).length;
+    const gg = BF.map((b) => b.gg).filter((x) => x != null).sort((a, b) => a - b);
+    const ggMed = gg.length ? gg[Math.floor(gg.length / 2)] : null;
+    const com = new Set(BF.map((b) => b.chiave)).size;
+    const cf = new Set(BF.map((b) => b.cf.toUpperCase())).size;
+    $("kpi").innerHTML = `
+      <div class="tile"><div class="et">Importo impegnato</div><div class="val" title="${F.euro(e, 2)}">${F.euro(e, 0)}</div><div class="nota">${F.euro(e, 2)}</div></div>
+      <div class="tile"><div class="et">Contributi</div><div class="val">${F.num(n)}</div><div class="nota">${F.num(cf)} codici fiscali distinti</div></div>
+      <div class="tile"><div class="et">Comuni sede</div><div class="val">${F.num(com)}</div><div class="nota">dei beneficiari selezionati</div></div>
+      <div class="tile"><div class="et">Importo medio</div><div class="val">${F.euro(n ? e / n : null, 0)}</div><div class="nota">mediano ${F.euro(med, 0)}</div></div>
+      <div class="tile"><div class="et">Pari a 7.000 €</div><div class="val">${F.num(tetto)}</div><div class="nota">${F.pct(n ? (tetto / n) * 100 : null, 1)} · importo più alto in elenco</div></div>
+      <div class="tile"><div class="et">Dal protocollo al decreto</div><div class="val">${ggMed == null ? "–" : ggMed + " gg"}</div><div class="nota">valore mediano</div></div>`;
+  }
+
+  function grafici() {
+    // settore
+    const tyAll = B.filter((b) => passa(b, "ty"));
+    const voci = TY.map((t, i) => {
+      const l = tyAll.filter((b) => b.ty === t);
+      return { l: t, v: S.misTy === "num" ? l.length : l.reduce((a, b) => a + b.e, 0), attivo: S.ty === t, col: t.startsWith("Altro") ? css("--ink-3") : css("--accent"), extra: S.misTy === "num" ? F.euro(l.reduce((a, b) => a + b.e, 0), 0) : l.length + " contributi" };
+    }).sort((a, b) => b.v - a.v);
+    barreOrizzontali($("g-ty"), voci, { lw: 210, fmt: S.misTy === "num" ? F.num : (v) => F.euro(v, 0), click: (v) => { S.ty = S.ty === v.l ? "" : v.l; $("ty").value = S.ty; S.pag = 0; aggiorna(); }, etichetta: "Contributi per settore" });
+    const fgAll = B.filter((b) => passa(b, "fg"));
+    const vfg = FG.map((t) => { const l = fgAll.filter((b) => b.fg === t); return { l: t.replace(/ \(.*\)/, ""), full: t, v: S.misTy === "num" ? l.length : l.reduce((a, b) => a + b.e, 0), attivo: S.fg === t, col: css("--s4") }; }).sort((a, b) => b.v - a.v);
+    barreOrizzontali($("g-fg"), vfg, { lw: 210, fmt: S.misTy === "num" ? F.num : (v) => F.euro(v, 0), click: (v) => { S.fg = S.fg === v.full ? "" : v.full; $("fg").value = S.fg; S.pag = 0; aggiorna(); }, etichetta: "Contributi per forma giuridica" });
+
+    // mesi del decreto
+    const mcAll = B.filter((b) => passa(b, "mc"));
+    const em = MC.map((m) => mcAll.filter((b) => mese(b.dd) === m));
+    colonne($("g-mesi"), MC.map(meseBreve), [{ n: "importo", col: css("--s5"), v: em.map((l) => l.reduce((a, b) => a + b.e, 0)), extra: em.map((l) => l.length + " contributi") }], {
+      valori: true, fmt: (v) => F.euro(v, 0), fmtBreve: (v) => "", fmtAsse: F.euroBreve, attivo: S.mc ? MC.indexOf(S.mc) : null, sotto: em.map((l) => (l.length ? l.length + " contr." : "")),
+      click: (i) => { S.mc = S.mc === MC[i] ? "" : MC[i]; $("mc").value = S.mc; S.pag = 0; aggiorna(); }, h: 270, etichetta: "Importo impegnato per mese del decreto",
+    });
+    // mesi della domanda
+    const mdAll = B.filter((b) => passa(b, "md"));
+    const dm = MD.map((m) => mdAll.filter((b) => mese(b.dt) === m).length);
+    colonne($("g-dom"), MD.map(meseBreve), [{ n: "domande", col: css("--s3"), v: dm }], {
+      valori: true, fmt: F.num, fmtBreve: F.num, attivo: S.md ? MD.indexOf(S.md) : null,
+      click: (i) => { S.md = S.md === MD[i] ? "" : MD[i]; $("md").value = S.md; S.pag = 0; aggiorna(); }, h: 270, etichetta: "Contributi per mese di trasmissione della domanda",
+    });
+    // fasce di importo
+    const feAll = B.filter((b) => passa(b, "fe"));
+    const fl = FE.map((f) => feAll.filter((b) => f.f(b.e)));
+    colonne($("g-fe"), FE.map((f) => f.et.replace(" €", "").replace(",01", "").replace(" esatti", "")), [{ n: "contributi", col: css("--s4"), v: fl.map((l) => l.length), extra: fl.map((l) => F.euro(l.reduce((a, b) => a + b.e, 0), 0)) }], {
+      valori: true, fmt: F.num, fmtBreve: F.num, sotto: fl.map((l) => F.euroBreve(l.reduce((a, b) => a + b.e, 0))), attivo: S.fe ? FE.findIndex((f) => f.id === S.fe) : null,
+      click: (i) => { S.fe = S.fe === FE[i].id ? "" : FE[i].id; $("fe").value = S.fe; S.pag = 0; aggiorna(); }, h: 260, etichetta: "Contributi per fascia di importo",
+    });
+    // tempi
+    const tAll = B.filter((b) => passa(b, "tempi"));
+    const tl = TEMPI.map((f) => tAll.filter((b) => b.gg != null && f.f(b.gg)).length);
+    colonne($("g-tempi"), TEMPI.map((t) => t.et.replace(" giorni", "")), [{ n: "contributi", col: css("--s3"), v: tl }], {
+      valori: true, fmt: F.num, fmtBreve: F.num, attivo: S.tempi ? TEMPI.findIndex((f) => f.id === S.tempi) : null,
+      click: (i) => { S.tempi = S.tempi === TEMPI[i].id ? "" : TEMPI[i].id; $("tempi").value = S.tempi; S.pag = 0; aggiorna(); }, h: 260, etichetta: "Giorni fra protocollo e decreto",
+    });
+    const gg = tAll.map((b) => b.gg).filter((x) => x != null);
+    $("nota-tempi").textContent = gg.length ? `Giorni di calendario fra la data di protocollo della domanda e la data del decreto di impegno. Minimo ${Math.min(...gg)}, massimo ${Math.max(...gg)}, media ${F.num(gg.reduce((a, b) => a + b, 0) / gg.length, 1)}.` : "";
+
+    // comuni
+    const cAll = B.filter((b) => passa(b, "comune"));
+    const ag = aggCom(cAll);
+    const vc = Object.entries(ag).map(([k, a]) => ({ l: COM[k] ? COM[k].n.split("-")[0] : k.slice(2), k, v: a.n, extra: F.euro(a.e, 0), attivo: S.comune === k, col: css("--accent") })).sort((a, b) => b.v - a.v || a.l.localeCompare(b.l)).slice(0, 20);
+    barreOrizzontali($("g-com"), vc, { fmt: (v) => F.num(v) + " contr.", click: (v) => { S.comune = S.comune === v.k ? "" : v.k; $("comune").value = S.comune; S.pag = 0; aggiorna(); }, etichetta: "Comuni con più contributi" });
+  }
+
+  const COLS = [
+    { k: "n", t: "N.", n: 1 }, { k: "d", t: "Beneficiario" }, { k: "cf", t: "Codice fiscale" }, { k: "t", t: "Iniziativa" },
+    { k: "cm", t: "Comune" }, { k: "pv", t: "Prov." }, { k: "ty", t: "Settore (stima)" }, { k: "dt", t: "Domanda inviata" },
+    { k: "dn", t: "Decreto" }, { k: "dd", t: "Data decreto" }, { k: "gg", t: "Giorni", n: 1 }, { k: "e", t: "Importo", n: 1 },
+  ];
+  function tabella() {
+    const tab = $("tab");
+    intestazioni(tab.tHead, COLS, S.ord, () => { S.pag = 0; aggiorna(); });
+    const righe = ordina(BF.slice(), S.ord, (b, k) => (k === "dn" ? parseInt(b.dn, 10) : b[k]));
+    const pp = S.perpag || righe.length || 1, np = Math.max(1, Math.ceil(righe.length / pp));
+    S.pag = Math.min(S.pag, np - 1);
+    const pagina = righe.slice(S.pag * pp, S.pag * pp + pp);
+    $("tit-tab").textContent = `Beneficiari selezionati: ${F.num(righe.length)}`;
+    tab.tBodies[0].innerHTML = pagina.length ? pagina.map((b) => `<tr>
+      <td class="n">${b.n}</td><td class="den">${F.esc(b.d)}</td>
+      <td class="cf">${b.cfok ? F.esc(b.cf) : `<span class="verificare" title="Valore presente nel file di origine">${F.esc(b.cf)} · DA VERIFICARE</span>`}</td>
+      <td class="tit">${F.esc(b.t)}</td><td>${F.esc(b.cm)}</td><td>${b.pv}</td><td>${F.esc(b.ty)}</td>
+      <td class="n">${F.data(b.dt)}</td><td class="n">${F.esc(b.dn)}</td><td class="n">${F.data(b.dd)}</td><td class="n">${b.gg ?? "–"}</td>
+      <td class="n"><b>${F.euro(b.e, 2)}</b></td></tr>`).join("") : `<tr><td colspan="12" class="vuoto">Nessun beneficiario con i filtri scelti.</td></tr>`;
+    const pg = $("pagine");
+    pg.innerHTML = np > 1 ? `<button type="button" data-p="${S.pag - 1}" ${S.pag === 0 ? "disabled" : ""} aria-label="Pagina precedente">‹</button><span>Pagina ${S.pag + 1} di ${np}</span><button type="button" data-p="${S.pag + 1}" ${S.pag >= np - 1 ? "disabled" : ""} aria-label="Pagina successiva">›</button>` : "";
+    pg.querySelectorAll("button").forEach((x) => (x.onclick = () => { S.pag = +x.dataset.p; aggiorna(); tab.scrollIntoView({ block: "start", behavior: "smooth" }); }));
+    $("csv").onclick = () => scaricaCSV("beneficiari_contributi_consiglio_regionale_2026.csv", [
+      ["N.", "Istanza", "Data trasmissione", "Data protocollo", "N. protocollo", "Denominazione", "Codice fiscale", "Titolo iniziativa", "N. decreto impegno", "Data decreto impegno", "Impegno (€)", "Comune", "Provincia", "Codice ISTAT Comune", "Settore (stima dal nome)", "Forma giuridica (dal nome)", "Giorni protocollo-decreto"],
+      ...righe.map((b) => [b.n, b.i, b.dt, b.dp, b.np, b.d, b.cf, b.t, b.dn, b.dd, b.e, b.cm, b.pv, b.c || "", b.ty, b.fg, b.gg]),
+    ]);
+  }
+
+  function filtriAttivi() {
+    const a = [];
+    if (S.cerca) a.push(`“${S.cerca}”`);
+    if (S.prov.size) a.push([...S.prov].map((p) => PROV_NOME[p]).join(", "));
+    if (S.comune) a.push(comuniSede.find((c) => c.k === S.comune)?.n || S.comune);
+    if (S.ty) a.push(S.ty); if (S.fg) a.push(S.fg.replace(/ \(.*\)/, ""));
+    if (S.fe) a.push(FE.find((f) => f.id === S.fe).et);
+    if (S.min !== "" || S.max !== "") a.push(`importo ${S.min || 0} – ${S.max || "∞"} €`);
+    if (S.md) a.push("domanda: " + nomeMese(S.md)); if (S.mc) a.push("decreto: " + nomeMese(S.mc));
+    if (S.da || S.a) a.push(`decreto dal ${F.data(S.da) === "–" ? "inizio" : F.data(S.da)} al ${F.data(S.a) === "–" ? "termine" : F.data(S.a)}`);
+    if (S.tempi) a.push(TEMPI.find((f) => f.id === S.tempi).et + " (tempi)");
+    $("attivi").innerHTML = a.map((x) => `<span>${F.esc(x)}</span>`).join("");
+  }
+
+  const m = D.meta;
+  const strani = B.filter((b) => !b.cfok);
+  $("piede").innerHTML = `<p><b>Fonte:</b> ${F.esc(m.fonte)}, foglio «beneficiari 2026». ${F.num(B.length)} righe, totale ${F.euro(B.reduce((a, b) => a + b.e, 0), 2)}: coincide al centesimo con il riepilogo per Comune dello stesso file.</p>
+    <p>La colonna «N.» riporta la numerazione originale del file, che non è continua. Il Comune è quello della sede del beneficiario. ${strani.length ? `Codici fiscali non regolari nel file di origine: ${strani.map((b) => `N. ${b.n} (${F.esc(b.d)})`).join(", ")}, segnalati come <span class="verificare">DA VERIFICARE</span>.` : ""}</p>
+    <p><b>Popolazione:</b> ${F.esc(m.pop)}. <b>Mappa:</b> ${F.esc(m.confini)}. Dashboard generata il ${m.generato}.</p>`;
+
+  // registrazione della vista: #beneficiari oppure #beneficiari-<codice ISTAT>
+  window.VISTE = window.VISTE || {};
+  window.VISTE.beneficiari = { apri(cod) { if (cod && comuniSede.some((c) => c.k === cod)) { S.comune = cod; $("comune").value = cod; S.pag = 0; } aggiorna(); } };
+  aggiorna();
+  ridisegnaAlRidimensionamento(() => { if (!document.getElementById("vista-beneficiari").hidden) aggiorna(); });
+})();
+</script>

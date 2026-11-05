@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contributi Consiglio regionale FVG</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Contributi del Consiglio regionale del Friuli Venezia Giulia: Comuni 2024, 2025, 2026 e beneficiari 2026, con mappa, filtri e tabelle.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@600;700&family=Fira+Sans:wght@400;500;600;700&display=swap">
+<style>
+/*CSS*/
+</style>
+</head>
+<body>
+<header class="testata">
+  <div class="wrap">
+    <div>
+      <p class="occhiello">Consiglio regionale del Friuli Venezia Giulia · contributi</p>
+      <h1 id="titolo">Contributi per Comune 2024 · 2025 · 2026</h1>
+      <p class="sotto" id="sottotitolo"></p>
+    </div>
+    <nav class="navdash" aria-label="Sezioni">
+      <a href="#comuni" data-vista="comuni">Comuni 2024 · 2026</a>
+      <a href="#beneficiari" data-vista="beneficiari">Beneficiari 2026</a>
+    </nav>
+  </div>
+</header>
+
+<section id="vista-comuni" aria-label="Contributi per Comune 2024, 2025, 2026">
+/*VISTA_COMUNI*/
+</section>
+
+<section id="vista-beneficiari" aria-label="Beneficiari dei contributi 2026" hidden>
+/*VISTA_BENEFICIARI*/
+</section>
+
+<script>/*DATI*/</script>
+<script>
+/*JS_COMUNE*/
+</script>
+/*SCRIPT_VISTE*/
+<script>
+(function () {
+  const TESTI = {
+    comuni: ["Contributi per Comune 2024 · 2025 · 2026", "Quanto è stato impegnato e quanti contributi sono arrivati in ciascun Comune, anno per anno. Tocca un Comune sulla mappa per vederne il dettaglio."],
+    beneficiari: ["Beneficiari dei contributi 2026", "Chi ha ricevuto i contributi 2026, per quale iniziativa, con quale decreto e per quale importo. Filtra per territorio, tipo di associazione, importo e date."],
+  };
+  let attuale = null;
+  // indirizzi: #comuni, #comuni-<codice ISTAT>, #beneficiari, #beneficiari-<codice ISTAT>
+  function vai() {
+    const h = decodeURIComponent(location.hash.slice(1));
+    const i = h.indexOf("-");
+    let v = i < 0 ? h : h.slice(0, i);
+    const cod = i < 0 ? null : h.slice(i + 1);
+    if (v !== "beneficiari") v = "comuni";
+    for (const k of ["comuni", "beneficiari"]) document.getElementById("vista-" + k).hidden = k !== v;
+    document.querySelectorAll(".navdash a").forEach((a) => (a.dataset.vista === v ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current")));
+    document.getElementById("titolo").textContent = TESTI[v][0];
+    document.getElementById("sottotitolo").textContent = TESTI[v][1];
+    Tip.nascondi();
+    window.VISTE[v].apri(cod);
+    if (attuale && attuale !== v) window.scrollTo({ top: 0 });
+    attuale = v;
+  }
+  addEventListener("hashchange", vai);
+  vai();
+})();
+</script>
+</body>
+</html>
