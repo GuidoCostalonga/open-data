@@ -1,13 +1,13 @@
 # Contributi del Consiglio regionale FVG
 
-Due dashboard in HTML, che si aprono con un doppio clic e funzionano anche senza connessione (serve la rete solo per i caratteri tipografici).
+Un solo file, `index.html`, che si apre con un doppio clic e funziona anche senza connessione (serve la rete solo per i caratteri tipografici). Ha due sezioni, scelte con i pulsanti in alto a destra:
 
-| File | Contenuto |
-|---|---|
-| `index.html` | Contributi per Comune 2024, 2025 e 2026: mappa, filtri, confronti fra anni, classifiche, tabella completa |
-| `beneficiari-2026.html` | I 578 contributi 2026 uno per uno: beneficiario, codice fiscale, iniziativa, decreto, date, importo |
+| Sezione | Indirizzo | Contenuto |
+|---|---|---|
+| Comuni 2024 · 2026 | `index.html#comuni` | Contributi per Comune 2024, 2025 e 2026: mappa, filtri, confronti fra anni, classifiche, tabella completa |
+| Beneficiari 2026 | `index.html#beneficiari` | I 578 contributi 2026 uno per uno: beneficiario, codice fiscale, iniziativa, decreto, date, importo |
 
-## Dashboard per Comune (`index.html`)
+## Sezione Comuni (`#comuni`)
 
 - **Periodo**: 2024, 2025, 2026 o triennio; **confronto** fra due anni con mappa a colori divergenti (aumenti in blu, cali in rosso).
 - **Indicatore sulla mappa**: importo, numero di contributi, importo per abitante, contributi ogni 10.000 abitanti, importo medio. I cerchi arancioni mostrano il numero di contributi.
@@ -15,12 +15,12 @@ Due dashboard in HTML, che si aprono con un doppio clic e funzionano anche senza
 - **Dettaglio del Comune**: tre anni a confronto, importo per abitante, posizione in regione, collegamento ai beneficiari 2026 del Comune.
 - **Tabella** ordinabile ed esportabile in CSV (si apre in Excel).
 
-## Dashboard dei beneficiari 2026 (`beneficiari-2026.html`)
+## Sezione Beneficiari 2026 (`#beneficiari`)
 
 - **Filtri**: ricerca libera (nome, iniziativa, codice fiscale, decreto), provincia, Comune della sede, settore, forma giuridica, fascia e intervallo di importo, mese della domanda, mese del decreto, intervallo di date del decreto, giorni fra protocollo e decreto.
 - **Grafici** cliccabili: settore, forma giuridica, decreti per mese, domande per mese, fasce di importo, tempi, Comuni con più contributi.
 - **Tabella** con pagine, ordinabile, esportabile in CSV con i soli beneficiari filtrati.
-- Collegamento diretto a un Comune: `beneficiari-2026.html#c-<codice ISTAT>` (es. `#c-093033` per Pordenone; i Comuni senza contributi 2026, come Roveredo in Piano, `#c-093036`, mostrano l'elenco completo).
+- Collegamento diretto a un Comune: `index.html#beneficiari-<codice ISTAT>` per i suoi beneficiari 2026 (es. `#beneficiari-093033` per Pordenone), `index.html#comuni-<codice ISTAT>` per il suo dettaglio 2024-2026 (es. `#comuni-093036` per Roveredo in Piano).
 
 ## Fonti e verifiche
 
@@ -51,4 +51,4 @@ Sostituire il file Excel in `dati/` (stessa struttura dei fogli «Foglio1» e «
 python3 strumenti/genera.py
 ```
 
-I modelli delle pagine sono in `strumenti/modelli/`. Serve il pacchetto Python `openpyxl`.
+I modelli sono in `strumenti/modelli/`: `pagina.html` (struttura e navigazione), `vista-comuni.html` e `vista-beneficiari.html` (le due sezioni), `comune.css` e `comune.js` (stile, mappa, grafici). Serve il pacchetto Python `openpyxl`.

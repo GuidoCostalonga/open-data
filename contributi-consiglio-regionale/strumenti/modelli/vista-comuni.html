@@ -1,40 +1,10 @@
-<!doctype html>
-<html lang="it">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Contributi del Consiglio regionale FVG</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Contributi del Consiglio regionale del Friuli Venezia Giulia per Comune: 2024, 2025 e 2026, con mappa, filtri e tabella.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@600;700&family=Fira+Sans:wght@400;500;600;700&display=swap">
-<style>
-/*CSS*/
-</style>
-</head>
-<body>
-<header class="testata">
-  <div class="wrap">
-    <div>
-      <p class="occhiello">Consiglio regionale del Friuli Venezia Giulia · contributi</p>
-      <h1>Contributi per Comune 2024 · 2025 · 2026</h1>
-      <p class="sotto">Quanto è stato impegnato e quanti contributi sono arrivati in ciascun Comune, anno per anno. Tocca un Comune sulla mappa per vederne il dettaglio.</p>
-    </div>
-    <nav class="navdash" aria-label="Dashboard">
-      <a href="index.html" aria-current="page">Comuni 2024 · 2026</a>
-      <a href="beneficiari-2026.html">Beneficiari 2026</a>
-    </nav>
-  </div>
-</header>
-
 <div class="wrap impianto">
   <aside class="filtri" aria-label="Filtri">
-    <h2>Filtri <button type="button" class="pulsante" id="azzera" style="min-height:34px;padding:4px 10px;font-size:13px">Azzera</button></h2>
+    <h2>Filtri <button type="button" class="pulsante" id="c-azzera" style="min-height:34px;padding:4px 10px;font-size:13px">Azzera</button></h2>
 
     <div class="campo">
-      <span class="etichetta" id="et-anno">Periodo</span>
-      <div class="segmenti" role="group" aria-labelledby="et-anno" id="anno">
+      <span class="etichetta" id="c-et-anno">Periodo</span>
+      <div class="segmenti" role="group" aria-labelledby="c-et-anno" id="c-anno">
         <button type="button" data-v="2024">2024</button>
         <button type="button" data-v="2025">2025</button>
         <button type="button" data-v="2026" aria-pressed="true">2026</button>
@@ -42,8 +12,8 @@
       </div>
     </div>
     <div class="campo">
-      <label for="confronto">Confronto fra anni</label>
-      <select id="confronto">
+      <label for="c-confronto">Confronto fra anni</label>
+      <select id="c-confronto">
         <option value="">Nessun confronto</option>
         <option value="2024-2026">Variazione 2024 → 2026</option>
         <option value="2025-2026">Variazione 2025 → 2026</option>
@@ -51,8 +21,8 @@
       </select>
     </div>
     <div class="campo">
-      <label for="ind">Indicatore sulla mappa</label>
-      <select id="ind">
+      <label for="c-ind">Indicatore sulla mappa</label>
+      <select id="c-ind">
         <option value="imp">Importo impegnato (€)</option>
         <option value="num">Numero di contributi</option>
         <option value="ab">Importo per abitante (€)</option>
@@ -60,11 +30,11 @@
         <option value="medio">Importo medio per contributo (€)</option>
       </select>
     </div>
-    <label class="spunta"><input type="checkbox" id="bolle" checked> Mostra il numero di contributi con i cerchi</label>
+    <label class="spunta"><input type="checkbox" id="c-bolle" checked> Mostra il numero di contributi con i cerchi</label>
 
     <div class="campo">
-      <span class="etichetta" id="et-prov">Provincia</span>
-      <div class="chips" role="group" aria-labelledby="et-prov" id="prov">
+      <span class="etichetta" id="c-et-prov">Provincia</span>
+      <div class="chips" role="group" aria-labelledby="c-et-prov" id="c-prov">
         <button type="button" class="chip" data-v="GO" aria-pressed="false">Gorizia</button>
         <button type="button" class="chip" data-v="PN" aria-pressed="false">Pordenone</button>
         <button type="button" class="chip" data-v="TS" aria-pressed="false">Trieste</button>
@@ -73,12 +43,12 @@
       </div>
     </div>
     <div class="campo">
-      <label for="fascia">Dimensione del Comune</label>
-      <select id="fascia"><option value="">Tutte le dimensioni</option></select>
+      <label for="c-fascia">Dimensione del Comune</label>
+      <select id="c-fascia"><option value="">Tutte le dimensioni</option></select>
     </div>
     <div class="campo">
-      <label for="copertura">Comuni</label>
-      <select id="copertura">
+      <label for="c-copertura">Comuni</label>
+      <select id="c-copertura">
         <option value="">Tutti i Comuni</option>
         <option value="si">Solo Comuni con contributi nel periodo</option>
         <option value="no">Solo Comuni senza contributi nel periodo</option>
@@ -89,56 +59,56 @@
     <div class="campo">
       <span class="etichetta">Importo nel periodo (€)</span>
       <div class="affianca">
-        <input type="number" id="min" min="0" step="1000" placeholder="da" aria-label="Importo minimo">
-        <input type="number" id="max" min="0" step="1000" placeholder="a" aria-label="Importo massimo">
+        <input type="number" id="c-min" min="0" step="1000" placeholder="da" aria-label="Importo minimo">
+        <input type="number" id="c-max" min="0" step="1000" placeholder="a" aria-label="Importo massimo">
       </div>
     </div>
     <div class="campo">
       <span class="etichetta">Numero di contributi nel periodo</span>
       <div class="affianca">
-        <input type="number" id="nmin" min="0" step="1" placeholder="da" aria-label="Numero minimo">
-        <input type="number" id="nmax" min="0" step="1" placeholder="a" aria-label="Numero massimo">
+        <input type="number" id="c-nmin" min="0" step="1" placeholder="da" aria-label="Numero minimo">
+        <input type="number" id="c-nmax" min="0" step="1" placeholder="a" aria-label="Numero massimo">
       </div>
     </div>
     <div class="campo">
-      <label for="cerca">Cerca un Comune</label>
-      <input type="search" id="cerca" list="elenco-comuni" placeholder="es. Roveredo in Piano" autocomplete="off">
-      <datalist id="elenco-comuni"></datalist>
+      <label for="c-cerca">Cerca un Comune</label>
+      <input type="search" id="c-cerca" list="c-elenco-comuni" placeholder="es. Roveredo in Piano" autocomplete="off">
+      <datalist id="c-elenco-comuni"></datalist>
     </div>
-    <div class="attivi" id="attivi" aria-live="polite"></div>
+    <div class="attivi" id="c-attivi" aria-live="polite"></div>
     <p class="piccolo">Popolazione: ISTAT (Istituto nazionale di statistica) al 1° gennaio 2025. I Comuni senza contributi restano in grigio chiaro.</p>
   </aside>
 
   <main class="contenuto">
-    <section class="kpi" id="kpi" aria-label="Indicatori principali"></section>
+    <section class="kpi" id="c-kpi" aria-label="Indicatori principali"></section>
 
     <div class="griglia2">
       <section class="scheda">
         <header>
-          <h2 id="tit-mappa">Mappa</h2>
-          <div class="segmenti" role="group" aria-label="Indicatore rapido" id="ind-rapido">
+          <h2 id="c-tit-mappa">Mappa</h2>
+          <div class="segmenti" role="group" aria-label="Indicatore rapido" id="c-ind-rapido">
             <button type="button" data-v="imp">Importo</button>
             <button type="button" data-v="num">Numero</button>
             <button type="button" data-v="ab">Per abitante</button>
           </div>
         </header>
-        <div class="mappa-box" id="mappa"></div>
-        <div class="legenda" id="legenda"></div>
+        <div class="mappa-box" id="c-mappa"></div>
+        <div class="legenda" id="c-legenda"></div>
         <p class="suggerimento">Trascina per spostare la mappa, usa i pulsanti, il doppio clic o Ctrl con la rotellina per ingrandire. Tocca un Comune per il dettaglio.</p>
       </section>
-      <section class="scheda dettaglio" id="dettaglio" aria-live="polite"></section>
+      <section class="scheda dettaglio" id="c-dettaglio" aria-live="polite"></section>
     </div>
 
     <div class="griglia2b">
       <section class="scheda">
         <header><h2>Andamento per provincia</h2></header>
-        <div class="serie-leg" id="leg-prov"></div>
-        <div class="grafico" id="g-prov"></div>
-        <p class="piccolo" id="nota-prov"></p>
+        <div class="serie-leg" id="c-leg-prov"></div>
+        <div class="grafico" id="c-g-prov"></div>
+        <p class="piccolo" id="c-nota-prov"></p>
       </section>
       <section class="scheda">
-        <header><h2 id="tit-top">Primi 15 Comuni</h2></header>
-        <div class="grafico" id="g-top"></div>
+        <header><h2 id="c-tit-top">Primi 15 Comuni</h2></header>
+        <div class="grafico" id="c-g-top"></div>
       </section>
     </div>
 
@@ -146,33 +116,27 @@
       <section class="scheda">
         <header><h2>Per dimensione del Comune</h2></header>
         <p class="piccolo" style="margin-bottom:6px">Importo per abitante nel periodo scelto, per fascia di popolazione. Sotto ogni colonna: quota di Comuni raggiunti.</p>
-        <div class="grafico" id="g-fasce"></div>
+        <div class="grafico" id="c-g-fasce"></div>
       </section>
       <section class="scheda">
         <header><h2>Distribuzione degli importi</h2></header>
         <p class="piccolo" style="margin-bottom:6px">Quanti Comuni ricadono in ciascuna fascia di importo ricevuto nel periodo scelto. Tocca una colonna per filtrare.</p>
-        <div class="grafico" id="g-dist"></div>
+        <div class="grafico" id="c-g-dist"></div>
       </section>
     </div>
 
     <section class="scheda">
       <div class="barra-tab">
-        <h2 id="tit-tab">Tutti i Comuni</h2>
-        <button type="button" class="pulsante pieno" id="csv">Scarica la tabella (CSV)</button>
+        <h2 id="c-tit-tab">Tutti i Comuni</h2>
+        <button type="button" class="pulsante pieno" id="c-csv">Scarica la tabella (CSV)</button>
       </div>
-      <div class="tab-box"><table class="dati" id="tab"><thead></thead><tbody></tbody></table></div>
+      <div class="tab-box"><table class="dati" id="c-tab"><thead></thead><tbody></tbody></table></div>
     </section>
   </main>
 </div>
-
 <footer class="piede">
-  <div class="wrap" id="piede"></div>
+  <div class="wrap" id="c-piede"></div>
 </footer>
-
-<script>/*DATI*/</script>
-<script>
-/*JS_COMUNE*/
-</script>
 <script>
 (function () {
   const D = window.DATI;
@@ -246,7 +210,8 @@
   ];
 
   /* ---------- controlli ---------- */
-  const $ = (id) => document.getElementById(id);
+  const P = "c-";
+  const $ = (id) => document.getElementById(P + id);
   const fs = $("fascia");
   FASCE_POP.forEach((f) => fs.appendChild(el("option", { value: f.id }, f.et)));
   const dl = $("elenco-comuni");
@@ -382,7 +347,7 @@
     const tot = ANNI.reduce((a, y) => a + (c.a[y] || [0, 0])[1], 0);
     const ntot = ANNI.reduce((a, y) => a + (c.a[y] || [0, 0])[0], 0);
     box.innerHTML = `<header><div><p class="occhiello">${PROV_NOME[c.p] || c.p}</p><h2 class="nome">${F.esc(c.n)}</h2></div>
-      <button type="button" class="pulsante" id="chiudi">Chiudi</button></header>
+      <button type="button" class="pulsante" id="c-chiudi">Chiudi</button></header>
       ${barre}
       <dl>
         <dt>Abitanti (ISTAT, 1° gennaio 2025)</dt><dd>${c.pop ? F.num(c.pop) : "–"}</dd>
@@ -391,7 +356,7 @@
         ${ANNI.map((y) => `<dt>Per abitante ${y}</dt><dd>${c.pop ? F.euro((c.a[y] || [0, 0])[1] / c.pop, 2) : "–"}</dd>`).join("")}
         <dt>Posizione in regione · ${IND_NOME[S.ind].toLowerCase()} ${PER_NOME(S.anno)}</dt><dd>${pos && v0 > 0 ? pos + "° su " + fvg.length : "–"}</dd>
       </dl>
-      ${c.a["2026"] && !c.est ? `<a class="pulsante pieno" style="display:inline-flex;align-items:center;text-decoration:none" href="beneficiari-2026.html#c-${c.c}">${c.a["2026"][0] === 1 ? "Vedi il beneficiario 2026" : "Vedi i " + c.a["2026"][0] + " beneficiari 2026"}</a>` : c.est ? "" : `<p class="vuoto">Nessun contributo nel 2026.</p>`}`;
+      ${c.a["2026"] && !c.est ? `<a class="pulsante pieno" style="display:inline-flex;align-items:center;text-decoration:none" href="#beneficiari-${c.c}">${c.a["2026"][0] === 1 ? "Vedi il beneficiario 2026" : "Vedi i " + c.a["2026"][0] + " beneficiari 2026"}</a>` : c.est ? "" : `<p class="vuoto">Nessun contributo nel 2026.</p>`}`;
     $("chiudi").onclick = () => { S.sel = null; aggiorna(); };
   }
 
@@ -503,12 +468,10 @@
     <p><b>Popolazione:</b> ${F.esc(m.pop)}. <b>Mappa:</b> ${F.esc(m.confini)}. Gli indicatori per abitante usano la stessa popolazione per tutti e tre gli anni.</p>
     <p>Il Comune indicato è quello della sede del beneficiario, non necessariamente il luogo dell'iniziativa. Dashboard generata il ${m.generato}.</p>`;
 
-  // apertura con un Comune già selezionato: index.html#c-030129
-  const h = location.hash.match(/^#c-(.+)$/);
-  if (h && PER[decodeURIComponent(h[1])]) S.sel = decodeURIComponent(h[1]);
+  // registrazione della vista: #comuni oppure #comuni-<codice ISTAT>
+  window.VISTE = window.VISTE || {};
+  window.VISTE.comuni = { apri(cod) { if (cod && PER[cod]) S.sel = cod; aggiorna(); } };
   aggiorna();
-  ridisegnaAlRidimensionamento(aggiorna);
+  ridisegnaAlRidimensionamento(() => { if (!document.getElementById("vista-comuni").hidden) aggiorna(); });
 })();
 </script>
-</body>
-</html>

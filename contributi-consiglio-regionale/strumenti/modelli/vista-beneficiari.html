@@ -1,46 +1,13 @@
-<!doctype html>
-<html lang="it">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Beneficiari 2026 Consiglio regionale FVG</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="I 578 contributi 2026 del Consiglio regionale del Friuli Venezia Giulia: beneficiari, iniziative, decreti, importi, con mappa e filtri.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@600;700&family=Fira+Sans:wght@400;500;600;700&display=swap">
-<style>
-/*CSS*/
-td.tit{max-width:340px}
-td.den{max-width:260px;font-weight:600}
-.cf{font-family:ui-monospace,"Fira Code",Menlo,Consolas,monospace;font-size:12.5px}
-</style>
-</head>
-<body>
-<header class="testata">
-  <div class="wrap">
-    <div>
-      <p class="occhiello">Consiglio regionale del Friuli Venezia Giulia · contributi 2026</p>
-      <h1>Beneficiari dei contributi 2026</h1>
-      <p class="sotto">Chi ha ricevuto i contributi 2026, per quale iniziativa, con quale decreto e per quale importo. Filtra per territorio, tipo di associazione, importo e date.</p>
-    </div>
-    <nav class="navdash" aria-label="Dashboard">
-      <a href="index.html">Comuni 2024 · 2026</a>
-      <a href="beneficiari-2026.html" aria-current="page">Beneficiari 2026</a>
-    </nav>
-  </div>
-</header>
-
 <div class="wrap impianto">
   <aside class="filtri" aria-label="Filtri">
-    <h2>Filtri <button type="button" class="pulsante" id="azzera" style="min-height:34px;padding:4px 10px;font-size:13px">Azzera</button></h2>
+    <h2>Filtri <button type="button" class="pulsante" id="b-azzera" style="min-height:34px;padding:4px 10px;font-size:13px">Azzera</button></h2>
     <div class="campo">
-      <label for="cerca">Cerca</label>
-      <input type="search" id="cerca" placeholder="beneficiario, iniziativa, codice fiscale, decreto" autocomplete="off">
+      <label for="b-cerca">Cerca</label>
+      <input type="search" id="b-cerca" placeholder="beneficiario, iniziativa, codice fiscale, decreto" autocomplete="off">
     </div>
     <div class="campo">
-      <span class="etichetta" id="et-prov">Provincia</span>
-      <div class="chips" role="group" aria-labelledby="et-prov" id="prov">
+      <span class="etichetta" id="b-et-prov">Provincia</span>
+      <div class="chips" role="group" aria-labelledby="b-et-prov" id="b-prov">
         <button type="button" class="chip" data-v="GO" aria-pressed="false">Gorizia</button>
         <button type="button" class="chip" data-v="PN" aria-pressed="false">Pordenone</button>
         <button type="button" class="chip" data-v="TS" aria-pressed="false">Trieste</button>
@@ -49,78 +16,78 @@ td.den{max-width:260px;font-weight:600}
       </div>
     </div>
     <div class="campo">
-      <label for="comune">Comune della sede</label>
-      <select id="comune"><option value="">Tutti i Comuni</option></select>
+      <label for="b-comune">Comune della sede</label>
+      <select id="b-comune"><option value="">Tutti i Comuni</option></select>
     </div>
     <div class="campo">
-      <label for="ty">Settore (stimato dal nome)</label>
-      <select id="ty"><option value="">Tutti i settori</option></select>
+      <label for="b-ty">Settore (stimato dal nome)</label>
+      <select id="b-ty"><option value="">Tutti i settori</option></select>
     </div>
     <div class="campo">
-      <label for="fg">Forma giuridica (dal nome)</label>
-      <select id="fg"><option value="">Tutte le forme</option></select>
+      <label for="b-fg">Forma giuridica (dal nome)</label>
+      <select id="b-fg"><option value="">Tutte le forme</option></select>
     </div>
     <div class="campo">
-      <label for="fe">Fascia di importo</label>
-      <select id="fe"><option value="">Tutti gli importi</option></select>
+      <label for="b-fe">Fascia di importo</label>
+      <select id="b-fe"><option value="">Tutti gli importi</option></select>
     </div>
     <div class="campo">
       <span class="etichetta">Importo (€)</span>
       <div class="affianca">
-        <input type="number" id="min" min="0" step="100" placeholder="da" aria-label="Importo minimo">
-        <input type="number" id="max" min="0" step="100" placeholder="a" aria-label="Importo massimo">
+        <input type="number" id="b-min" min="0" step="100" placeholder="da" aria-label="Importo minimo">
+        <input type="number" id="b-max" min="0" step="100" placeholder="a" aria-label="Importo massimo">
       </div>
     </div>
     <div class="campo">
-      <label for="md">Mese di trasmissione della domanda</label>
-      <select id="md"><option value="">Tutti i mesi</option></select>
+      <label for="b-md">Mese di trasmissione della domanda</label>
+      <select id="b-md"><option value="">Tutti i mesi</option></select>
     </div>
     <div class="campo">
-      <label for="mc">Mese del decreto di impegno</label>
-      <select id="mc"><option value="">Tutti i mesi</option></select>
+      <label for="b-mc">Mese del decreto di impegno</label>
+      <select id="b-mc"><option value="">Tutti i mesi</option></select>
     </div>
     <div class="campo">
       <span class="etichetta">Data del decreto</span>
       <div class="affianca">
-        <input type="date" id="dda" aria-label="Decreto dal" style="min-height:40px;border:1px solid var(--line);border-radius:8px;padding:6px;background:var(--surface)">
-        <input type="date" id="dda2" aria-label="Decreto al" style="min-height:40px;border:1px solid var(--line);border-radius:8px;padding:6px;background:var(--surface)">
+        <input type="date" id="b-dda" aria-label="Decreto dal" style="min-height:40px;border:1px solid var(--line);border-radius:8px;padding:6px;background:var(--surface)">
+        <input type="date" id="b-dda2" aria-label="Decreto al" style="min-height:40px;border:1px solid var(--line);border-radius:8px;padding:6px;background:var(--surface)">
       </div>
     </div>
     <div class="campo">
-      <label for="tempi">Giorni fra protocollo e decreto</label>
-      <select id="tempi"><option value="">Qualsiasi durata</option></select>
+      <label for="b-tempi">Giorni fra protocollo e decreto</label>
+      <select id="b-tempi"><option value="">Qualsiasi durata</option></select>
     </div>
-    <div class="attivi" id="attivi" aria-live="polite"></div>
+    <div class="attivi" id="b-attivi" aria-live="polite"></div>
     <p class="piccolo">Settore e forma giuridica sono ricavati automaticamente dalla denominazione: servono a orientarsi, non sono una classificazione ufficiale.</p>
   </aside>
 
   <main class="contenuto">
-    <section class="kpi" id="kpi" aria-label="Indicatori principali"></section>
+    <section class="kpi" id="b-kpi" aria-label="Indicatori principali"></section>
 
     <div class="griglia2">
       <section class="scheda">
         <header>
-          <h2 id="tit-mappa">Mappa dei beneficiari</h2>
-          <div class="segmenti" role="group" aria-label="Indicatore sulla mappa" id="ind">
+          <h2 id="b-tit-mappa">Mappa dei beneficiari</h2>
+          <div class="segmenti" role="group" aria-label="Indicatore sulla mappa" id="b-ind">
             <button type="button" data-v="imp" aria-pressed="true">Importo</button>
             <button type="button" data-v="num">Numero</button>
             <button type="button" data-v="ab">Per abitante</button>
           </div>
         </header>
-        <div class="mappa-box" id="mappa"></div>
-        <div class="legenda" id="legenda"></div>
-        <label class="spunta" style="margin-top:6px"><input type="checkbox" id="bolle" checked> Cerchi con il numero di contributi</label>
+        <div class="mappa-box" id="b-mappa"></div>
+        <div class="legenda" id="b-legenda"></div>
+        <label class="spunta" style="margin-top:6px"><input type="checkbox" id="b-bolle" checked> Cerchi con il numero di contributi</label>
         <p class="suggerimento">Tocca un Comune per filtrare i beneficiari con sede in quel Comune; toccalo di nuovo per togliere il filtro.</p>
       </section>
       <section class="scheda">
         <header><h2>Per settore</h2></header>
-        <div class="segmenti" role="group" aria-label="Misura" id="mis-ty" style="margin-bottom:8px">
+        <div class="segmenti" role="group" aria-label="Misura" id="b-mis-ty" style="margin-bottom:8px">
           <button type="button" data-v="num" aria-pressed="true">Numero</button>
           <button type="button" data-v="imp">Importo</button>
         </div>
-        <div class="grafico" id="g-ty"></div>
+        <div class="grafico" id="b-g-ty"></div>
         <h3 style="margin-top:14px">Per forma giuridica</h3>
-        <div class="grafico" id="g-fg"></div>
+        <div class="grafico" id="b-g-fg"></div>
       </section>
     </div>
 
@@ -128,61 +95,56 @@ td.den{max-width:260px;font-weight:600}
       <section class="scheda">
         <header><h2>Decreti di impegno per mese</h2></header>
         <div class="serie-leg"><span><i style="background:var(--s5)"></i>importo impegnato</span><span>sopra: numero di contributi</span></div>
-        <div class="grafico" id="g-mesi"></div>
+        <div class="grafico" id="b-g-mesi"></div>
       </section>
       <section class="scheda">
         <header><h2>Domande trasmesse per mese</h2></header>
         <div class="serie-leg"><span><i style="background:var(--s3)"></i>contributi poi concessi, per mese di invio della domanda</span></div>
-        <div class="grafico" id="g-dom"></div>
+        <div class="grafico" id="b-g-dom"></div>
       </section>
     </div>
 
     <div class="griglia2b">
       <section class="scheda">
         <header><h2>Fasce di importo</h2></header>
-        <div class="grafico" id="g-fe"></div>
+        <div class="grafico" id="b-g-fe"></div>
       </section>
       <section class="scheda">
         <header><h2>Tempi dal protocollo al decreto</h2></header>
-        <div class="grafico" id="g-tempi"></div>
-        <p class="piccolo" id="nota-tempi"></p>
+        <div class="grafico" id="b-g-tempi"></div>
+        <p class="piccolo" id="b-nota-tempi"></p>
       </section>
     </div>
 
     <section class="scheda">
       <header><h2>Comuni con più contributi</h2></header>
-      <div class="grafico" id="g-com"></div>
+      <div class="grafico" id="b-g-com"></div>
     </section>
 
     <section class="scheda">
       <div class="barra-tab">
-        <h2 id="tit-tab">Beneficiari</h2>
+        <h2 id="b-tit-tab">Beneficiari</h2>
         <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-          <label for="perpag" class="piccolo">Righe</label>
-          <select id="perpag" style="min-height:40px;border:1px solid var(--line);border-radius:8px;padding:6px;background:var(--surface)">
+          <label for="b-perpag" class="piccolo">Righe</label>
+          <select id="b-perpag" style="min-height:40px;border:1px solid var(--line);border-radius:8px;padding:6px;background:var(--surface)">
             <option>25</option><option selected>50</option><option>100</option><option value="0">tutte</option>
           </select>
-          <button type="button" class="pulsante pieno" id="csv">Scarica i beneficiari filtrati (CSV)</button>
+          <button type="button" class="pulsante pieno" id="b-csv">Scarica i beneficiari filtrati (CSV)</button>
         </div>
       </div>
-      <div class="tab-box"><table class="dati" id="tab"><thead></thead><tbody></tbody></table></div>
-      <div class="pagine" id="pagine"></div>
+      <div class="tab-box"><table class="dati" id="b-tab"><thead></thead><tbody></tbody></table></div>
+      <div class="pagine" id="b-pagine"></div>
     </section>
   </main>
 </div>
-
-<footer class="piede"><div class="wrap" id="piede"></div></footer>
-
-<script>/*DATI*/</script>
-<script>
-/*JS_COMUNE*/
-</script>
+<footer class="piede"><div class="wrap" id="b-piede"></div></footer>
 <script>
 (function () {
   const D = window.DATI;
   const B = D.ben;
   const COM = Object.fromEntries(D.comuni.map((c) => [c.c, c]));
-  const $ = (id) => document.getElementById(id);
+  const P = "b-";
+  const $ = (id) => document.getElementById(P + id);
   const giorni = (a, b) => (a && b ? Math.round((new Date(b) - new Date(a)) / 864e5) : null);
   B.forEach((b) => { b.gg = giorni(b.dp, b.dd); b.chiave = b.c || "X-" + b.cm; });
 
@@ -253,7 +215,7 @@ td.den{max-width:260px;font-weight:600}
   $("azzera").addEventListener("click", () => {
     Object.assign(S, S0());
     ["cerca", "comune", "ty", "fg", "fe", "min", "max", "md", "mc", "dda", "dda2", "tempi"].forEach((i) => ($(i).value = ""));
-    $("bolle").checked = true; $("perpag").value = "50"; mappa.reset(); history.replaceState(null, "", location.pathname); aggiorna();
+    $("bolle").checked = true; $("perpag").value = "50"; mappa.reset(); history.replaceState(null, "", "#beneficiari"); aggiorna();
   });
 
   const aggCom = (lista) => {
@@ -412,12 +374,10 @@ td.den{max-width:260px;font-weight:600}
     <p>La colonna «N.» riporta la numerazione originale del file, che non è continua. Il Comune è quello della sede del beneficiario. ${strani.length ? `Codici fiscali non regolari nel file di origine: ${strani.map((b) => `N. ${b.n} (${F.esc(b.d)})`).join(", ")}, segnalati come <span class="verificare">DA VERIFICARE</span>.` : ""}</p>
     <p><b>Popolazione:</b> ${F.esc(m.pop)}. <b>Mappa:</b> ${F.esc(m.confini)}. Dashboard generata il ${m.generato}.</p>`;
 
-  // apertura filtrata su un Comune: beneficiari-2026.html#c-030129
-  const h = location.hash.match(/^#c-(.+)$/);
-  if (h) { const k = decodeURIComponent(h[1]); if (comuniSede.some((c) => c.k === k)) { S.comune = k; $("comune").value = k; } }
+  // registrazione della vista: #beneficiari oppure #beneficiari-<codice ISTAT>
+  window.VISTE = window.VISTE || {};
+  window.VISTE.beneficiari = { apri(cod) { if (cod && comuniSede.some((c) => c.k === cod)) { S.comune = cod; $("comune").value = cod; S.pag = 0; } aggiorna(); } };
   aggiorna();
-  ridisegnaAlRidimensionamento(aggiorna);
+  ridisegnaAlRidimensionamento(() => { if (!document.getElementById("vista-beneficiari").hidden) aggiorna(); });
 })();
 </script>
-</body>
-</html>

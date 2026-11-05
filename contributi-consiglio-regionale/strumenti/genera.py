@@ -7,8 +7,7 @@ Legge:
   dati/popolazione_istat_1gen2025_fvg.csv (ISTAT, popolazione al 1 gennaio 2025)
   dati/province_fvg_semplificate.geojson  (contorni delle province, ottenuti dai confini comunali)
 Scrive:
-  index.html            dashboard per Comune 2024, 2025, 2026
-  beneficiari-2026.html dashboard dei beneficiari 2026
+  index.html  un solo file con due sezioni: Comuni 2024, 2025, 2026 e beneficiari 2026
 
 Uso: python3 strumenti/genera.py   (dalla cartella contributi-consiglio-regionale)
 Richiede openpyxl.
@@ -243,17 +242,23 @@ def main():
         "totali": totali_foglio,
         "generato": datetime.now().strftime("%d/%m/%Y"),
     }
-    dati_comuni = {"meta": meta, "comuni": list(per_comune.values()), "fuori": fuori, "geo": geo, "prov": province}
-    dati_ben = {"meta": meta, "ben": ben, "comuni": [{"c": v["c"], "n": v["n"], "p": v["p"], "pop": v["pop"], "k": v["k"]} for v in per_comune.values()], "geo": geo, "prov": province}
+    dati = {"meta": meta, "comuni": list(per_comune.values()), "fuori": fuori, "ben": ben, "geo": geo, "prov": province}
 
-    css = (MODELLI / "comune.css").read_text(encoding="utf-8")
-    js = (MODELLI / "comune.js").read_text(encoding="utf-8")
-    for modello, uscita, dati in (("cruscotto.html", "index.html", dati_comuni), ("beneficiari.html", "beneficiari-2026.html", dati_ben)):
-        t = (MODELLI / modello).read_text(encoding="utf-8")
-        t = t.replace("/*CSS*/", css).replace("/*JS_COMUNE*/", js)
-        t = t.replace("/*DATI*/", "window.DATI=" + json.dumps(dati, ensure_ascii=False, separators=(",", ":")) + ";")
-        (BASE / uscita).write_text(t, encoding="utf-8")
-        print(f"scritto {uscita} ({len(t)//1024} kB)")
+    def parti(nome):
+        v = (MODELLI / nome).read_text(encoding="utf-8")
+        i = v.index("<script>")
+        return v[:i].rstrip(), v[i:].strip()
+
+    mc, sc = parti("vista-comuni.html")
+    mb, sb = parti("vista-beneficiari.html")
+    t = (MODELLI / "pagina.html").read_text(encoding="utf-8")
+    t = t.replace("/*CSS*/", (MODELLI / "comune.css").read_text(encoding="utf-8"))
+    t = t.replace("/*JS_COMUNE*/", (MODELLI / "comune.js").read_text(encoding="utf-8"))
+    t = t.replace("/*VISTA_COMUNI*/", mc).replace("/*VISTA_BENEFICIARI*/", mb)
+    t = t.replace("/*SCRIPT_VISTE*/", sc + "\n" + sb)
+    t = t.replace("/*DATI*/", "window.DATI=" + json.dumps(dati, ensure_ascii=False, separators=(",", ":")) + ";")
+    (BASE / "index.html").write_text(t, encoding="utf-8")
+    print(f"scritto index.html ({len(t)//1024} kB)")
 
 
 if __name__ == "__main__":

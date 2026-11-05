@@ -164,3 +164,8 @@ table.dati tbody tr.sel{background:var(--surface-2);box-shadow:inset 3px 0 0 var
 .piede .wrap{padding-block:18px 28px;font-size:13px;color:var(--ink-2);display:flex;flex-direction:column;gap:6px}
 .piede p{margin:0;max-width:110ch;overflow-wrap:anywhere}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* tabella dei beneficiari */
+td.tit{max-width:340px}
+td.den{max-width:260px;font-weight:600}
+.cf{font-family:ui-monospace,"Fira Code",Menlo,Consolas,monospace;font-size:12.5px}
