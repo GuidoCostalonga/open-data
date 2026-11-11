@@ -238,6 +238,7 @@ def main():
     meta = {
         "fonte": "Consiglio regionale del Friuli Venezia Giulia, contributi: file CONTRIBUTO_CONSIGLIO_REGIONALE_2026_2025_2024_05112026.xlsx (estrazione del 5 novembre 2026)",
         "pop": "ISTAT, popolazione residente al 1° gennaio 2025 (demo.istat.it)",
+        "fonte_breve": "Fonte: Consiglio regionale del Friuli Venezia Giulia, estrazione del 5 novembre 2026; popolazione ISTAT (Istituto nazionale di statistica) al 1° gennaio 2025.",
         "confini": "Confini comunali: openpolis, geojson-italy (dati ISTAT), semplificati",
         "totali": totali_foglio,
         "generato": datetime.now().strftime("%d/%m/%Y"),

@@ -25,6 +25,15 @@
       <a href="#comuni" data-vista="comuni">Comuni dal 2024 al 2026</a>
       <a href="#beneficiari" data-vista="beneficiari">Beneficiari 2026</a>
     </nav>
+    <form class="cerca-comune" id="cerca-comune" role="search">
+      <label for="cc-input">Cerca il tuo Comune</label>
+      <div class="cc-riga">
+        <input type="search" id="cc-input" list="cc-elenco" placeholder="Per esempio Sacile" autocomplete="off">
+        <button type="submit" class="pulsante pieno">Cerca</button>
+      </div>
+      <datalist id="cc-elenco"></datalist>
+      <div class="cc-esito" id="cc-esito" aria-live="polite"></div>
+    </form>
   </div>
 </header>
 
@@ -65,6 +74,53 @@
     attuale = v;
   }
   filtriRichiudibili();
+
+  // ricerca del Comune nella testata: risposta immediata con i tre anni e i collegamenti
+  const D = window.DATI;
+  const norm = (s) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z]/g, "");
+  const tutti = D.comuni.slice().sort((a, b) => a.n.localeCompare(b.n, "it"));
+  const elenco = document.getElementById("cc-elenco");
+  tutti.forEach((c) => elenco.appendChild(el("option", { value: c.n })));
+  function trovaComune(q) {
+    const k = norm(q);
+    if (!k) return [];
+    const pieni = tutti.filter((c) => norm(c.n) === k || norm(c.n.split("-")[0]) === k);
+    if (pieni.length) return pieni;
+    return tutti.filter((c) => norm(c.n).startsWith(k) || norm(c.n.split("-")[0]).startsWith(k));
+  }
+  function esitoComune(c) {
+    const anni = ["2024", "2025", "2026"].map((y) => {
+      const v = c.a[y];
+      return v ? `nel ${y} ${F.euro(v[1], 2)} con ${v[0] === 1 ? "1 contributo" : v[0] + " contributi"}` : `nel ${y} nessun contributo`;
+    });
+    const ben = c.a["2026"] ? c.a["2026"][0] : 0;
+    return `<p><b>${F.esc(c.n)}</b> (provincia di ${PROV_NOME[c.p]}, ${F.num(c.pop)} abitanti): ${anni.join("; ")}.</p>
+      <p class="cc-azioni"><a href="#comuni-${c.c}">Apri la scheda del Comune</a>${ben ? ` <a href="#beneficiari-${c.c}">${ben === 1 ? "Vedi il beneficiario 2026" : "Vedi i " + ben + " beneficiari 2026"}</a>` : ""}</p>`;
+  }
+  function cerca(definitiva) {
+    const q = document.getElementById("cc-input").value.trim();
+    const out = document.getElementById("cc-esito");
+    if (!q) { out.innerHTML = ""; return; }
+    const r = trovaComune(q);
+    if (r.length === 1) out.innerHTML = esitoComune(r[0]);
+    else if (r.length > 1 && r.length <= 8) out.innerHTML = `<p>Più Comuni corrispondono: ${r.map((c) => `<button type="button" class="cc-scelta" data-c="${c.c}">${F.esc(c.n)}</button>`).join(" ")}</p>`;
+    else if (definitiva) out.innerHTML = r.length ? `<p>Troppi Comuni corrispondono a «${F.esc(q)}»: aggiungi qualche lettera.</p>` : `<p>Nessun Comune del Friuli Venezia Giulia si chiama «${F.esc(q)}». Controlla come è scritto oppure scegli dall'elenco che compare mentre scrivi.</p>`;
+    out.querySelectorAll(".cc-scelta").forEach((b) => (b.onclick = () => { out.innerHTML = esitoComune(tutti.find((c) => c.c === b.dataset.c)); }));
+  }
+  document.getElementById("cerca-comune").addEventListener("submit", (e) => { e.preventDefault(); cerca(true); });
+  document.getElementById("cc-input").addEventListener("change", () => cerca(false));
+
+  // indice delle sezioni: scorre senza cambiare l'indirizzo della pagina
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest && e.target.closest(".indice a");
+    if (!a) return;
+    const dest = document.getElementById(a.getAttribute("href").slice(1));
+    if (!dest) return;
+    e.preventDefault();
+    const fermo = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    dest.scrollIntoView({ behavior: fermo ? "auto" : "smooth", block: "start" });
+    dest.setAttribute("tabindex", "-1"); dest.focus({ preventScroll: true });
+  });
   addEventListener("hashchange", vai);
   vai();
 })();

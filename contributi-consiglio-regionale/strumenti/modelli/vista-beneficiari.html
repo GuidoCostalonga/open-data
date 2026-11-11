@@ -64,7 +64,16 @@
   <main class="contenuto">
     <section class="kpi" id="b-kpi" aria-label="Indicatori principali"></section>
 
-    <div class="griglia2">
+    <nav class="indice" aria-label="Sezioni della pagina">
+      <a href="#b-sez-mappa">Mappa e settori</a>
+      <a href="#b-sez-percorso">Percorso della domanda</a>
+      <a href="#b-sez-mesi">Mesi</a>
+      <a href="#b-sez-importi">Importi e tempi</a>
+      <a href="#b-sez-comuni">Comuni</a>
+      <a href="#b-sez-tabella">Tabella completa</a>
+    </nav>
+
+    <div class="griglia2" id="b-sez-mappa">
       <section class="scheda">
         <header>
           <h2 id="b-tit-mappa">Mappa dei beneficiari</h2>
@@ -91,10 +100,16 @@
       </section>
     </div>
 
-    <div class="griglia2b">
+    <section class="scheda" id="b-sez-percorso">
+      <header><h2>Il percorso di una domanda</h2></header>
+      <ol class="percorso" id="b-percorso"></ol>
+      <p class="piccolo" id="b-nota-percorso"></p>
+    </section>
+
+    <div class="griglia2b" id="b-sez-mesi">
       <section class="scheda">
         <header><h2>Decreti di impegno per mese</h2></header>
-        <div class="serie-leg"><span><i style="background:var(--s5)"></i>importo impegnato</span><span>sopra: numero di contributi</span></div>
+        <div class="serie-leg"><span><i style="background:var(--s5)"></i>importo impegnato</span><span>sotto ogni mese: numero di contributi</span></div>
         <div class="grafico" id="b-g-mesi"></div>
       </section>
       <section class="scheda">
@@ -104,7 +119,7 @@
       </section>
     </div>
 
-    <div class="griglia2b">
+    <div class="griglia2b" id="b-sez-importi">
       <section class="scheda">
         <header><h2>Fasce di importo</h2></header>
         <div class="grafico" id="b-g-fe"></div>
@@ -116,12 +131,12 @@
       </section>
     </div>
 
-    <section class="scheda">
+    <section class="scheda" id="b-sez-comuni">
       <header><h2>Comuni con più contributi</h2></header>
       <div class="grafico" id="b-g-com"></div>
     </section>
 
-    <section class="scheda">
+    <section class="scheda" id="b-sez-tabella">
       <div class="barra-tab">
         <h2 id="b-tit-tab">Beneficiari</h2>
         <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
@@ -269,16 +284,33 @@
     const cf = new Set(BF.map((b) => b.cf.toUpperCase())).size;
     const filtrato = S.cerca || S.prov.size || S.comune || S.ty || S.fg || S.fe || S.min !== "" || S.max !== "" || S.md || S.mc || S.da || S.a || S.tempi;
     $("kpi").innerHTML = `
-      <p class="frase">${filtrato ? "Con i filtri scelti, nel 2026 hanno" : "Nel 2026 hanno"} ricevuto un contributo <b>${F.num(n)}</b> ${n === 1 ? "beneficiario" : "beneficiari"} con sede in <b>${F.num(com)} ${com === 1 ? "Comune" : "Comuni"}</b>, per <b>${F.euro(e, 2)}</b>. In <b>${F.num(tetto)}</b> casi su ${F.num(n)} il contributo è di 7.000 €, l'importo più alto dell'elenco.</p>
+      <p class="frase">${filtrato ? "Con i filtri scelti, nel 2026 hanno" : "Nel 2026 hanno"} ricevuto un contributo <b>${F.num(n)}</b> ${n === 1 ? "beneficiario" : "beneficiari"} con sede in <b>${F.num(com)} ${com === 1 ? "Comune" : "Comuni"}</b>, per <b>${F.euro(e, 2)}</b>. In <b>${F.num(tetto)}</b> casi su ${F.num(n)} il contributo è di 7.000&nbsp;€, l'importo più alto dell'elenco.</p>
       <dl class="fatti">
         <div><dt>Importo medio</dt><dd>${F.euro(n ? e / n : null, 0)}</dd></div>
         <div><dt>Importo mediano</dt><dd>${F.euro(med, 0)}</dd></div>
         <div><dt>Giorni dal protocollo al decreto, valore mediano</dt><dd>${ggMed == null ? "–" : ggMed}</dd></div>
         <div><dt>Codici fiscali distinti</dt><dd>${F.num(cf)}</dd></div>
-      </dl>`;
+      </dl>
+      <p class="fonte-dato">${F.esc(D.meta.fonte_breve)}</p>`;
+  }
+
+  // valori mediani sui contributi selezionati: domanda inviata, protocollo, decreto di impegno
+  function percorso() {
+    const mediana = (v) => { const s = v.filter((x) => x != null).sort((a, b) => a - b); return s.length ? (s.length % 2 ? s[(s.length - 1) / 2] : (s[s.length / 2 - 1] + s[s.length / 2]) / 2) : null; };
+    const g = (a, b) => (a && b ? Math.round((new Date(b.slice(0, 10)) - new Date(a.slice(0, 10))) / 864e5) : null);
+    const m1 = mediana(BF.map((b) => g(b.dt, b.dp))), m2 = mediana(BF.map((b) => g(b.dp, b.dd))), mt = mediana(BF.map((b) => g(b.dt, b.dd)));
+    const gg = (v) => (v == null ? "–" : v === 0 ? "lo stesso giorno" : F.num(v, v % 1 ? 1 : 0) + (v === 1 ? " giorno" : " giorni"));
+    $("percorso").innerHTML = `
+      <li><span class="tappa">Domanda inviata</span><span class="cosa">Il richiedente trasmette la domanda al Consiglio regionale</span></li>
+      <li class="passo"><span class="durata">${gg(m1)}</span></li>
+      <li><span class="tappa">Domanda protocollata</span><span class="cosa">Riceve data e numero di protocollo</span></li>
+      <li class="passo"><span class="durata">${gg(m2)}</span></li>
+      <li><span class="tappa">Decreto di impegno</span><span class="cosa">Il contributo viene impegnato con un decreto numerato</span></li>`;
+    $("nota-percorso").textContent = BF.length ? `In tutto, dall'invio della domanda al decreto: ${gg(mt)}. Giorni di calendario, valori mediani calcolati sui ${F.num(BF.length)} contributi selezionati: metà delle pratiche ha impiegato meno tempo, metà di più.` : "Nessun contributo con i filtri scelti.";
   }
 
   function grafici() {
+    percorso();
     // settore
     const tyAll = B.filter((b) => passa(b, "ty"));
     const voci = TY.map((t, i) => {

@@ -392,3 +392,12 @@ function filtriRichiudibili() {
     f.parentNode.insertBefore(b, f);
   });
 }
+
+/* copia l'indirizzo diretto di una sezione; se il navigatore non lo permette, lo mostra da copiare a mano */
+function copiaCollegamento(hash, esito) {
+  const url = location.href.split("#")[0] + hash;
+  const mostra = () => { if (esito) esito.innerHTML = `Copia questo indirizzo: <input type="text" readonly value="${F.esc(url)}" aria-label="Indirizzo del Comune" style="width:100%;min-height:36px;margin-top:4px">`; const i = esito && esito.querySelector("input"); if (i) { i.focus(); i.select(); } };
+  try {
+    navigator.clipboard.writeText(url).then(() => { if (esito) esito.textContent = "Collegamento copiato: incollalo dove vuoi."; }, mostra);
+  } catch (e) { mostra(); }
+}

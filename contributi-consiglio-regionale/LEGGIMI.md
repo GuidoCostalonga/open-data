@@ -7,17 +7,26 @@ Un solo file, `index.html`, che si apre con un doppio clic e funziona anche senz
 | Comuni 2024 · 2026 | `index.html#comuni` | Contributi per Comune 2024, 2025 e 2026: mappa, filtri, confronti fra anni, classifiche, tabella completa |
 | Beneficiari 2026 | `index.html#beneficiari` | I 578 contributi 2026 uno per uno: beneficiario, codice fiscale, iniziativa, decreto, date, importo |
 
+## In cima alla pagina
+
+- **Cerca il tuo Comune**: scrivendo il nome compare subito quanto ha ricevuto il Comune nel 2024, nel 2025 e nel 2026, con i collegamenti alla sua scheda e ai suoi beneficiari 2026.
+- **Indice delle sezioni**: resta in alto mentre si scorre e porta direttamente a mappa, province, grafici e tabella.
+- **Fonte accanto ai numeri**: sotto la frase di apertura sono indicate fonte e data dei dati.
+
 ## Sezione Comuni (`#comuni`)
 
 - **Periodo**: 2024, 2025, 2026 o triennio; **confronto** fra due anni con mappa a colori divergenti (aumenti in blu, cali in rosso).
 - **Indicatore sulla mappa**: importo, numero di contributi, importo per abitante, contributi ogni 10.000 abitanti, importo medio. I cerchi arancioni mostrano il numero di contributi.
 - **Filtri**: provincia (anche «fuori regione»), dimensione del Comune, Comuni con o senza contributi, Comuni presenti in tutti e tre gli anni, Comuni nuovi nel 2026, intervallo di importo, intervallo di numero, ricerca per nome; si filtra anche toccando le colonne dei grafici.
-- **Dettaglio del Comune**: tre anni a confronto, importo per abitante, posizione in regione, collegamento ai beneficiari 2026 del Comune.
+- **Dettaglio del Comune**: tre anni a confronto, importo per abitante, posizione in regione, collegamento ai beneficiari 2026 del Comune, pulsante per copiare l'indirizzo diretto del Comune. Quando nessun Comune è selezionato, al suo posto c'è la classifica dei primi 15.
+- **Province**: tabella del periodo scelto e grafico dell'andamento dal 2024 al 2026 nella stessa sezione.
+- **Tabella**: colonna «Andamento» con tre piccole barre (2024, 2025, 2026) in scala sull'anno più alto del Comune; i valori esatti restano nelle colonne accanto.
 - **Tabella** ordinabile ed esportabile in CSV (si apre in Excel).
 
 ## Sezione Beneficiari 2026 (`#beneficiari`)
 
 - **Filtri**: ricerca libera (nome, iniziativa, codice fiscale, decreto), provincia, Comune della sede, settore, forma giuridica, fascia e intervallo di importo, mese della domanda, mese del decreto, intervallo di date del decreto, giorni fra protocollo e decreto.
+- **Il percorso di una domanda**: schema in tre tappe (domanda inviata, protocollata, decreto di impegno) con i giorni mediani fra l'una e l'altra, calcolati sui contributi selezionati.
 - **Grafici** cliccabili: settore, forma giuridica, decreti per mese, domande per mese, fasce di importo, tempi, Comuni con più contributi.
 - **Tabella** con pagine, ordinabile, esportabile in CSV con i soli beneficiari filtrati.
 - Collegamento diretto a un Comune: `index.html#beneficiari-<codice ISTAT>` per i suoi beneficiari 2026 (es. `#beneficiari-093033` per Pordenone), `index.html#comuni-<codice ISTAT>` per il suo dettaglio 2024-2026 (es. `#comuni-093036` per Roveredo in Piano).

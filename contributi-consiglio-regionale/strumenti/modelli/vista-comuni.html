@@ -82,7 +82,14 @@
   <main class="contenuto">
     <section class="kpi" id="c-kpi" aria-label="Indicatori principali"></section>
 
-    <div class="griglia2">
+    <nav class="indice" aria-label="Sezioni della pagina">
+      <a href="#c-sez-mappa">Mappa e classifica</a>
+      <a href="#c-sez-province">Province</a>
+      <a href="#c-sez-dimensione">Dimensione dei Comuni</a>
+      <a href="#c-sez-tabella">Tabella completa</a>
+    </nav>
+
+    <div class="griglia2" id="c-sez-mappa">
       <section class="scheda">
         <header>
           <h2 id="c-tit-mappa">Mappa</h2>
@@ -99,20 +106,20 @@
       <section class="scheda dettaglio" id="c-dettaglio" aria-live="polite"></section>
     </div>
 
-    <div class="griglia2b">
-      <section class="scheda">
-        <header><h2>Come sono cambiate le province</h2></header>
-        <div class="serie-leg" id="c-leg-prov"></div>
-        <div class="grafico" id="c-g-prov"></div>
-        <p class="piccolo" id="c-nota-prov"></p>
-      </section>
-      <section class="scheda">
-        <header><h2 id="c-tit-top">Primi 15 Comuni</h2></header>
-        <div class="grafico" id="c-g-top"></div>
-      </section>
-    </div>
+    <section class="scheda" id="c-sez-province">
+      <header><h2 id="c-tit-prov">Le quattro province</h2></header>
+      <div class="griglia2b">
+        <div class="tab-box tab-corta"><table class="dati" id="c-prov-tab"><thead><tr><th scope="col">Provincia</th><th scope="col" class="n">Contributi</th><th scope="col" class="n">Importo</th><th scope="col" class="n">Euro per abitante</th><th scope="col" class="n">Comuni raggiunti</th></tr></thead><tbody></tbody></table></div>
+        <div>
+          <h3>Come sono cambiate dal 2024 al 2026</h3>
+          <div class="serie-leg" id="c-leg-prov"></div>
+          <div class="grafico" id="c-g-prov"></div>
+        </div>
+      </div>
+      <p class="piccolo" id="c-nota-prov"></p>
+    </section>
 
-    <div class="griglia2b">
+    <div class="griglia2b" id="c-sez-dimensione">
       <section class="scheda">
         <header><h2>Piccoli e grandi Comuni</h2></header>
         <p class="piccolo" >Importo per abitante nel periodo scelto, per fascia di popolazione. Sotto ogni colonna: quota di Comuni raggiunti.</p>
@@ -125,7 +132,7 @@
       </section>
     </div>
 
-    <section class="scheda">
+    <section class="scheda" id="c-sez-tabella">
       <div class="barra-tab">
         <h2 id="c-tit-tab">Tutti i Comuni</h2>
         <button type="button" class="pulsante pieno" id="c-csv">Scarica la tabella (CSV)</button>
@@ -265,6 +272,7 @@
     kpi(vis);
     disegnaMappa(visFVG, setVis);
     dettaglio();
+    tabellaProvince();
     graficoProvince(vis);
     graficoTop(vis);
     graficoFasce(vis);
@@ -300,7 +308,8 @@
         <div><dt>Euro per abitante</dt><dd>${F.euro(pop ? eFVG / pop : null, 2)}</dd></div>
         <div><dt>Residenti nei Comuni scelti</dt><dd>${F.num(pop)}</dd></div>
         <div><dt>Comuni raggiunti</dt><dd>${F.pct(fvg.length ? (raggiunti / fvg.length) * 100 : null, 0)}</dd></div>
-      </dl>`;
+      </dl>
+      <p class="fonte-dato">${F.esc(D.meta.fonte_breve)}</p>`;
   }
 
   function disegnaMappa(visFVG, setVis) {
@@ -320,18 +329,9 @@
   function dettaglio() {
     const box = $("dettaglio");
     if (!S.sel || !PER[S.sel]) {
-      // riepilogo per provincia
-      const righe = ["GO", "PN", "TS", "UD"].map((p) => {
-        const cs = C.filter((c) => c.p === p);
-        const [n, e] = cs.reduce((a, c) => { const v = val(c, S.anno); return [a[0] + v[0], a[1] + v[1]]; }, [0, 0]);
-        const pop = cs.reduce((a, c) => a + (c.pop || 0), 0);
-        const r = cs.filter((c) => val(c, S.anno)[0] > 0).length;
-        return `<tr><td>${PROV_NOME[p]}</td><td class="n">${F.num(n)}</td><td class="n">${F.euro(e, 0)}</td><td class="n">${F.euro(e / pop, 2)}</td><td class="n">${r}/${cs.length}</td></tr>`;
-      }).join("");
-      box.innerHTML = `<header><h2>Le quattro province nel ${PER_NOME(S.anno)}</h2></header>
-        <div class="tab-box"><table class="dati"><thead><tr><th>Provincia</th><th class="n">Contr.</th><th class="n">Importo</th><th class="n">€/ab.</th><th class="n">Comuni</th></tr></thead><tbody>${righe}</tbody></table></div>
-        <p class="vuoto" style="margin-top:12px">Tocca un Comune sulla mappa, nella classifica o nella tabella per vederne il dettaglio anno per anno.</p>
-        ${D.fuori.length ? `<p class="piccolo">Nel file compaiono anche contributi a sedi fuori regione: ${D.fuori.map((f) => `${F.esc(f.n)} (${f.p}), ${f.anno}: ${f.num} contributo, ${F.euro(f.imp, 2)}`).join("; ")}. Sono inclusi nei totali ma non hanno un'area sulla mappa.</p>` : ""}`;
+      box.innerHTML = `<header><h2 id="c-tit-top">I primi 15 Comuni</h2></header>
+        <p class="piccolo">Tocca un Comune nella classifica, sulla mappa o nella tabella per vederne il dettaglio anno per anno.</p>
+        <div class="grafico" id="c-g-top"></div>`;
       return;
     }
     const c = PER[S.sel];
@@ -359,8 +359,24 @@
         ${ANNI.map((y) => `<dt>Per abitante ${y}</dt><dd>${c.pop ? F.euro((c.a[y] || [0, 0])[1] / c.pop, 2) : "–"}</dd>`).join("")}
         <dt>Posizione in regione per ${IND_NOME[S.ind].toLowerCase()}, ${PER_NOME(S.anno)}</dt><dd>${pos && v0 > 0 ? pos + "° su " + fvg.length : "–"}</dd>
       </dl>
-      ${c.a["2026"] && !c.est ? `<a class="pulsante pieno" style="display:inline-flex;align-items:center;text-decoration:none" href="#beneficiari-${c.c}">${c.a["2026"][0] === 1 ? "Vedi il beneficiario 2026" : "Vedi i " + c.a["2026"][0] + " beneficiari 2026"}</a>` : c.est ? "" : `<p class="vuoto">Nessun contributo nel 2026.</p>`}`;
+      <div class="azioni">
+      ${c.a["2026"] && !c.est ? `<a class="pulsante pieno" href="#beneficiari-${c.c}">${c.a["2026"][0] === 1 ? "Vedi il beneficiario 2026" : "Vedi i " + c.a["2026"][0] + " beneficiari 2026"}</a>` : c.est ? "" : `<p class="vuoto">Nessun contributo nel 2026.</p>`}
+      ${c.est ? "" : `<button type="button" class="pulsante" id="c-copia">Copia il collegamento a questo Comune</button>`}
+      </div>
+      ${c.est ? "" : `<p class="piccolo" id="c-copia-esito" aria-live="polite"></p>`}`;
     $("chiudi").onclick = () => { S.sel = null; aggiorna(); };
+    if (!c.est) $("copia").onclick = () => copiaCollegamento("#comuni-" + c.c, $("copia-esito"));
+  }
+
+  function tabellaProvince() {
+    $("tit-prov").textContent = `Le quattro province, ${PER_NOME(S.anno)}`;
+    $("prov-tab").tBodies[0].innerHTML = ["GO", "PN", "TS", "UD"].map((p) => {
+      const cs = C.filter((c) => c.p === p);
+      const [n, e] = cs.reduce((a, c) => { const v = val(c, S.anno); return [a[0] + v[0], a[1] + v[1]]; }, [0, 0]);
+      const pop = cs.reduce((a, c) => a + (c.pop || 0), 0);
+      const r = cs.filter((c) => val(c, S.anno)[0] > 0).length;
+      return `<tr><td>${PROV_NOME[p]}</td><td class="n">${F.num(n)}</td><td class="n">${F.euro(e, 0)}</td><td class="n">${F.euro(e / pop, 2)}</td><td class="n">${r} su ${cs.length}</td></tr>`;
+    }).join("");
   }
 
   function graficoProvince(vis) {
@@ -373,11 +389,11 @@
     }));
     $("leg-prov").innerHTML = ANNI.map((y, i) => `<span><i style="background:${colori[i]}"></i>${y}</span>`).join("") + `<span>${usaNum ? "numero di contributi" : "importo impegnato"}</span>`;
     colonne($("g-prov"), prov.map((p) => PROV_NOME[p]), serie, { valori: true, fmt: usaNum ? F.num : (v) => F.euro(v, 0), fmtBreve: usaNum ? F.num : (v) => F.euroBreve(v).replace("\u00a0mila\u00a0€", " mila").replace("\u00a0mln\u00a0€", " mln"), fmtAsse: usaNum ? F.num : (v) => F.euroBreve(v), etichetta: "Andamento per provincia" });
-    const ve = vis.filter((c) => c.est);
-    $("nota-prov").textContent = ve.length ? "Esclusi dal grafico i contributi a sedi fuori regione." : "";
+    $("nota-prov").textContent = D.fuori.length ? `La tabella riguarda tutti i Comuni della provincia; il grafico segue i filtri. Esclusi dalla tabella e dal grafico i contributi a sedi fuori regione: ${D.fuori.map((f) => `${f.n} (${f.p}), ${f.anno}: ${f.num} contributo, ${F.euro(f.imp, 2)}`).join("; ")}. Sono inclusi nei totali ma non hanno un'area sulla mappa.` : "";
   }
 
   function graficoTop(vis) {
+    if (!$("g-top")) return;
     const cf = confronto();
     const ind = S.ind;
     const voci = vis.filter((c) => !c.est).map((c) => ({ c, v: valoreMappa(c) })).filter((x) => x.v != null && (cf ? x.v !== 0 : x.v > 0));
@@ -415,7 +431,7 @@
   }
 
   const COLS = [
-    { k: "n", t: "Comune" }, { k: "p", t: "Prov." }, { k: "pop", t: "Abitanti", n: 1 },
+    { k: "n", t: "Comune" }, { k: "p", t: "Prov." }, { k: "and", t: "Andamento" }, { k: "pop", t: "Abitanti", n: 1 },
     { k: "n24", t: "Contr. 2024", n: 1 }, { k: "e24", t: "Importo 2024", n: 1 },
     { k: "n25", t: "Contr. 2025", n: 1 }, { k: "e25", t: "Importo 2025", n: 1 },
     { k: "n26", t: "Contr. 2026", n: 1 }, { k: "e26", t: "Importo 2026", n: 1 },
@@ -428,18 +444,25 @@
       case "n25": return (c.a["2025"] || [0])[0]; case "e25": return (c.a["2025"] || [0, 0])[1];
       case "n26": return (c.a["2026"] || [0])[0]; case "e26": return (c.a["2026"] || [0, 0])[1];
       case "imp": return val(c, S.anno)[1]; case "ab": return c.pop ? val(c, S.anno)[1] / c.pop : null;
+      case "and":
       case "var": { const a = (c.a["2024"] || [0, 0])[1], b = (c.a["2026"] || [0, 0])[1]; return a ? ((b - a) / a) * 100 : null; }
     }
   };
+  // tre barre per Comune, in scala sul suo anno più alto; i valori esatti restano nelle colonne accanto
+  function mini(c) {
+    const v = ANNI.map((y) => (c.a[y] || [0, 0])[1]), mx = Math.max(...v);
+    if (!mx) return '<span class="mini vuota">nessun contributo</span>';
+    return `<span class="mini" role="img" aria-label="${ANNI.map((y, i) => y + ": " + F.euro(v[i], 2)).join("; ")}">${v.map((x) => `<i style="height:${x ? Math.max(8, (x / mx) * 100).toFixed(0) : 0}%"></i>`).join("")}</span>`;
+  }
   function tabella(vis) {
     const tab = $("tab");
-    COLS[9].t = `Importo ${PER_NOME(S.anno)}`; COLS[10].t = `€/ab. ${PER_NOME(S.anno)}`;
+    COLS[10].t = `Importo ${PER_NOME(S.anno)}`; COLS[11].t = `€/ab. ${PER_NOME(S.anno)}`;
     intestazioni(tab.tHead, COLS, S.ord, aggiorna);
     const righe = ordina(vis.slice(), S.ord, cella);
     $("tit-tab").textContent = `Comuni selezionati: ${F.num(righe.length)}`;
     tab.tBodies[0].innerHTML = righe.map((c) => {
       const v = cella(c, "var");
-      return `<tr data-c="${F.esc(c.c)}" class="${c.c === S.sel ? "sel" : ""}"><td>${F.esc(c.n)}</td><td>${c.p}</td><td class="n">${F.num(c.pop)}</td>
+      return `<tr data-c="${F.esc(c.c)}" class="${c.c === S.sel ? "sel" : ""}"><td>${F.esc(c.n)}</td><td>${c.p}</td><td>${mini(c)}</td><td class="n">${F.num(c.pop)}</td>
       <td class="n">${cella(c, "n24") || ""}</td><td class="n">${cella(c, "e24") ? F.euro(cella(c, "e24"), 2) : ""}</td>
       <td class="n">${cella(c, "n25") || ""}</td><td class="n">${cella(c, "e25") ? F.euro(cella(c, "e25"), 2) : ""}</td>
       <td class="n">${cella(c, "n26") || ""}</td><td class="n">${cella(c, "e26") ? F.euro(cella(c, "e26"), 2) : ""}</td>
