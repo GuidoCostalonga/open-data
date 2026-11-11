@@ -1,6 +1,6 @@
 <div class="wrap impianto">
-  <aside class="filtri" aria-label="Filtri">
-    <h2>Filtri <button type="button" class="pulsante" id="b-azzera" style="min-height:34px;padding:4px 10px;font-size:13px">Azzera</button></h2>
+  <aside class="filtri" id="b-filtri" aria-label="Filtri">
+    <h2>Filtri <button type="button" class="pulsante piccolo-p" id="b-azzera">Azzera</button></h2>
     <div class="campo">
       <label for="b-cerca">Cerca</label>
       <input type="search" id="b-cerca" placeholder="beneficiario, iniziativa, codice fiscale, decreto" autocomplete="off">
@@ -231,8 +231,8 @@
     etichetta: "Mappa dei Comuni sede dei beneficiari 2026",
     tip: (c) => {
       const a = AGG[c.c] || { n: 0, e: 0 };
-      const nomi = BF.filter((b) => b.c === c.c).slice(0, 4).map((b) => "· " + F.esc(b.d)).join("<br>");
-      return `<b>${F.esc(c.n)}</b> (${c.p})<br>${F.num(a.n)} contributi · ${F.euro(a.e, 2)}<br>${c.pop ? F.euro(a.e / c.pop, 2) + " per abitante" : ""}${nomi ? `<div style="margin-top:4px;font-size:12px;color:var(--ink-2)">${nomi}${a.n > 4 ? "<br>…" : ""}</div>` : ""}`;
+      const nomi = BF.filter((b) => b.c === c.c).slice(0, 4).map((b) => F.esc(b.d)).join("<br>");
+      return `<b>${F.esc(c.n)}</b> (${c.p})<br>${F.num(a.n)} contributi, ${F.euro(a.e, 2)}<br>${c.pop ? F.euro(a.e / c.pop, 2) + " per abitante" : ""}${nomi ? `<div style="margin-top:4px;font-size:12px;color:var(--ink-2)">${nomi}${a.n > 4 ? "<br>…" : ""}</div>` : ""}`;
     },
     click: (k) => { if (!k) return; S.comune = S.comune === k ? "" : k; $("comune").value = S.comune; S.pag = 0; aggiorna(); },
   });
@@ -267,13 +267,15 @@
     const ggMed = gg.length ? gg[Math.floor(gg.length / 2)] : null;
     const com = new Set(BF.map((b) => b.chiave)).size;
     const cf = new Set(BF.map((b) => b.cf.toUpperCase())).size;
+    const filtrato = S.cerca || S.prov.size || S.comune || S.ty || S.fg || S.fe || S.min !== "" || S.max !== "" || S.md || S.mc || S.da || S.a || S.tempi;
     $("kpi").innerHTML = `
-      <div class="tile"><div class="et">Importo impegnato</div><div class="val" title="${F.euro(e, 2)}">${F.euro(e, 0)}</div><div class="nota">${F.euro(e, 2)}</div></div>
-      <div class="tile"><div class="et">Contributi</div><div class="val">${F.num(n)}</div><div class="nota">${F.num(cf)} codici fiscali distinti</div></div>
-      <div class="tile"><div class="et">Comuni sede</div><div class="val">${F.num(com)}</div><div class="nota">dei beneficiari selezionati</div></div>
-      <div class="tile"><div class="et">Importo medio</div><div class="val">${F.euro(n ? e / n : null, 0)}</div><div class="nota">mediano ${F.euro(med, 0)}</div></div>
-      <div class="tile"><div class="et">Pari a 7.000 €</div><div class="val">${F.num(tetto)}</div><div class="nota">${F.pct(n ? (tetto / n) * 100 : null, 1)} · importo più alto in elenco</div></div>
-      <div class="tile"><div class="et">Dal protocollo al decreto</div><div class="val">${ggMed == null ? "–" : ggMed + " gg"}</div><div class="nota">valore mediano</div></div>`;
+      <p class="frase">${filtrato ? "Con i filtri scelti, nel 2026 hanno" : "Nel 2026 hanno"} ricevuto un contributo <b>${F.num(n)}</b> ${n === 1 ? "beneficiario" : "beneficiari"} con sede in <b>${F.num(com)} ${com === 1 ? "Comune" : "Comuni"}</b>, per <b>${F.euro(e, 2)}</b>. In <b>${F.num(tetto)}</b> casi su ${F.num(n)} il contributo è di 7.000 €, l'importo più alto dell'elenco.</p>
+      <dl class="fatti">
+        <div><dt>Importo medio</dt><dd>${F.euro(n ? e / n : null, 0)}</dd></div>
+        <div><dt>Importo mediano</dt><dd>${F.euro(med, 0)}</dd></div>
+        <div><dt>Giorni dal protocollo al decreto, valore mediano</dt><dd>${ggMed == null ? "–" : ggMed}</dd></div>
+        <div><dt>Codici fiscali distinti</dt><dd>${F.num(cf)}</dd></div>
+      </dl>`;
   }
 
   function grafici() {
@@ -341,7 +343,7 @@
     $("tit-tab").textContent = `Beneficiari selezionati: ${F.num(righe.length)}`;
     tab.tBodies[0].innerHTML = pagina.length ? pagina.map((b) => `<tr>
       <td class="n">${b.n}</td><td class="den">${F.esc(b.d)}</td>
-      <td class="cf">${b.cfok ? F.esc(b.cf) : `<span class="verificare" title="Valore presente nel file di origine">${F.esc(b.cf)} · DA VERIFICARE</span>`}</td>
+      <td class="cf">${b.cfok ? F.esc(b.cf) : `<span class="verificare" title="Valore presente nel file di origine">${F.esc(b.cf)}, DA VERIFICARE</span>`}</td>
       <td class="tit">${F.esc(b.t)}</td><td>${F.esc(b.cm)}</td><td>${b.pv}</td><td>${F.esc(b.ty)}</td>
       <td class="n">${F.data(b.dt)}</td><td class="n">${F.esc(b.dn)}</td><td class="n">${F.data(b.dd)}</td><td class="n">${b.gg ?? "–"}</td>
       <td class="n"><b>${F.euro(b.e, 2)}</b></td></tr>`).join("") : `<tr><td colspan="12" class="vuoto">Nessun beneficiario con i filtri scelti.</td></tr>`;

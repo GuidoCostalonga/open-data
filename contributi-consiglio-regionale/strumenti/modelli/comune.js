@@ -7,14 +7,14 @@ const F = {
   euro(v, dec) {
     if (v == null || !isFinite(v)) return "–";
     const d = dec == null ? (Math.abs(v) >= 1000 ? 0 : 2) : dec;
-    return raggruppa(v, d) + " €";
+    return raggruppa(v, d) + "\u00a0€";
   },
   euroBreve(v) {
     if (v == null || !isFinite(v)) return "–";
     const a = Math.abs(v);
-    if (a >= 1e6) return (v / 1e6).toLocaleString("it-IT", { maximumFractionDigits: 2 }) + " mln €";
-    if (a >= 1e4) return (v / 1e3).toLocaleString("it-IT", { maximumFractionDigits: 0 }) + " mila €";
-    return raggruppa(Math.round(v), 0) + " €";
+    if (a >= 1e6) return (v / 1e6).toLocaleString("it-IT", { maximumFractionDigits: 2 }) + "\u00a0mln\u00a0€";
+    if (a >= 1e4) return (v / 1e3).toLocaleString("it-IT", { maximumFractionDigits: 0 }) + "\u00a0mila\u00a0€";
+    return raggruppa(Math.round(v), 0) + "\u00a0€";
   },
   num(v, dec = 0) {
     if (v == null || !isFinite(v)) return "–";
@@ -292,7 +292,7 @@ function barreOrizzontali(box, voci, opz = {}) {
     if (v.attivo) { r.setAttribute("stroke", css("--focus")); r.setAttribute("stroke-width", "2.5"); }
     const tv = sv("text", { x: lw + bw + 6, y: y + rh / 2 + 4, class: "forte" });
     tv.textContent = opz.fmt ? opz.fmt(v.v) : v.v;
-    const ti = sv("title"); ti.textContent = `${v.l}: ${opz.fmt ? opz.fmt(v.v) : v.v}${v.extra ? " · " + v.extra : ""}`;
+    const ti = sv("title"); ti.textContent = `${v.l}: ${opz.fmt ? opz.fmt(v.v) : v.v}${v.extra ? ", " + v.extra : ""}`;
     g.append(ti, t, r, tv);
     if (opz.click) { g.addEventListener("click", () => opz.click(v)); g.addEventListener("keydown", (e) => { if (e.key === "Enter") opz.click(v); }); }
     s.appendChild(g);
@@ -301,7 +301,18 @@ function barreOrizzontali(box, voci, opz = {}) {
 }
 function colonne(box, cat, serie, opz = {}) {
   box.innerHTML = "";
-  const W = Math.max(320, Math.round(box.clientWidth || 620)), H = opz.h || 250, ml = 62, mb = 34, mt = 22;
+  const W = Math.max(320, Math.round(box.clientWidth || 620)), ml = 62, mt = 22;
+  // etichette su due righe quando non entrano nella colonna
+  const cwStima = (W - ml) / cat.length;
+  const righe = cat.map((c) => {
+    if (c.length * 6.6 <= cwStima - 6) return [c];
+    const sp = [...c.matchAll(/ /g)].map((m) => m.index);
+    if (!sp.length) return [c];
+    const k = sp.reduce((a, b) => (Math.abs(b - c.length / 2) < Math.abs(a - c.length / 2) ? b : a));
+    return [c.slice(0, k), c.slice(k + 1)];
+  });
+  const nr = Math.max(...righe.map((r) => r.length));
+  const mb = 20 + 14 * nr + (opz.sotto ? 14 : 0), H = (opz.h || 250) + (mb - 34);
   const max = Math.max(1e-9, ...serie.flatMap((s) => s.v));
   const step = niceStep(max / 4), top = Math.ceil(max / step) * step;
   const s = sv("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": opz.etichetta || "grafico a colonne" });
@@ -318,7 +329,7 @@ function colonne(box, cat, serie, opz = {}) {
       const g = sv("g", { class: "bar", tabindex: opz.click ? "0" : "-1" });
       const r = sv("rect", { x: x + 1, y, width: Math.max(1, bw - 2), height: Math.max(0, h), rx: 2, fill: se.col });
       if (opz.attivo != null && opz.attivo === i) { r.setAttribute("stroke", css("--focus")); r.setAttribute("stroke-width", "2.5"); }
-      const ti = sv("title"); ti.textContent = `${c}${se.n ? " · " + se.n : ""}: ${opz.fmt ? opz.fmt(v) : v}${se.extra ? " · " + se.extra[i] : ""}`;
+      const ti = sv("title"); ti.textContent = `${c}${se.n ? ", " + se.n : ""}: ${opz.fmt ? opz.fmt(v) : v}${se.extra ? ", " + se.extra[i] : ""}`;
       g.append(ti, r);
       if (opz.valori && (serie.length === 1 || bw > 34) && v > 0) {
         const tv = sv("text", { x: x + bw / 2, y: y - 5, "text-anchor": "middle", class: "forte" });
@@ -328,8 +339,8 @@ function colonne(box, cat, serie, opz = {}) {
       if (opz.click) { g.addEventListener("click", () => opz.click(i)); g.addEventListener("keydown", (e) => { if (e.key === "Enter") opz.click(i); }); }
       s.appendChild(g);
     });
-    const tc = sv("text", { x: ml + i * cw + cw / 2, y: H - mb + 16, "text-anchor": "middle" }); tc.textContent = c; s.appendChild(tc);
-    if (opz.sotto) { const t2 = sv("text", { x: ml + i * cw + cw / 2, y: H - mb + 29, "text-anchor": "middle" }); t2.style.fontSize = "10.5px"; t2.textContent = opz.sotto[i]; s.appendChild(t2); }
+    righe[i].forEach((r, j) => { const tc = sv("text", { x: ml + i * cw + cw / 2, y: H - mb + 16 + j * 14, "text-anchor": "middle" }); tc.textContent = r; s.appendChild(tc); });
+    if (opz.sotto) { const t2 = sv("text", { x: ml + i * cw + cw / 2, y: H - mb + 16 + nr * 14 + 1, "text-anchor": "middle" }); t2.style.fontSize = "10.5px"; t2.textContent = opz.sotto[i]; s.appendChild(t2); }
   });
   s.appendChild(sv("line", { x1: ml, x2: W, y1: H - mb, y2: H - mb, class: "asse" }));
   box.appendChild(s);
@@ -369,4 +380,15 @@ function ridisegnaAlRidimensionamento(fn) {
   let t; addEventListener("resize", () => { clearTimeout(t); t = setTimeout(fn, 200); });
   if (window.matchMedia) matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change", fn);
   new MutationObserver(fn).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+}
+
+/* sul telefono i filtri stanno chiusi sotto un pulsante, così i dati si vedono subito */
+function filtriRichiudibili() {
+  document.querySelectorAll(".filtri").forEach((f) => {
+    if (f.previousElementSibling && f.previousElementSibling.classList.contains("apri-filtri")) return;
+    const b = el("button", { type: "button", class: "pulsante apri-filtri", "aria-expanded": "false" }, "Mostra i filtri");
+    if (f.id) b.setAttribute("aria-controls", f.id);
+    b.addEventListener("click", () => { const ap = f.classList.toggle("aperti"); b.setAttribute("aria-expanded", String(ap)); b.textContent = ap ? "Nascondi i filtri" : "Mostra i filtri"; });
+    f.parentNode.insertBefore(b, f);
+  });
 }

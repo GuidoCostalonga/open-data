@@ -1,6 +1,6 @@
 <div class="wrap impianto">
-  <aside class="filtri" aria-label="Filtri">
-    <h2>Filtri <button type="button" class="pulsante" id="c-azzera" style="min-height:34px;padding:4px 10px;font-size:13px">Azzera</button></h2>
+  <aside class="filtri" id="c-filtri" aria-label="Filtri">
+    <h2>Filtri <button type="button" class="pulsante piccolo-p" id="c-azzera">Azzera</button></h2>
 
     <div class="campo">
       <span class="etichetta" id="c-et-anno">Periodo</span>
@@ -101,7 +101,7 @@
 
     <div class="griglia2b">
       <section class="scheda">
-        <header><h2>Andamento per provincia</h2></header>
+        <header><h2>Come sono cambiate le province</h2></header>
         <div class="serie-leg" id="c-leg-prov"></div>
         <div class="grafico" id="c-g-prov"></div>
         <p class="piccolo" id="c-nota-prov"></p>
@@ -114,13 +114,13 @@
 
     <div class="griglia2b">
       <section class="scheda">
-        <header><h2>Per dimensione del Comune</h2></header>
-        <p class="piccolo" style="margin-bottom:6px">Importo per abitante nel periodo scelto, per fascia di popolazione. Sotto ogni colonna: quota di Comuni raggiunti.</p>
+        <header><h2>Piccoli e grandi Comuni</h2></header>
+        <p class="piccolo" >Importo per abitante nel periodo scelto, per fascia di popolazione. Sotto ogni colonna: quota di Comuni raggiunti.</p>
         <div class="grafico" id="c-g-fasce"></div>
       </section>
       <section class="scheda">
-        <header><h2>Distribuzione degli importi</h2></header>
-        <p class="piccolo" style="margin-bottom:6px">Quanti Comuni ricadono in ciascuna fascia di importo ricevuto nel periodo scelto. Tocca una colonna per filtrare.</p>
+        <header><h2>Quanto ha ricevuto ciascun Comune</h2></header>
+        <p class="piccolo" >Quanti Comuni ricadono in ciascuna fascia di importo ricevuto nel periodo scelto. Tocca una colonna per filtrare.</p>
         <div class="grafico" id="c-g-dist"></div>
       </section>
     </div>
@@ -180,7 +180,7 @@
   };
   const IND_NOME = { imp: "Importo impegnato", num: "Numero di contributi", ab: "Importo per abitante", dens: "Contributi ogni 10.000 abitanti", medio: "Importo medio per contributo" };
   const fmtInd = (ind, v) => (ind === "num" ? F.num(v) : ind === "dens" ? F.num(v, 1) : ind === "ab" ? F.euro(v, 2) : F.euro(v, 0));
-  const PER_NOME = (p) => (p === "tot" ? "triennio 2024-2026" : p);
+  const PER_NOME = (p) => (p === "tot" ? "dal 2024 al 2026" : p);
 
   /* filtro */
   function passa(c, salta) {
@@ -246,7 +246,7 @@
   const titoloInd = () => {
     const cf = confronto();
     if (cf) return `Variazione ${S.ind === "num" || S.ind === "dens" ? "del numero di contributi" : "dell'importo"} ${cf[0]} → ${cf[1]}`;
-    return `${IND_NOME[S.ind]} · ${PER_NOME(S.anno)}`;
+    return `${IND_NOME[S.ind]}, ${PER_NOME(S.anno)}`;
   };
 
   /* ---------- disegno ---------- */
@@ -275,29 +275,32 @@
 
   function kpi(vis) {
     const per = S.anno, [n, e] = vis.reduce((a, c) => { const v = val(c, per); return [a[0] + v[0], a[1] + v[1]]; }, [0, 0]);
-    const raggiunti = vis.filter((c) => !c.est && val(c, per)[0] > 0).length;
-    const nFVG = vis.filter((c) => !c.est).length;
-    const pop = vis.filter((c) => !c.est).reduce((a, c) => a + (c.pop || 0), 0);
-    const eFVG = vis.filter((c) => !c.est).reduce((a, c) => a + val(c, per)[1], 0);
-    let varTxt = "";
+    const fvg = vis.filter((c) => !c.est);
+    const raggiunti = fvg.filter((c) => val(c, per)[0] > 0).length;
+    const pop = fvg.reduce((a, c) => a + (c.pop || 0), 0);
+    const eFVG = fvg.reduce((a, c) => a + val(c, per)[1], 0);
+    const filtrato = S.prov.size || S.fascia || S.cop || S.min !== "" || S.max !== "" || S.nmin !== "" || S.nmax !== "" || S.cerca || S.distSel;
+    const quando = per === "tot" ? "Nei tre anni dal 2024 al 2026" : `Nel ${per}`;
+    const verbo = per === "tot" ? "ha impegnato in tutto" : "ha impegnato";
+    let confr = "";
     const prec = per === "2026" ? "2025" : per === "2025" ? "2024" : null;
     if (prec) {
       const ep = vis.reduce((a, c) => a + val(c, prec)[1], 0), np = vis.reduce((a, c) => a + val(c, prec)[0], 0);
       const ve = ep ? ((e - ep) / ep) * 100 : null, vn = np ? ((n - np) / np) * 100 : null;
-      varTxt = `<div class="tile"><div class="et">Rispetto al ${prec}</div><div class="val ${ve >= 0 ? "su" : "giu"}">${F.pct(ve, 1, true)}</div><div class="nota">importo · numero ${F.pct(vn, 1, true)}</div></div>`;
+      if (ve != null) confr = ` <span class="${ve >= 0 ? "su" : "giu"}">${ve >= 0 ? "Sono il " + F.pct(ve, 1) + " in più" : "Sono il " + F.pct(-ve, 1) + " in meno"}</span> rispetto al ${prec}${vn != null ? `, con ${vn >= 0 ? F.pct(vn, 1) + " di contributi in più" : F.pct(-vn, 1) + " di contributi in meno"}` : ""}.`;
     } else if (per === "tot") {
       const e24 = vis.reduce((a, c) => a + val(c, "2024")[1], 0), e26 = vis.reduce((a, c) => a + val(c, "2026")[1], 0);
-      varTxt = `<div class="tile"><div class="et">Dal 2024 al 2026</div><div class="val ${e26 >= e24 ? "su" : "giu"}">${F.pct(e24 ? ((e26 - e24) / e24) * 100 : null, 1, true)}</div><div class="nota">variazione dell'importo annuo</div></div>`;
-    } else {
-      varTxt = `<div class="tile"><div class="et">Anno precedente</div><div class="val">–</div><div class="nota">il file parte dal 2024</div></div>`;
+      if (e24) confr = ` Dal 2024 al 2026 l'importo annuo è <span class="${e26 >= e24 ? "su" : "giu"}">${e26 >= e24 ? "cresciuto" : "calato"} del ${F.pct(Math.abs(((e26 - e24) / e24) * 100), 1)}</span>.`;
     }
+    const dove = fvg.length === NFVG ? `${F.num(raggiunti)} Comuni sui ${F.num(NFVG)} del Friuli Venezia Giulia` : `${F.num(raggiunti)} Comuni sui ${F.num(fvg.length)} selezionati`;
     $("kpi").innerHTML = `
-      <div class="tile"><div class="et">Importo impegnato · ${PER_NOME(per)}</div><div class="val" title="${F.euro(e, 2)}">${F.euro(e, 0)}</div><div class="nota">${F.euro(e, 2)}</div></div>
-      <div class="tile"><div class="et">Contributi</div><div class="val">${F.num(n)}</div><div class="nota">concessi nel periodo</div></div>
-      <div class="tile"><div class="et">Comuni raggiunti</div><div class="val">${F.num(raggiunti)} <span style="font-size:.6em;color:var(--ink-3)">su ${F.num(nFVG)}</span></div><div class="nota">${F.pct(nFVG ? (raggiunti / nFVG) * 100 : null, 0)} dei Comuni selezionati</div></div>
-      <div class="tile"><div class="et">Importo medio</div><div class="val">${F.euro(n ? e / n : null, 0)}</div><div class="nota">per contributo</div></div>
-      <div class="tile"><div class="et">Per abitante</div><div class="val">${F.euro(pop ? eFVG / pop : null, 2)}</div><div class="nota">su ${F.num(pop)} residenti</div></div>
-      ${varTxt}`;
+      <p class="frase">${filtrato ? "Con i filtri scelti: " + quando.toLowerCase() : quando} il Consiglio regionale ${verbo} <b>${F.euro(e, 2)}</b> per <b>${F.num(n)}</b> ${n === 1 ? "contributo" : "contributi"}, arrivati in <b>${dove}</b>.${confr}</p>
+      <dl class="fatti">
+        <div><dt>Importo medio per contributo</dt><dd>${F.euro(n ? e / n : null, 0)}</dd></div>
+        <div><dt>Euro per abitante</dt><dd>${F.euro(pop ? eFVG / pop : null, 2)}</dd></div>
+        <div><dt>Residenti nei Comuni scelti</dt><dd>${F.num(pop)}</dd></div>
+        <div><dt>Comuni raggiunti</dt><dd>${F.pct(fvg.length ? (raggiunti / fvg.length) * 100 : null, 0)}</dd></div>
+      </dl>`;
   }
 
   function disegnaMappa(visFVG, setVis) {
@@ -325,7 +328,7 @@
         const r = cs.filter((c) => val(c, S.anno)[0] > 0).length;
         return `<tr><td>${PROV_NOME[p]}</td><td class="n">${F.num(n)}</td><td class="n">${F.euro(e, 0)}</td><td class="n">${F.euro(e / pop, 2)}</td><td class="n">${r}/${cs.length}</td></tr>`;
       }).join("");
-      box.innerHTML = `<header><h2>Riepilogo per provincia · ${PER_NOME(S.anno)}</h2></header>
+      box.innerHTML = `<header><h2>Le quattro province nel ${PER_NOME(S.anno)}</h2></header>
         <div class="tab-box"><table class="dati"><thead><tr><th>Provincia</th><th class="n">Contr.</th><th class="n">Importo</th><th class="n">€/ab.</th><th class="n">Comuni</th></tr></thead><tbody>${righe}</tbody></table></div>
         <p class="vuoto" style="margin-top:12px">Tocca un Comune sulla mappa, nella classifica o nella tabella per vederne il dettaglio anno per anno.</p>
         ${D.fuori.length ? `<p class="piccolo">Nel file compaiono anche contributi a sedi fuori regione: ${D.fuori.map((f) => `${F.esc(f.n)} (${f.p}), ${f.anno}: ${f.num} contributo, ${F.euro(f.imp, 2)}`).join("; ")}. Sono inclusi nei totali ma non hanno un'area sulla mappa.</p>` : ""}`;
@@ -338,7 +341,7 @@
       return `<div style="display:grid;grid-template-columns:42px 1fr auto;gap:8px;align-items:center;margin:4px 0">
         <span style="font-weight:600">${y}</span>
         <span style="background:var(--surface-2);border-radius:4px;height:16px;position:relative"><span style="position:absolute;inset:0 auto 0 0;width:${((v[1] / max) * 100).toFixed(1)}%;background:var(--accent);border-radius:4px"></span></span>
-        <span style="text-align:right;min-width:150px">${F.euro(v[1], 2)} · ${v[0]} contr.</span></div>`;
+        <span style="text-align:right;min-width:150px">${F.euro(v[1], 2)}, ${v[0]} contr.</span></div>`;
     }).join("");
     // posizione in classifica
     const fvg = C.filter((x) => !x.est);
@@ -346,15 +349,15 @@
     const pos = v0 == null ? null : fvg.filter((x) => (metrica(x, S.anno, S.ind) || 0) > v0).length + 1;
     const tot = ANNI.reduce((a, y) => a + (c.a[y] || [0, 0])[1], 0);
     const ntot = ANNI.reduce((a, y) => a + (c.a[y] || [0, 0])[0], 0);
-    box.innerHTML = `<header><div><p class="occhiello">${PROV_NOME[c.p] || c.p}</p><h2 class="nome">${F.esc(c.n)}</h2></div>
+    box.innerHTML = `<header><div><h2 class="nome">${F.esc(c.n)}</h2><p class="prov-nome">Provincia di ${PROV_NOME[c.p] || c.p}</p></div>
       <button type="button" class="pulsante" id="c-chiudi">Chiudi</button></header>
       ${barre}
       <dl>
         <dt>Abitanti (ISTAT, 1° gennaio 2025)</dt><dd>${c.pop ? F.num(c.pop) : "–"}</dd>
-        <dt>Triennio 2024-2026</dt><dd>${F.euro(tot, 2)} · ${ntot} contr.</dd>
+        <dt>Dal 2024 al 2026</dt><dd>${F.euro(tot, 2)}, ${ntot} contr.</dd>
         <dt>Per abitante nel triennio</dt><dd>${c.pop ? F.euro(tot / c.pop, 2) : "–"}</dd>
         ${ANNI.map((y) => `<dt>Per abitante ${y}</dt><dd>${c.pop ? F.euro((c.a[y] || [0, 0])[1] / c.pop, 2) : "–"}</dd>`).join("")}
-        <dt>Posizione in regione · ${IND_NOME[S.ind].toLowerCase()} ${PER_NOME(S.anno)}</dt><dd>${pos && v0 > 0 ? pos + "° su " + fvg.length : "–"}</dd>
+        <dt>Posizione in regione per ${IND_NOME[S.ind].toLowerCase()}, ${PER_NOME(S.anno)}</dt><dd>${pos && v0 > 0 ? pos + "° su " + fvg.length : "–"}</dd>
       </dl>
       ${c.a["2026"] && !c.est ? `<a class="pulsante pieno" style="display:inline-flex;align-items:center;text-decoration:none" href="#beneficiari-${c.c}">${c.a["2026"][0] === 1 ? "Vedi il beneficiario 2026" : "Vedi i " + c.a["2026"][0] + " beneficiari 2026"}</a>` : c.est ? "" : `<p class="vuoto">Nessun contributo nel 2026.</p>`}`;
     $("chiudi").onclick = () => { S.sel = null; aggiorna(); };
@@ -369,7 +372,7 @@
       v: prov.map((p) => vis.filter((c) => c.p === p).reduce((a, c) => a + (c.a[y] || [0, 0])[usaNum ? 0 : 1], 0)),
     }));
     $("leg-prov").innerHTML = ANNI.map((y, i) => `<span><i style="background:${colori[i]}"></i>${y}</span>`).join("") + `<span>${usaNum ? "numero di contributi" : "importo impegnato"}</span>`;
-    colonne($("g-prov"), prov.map((p) => PROV_NOME[p]), serie, { valori: true, fmt: usaNum ? F.num : (v) => F.euro(v, 0), fmtBreve: usaNum ? F.num : (v) => F.euroBreve(v).replace(" mila €", "k").replace(" mln €", "M"), fmtAsse: usaNum ? F.num : (v) => F.euroBreve(v), etichetta: "Andamento per provincia" });
+    colonne($("g-prov"), prov.map((p) => PROV_NOME[p]), serie, { valori: true, fmt: usaNum ? F.num : (v) => F.euro(v, 0), fmtBreve: usaNum ? F.num : (v) => F.euroBreve(v).replace("\u00a0mila\u00a0€", " mila").replace("\u00a0mln\u00a0€", " mln"), fmtAsse: usaNum ? F.num : (v) => F.euroBreve(v), etichetta: "Andamento per provincia" });
     const ve = vis.filter((c) => c.est);
     $("nota-prov").textContent = ve.length ? "Esclusi dal grafico i contributi a sedi fuori regione." : "";
   }
@@ -380,7 +383,7 @@
     const voci = vis.filter((c) => !c.est).map((c) => ({ c, v: valoreMappa(c) })).filter((x) => x.v != null && (cf ? x.v !== 0 : x.v > 0));
     voci.sort((a, b) => b.v - a.v);
     const top = cf ? voci.slice(0, 8).concat(voci.slice(-7).filter((x) => x.v < 0 && !voci.slice(0, 8).includes(x))) : voci.slice(0, 15);
-    $("tit-top").textContent = cf ? "Maggiori aumenti e cali" : `Primi 15 Comuni · ${IND_NOME[ind].toLowerCase()}`;
+    $("tit-top").textContent = cf ? "Maggiori aumenti e cali" : `I primi 15 Comuni per ${IND_NOME[ind].toLowerCase()}`;
     barreOrizzontali($("g-top"), top.map((x) => ({ l: x.c.n.split("-")[0], v: x.v, c: x.c.c, attivo: x.c.c === S.sel, col: x.v < 0 ? css("--neg") : css("--accent") })), {
       fmt: cf ? segno : (v) => fmtInd(ind, v), click: (v) => { S.sel = v.c; aggiorna(); }, etichetta: "Classifica dei Comuni",
     });
