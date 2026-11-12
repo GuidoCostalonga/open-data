@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contributi Consiglio regionale FVG</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Contributi del Consiglio regionale del Friuli Venezia Giulia: Comuni 2024, 2025, 2026 e beneficiari 2026, con mappa, filtri e tabelle.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+/*CSS*/
+</style>
+</head>
+<body>
+<header class="testata">
+  <div class="wrap">
+    <div>
+      <p class="ente">Consiglio regionale del Friuli Venezia Giulia</p>
+      <h1 id="titolo">Contributi per Comune dal 2024 al 2026</h1>
+      <p class="sotto" id="sottotitolo"></p>
+    </div>
+    <nav class="navdash" aria-label="Sezioni">
+      <a href="#comuni" data-vista="comuni">Comuni dal 2024 al 2026</a>
+      <a href="#beneficiari" data-vista="beneficiari">Beneficiari 2026</a>
+    </nav>
+    <form class="cerca-comune" id="cerca-comune" role="search">
+      <label for="cc-input">Cerca il tuo Comune</label>
+      <div class="cc-riga">
+        <input type="search" id="cc-input" list="cc-elenco" placeholder="Per esempio Sacile" autocomplete="off">
+        <button type="submit" class="pulsante pieno">Cerca</button>
+      </div>
+      <datalist id="cc-elenco"></datalist>
+      <div class="cc-esito" id="cc-esito" aria-live="polite"></div>
+    </form>
+  </div>
+</header>
+
+<section id="vista-comuni" aria-label="Contributi per Comune 2024, 2025, 2026">
+/*VISTA_COMUNI*/
+</section>
+
+<section id="vista-beneficiari" aria-label="Beneficiari dei contributi 2026" hidden>
+/*VISTA_BENEFICIARI*/
+</section>
+
+<script>/*DATI*/</script>
+<script>
+/*JS_COMUNE*/
+</script>
+/*SCRIPT_VISTE*/
+<script>
+(function () {
+  const TESTI = {
+    comuni: ["Contributi per Comune dal 2024 al 2026", "Quanto è stato impegnato e quanti contributi sono arrivati in ciascun Comune, anno per anno. Tocca un Comune sulla mappa per vederne il dettaglio."],
+    beneficiari: ["Beneficiari dei contributi 2026", "Chi ha ricevuto i contributi 2026, per quale iniziativa, con quale decreto e per quale importo. Filtra per territorio, tipo di associazione, importo e date."],
+  };
+  let attuale = null;
+  // indirizzi: #comuni, #comuni-<codice ISTAT>, #beneficiari, #beneficiari-<codice ISTAT>
+  function vai() {
+    const h = decodeURIComponent(location.hash.slice(1));
+    const i = h.indexOf("-");
+    let v = i < 0 ? h : h.slice(0, i);
+    const cod = i < 0 ? null : h.slice(i + 1);
+    if (v !== "beneficiari") v = "comuni";
+    for (const k of ["comuni", "beneficiari"]) document.getElementById("vista-" + k).hidden = k !== v;
+    document.querySelectorAll(".navdash a").forEach((a) => (a.dataset.vista === v ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current")));
+    document.getElementById("titolo").textContent = TESTI[v][0];
+    document.getElementById("sottotitolo").textContent = TESTI[v][1];
+    Tip.nascondi();
+    window.VISTE[v].apri(cod);
+    if (attuale && attuale !== v) window.scrollTo({ top: 0 });
+    attuale = v;
+  }
+  filtriRichiudibili();
+
+  // ricerca del Comune nella testata: risposta immediata con i tre anni e i collegamenti
+  const D = window.DATI;
+  const norm = (s) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z]/g, "");
+  const tutti = D.comuni.slice().sort((a, b) => a.n.localeCompare(b.n, "it"));
+  const elenco = document.getElementById("cc-elenco");
+  tutti.forEach((c) => elenco.appendChild(el("option", { value: c.n })));
+  function trovaComune(q) {
+    const k = norm(q);
+    if (!k) return [];
+    const pieni = tutti.filter((c) => norm(c.n) === k || norm(c.n.split("-")[0]) === k);
+    if (pieni.length) return pieni;
+    return tutti.filter((c) => norm(c.n).startsWith(k) || norm(c.n.split("-")[0]).startsWith(k));
+  }
+  function esitoComune(c) {
+    const anni = ["2024", "2025", "2026"].map((y) => {
+      const v = c.a[y];
+      return v ? `nel ${y} ${F.euro(v[1], 2)} con ${v[0] === 1 ? "1 contributo" : v[0] + " contributi"}` : `nel ${y} nessun contributo`;
+    });
+    const ben = c.a["2026"] ? c.a["2026"][0] : 0;
+    return `<p><b>${F.esc(c.n)}</b> (provincia di ${PROV_NOME[c.p]}, ${F.num(c.pop)} abitanti): ${anni.join("; ")}.</p>
+      <p class="cc-azioni"><a href="#comuni-${c.c}">Apri la scheda del Comune</a>${ben ? ` <a href="#beneficiari-${c.c}">${ben === 1 ? "Vedi il beneficiario 2026" : "Vedi i " + ben + " beneficiari 2026"}</a>` : ""}</p>`;
+  }
+  function cerca(definitiva) {
+    const q = document.getElementById("cc-input").value.trim();
+    const out = document.getElementById("cc-esito");
+    if (!q) { out.innerHTML = ""; return; }
+    const r = trovaComune(q);
+    if (r.length === 1) out.innerHTML = esitoComune(r[0]);
+    else if (r.length > 1 && r.length <= 8) out.innerHTML = `<p>Più Comuni corrispondono: ${r.map((c) => `<button type="button" class="cc-scelta" data-c="${c.c}">${F.esc(c.n)}</button>`).join(" ")}</p>`;
+    else if (definitiva) out.innerHTML = r.length ? `<p>Troppi Comuni corrispondono a «${F.esc(q)}»: aggiungi qualche lettera.</p>` : `<p>Nessun Comune del Friuli Venezia Giulia si chiama «${F.esc(q)}». Controlla come è scritto oppure scegli dall'elenco che compare mentre scrivi.</p>`;
+    out.querySelectorAll(".cc-scelta").forEach((b) => (b.onclick = () => { out.innerHTML = esitoComune(tutti.find((c) => c.c === b.dataset.c)); }));
+  }
+  document.getElementById("cerca-comune").addEventListener("submit", (e) => { e.preventDefault(); cerca(true); });
+  document.getElementById("cc-input").addEventListener("change", () => cerca(false));
+
+  // indice delle sezioni: scorre senza cambiare l'indirizzo della pagina
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest && e.target.closest(".indice a");
+    if (!a) return;
+    const dest = document.getElementById(a.getAttribute("href").slice(1));
+    if (!dest) return;
+    e.preventDefault();
+    const fermo = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    dest.scrollIntoView({ behavior: fermo ? "auto" : "smooth", block: "start" });
+    dest.setAttribute("tabindex", "-1"); dest.focus({ preventScroll: true });
+  });
+  addEventListener("hashchange", vai);
+  vai();
+})();
+</script>
+</body>
+</html>
