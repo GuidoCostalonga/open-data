@@ -66,7 +66,7 @@ Le tre versioni condividono pagine, testi, notizie e immagini; cambia solo il fo
 |---|---|---|---|
 | A | non più pubblicata | istituzionale FdI; apertura con la foto in Vespa | `varianti/a/stile.css` |
 | B | costalonga.org/scocci-b | Editorial Pop nei colori FdI; apertura con la foto in Vespa | `assets/css/stile.css` |
-| C| C | costalonga.org/scocci, dal repository GuidoCostalonga/scocci (pubblica, senza parola chiave) | stile del sito di Manuel Pil8 (Cordenons 2027) con il blu FdI al posto del rosso; apertura con la foto in Vespa | `varianti/c/stile.css` |er preparare e pubblicare una variante (A o C):
+| C | costalonga.org/scocci, dal repository GuidoCostalonga/scocci (pubblica, senza parola chiave) | stile del sito di Manuel Pil8 (Cordenons 2027) con il blu FdI al posto del rosso; apertura con la foto in Vespa | `varianti/c/stile.css` |er preparare e pubblicare una variante (A o C):
 
 ```bash
 strumenti/variante.sh c /tmp/scocci-c
