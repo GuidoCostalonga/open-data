@@ -32,7 +32,7 @@
  "file_unico": {
   "percorso": "fvg_unico.geojson",
   "elementi": 116981,
-  "byte": 89100616,
+  "byte": 89100934,
   "livelli": [
    "regione",
    "province",
@@ -14788,14 +14788,14 @@
     {
      "percorso": "integrale/confini/comunita_montagna.geojson",
      "elementi": 6,
-     "byte": 3023391
+     "byte": 3023709
     }
    ],
    "leggero": [
     {
      "percorso": "leggero/confini/comunita_montagna.geojson",
      "elementi": 6,
-     "byte": 265751
+     "byte": 266069
     }
    ]
   },
