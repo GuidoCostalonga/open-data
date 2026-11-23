@@ -10899,6 +10899,38 @@
      "byte": 2986748
     }
    ]
+  },
+  {
+   "id": "ispettorati_forestali",
+   "gruppo": "confini",
+   "titolo": "Ispettorati forestali",
+   "fonte": "REGIONE",
+   "livello_origine": null,
+   "elementi": 4,
+   "geometrie": {
+    "Polygon": 4
+   },
+   "riquadro": [
+    12.32138,
+    45.58088,
+    13.91866,
+    46.64795
+   ],
+   "campi": [
+    "NOMEIRF",
+    "ID",
+    "INDIRIZZO",
+    "TELEFONO",
+    "EMAIL",
+    "nota"
+   ],
+   "file": [
+    {
+     "percorso": "integrale/confini/ispettorati_forestali.geojson",
+     "elementi": 4,
+     "byte": 3071379
+    }
+   ]
   }
  ]
 }
