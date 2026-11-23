@@ -56,7 +56,7 @@ details[open] > summary::before { content: "▾"; }
 #apri { display: none; position: absolute; top: 10px; left: 54px; z-index: 950; font: inherit; font-weight: 700;
   padding: 9px 14px; border-radius: 8px; border: 1px solid var(--filo); background: var(--carta); color: var(--grafite);
   box-shadow: var(--ombra); cursor: pointer; }
-.leaflet-popup-content { margin: 12px 14px; font-family: var(--f-testo); min-width: 220px; }
+.leaflet-popup-content { margin: 12px 14px; font-family: var(--f-testo); min-width: min(220px, calc(100vw - 90px)); }
 .leaflet-popup-content h2 { font-size: 1rem; margin: 0 0 2px; }
 .leaflet-popup-content .da { font-size: .78rem; color: #6a747d; margin-bottom: 8px; }
 .leaflet-popup-content table { border-collapse: collapse; font-size: .82rem; width: 100%; }
@@ -68,7 +68,12 @@ details[open] > summary::before { content: "▾"; }
     transition: transform .2s; box-shadow: var(--ombra); }
   body.aperto #pannello { transform: none; }
   #apri { display: block; }
-  #stato { max-width: 80vw; }
+  #stato { max-width: 80vw; bottom: 52px; }
+  .livello input { width: 24px; height: 24px; margin-top: 0; }
+  .livello label { gap: 10px; padding: 4px 0; }
+  .nota, .livello select { margin-left: 34px; }
+  .livello select { max-width: calc(100% - 34px); }
+  header input[type=checkbox] { width: 20px; height: 20px; }
 }
 @media (prefers-reduced-motion: reduce) { #pannello { transition: none; } }
 </style>
@@ -138,7 +143,7 @@ function strato(dati, livello) {
     renderer: disegno,
     style: { color: tinta, weight: 1.4, opacity: 0.9, fillColor: tinta, fillOpacity: 0.12 },
     pointToLayer: (e, ll) => L.circleMarker(ll, { renderer: disegno, radius: 3, color: tinta, weight: 1, fillColor: tinta, fillOpacity: 0.7 }),
-    onEachFeature: (e, s) => s.bindPopup(() => scheda(e, livello), { maxWidth: 340 }),
+    onEachFeature: (e, s) => s.bindPopup(() => scheda(e, livello), { maxWidth: Math.min(340, innerWidth - 60) }),
   });
 }
 
@@ -155,7 +160,7 @@ function aggiornaStato(testo) {
   let elementi = 0;
   attivi.forEach((s) => { elementi += s.getLayers().length; });
   document.getElementById("stato").textContent = testo ||
-    (attivi.size ? `${attivi.size} livelli accesi, ${numero(elementi)} elementi sulla mappa` : "Nessun livello caricato");
+    (attivi.size ? `${attivi.size === 1 ? "1 livello acceso" : attivi.size + " livelli accesi"}, ${numero(elementi)} elementi sulla mappa` : "Nessun livello caricato");
 }
 
 async function accendi(livello, riga) {
