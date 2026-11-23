@@ -141,7 +141,9 @@ La verifica controlla che ogni file sia GeoJSON valido, che i conteggi coincidan
 
 ## Come aprire la mappa
 
-La pagina `index.html` legge i dati dalla cartella `dati`, quindi va aperta da un servizio in rete (per esempio GitHub Pages) oppure, sul proprio computer, avviando un piccolo servizio locale nella cartella:
+La mappa viene pubblicata su GitHub Pages dal flusso `.github/workflows/pagine.yml` a ogni aggiornamento del ramo principale. GitHub Pages ammette siti fino a 1 GB, quindi il sito pubblicato contiene la pagina, l'indice e i file leggeri (circa 0,5 GB); edifici, numeri civici e file integrali da scaricare vengono letti direttamente dal deposito.
+
+Sul proprio computer la pagina va aperta avviando un piccolo servizio locale nella cartella `geografia-fvg`:
 
 ```bash
 python3 -m http.server 8000

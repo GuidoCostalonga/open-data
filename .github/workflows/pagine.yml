@@ -1,0 +1,57 @@
+# Pubblica su GitHub Pages la mappa della geografia del FVG.
+# Il sito pubblicato contiene la pagina, l'indice e i file leggeri; i file integrali
+# (oltre il limite di 1 GB di GitHub Pages) vengono letti dalla mappa direttamente dal deposito.
+name: Pubblica la mappa
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "geografia-fvg/index.html"
+      - "geografia-fvg/dati/indice.json"
+      - "geografia-fvg/dati/leggero/**"
+      - ".github/workflows/pagine.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pagine
+  cancel-in-progress: true
+
+jobs:
+  pubblica:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.pubblicazione.outputs.page_url }}
+    steps:
+      - name: Scarica solo i file del sito
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            geografia-fvg/index.html
+            geografia-fvg/dati/indice.json
+            geografia-fvg/dati/fvg_unico.geojson
+            geografia-fvg/dati/leggero
+      - name: Compone il sito
+        run: |
+          mkdir -p _sito
+          cp -r geografia-fvg _sito/geografia-fvg
+          printf '%s\n' '<!doctype html><html lang="it"><head><meta charset="utf-8">' \
+            '<meta http-equiv="refresh" content="0; url=geografia-fvg/">' \
+            '<title>Open data</title></head><body>' \
+            '<p><a href="geografia-fvg/">Geografia del Friuli Venezia Giulia</a></p></body></html>' > _sito/index.html
+          touch _sito/.nojekyll
+          du -sh _sito
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _sito
+      - name: Pubblica
+        id: pubblicazione
+        uses: actions/deploy-pages@v4

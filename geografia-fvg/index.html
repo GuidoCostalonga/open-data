@@ -94,6 +94,10 @@ details[open] > summary::before { content: "▾"; }
 <script>
 "use strict";
 const DATI = "dati/";
+// Sul sito pubblicato stanno solo i file leggeri: quelli integrali si leggono dal deposito.
+const DEPOSITO = "https://raw.githubusercontent.com/GuidoCostalonga/open-data/main/geografia-fvg/dati/";
+const IN_LOCALE = ["localhost", "127.0.0.1"].includes(location.hostname);
+const indirizzo = (percorso) => (percorso.startsWith("integrale/") && !IN_LOCALE ? DEPOSITO : DATI) + percorso;
 const GRUPPI = {
   confini: "Confini amministrativi", acque: "Acque", rilievo: "Monti e rilievo", natura: "Natura e aree protette",
   trasporti: "Strade, ferrovie, ciclovie e sentieri", insediamenti: "Centri abitati ed edifici", servizi: "Servizi e luoghi di interesse",
@@ -140,7 +144,7 @@ function strato(dati, livello) {
 
 async function scarica(percorso) {
   if (!memoria.has(percorso)) {
-    const risposta = await fetch(DATI + percorso);
+    const risposta = await fetch(indirizzo(percorso));
     if (!risposta.ok) throw new Error("file non raggiungibile (" + risposta.status + ")");
     memoria.set(percorso, await risposta.json());
   }
@@ -184,9 +188,9 @@ function rigaLivello(livello) {
   const byteLeggero = livello.leggero.reduce((s, f) => s + f.byte, 0);
   const diviso = livello.leggero.length > 1;
   const avviso = !diviso && byteLeggero > SOGLIA_PESO_AVVISO ? " Livello pesante: il caricamento richiede qualche secondo." : "";
-  const collegamento = diviso ? "" : ` · <a href="${DATI}${livello.file[0].percorso}" download>integrale</a>` +
+  const collegamento = diviso ? "" : ` · <a href="${indirizzo(livello.file[0].percorso)}" download>integrale</a>` +
     (livello.file.length === 1 && livello.leggero[0].percorso !== livello.file[0].percorso
-      ? ` · <a href="${DATI}${livello.leggero[0].percorso}" download>leggero</a>` : "");
+      ? ` · <a href="${indirizzo(livello.leggero[0].percorso)}" download>leggero</a>` : "");
   riga.innerHTML = `<label><input type="checkbox"><span>${pulisci(livello.titolo)}</span></label>` +
     `<div class="nota">${livello.elementi === 1 ? "1 elemento" : numero(livello.elementi) + " elementi"} · ${diviso ? livello.leggero.length + " parti" : peso(byteLeggero)} · ` +
     `${SIGLE_FONTE[livello.fonte]}${collegamento}.${avviso}</div>`;
