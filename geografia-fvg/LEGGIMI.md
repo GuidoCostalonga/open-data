@@ -111,7 +111,7 @@ Punti da tenere presenti:
 | Carnia | 28 | documento unico di programmazione 2024-2026 |
 | Canal del Ferro e Val Canale | 8 | piano integrato di attività e organizzazione 2025-2027 |
 | Gemonese | 6 | documento unico di programmazione 2026-2028 |
-| Natisone e Torre | 15 | statuto pubblicato sul sito della Comunità; notizie di stampa di marzo e aprile 2026 riferiscono di 15 comuni, senza elencarli |
+| Natisone e Torre | 15 | elenco dei comuni appartenenti pubblicato nella pagina iniziale del sito della Comunità, consultato il 23 novembre 2026; coincide con lo statuto |
 | Prealpi Friulane Orientali | 15 | documento unico di programmazione 2025-2027 |
 | Dolomiti Friulane, Cavallo e Cansiglio | 12 | atti del 2026 |
 
