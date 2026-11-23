@@ -14,3 +14,4 @@ comunita_collinare|confini|Comunità collinare del Friuli|ENTI
 ambiti_servizio_sociale|confini|Ambiti del Servizio sociale dei Comuni|ENTI
 distretti_sanitari|confini|Distretti sanitari|ENTI
 aziende_sanitarie|confini|Aziende sanitarie|ENTI
+ispettorati_forestali|confini|Ispettorati forestali|REGIONE

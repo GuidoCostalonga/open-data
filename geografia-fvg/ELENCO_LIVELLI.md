@@ -1,8 +1,8 @@
 # Elenco dei livelli
 
-Livelli: 192. Elementi: 2.287.090. File integrali: 638.
+Livelli: 193. Elementi: 2.287.094. File integrali: 639.
 
-## Confini amministrativi (33 livelli)
+## Confini amministrativi (34 livelli)
 
 | Livello | Identificativo | Fonte | Geometria | Elementi | Integrale (MB) | Leggero (MB) | Nel file unico |
 |---|---|---|---|---:|---:|---:|---|
@@ -39,6 +39,7 @@ Livelli: 192. Elementi: 2.287.090. File integrali: 638.
 | Ambiti del Servizio sociale dei Comuni | `ambiti_servizio_sociale` | Unione dei comuni, composizione ufficiale | aree | 18 | 8,36 | 0,6 | sì |
 | Distretti sanitari | `distretti_sanitari` | Unione dei comuni, composizione ufficiale | aree | 18 | 8,18 | 0,62 | sì |
 | Aziende sanitarie | `aziende_sanitarie` | Unione dei comuni, composizione ufficiale | aree | 3 | 2,99 | 0,3 | sì |
+| Ispettorati forestali | `ispettorati_forestali` | Regione FVG (IRDAT) | aree | 4 | 3,07 | 0,36 | sì |
 
 ## Acque (39 livelli)
 

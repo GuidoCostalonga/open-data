@@ -4,9 +4,9 @@ Raccolta di dati geografici del FVG (Friuli Venezia Giulia) in formato GeoJSON, 
 
 | Voce | Valore |
 |---|---|
-| Livelli | 192 |
-| Elementi geografici | 2.287.090 |
-| File GeoJSON | 829 |
+| Livelli | 193 |
+| Elementi geografici | 2.287.094 |
+| File GeoJSON | 831 |
 | Sistema di coordinate | WGS84, longitudine e latitudine (EPSG:4326) |
 | Data di estrazione | 22 novembre 2026 |
 
@@ -16,7 +16,7 @@ L'elenco completo, livello per livello, è in [ELENCO_LIVELLI.md](ELENCO_LIVELLI
 
 | Gruppo | Livelli | Esempi |
 |---|---:|---|
-| Confini amministrativi | 33 | regione, ex province, 215 comuni, Comunità di montagna, aziende e distretti sanitari, ambiti del Servizio sociale dei Comuni, sezioni di censimento, comuni censuari, confine di Stato, comuni confinanti di Veneto, Austria e Slovenia |
+| Confini amministrativi | 34 | regione, ex province, 215 comuni, Comunità di montagna, aziende e distretti sanitari, ambiti del Servizio sociale dei Comuni, sezioni di censimento, comuni censuari, confine di Stato, comuni confinanti di Veneto, Austria e Slovenia |
 | Acque | 39 | fiumi, torrenti, canali, laghi, laguna, linea di costa, bacini idrografici, sorgenti, idrovore |
 | Monti e rilievo | 21 | curve di livello ogni 25 metri, cime con quota, passi, ghiacciai, grotte, geositi, frane |
 | Natura e aree protette | 27 | parchi, riserve, biotopi, Natura 2000, boschi, prati stabili, uso del suolo, habitat |
@@ -32,7 +32,7 @@ L'elenco completo, livello per livello, è in [ELENCO_LIVELLI.md](ELENCO_LIVELLI
 | `dati/indice.json` | Indice di tutti i livelli: titolo, fonte, numero di elementi, campi, file |
 | `dati/integrale/<gruppo>/` | Un file per livello alla massima precisione, senza semplificazione delle forme |
 | `dati/leggero/<gruppo>/` | Gli stessi livelli semplificati, adatti a mappe in rete e dashboard |
-| `dati/fvg_unico.geojson` | File unico con 150 livelli alleggeriti; ogni elemento riporta `livello`, `gruppo`, `titolo_livello` e `fonte` |
+| `dati/fvg_unico.geojson` | File unico con 151 livelli alleggeriti; ogni elemento riporta `livello`, `gruppo`, `titolo_livello` e `fonte` |
 | `strumenti/` | Programmi che scaricano, costruiscono e verificano i dati |
 
 ### Due versioni per ogni livello
@@ -57,7 +57,7 @@ Edifici e numeri civici non hanno una versione leggera separata: la mappa usa di
 
 ### Il file unico
 
-`dati/fvg_unico.geojson` (89 MB) riunisce i 150 livelli la cui versione leggera pesa fino a 2,5 megabyte. Il file con tutti i 190 livelli alleggeriti pesa oltre 400 megabyte e non può stare su GitHub; si genera sul proprio computer con:
+`dati/fvg_unico.geojson` (89 MB) riunisce i 151 livelli la cui versione leggera pesa fino a 2,5 megabyte. Il file con tutti i 191 livelli alleggeriti pesa oltre 400 megabyte e non può stare su GitHub; si genera sul proprio computer con:
 
 ```bash
 python3 strumenti/alleggerisci.py dati --unico-completo
@@ -67,7 +67,7 @@ python3 strumenti/alleggerisci.py dati --unico-completo
 
 | Fonte | Livelli | Che cosa fornisce | Licenza |
 |---|---:|---|---|
-| Regione autonoma FVG, catalogo IRDAT (Infrastruttura regionale di dati ambientali e territoriali) | 129 | confini, idrografia, aree protette, edifici, strade, numeri civici, piano paesaggistico | IODL 2.0 (Italian Open Data License) |
+| Regione autonoma FVG, catalogo IRDAT (Infrastruttura regionale di dati ambientali e territoriali) | 130 | confini, idrografia, aree protette, edifici, strade, numeri civici, piano paesaggistico | IODL 2.0 (Italian Open Data License) |
 | Unione dei comuni secondo la composizione ufficiale degli enti | 5 | Comunità di montagna, Comunità collinare, ambiti del Servizio sociale dei Comuni, distretti e aziende sanitarie | IODL 2.0 per le forme dei comuni; composizione da atti pubblici |
 | OpenStreetMap e contributori | 48 | strade di ogni classe, sentieri, luoghi, servizi, uso del suolo, confine di Stato | ODbL (Open Database License) |
 | ISTAT (Istituto nazionale di statistica) | 7 | confini al 1 gennaio 2026, comuni veneti confinanti, perimetri dei centri abitati 2021 | CC BY 4.0 (Creative Commons Attribuzione) |
@@ -115,11 +115,14 @@ Punti da tenere presenti:
 | Prealpi Friulane Orientali | 15 | documento unico di programmazione 2025-2027 |
 | Dolomiti Friulane, Cavallo e Cansiglio | 12 | atti del 2026 |
 
+## Ispettorati forestali
+
+Il servizio regionale non riesce a restituire i quattro ispettorati insieme. Tre (Tolmezzo, Pordenone, Trieste e Gorizia) sono scaricati uno alla volta con la geometria ufficiale. Per Udine la geometria non è leggibile: il perimetro è ricostruito unendo le giurisdizioni delle sue sette stazioni forestali, e l'elemento lo dichiara nel campo `nota`. Lo stesso metodo, applicato per controllo agli altri tre, differisce dal perimetro ufficiale per meno dello 0,03% della superficie.
+
 ## Livelli non disponibili
 
 | Livello | Motivo |
 |---|---|
-| Ispettorati forestali | il servizio regionale restituisce un file danneggiato |
 | Edifici di OpenStreetMap | esclusi per non duplicare gli edifici ufficiali della Regione |
 
 ## Come aggiornare i dati
@@ -152,6 +155,10 @@ python3 strumenti/costruisci.py LAVORO dati comuni osm_frazioni_confini
 
 ```bash
 python3 strumenti/prepara_enti.py dati LAVORO/intermedi
+```
+
+```bash
+python3 strumenti/prepara_ispettorati.py dati LAVORO/intermedi
 ```
 
 ```bash

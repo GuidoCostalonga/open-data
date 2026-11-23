@@ -31,8 +31,8 @@
  },
  "file_unico": {
   "percorso": "fvg_unico.geojson",
-  "elementi": 116981,
-  "byte": 89100934,
+  "elementi": 116985,
+  "byte": 89465153,
   "livelli": [
    "regione",
    "province",
@@ -183,7 +183,8 @@
    "comunita_collinare",
    "ambiti_servizio_sociale",
    "distretti_sanitari",
-   "aziende_sanitarie"
+   "aziende_sanitarie",
+   "ispettorati_forestali"
   ]
  },
  "livelli": [
@@ -14962,6 +14963,45 @@
      "percorso": "leggero/confini/aziende_sanitarie.geojson",
      "elementi": 3,
      "byte": 302944
+    }
+   ]
+  },
+  {
+   "id": "ispettorati_forestali",
+   "gruppo": "confini",
+   "titolo": "Ispettorati forestali",
+   "fonte": "REGIONE",
+   "livello_origine": null,
+   "elementi": 4,
+   "geometrie": {
+    "Polygon": 4
+   },
+   "riquadro": [
+    12.32138,
+    45.58088,
+    13.91866,
+    46.64795
+   ],
+   "campi": [
+    "NOMEIRF",
+    "ID",
+    "INDIRIZZO",
+    "TELEFONO",
+    "EMAIL",
+    "nota"
+   ],
+   "file": [
+    {
+     "percorso": "integrale/confini/ispettorati_forestali.geojson",
+     "elementi": 4,
+     "byte": 3071379
+    }
+   ],
+   "leggero": [
+    {
+     "percorso": "leggero/confini/ispettorati_forestali.geojson",
+     "elementi": 4,
+     "byte": 364034
     }
    ]
   }
