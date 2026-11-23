@@ -102,7 +102,7 @@ Controlli svolti: i 18 ambiti coprono tutti i 215 comuni, ciascuno una sola volt
 Punti da tenere presenti:
 
 - **Distretti di Pordenone:** l'atto aziendale dice che ogni distretto coincide con l'ambito territoriale omonimo, senza elencare i comuni. L'elenco è quello dell'ambito del Servizio sociale dei Comuni corrispondente.
-- **Distretti di Trieste:** il capoluogo è diviso tra due distretti secondo le circoscrizioni comunali, prese da OpenStreetMap. La fonte è l'atto aziendale del 19 maggio 2022: *un eventuale riordino successivo dei distretti triestini è DA VERIFICARE*.
+- **Distretti di Trieste:** il capoluogo è diviso tra due distretti secondo le circoscrizioni comunali, prese da OpenStreetMap. La fonte è l'atto aziendale adottato con decreto n. 454 del 19 maggio 2022, tuttora quello pubblicato dall'azienda; i quattro distretti (Trieste 1, Trieste 2, Alto Isontino, Basso Isontino) sono confermati dall'organigramma del 2 luglio 2026. L'atto è stato modificato dal decreto n. 925 dell'8 novembre 2023, che non riguarda i distretti; *il testo di una successiva modifica (decreto n. 767 del 2024) non è consultabile sul sito dell'azienda ed è DA VERIFICARE*.
 - **Comunità di montagna:** la composizione è quella degli statuti pubblicati; *eventuali adesioni o recessi successivi sono DA VERIFICARE*.
 
 ## Livelli non disponibili
