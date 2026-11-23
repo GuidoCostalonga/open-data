@@ -36,6 +36,7 @@ osm_aeroporti|trasporti|Aeroporti, aviosuperfici e piste
 osm_porti|trasporti|Porti e approdi
 osm_parcheggi|trasporti|Parcheggi
 osm_linee_elettriche|trasporti|Linee elettriche
+osm_edifici|insediamenti|Edifici di OpenStreetMap
 osm_aree_militari|insediamenti|Aree militari
 osm_municipi_uffici|servizi|Municipi e uffici pubblici
 osm_sanita|servizi|Ospedali, ambulatori, farmacie e servizi sociali

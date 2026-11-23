@@ -143,6 +143,8 @@ def livelli_area(t):
     naturale, uso = t.get("natural"), t.get("landuse")
     if naturale == "water" or t.get("waterway") == "riverbank" or uso in ("reservoir", "basin"):
         poligoni.append(("osm_acque", t.get("water") or naturale or uso))
+    if t.get("building") and t["building"] != "no":
+        poligoni.append(("osm_edifici", t["building"]))
     if t.get("place") in ("island", "islet"):
         poligoni.append(("osm_isole", t["place"]))
     if naturale == "glacier":

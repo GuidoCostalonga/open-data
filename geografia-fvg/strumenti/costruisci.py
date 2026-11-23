@@ -19,7 +19,10 @@ QUI = pathlib.Path(__file__).parent
 PRECISIONE = 7                      # sette decimali di grado: circa un centimetro
 SOGLIA_DIVISIONE_BYTE = 45_000_000  # oltre questa misura il livello viene diviso
 LIMITE_PARTE_BYTE = 70_000_000     # una parte più pesante viene spezzata in blocchi
-DIVISI_PER_COMUNE = {"edifici", "numeri_civici"}
+DIVISI_PER_COMUNE = {"edifici", "numeri_civici", "osm_edifici"}
+# Livelli di cui si tengono solo gli elementi dentro un comune del FVG: l'estratto
+# OpenStreetMap comprende anche edifici appena oltre il confine regionale.
+SOLO_ENTRO_REGIONE = {"osm_edifici"}
 SIGLE = {"030": "UD", "031": "GO", "032": "TS", "093": "PN"}
 FONTI = {
     "REGIONE": {
@@ -114,7 +117,7 @@ class Ripartitore:
         self.sagome = np.array([shapely.make_valid(shape(c["geometry"])) for c in comuni])
         self.albero = shapely.STRtree(self.sagome)
 
-    def comune(self, geometria):
+    def comune(self, geometria, solo_dentro=False):
         forma = shape(geometria)
         try:
             punto = shapely.point_on_surface(forma)
@@ -124,6 +127,8 @@ class Ripartitore:
             punto = shapely.centroid(forma)
         trovati = self.albero.query(punto, predicate="intersects")
         if len(trovati) == 0:
+            if solo_dentro:
+                return None
             trovati = [self.albero.nearest(punto)]
         return self.codici[int(trovati[0])]
 
@@ -158,6 +163,8 @@ def costruisci_livello(voce, lavoro, dati, ripartitore):
     for grezzo in elementi_grezzi(voce, lavoro):
         elemento = normalizza(grezzo)
         if elemento is None:
+            continue
+        if voce["id"] in SOLO_ENTRO_REGIONE and ripartitore.comune(elemento["geometry"], solo_dentro=True) is None:
             continue
         tipi[elemento["geometry"]["type"]] += 1
         campi.update(elemento["properties"].keys())

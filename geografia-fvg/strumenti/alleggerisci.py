@@ -19,7 +19,7 @@ PRECISIONE = "0.00001"               # cinque decimali di grado: circa un metro
 INTERVALLO_M = 10                    # tolleranza di semplificazione ordinaria
 INTERVALLO_PESANTI_M = 25            # tolleranza per i livelli oltre la soglia
 SOGLIA_PESANTE_BYTE = 15_000_000
-SENZA_LEGGERO = {"edifici", "numeri_civici"}   # già essenziali: si usa il file integrale
+SENZA_LEGGERO = {"edifici", "numeri_civici", "osm_edifici"}   # già essenziali: si usa il file integrale
 FILTRI = {"curve_livello": 'tipo == "direttrice"'}
 SOGLIA_FILE_UNICO_BYTE = 2_500_000   # il file unico pubblicato accoglie i livelli fino a questo peso
 NOME_UNICO, NOME_UNICO_COMPLETO = "fvg_unico.geojson", "fvg_unico_completo.geojson"
