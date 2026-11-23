@@ -1,0 +1,130 @@
+# id|gruppo|titolo|livello del servizio WFS della Regione FVG (IRDAT)
+regione|confini|Regione|UNITA_AMM:REGIONE_FVG
+province|confini|Ex province (Enti di decentramento regionale)|UNITA_AMM:PROVINCE_FVG
+comuni|confini|Comuni|UNITA_AMM:COMUNI_FVG
+sezioni_censimento_2021|confini|Sezioni di censimento 2021|UNITA_STAT:SEZ_CENS_2021
+comuni_censuari|confini|Comuni censuari (catasto)|CATASTO:COMUNI_CENSUARI
+comunita_montane_storiche|confini|Comunità montane (assetto storico)|UNIT_AMM:DBPRIOR_0804_COM_MONTANE
+stazioni_forestali|confini|Giurisdizioni delle stazioni forestali 2024|UNIT_AMM:STAZIONI_FORESTALI_2024
+consorzi_bonifica|confini|Consorzi di bonifica|IDROGRAF:CONSORZI_BONIFICA_A
+distretti_venatori|confini|Distretti venatori|GEST_FAUVE:DIST_VENATORI
+riserve_caccia|confini|Riserve di caccia|GEST_FAUVE:RISERVE_CACCIA
+collegi_pesca|confini|Collegi di pesca|ETP:ETP_COLLEGI_DI_PESCA
+ambiti_paesaggio|confini|Ambiti di paesaggio del Piano paesaggistico regionale|PPR:v_ambiti_paesaggio_ppr_fvg
+zone_sismiche|confini|Classificazione sismica dei comuni|ZONE_VINC:CLASSI_SISM_OPCM3274
+zone_marittime|confini|Zone amministrative marittime|ARPA:ADRI_BLU_ZONE_AMM
+usi_civici|confini|Usi civici|PPR:v_usi_civici
+aree_militari_demaniali|confini|Aree militari, confinarie e demaniali|PPR:v_aree_militari_confinarie_demaniali
+corsi_acqua|acque|Corsi d'acqua|IDROGRAF:COM_V_GIS_P_CORSI_ACQUA
+corsi_acqua_strahler|acque|Corsi d'acqua con ordine di Strahler|IDROGRAF:COM_V_GIS_P_CORSI_ACQUA_STRAH
+canali_artificiali|acque|Canali artificiali|CAR_GEO:V_CANALE_ARTIFICIALE
+specchi_acqua|acque|Specchi d'acqua|IDROGRAF:COM_V_GIS_P_SPECCHI_ACQUA
+specchi_acqua_minori|acque|Specchi d'acqua, inclusi i minori|STRAT_PR:DBPRIOR_0205_SPECCHIO_A
+laghi|acque|Laghi|PPR:v_laghi
+laguna|acque|Laguna di Marano e Grado|STRAT_PR:DBPRIOR_0205_LAGUNA_GM
+canali_laguna_grado|acque|Canali della laguna di Grado|SAL_SIC:CANALI_LAGUNA_GRADO
+barene|acque|Barene|CAR_GEO:V_BARENA
+bocche_lagunari|acque|Bocche lagunari|CAR_GEO:V_BOCCA_LAGUNARE
+linea_costa|acque|Linea di costa|STRAT_PR:DBPRIOR_0206_LIM_COSTA
+linea_battigia|acque|Linea di battigia|PAESAGGIO:LINEA_BATTIGIA
+tipologia_costa|acque|Tipologia di costa|PPR:v_tipologia_di_costa
+isobate|acque|Isobate del fondo marino|CAR_GEO:V_ISOBATA_FONDO_MARINO
+acque_marino_costiere|acque|Acque marino costiere|IDROGRAF:COM_V_GIS_P_CIS_ACQUE_MAR_COST
+acque_transizione|acque|Acque di transizione|IDROGRAF:COM_V_GIS_P_CIS_ACQUE_TRANSIZ
+acque_balneazione|acque|Acque di balneazione|IDROGRAF:AP_BALNEAZIONE
+bacini_amministrativi|acque|Bacini idrografici amministrativi|IDROGRAF:COM_V_GIS_P_BACINI_AMM_183_89
+bacini_naturali|acque|Bacini idrografici naturali|IDROGRAF:COM_V_GIS_P_BACINI_NATURALI
+bacini_elementari|acque|Bacini idrografici elementari|IDROGRAF:COM_V_GIS_P_BACINI_ELEMENTARI
+linea_risorgive|acque|Linea delle risorgive|IDROGRAF:COM_V_GIS_P_LINEA_RISORGIVE
+sorgenti_captate|acque|Sorgenti captate|IDROGRAF:IDR_GIS_SORGENTI_CAPTATE
+sorgenti_carsiche|acque|Sorgenti carsiche|CAT_SPELEO:SORGENTI_CARSICHE
+acque_minerali_termali|acque|Acque minerali e termali|GEOLOGIA:ACQUE_MINER_TERM
+zone_umide|acque|Zone umide|HABIT_BIOT:ZONEUMIDE
+sbarramenti|acque|Sbarramenti|IDROGRAF:COM_V_GIS_P_SBARRAMENTI
+dighe|acque|Dighe|STRAT_PR:DBPRIOR_0209_DIGA
+idrovore|acque|Idrovore|IDROGRAF:IDROVORE
+argini|acque|Argini fluviali|CAR_GEO:V_ARGINE_FLUVIALE
+ponti|acque|Ponti sui corsi d'acqua|SIST_ID_FR:V_PONTI
+opere_marittime|acque|Opere marittime|GEOLOGIA:OPERE_MARITTIME
+stazioni_idrometriche|acque|Stazioni idrometriche|MONIT_AMB:COM_V_GIS_P_STAZIONI_IDRO
+vie_acqua|acque|Vie d'acqua|PPR:v_viabilita_lenta_vie_acqua
+ghiacciai|rilievo|Ghiacciai|PPR:v_ghiacciai
+ghiacciai_nevai|rilievo|Ghiacciai e nevai|STRAT_PR:DBPRIOR_0208_GHIAC_NEV
+circhi_glaciali|rilievo|Circhi glaciali|PPR:v_circhi_glaciali
+montagne_oltre_1600|rilievo|Montagne oltre i 1600 metri|PPR:v_montagne_oltre_1600_m
+toponimi_orografia|rilievo|Toponimi dell'orografia|NOMI_GEO:TOPONIMI_OROGRAFIA_PUNTI
+grotte|rilievo|Grotte (catasto speleologico)|CAT_SPELEO:GROTTEFVG
+aree_carsiche|rilievo|Aree carsiche|CAT_SPELEO:AREE_CARSICHE
+doline|rilievo|Doline|CAR_GEO:V_DOLINE
+geositi|rilievo|Geositi|GEOLOGIA:GEOSITI
+faglie|rilievo|Faglie|CAR_GEO:V_FAGLIA
+unita_geologiche|rilievo|Unità geologiche (carta geologica)|GEOLOGIA:CARTAGEO_UNITALITOCRON
+frane|rilievo|Perimetri delle frane|UTIL_TER:VW_DATA_FRANE_PERIMETRO
+valanghe|rilievo|Valanghe rilevate|ZONE_RISC:CV_VALANGHE_RILEVATE
+vertici_geodetici|rilievo|Vertici geodetici IGM95|IRDAT:VERTICI_IGM95
+parchi_regionali|natura|Parchi naturali regionali|SITI_PROT:PARCHI_NATURALI_REG
+riserve_regionali|natura|Riserve naturali regionali|SITI_PROT:RISERVE_NATURALI_REG
+riserve_statali|natura|Riserve naturali statali|SITI_PROT:RIS_NATURALI_STATALI
+biotopi|natura|Biotopi|SITI_PROT:BIOTOPI
+natura2000_zsc_sic|natura|Natura 2000, zone speciali di conservazione e siti di importanza comunitaria|SITI_PROT:SIC
+natura2000_zps|natura|Natura 2000, zone di protezione speciale|SITI_PROT:ZPS
+aree_importanti_uccelli|natura|Aree importanti per gli uccelli|SITI_PROT:IMPORTANT_BIRD_AREA
+riserve_biosfera_unesco|natura|Riserve della biosfera UNESCO|SITI_PROT:MAB_UNESCO_FVG
+siti_unesco|natura|Siti UNESCO|PPR:v_siti_unesco
+parchi_comunali|natura|Parchi comunali e intercomunali|SITI_PROT:PARCHI_COMUNALI_RAFVG
+aree_rilevante_interesse_ambientale|natura|Aree di rilevante interesse ambientale|SITI_PROT:ARIA_BUR
+prati_stabili|natura|Prati stabili|SITI_PROT:PRATISTABILI
+boschi|natura|Territori coperti da foreste e boschi|PPR:v_territori_coperti_da_foreste_e_boschi
+tipologie_forestali|natura|Tipologie forestali|GEST_FOR:serv_forcfr_t_tipi_forestali
+uso_suolo_corine|natura|Uso del suolo Corine Land Cover|USO_SUOLO:CORINE_LC_FVG_INSP
+habitat_carta_natura|natura|Habitat della Carta della natura 2017|CART_NAT:C_HABITAT_A_FVG_2017
+alberi_monumentali|natura|Alberi monumentali e notevoli|PPR:v_alberi_monumentali_e_notevoli
+rete_ecologica|natura|Rete ecologica, ecotopi|PPR:v_rete_ecologica_ecotopi
+oasi_protezione|natura|Oasi di protezione della fauna|GEST_FAUVE:OASI_PROTEZIONE
+zone_ripopolamento|natura|Zone di ripopolamento e cattura|GEST_FAUVE:ZONE_RIPOP_CATTURA
+vigneti|natura|Vigneti|USO_SUOLO:VIGNETI_CTRN_ED1
+frutteti|natura|Frutteti|USO_SUOLO:FRUTTETI_CTRN_ED1
+incendi|natura|Aree percorse da incendi|ZONE_RISC:V_INCENDI_CT
+vincolo_idrogeologico|natura|Vincolo idrogeologico|ZONE_VINC:VINCOLO_IDROGEOLOGICO
+vincoli_paesaggistici|natura|Vincoli paesaggistici|PAESAGGIO:VINC_PAES_136DLGS42
+grafo_stradale|trasporti|Grafo stradale regionale|RETI_TRASP:GRAFO_STRADALE_FVG
+strade_regionali|trasporti|Assi delle strade regionali (catasto strade)|RETI_TRASP:ASSI_STRADALI_CAT_STR_REG
+cippi_chilometrici|trasporti|Cippi chilometrici|RETI_TRASP:CIPPI_CHILOMETRICI_CAT_STR_FVG
+distributori_carburante|trasporti|Distributori di carburante|RETI_TRASP:DISTRIBUTORI_FVG
+ferrovie|trasporti|Tratte ferroviarie|STRAT_PR:DBPRIOR_0513_TRATTA_FER
+ciclovie_regionali|trasporti|Rete delle ciclovie di interesse regionale 2022|RETI_TRASP:RECIR_2022
+ciclovie_piano_paesaggistico|trasporti|Ciclovie del Piano paesaggistico|PPR:v_viabilita_lenta_ciclovie
+ciclovie_locali|trasporti|Ciclovie locali|PPR:v_viabilita_lenta_ciclovie_locale
+cammini|trasporti|Cammini|PPR:v_viabilita_lenta_cammini
+cammini_locali|trasporti|Cammini locali|PPR:v_viabilita_lenta_cammini_locale
+percorsi_panoramici|trasporti|Percorsi panoramici|PPR:v_viabilita_lenta_percorsi_panoramici
+sentieri_cai|trasporti|Sentieri del Club alpino italiano|RETI_TRASP:SENTIERI_CAI_CTRN_ED1
+itinerari_camminaboschi|trasporti|Itinerari Camminaboschi|ITINERARI:ITINERARI_CAMMINABOSCHI
+viabilita_forestale|trasporti|Viabilità forestale|GEST_FOR:serv_forcfr_v_viab_for
+teleferiche|trasporti|Teleferiche|GEST_FOR:V_TELEFERICHE
+porto_trieste|trasporti|Porto di Trieste, azzonamento funzionale|AUT_PORT:PRP_TRIESTE_AZZONAMENTO_FUNZIONALE_RDN2008
+edifici|insediamenti|Edifici|EDIFICI:DBS_EDIFICATO
+numeri_civici|insediamenti|Numeri civici|INDIRIZZI:V_CIVICI_DSET
+urbanizzato|insediamenti|Aree urbanizzate|STRAT_PR:DBPRIOR_1001_URBANIZZATO
+localita|insediamenti|Località (carta 1:25.000)|NOMI_GEO:CRN25000_LOCALITA
+localita_puntuali|insediamenti|Località puntuali|NOMI_GEO:DBPRIOR_0411_LOCAL_PUNT
+toponimi|insediamenti|Nomi geografici|NOMI_GEO:GEOGRAPHICALNAMES_INSP
+morfotipi_insediativi|insediamenti|Morfotipi insediativi|PPR:v_morfotipi_areali
+zone_industriali|insediamenti|Siti industriali e artigianali|INDUSTR:prog_masterplan_vm_siti_masterplan
+cimiteri|insediamenti|Cimiteri|USO_SUOLO:CIMITERI_CTRN_ED1
+campeggi|insediamenti|Campeggi|USO_SUOLO:CAMPEGGI_CTRN_ED1
+cave|insediamenti|Cave autorizzate|UTIL_TER:CAVE_AREE_AUT
+discariche|insediamenti|Discariche|USO_SUOLO:DISCARICHE_CTRN_ED1
+scuole|servizi|Scuole|PUB_UTIL:SCUOLE_GEO
+impianti_sportivi|servizi|Impianti sportivi|PUB_UTIL:ImpiantiSportiviFVG
+centri_impiego|servizi|Centri per l'impiego|PUB_UTIL:CPI_RAFVG
+sedi_stazioni_forestali|servizi|Sedi delle stazioni forestali|UNIT_AMM:SEDI_STAZIONI_FORESTALI_2024
+stazioni_meteorologiche|servizi|Stazioni meteorologiche|MONIT_AMB:COM_V_GIS_P_STAZIONI_METEO
+beni_culturali|servizi|Beni culturali|PPR:v_beni_culturali
+beni_storico_artistici|servizi|Beni immobili di interesse storico artistico|PPR:v_beni_immobili_interesse_storico_artistico_parte_ii
+zone_archeologiche|servizi|Zone di interesse archeologico|PPR:v_zone_interesse_archeologico
+centuriazioni|servizi|Centuriazioni romane|PPR:v_centuriazioni
+poli_valore_simbolico|servizi|Poli di alto valore simbolico|PPR:v_poli_valore_simbolico
+itinerari_letteratura_storia|servizi|Itinerari della letteratura e della storia|PPR:v_itinerari_letteratura_storia
+impianti_idroelettrici|servizi|Impianti idroelettrici|RIS_ENERG:prog_impaue_v_idroelettrici_public
+stabilimenti_rischio_incidente|servizi|Stabilimenti a rischio di incidente rilevante|INDUSTR:rischi_incidenti_rilevanti_rir
