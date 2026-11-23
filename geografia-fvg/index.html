@@ -25,6 +25,8 @@ body { font-family: var(--f-testo); color: var(--grafite); background: var(--car
 #pannello { width: 370px; max-width: 100%; height: 100%; display: flex; flex-direction: column;
   border-right: 1px solid var(--filo); background: var(--carta); z-index: 1100; }
 header { padding: 16px 16px 10px; border-bottom: 1px solid var(--filo); }
+#torna { display: inline-block; margin-bottom: 8px; font-size: .88rem; font-weight: 700; color: var(--focus); text-decoration: none; }
+#torna:hover { text-decoration: underline; }
 h1 { font-size: 1.25rem; margin: 0 0 4px; line-height: 1.2; }
 header p { margin: 0 0 10px; font-size: .9rem; color: var(--grafite-2); }
 #cerca { width: 100%; padding: 9px 12px; font: inherit; color: inherit; background: var(--carta-2);
@@ -81,6 +83,7 @@ details[open] > summary::before { content: "▾"; }
 <body>
 <aside id="pannello" aria-label="Livelli della mappa">
   <header>
+    <a id="torna" href="/" hidden>← Atlante FVG</a>
     <h1>Geografia del Friuli Venezia Giulia</h1>
     <p id="sommario">Caricamento dell'elenco dei livelli…</p>
     <input id="cerca" type="search" placeholder="Cerca un livello: fiumi, comuni, ciclovie…" aria-label="Cerca un livello">
@@ -98,7 +101,10 @@ details[open] > summary::before { content: "▾"; }
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
 "use strict";
-const DATI = "dati/";
+// La pagina è pubblicata anche su altri siti (atlantefvg.it) senza i dati: lì li legge da costalonga.org.
+const ORIGINE = "https://costalonga.org/open-data/geografia-fvg/dati/";
+const CON_DATI = ["costalonga.org", "localhost", "127.0.0.1"].includes(location.hostname);
+const DATI = CON_DATI ? "dati/" : ORIGINE;
 // Sul sito pubblicato stanno solo i file leggeri: quelli integrali si leggono dal deposito.
 const DEPOSITO = "https://raw.githubusercontent.com/GuidoCostalonga/open-data/main/geografia-fvg/dati/";
 const IN_LOCALE = ["localhost", "127.0.0.1"].includes(location.hostname);
@@ -248,6 +254,7 @@ document.getElementById("spegni").addEventListener("click", () => {
   document.querySelectorAll("#elenco input:checked").forEach((c) => { c.checked = false; });
   schede.forEach(spegni); aggiornaStato();
 });
+document.getElementById("torna").hidden = !location.hostname.endsWith("atlantefvg.it");
 const stretto = matchMedia("(max-width: 760px)");
 const adatta = () => { document.getElementById("chiudi").hidden = !stretto.matches; };
 stretto.addEventListener("change", adatta); adatta();
