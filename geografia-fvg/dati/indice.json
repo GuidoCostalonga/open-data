@@ -32,7 +32,7 @@
  "file_unico": {
   "percorso": "fvg_unico.geojson",
   "elementi": 116981,
-  "byte": 89098801,
+  "byte": 89099246,
   "livelli": [
    "regione",
    "province",
@@ -14913,14 +14913,14 @@
     {
      "percorso": "integrale/confini/distretti_sanitari.geojson",
      "elementi": 18,
-     "byte": 8184105
+     "byte": 8184461
     }
    ],
    "leggero": [
     {
      "percorso": "leggero/confini/distretti_sanitari.geojson",
      "elementi": 18,
-     "byte": 616992
+     "byte": 617348
     }
    ]
   },
@@ -14954,14 +14954,14 @@
     {
      "percorso": "integrale/confini/aziende_sanitarie.geojson",
      "elementi": 3,
-     "byte": 2986659
+     "byte": 2986748
     }
    ],
    "leggero": [
     {
      "percorso": "leggero/confini/aziende_sanitarie.geojson",
      "elementi": 3,
-     "byte": 302855
+     "byte": 302944
     }
    ]
   }
