@@ -32,7 +32,7 @@
  "file_unico": {
   "percorso": "fvg_unico.geojson",
   "elementi": 116981,
-  "byte": 89099246,
+  "byte": 89100616,
   "livelli": [
    "regione",
    "province",
@@ -14788,14 +14788,14 @@
     {
      "percorso": "integrale/confini/comunita_montagna.geojson",
      "elementi": 6,
-     "byte": 3022929
+     "byte": 3023391
     }
    ],
    "leggero": [
     {
      "percorso": "leggero/confini/comunita_montagna.geojson",
      "elementi": 6,
-     "byte": 265289
+     "byte": 265751
     }
    ]
   },
@@ -14812,7 +14812,7 @@
    "riquadro": [
     12.91476,
     46.04227,
-    13.17832,
+    13.20718,
     46.28347
    ],
    "campi": [
@@ -14827,14 +14827,14 @@
     {
      "percorso": "integrale/confini/comunita_collinare.geojson",
      "elementi": 1,
-     "byte": 427606
+     "byte": 450838
     }
    ],
    "leggero": [
     {
      "percorso": "leggero/confini/comunita_collinare.geojson",
      "elementi": 1,
-     "byte": 29838
+     "byte": 30746
     }
    ]
   },

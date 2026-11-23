@@ -35,7 +35,7 @@ Livelli: 192. Elementi: 2.287.090. File integrali: 638.
 | Comuni austriaci confinanti (Carinzia) | `austria_comuni_confinanti` | OpenStreetMap | aree | 9 | 0,22 | 0,11 | sì |
 | Comuni sloveni confinanti | `slovenia_comuni_confinanti` | Eurostat GISCO | aree | 14 | 0,02 | 0,02 | sì |
 | Comunità di montagna | `comunita_montagna` | Unione dei comuni, composizione ufficiale | aree | 6 | 3,02 | 0,27 | sì |
-| Comunità collinare del Friuli | `comunita_collinare` | Unione dei comuni, composizione ufficiale | aree | 1 | 0,43 | 0,03 | sì |
+| Comunità collinare del Friuli | `comunita_collinare` | Unione dei comuni, composizione ufficiale | aree | 1 | 0,45 | 0,03 | sì |
 | Ambiti del Servizio sociale dei Comuni | `ambiti_servizio_sociale` | Unione dei comuni, composizione ufficiale | aree | 18 | 8,36 | 0,6 | sì |
 | Distretti sanitari | `distretti_sanitari` | Unione dei comuni, composizione ufficiale | aree | 18 | 8,18 | 0,62 | sì |
 | Aziende sanitarie | `aziende_sanitarie` | Unione dei comuni, composizione ufficiale | aree | 3 | 2,99 | 0,3 | sì |
