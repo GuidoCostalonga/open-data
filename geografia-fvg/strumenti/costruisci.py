@@ -34,6 +34,10 @@ FONTI = {
         "nome": "ISTAT (Istituto nazionale di statistica), basi territoriali del censimento 2021, distribuite dalla Regione FVG; perimetri ottenuti unendo le sezioni di censimento",
         "indirizzo": "https://www.istat.it/notizia/basi-territoriali-e-variabili-censuarie/",
     },
+    "ENTI": {
+        "nome": "Perimetri ottenuti unendo i comuni della Regione FVG (catalogo IRDAT) secondo la composizione ufficiale di ogni ente, indicata nei campi fonte_composizione e indirizzo_fonte",
+        "indirizzo": "https://irdat.regione.fvg.it/",
+    },
     "OSM": {
         "nome": "OpenStreetMap e contributori",
         "indirizzo": "https://www.openstreetmap.org/copyright",

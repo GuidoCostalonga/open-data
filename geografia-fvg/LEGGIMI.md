@@ -4,9 +4,9 @@ Raccolta di dati geografici del FVG (Friuli Venezia Giulia) in formato GeoJSON, 
 
 | Voce | Valore |
 |---|---|
-| Livelli | 187 |
-| Elementi geografici | 2.287.044 |
-| File GeoJSON | 819 |
+| Livelli | 192 |
+| Elementi geografici | 2.287.090 |
+| File GeoJSON | 829 |
 | Sistema di coordinate | WGS84, longitudine e latitudine (EPSG:4326) |
 | Data di estrazione | 22 novembre 2026 |
 
@@ -16,7 +16,7 @@ L'elenco completo, livello per livello, è in [ELENCO_LIVELLI.md](ELENCO_LIVELLI
 
 | Gruppo | Livelli | Esempi |
 |---|---:|---|
-| Confini amministrativi | 28 | regione, ex province, 215 comuni, sezioni di censimento, comuni censuari, confine di Stato, comuni confinanti di Veneto, Austria e Slovenia |
+| Confini amministrativi | 33 | regione, ex province, 215 comuni, Comunità di montagna, aziende e distretti sanitari, ambiti del Servizio sociale dei Comuni, sezioni di censimento, comuni censuari, confine di Stato, comuni confinanti di Veneto, Austria e Slovenia |
 | Acque | 39 | fiumi, torrenti, canali, laghi, laguna, linea di costa, bacini idrografici, sorgenti, idrovore |
 | Monti e rilievo | 21 | curve di livello ogni 25 metri, cime con quota, passi, ghiacciai, grotte, geositi, frane |
 | Natura e aree protette | 27 | parchi, riserve, biotopi, Natura 2000, boschi, prati stabili, uso del suolo, habitat |
@@ -32,7 +32,7 @@ L'elenco completo, livello per livello, è in [ELENCO_LIVELLI.md](ELENCO_LIVELLI
 | `dati/indice.json` | Indice di tutti i livelli: titolo, fonte, numero di elementi, campi, file |
 | `dati/integrale/<gruppo>/` | Un file per livello alla massima precisione, senza semplificazione delle forme |
 | `dati/leggero/<gruppo>/` | Gli stessi livelli semplificati, adatti a mappe in rete e dashboard |
-| `dati/fvg_unico.geojson` | File unico con 145 livelli alleggeriti; ogni elemento riporta `livello`, `gruppo`, `titolo_livello` e `fonte` |
+| `dati/fvg_unico.geojson` | File unico con 150 livelli alleggeriti; ogni elemento riporta `livello`, `gruppo`, `titolo_livello` e `fonte` |
 | `strumenti/` | Programmi che scaricano, costruiscono e verificano i dati |
 
 ### Due versioni per ogni livello
@@ -57,7 +57,7 @@ Edifici e numeri civici non hanno una versione leggera separata: la mappa usa di
 
 ### Il file unico
 
-`dati/fvg_unico.geojson` (87 MB) riunisce i 145 livelli la cui versione leggera pesa fino a 2,5 megabyte. Il file con tutti i 185 livelli alleggeriti pesa oltre 400 megabyte e non può stare su GitHub; si genera sul proprio computer con:
+`dati/fvg_unico.geojson` (89 MB) riunisce i 150 livelli la cui versione leggera pesa fino a 2,5 megabyte. Il file con tutti i 190 livelli alleggeriti pesa oltre 400 megabyte e non può stare su GitHub; si genera sul proprio computer con:
 
 ```bash
 python3 strumenti/alleggerisci.py dati --unico-completo
@@ -68,6 +68,7 @@ python3 strumenti/alleggerisci.py dati --unico-completo
 | Fonte | Livelli | Che cosa fornisce | Licenza |
 |---|---:|---|---|
 | Regione autonoma FVG, catalogo IRDAT (Infrastruttura regionale di dati ambientali e territoriali) | 129 | confini, idrografia, aree protette, edifici, strade, numeri civici, piano paesaggistico | IODL 2.0 (Italian Open Data License) |
+| Unione dei comuni secondo la composizione ufficiale degli enti | 5 | Comunità di montagna, Comunità collinare, ambiti del Servizio sociale dei Comuni, distretti e aziende sanitarie | IODL 2.0 per le forme dei comuni; composizione da atti pubblici |
 | OpenStreetMap e contributori | 48 | strade di ogni classe, sentieri, luoghi, servizi, uso del suolo, confine di Stato | ODbL (Open Database License) |
 | ISTAT (Istituto nazionale di statistica) | 7 | confini al 1 gennaio 2026, comuni veneti confinanti, perimetri dei centri abitati 2021 | CC BY 4.0 (Creative Commons Attribuzione) |
 | Eurostat GISCO | 1 | comuni sloveni confinanti | riuso con citazione della fonte, solo per fini non commerciali (© EuroGeographics) |
@@ -84,16 +85,32 @@ Chi riusa i dati deve citare la fonte indicata nel campo `fonte` di ogni file. P
 - I perimetri dei centri abitati sono ottenuti unendo le sezioni di censimento 2021 e non riportano il nome della località.
 - La data di aggiornamento di ogni livello regionale è quella del catalogo IRDAT; OpenStreetMap è aggiornato al 21 novembre 2026.
 
-## Livelli richiesti e non disponibili
+## Enti sovracomunali ricostruiti dai comuni
+
+Questi perimetri non sono pubblicati come dato geografico: sono ottenuti unendo i comuni della Regione secondo la composizione ufficiale di ogni ente. Ogni elemento riporta l'elenco dei comuni, i codici ISTAT e la fonte della composizione.
+
+| Livello | Elementi | Fonte della composizione |
+|---|---:|---|
+| Comunità di montagna | 6 | statuti pubblicati sul portale regionale delle autonomie locali; legge regionale 29 novembre 2019, n. 21, articolo 17 |
+| Comunità collinare del Friuli | 1 | legge regionale 29 novembre 2019, n. 21, articolo 21, comma 1 |
+| Ambiti del Servizio sociale dei Comuni | 18 | pagina della Regione FVG sugli enti gestori, aggiornata al 31 gennaio 2025 |
+| Distretti sanitari | 18 | atti aziendali delle tre aziende sanitarie |
+| Aziende sanitarie | 3 | unione dei rispettivi distretti |
+
+Controlli svolti: i 18 ambiti coprono tutti i 215 comuni, ciascuno una sola volta; le tre aziende corrispondono alle ex province (Udine 134 comuni, Pordenone 50, Gorizia e Trieste 31).
+
+Punti da tenere presenti:
+
+- **Distretti di Pordenone:** l'atto aziendale dice che ogni distretto coincide con l'ambito territoriale omonimo, senza elencare i comuni. L'elenco è quello dell'ambito del Servizio sociale dei Comuni corrispondente.
+- **Distretti di Trieste:** il capoluogo è diviso tra due distretti secondo le circoscrizioni comunali, prese da OpenStreetMap. La fonte è l'atto aziendale del 19 maggio 2022: *un eventuale riordino successivo dei distretti triestini è DA VERIFICARE*.
+- **Comunità di montagna:** la composizione è quella degli statuti pubblicati; *eventuali adesioni o recessi successivi sono DA VERIFICARE*.
+
+## Livelli non disponibili
 
 | Livello | Motivo |
 |---|---|
-| Comunità di montagna e Comunità collinare (assetto attuale) | non pubblicate come dato geografico nelle fonti consultate; è presente l'assetto storico delle comunità montane |
-| Aziende sanitarie, distretti sanitari, ambiti dei servizi sociali | non pubblicati come dato geografico nelle fonti consultate |
 | Ispettorati forestali | il servizio regionale restituisce un file danneggiato |
 | Edifici di OpenStreetMap | esclusi per non duplicare gli edifici ufficiali della Regione |
-
-Questi perimetri si possono ricostruire unendo i comuni, a partire da un elenco ufficiale dei comuni che compongono ogni ente.
 
 ## Come aggiornare i dati
 
@@ -117,6 +134,14 @@ python3 strumenti/prepara_localita.py LAVORO/fonti LAVORO/intermedi
 
 ```bash
 python3 strumenti/curve_livello.py LAVORO/fonti LAVORO/intermedi
+```
+
+```bash
+python3 strumenti/costruisci.py LAVORO dati comuni osm_frazioni_confini
+```
+
+```bash
+python3 strumenti/prepara_enti.py dati LAVORO/intermedi
 ```
 
 ```bash

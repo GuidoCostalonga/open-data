@@ -1,0 +1,64 @@
+{
+ "fonti": {
+  "ambiti": {"documento": "Regione FVG, Enti gestori del Servizio sociale dei Comuni, pagina aggiornata al 31 gennaio 2025", "indirizzo": "https://www.regione.fvg.it/rafvg/cms/RAFVG/salute-sociale/sistema-sociale-sanitario/FOGLIA105/"},
+  "statuti": {"documento": "Statuti delle Comunità di montagna pubblicati dalla Regione FVG, portale delle autonomie locali; legge regionale 29 novembre 2019, n. 21, articolo 17", "indirizzo": "https://autonomielocali.regione.fvg.it/aall/opencms/AALL/Forme_Collaborative/comunita_di_montagna/"},
+  "collinare": {"documento": "Legge regionale 29 novembre 2019, n. 21, articolo 21, comma 1", "indirizzo": "https://lexview-int.regione.fvg.it/FontiNormative/xml/xmllex.aspx?anno=2019&legge=21"},
+  "asufc": {"documento": "Atto aziendale dell'Azienda sanitaria universitaria Friuli Centrale, decreto del direttore generale n. 161/2026, articolo 7.1", "indirizzo": "https://asufc.sanita.fvg.it/export/sites/asufc/it/amministrazione_trasparente/documenti_AT/01_disposizioni_generali/regolamenti/2026_161_ddg_modifica-atto-aziendale_all0.pdf"},
+  "asugi": {"documento": "Atto aziendale dell'Azienda sanitaria universitaria Giuliano Isontina, documento del 19 maggio 2022", "indirizzo": "https://asugi.sanita.fvg.it/export/sites/aas1/it/amm_trasp_asugi/allegati/001_disposizioni_generali/01_atti_generali/atto_aziendale_2022.pdf"},
+  "asfo": {"documento": "Atto aziendale dell'Azienda sanitaria Friuli Occidentale: i distretti coincidono con gli ambiti territoriali omonimi; elenco dei comuni ripreso dall'ambito del Servizio sociale dei Comuni corrispondente", "indirizzo": "https://asfo.sanita.fvg.it/export/sites/aas5/it/amministrazione_trasparente/01_disposizioni_generali/02_atti_generali/_doc/atto_aziendale/atto_aziendale.pdf"}
+ },
+ "ambiti_servizio_sociale": {
+  "Carso Giuliano": {"ente_gestore": "Comune di Muggia", "comuni": ["Duino Aurisina", "Muggia", "Monrupino", "San Dorligo della Valle", "Sgonico"]},
+  "Triestino": {"ente_gestore": "Comune di Trieste", "comuni": ["Trieste"]},
+  "Collio - Alto Isonzo": {"ente_gestore": "Comune di Gorizia", "comuni": ["Capriva del Friuli", "Cormons", "Dolegna del Collio", "Farra d'Isonzo", "Gorizia", "Gradisca d'Isonzo", "Mariano del Friuli", "Medea", "Moraro", "Mossa", "Romans d'Isonzo", "San Floriano del Collio", "San Lorenzo Isontino", "Savogna d'Isonzo", "Villesse"]},
+  "Carso Isonzo Adriatico": {"ente_gestore": "Comune di Monfalcone", "comuni": ["Doberdò del Lago", "Fogliano Redipuglia", "Grado", "Monfalcone", "Ronchi dei Legionari", "Sagrado", "San Canzian d'Isonzo", "San Pier d'Isonzo", "Staranzano", "Turriaco"]},
+  "Gemonese / Canal del Ferro - Val Canale": {"ente_gestore": "ASUFC", "comuni": ["Artegna", "Bordano", "Chiusaforte", "Dogna", "Gemona del Friuli", "Malborghetto Valbruna", "Moggio Udinese", "Montenars", "Osoppo", "Pontebba", "Resia", "Resiutta", "Tarvisio", "Trasaghis", "Venzone"]},
+  "Carnia": {"ente_gestore": "ASUFC", "comuni": ["Amaro", "Ampezzo", "Arta Terme", "Cavazzo Carnico", "Cercivento", "Comeglians", "Enemonzo", "Forni Avoltri", "Forni di Sopra", "Forni di Sotto", "Lauco", "Ovaro", "Paluzza", "Paularo", "Prato Carnico", "Preone", "Ravascletto", "Raveo", "Rigolato", "Sappada", "Sauris", "Socchieve", "Sutrio", "Tolmezzo", "Treppo Ligosullo", "Verzegnis", "Villa Santina", "Zuglio"]},
+  "Collinare": {"ente_gestore": "ASUFC", "comuni": ["Buja", "Colloredo di Monte Albano", "Coseano", "Dignano", "Fagagna", "Flaibano", "Forgaria nel Friuli", "Majano", "Moruzzo", "Ragogna", "Rive d'Arcano", "San Daniele del Friuli", "San Vito di Fagagna", "Treppo Grande"]},
+  "Torre": {"ente_gestore": "Comune di Tarcento", "comuni": ["Attimis", "Cassacco", "Faedis", "Lusevera", "Magnano in Riviera", "Nimis", "Povoletto", "Reana del Rojale", "Taipana", "Tarcento", "Tricesimo"]},
+  "Natisone": {"ente_gestore": "Comune di Cividale del Friuli", "comuni": ["Buttrio", "Cividale del Friuli", "Corno di Rosazzo", "Drenchia", "Grimacco", "Manzano", "Moimacco", "Premariacco", "Prepotto", "Pulfero", "Remanzacco", "San Giovanni al Natisone", "San Leonardo", "San Pietro al Natisone", "Savogna", "Stregna", "Torreano"]},
+  "Mediofriuli": {"ente_gestore": "ASP Daniele Moro di Codroipo", "comuni": ["Basiliano", "Bertiolo", "Camino al Tagliamento", "Castions di Strada", "Codroipo", "Lestizza", "Mereto di Tomba", "Mortegliano", "Sedegliano", "Talmassons", "Varmo"]},
+  "Friuli Centrale": {"ente_gestore": "Comune di Udine", "comuni": ["Campoformido", "Martignacco", "Pagnacco", "Pasian di Prato", "Pavia di Udine", "Pozzuolo del Friuli", "Pradamano", "Tavagnacco", "Udine"]},
+  "Agro Aquileiese": {"ente_gestore": "Comune di Cervignano del Friuli", "comuni": ["Aiello del Friuli", "Aquileia", "Bagnaria Arsa", "Bicinicco", "Campolongo Tapogliano", "Cervignano del Friuli", "Chiopris-Viscone", "Fiumicello Villa Vicentina", "Gonars", "Palmanova", "Ruda", "Santa Maria la Longa", "San Vito al Torre", "Terzo di Aquileia", "Torviscosa", "Trivignano Udinese", "Visco"]},
+  "Riviera Bassa Friulana": {"ente_gestore": "Comune di Latisana", "comuni": ["Carlino", "Latisana", "Lignano Sabbiadoro", "Marano Lagunare", "Muzzana del Turgnano", "Palazzolo dello Stella", "Pocenia", "Porpetto", "Precenicco", "Rivignano Teor", "Ronchis", "San Giorgio di Nogaro"]},
+  "Livenza-Cansiglio-Cavallo": {"ente_gestore": "Comune di Sacile", "comuni": ["Aviano", "Brugnera", "Budoia", "Caneva", "Fontanafredda", "Polcenigo", "Sacile"]},
+  "Tagliamento": {"ente_gestore": "Comune di San Vito al Tagliamento", "comuni": ["Casarsa della Delizia", "Cordovado", "Morsano al Tagliamento", "San Giorgio della Richinvelda", "San Martino al Tagliamento", "San Vito al Tagliamento", "Sesto al Reghena", "Valvasone Arzene"]},
+  "Sile e Meduna": {"ente_gestore": "Comune di Azzano Decimo", "comuni": ["Azzano Decimo", "Chions", "Fiume Veneto", "Pasiano di Pordenone", "Prata di Pordenone", "Pravisdomini"]},
+  "Valli e Dolomiti friulane": {"ente_gestore": "Comunità di montagna delle Prealpi Friulane Orientali", "comuni": ["Andreis", "Arba", "Barcis", "Castelnovo del Friuli", "Cavasso Nuovo", "Cimolais", "Claut", "Clauzetto", "Erto e Casso", "Fanna", "Frisanco", "Maniago", "Meduno", "Montereale Valcellina", "Pinzano al Tagliamento", "Sequals", "Spilimbergo", "Tramonti di Sopra", "Tramonti di Sotto", "Travesio", "Vajont", "Vito d'Asio", "Vivaro"]},
+  "Noncello": {"ente_gestore": "Comune di Pordenone", "comuni": ["Cordenons", "Porcia", "Pordenone", "Roveredo in Piano", "San Quirino", "Zoppola"]}
+ },
+ "comunita_montagna": {
+  "Comunità di montagna della Carnia": ["Amaro", "Ampezzo", "Arta Terme", "Cavazzo Carnico", "Cercivento", "Comeglians", "Enemonzo", "Forni Avoltri", "Forni di Sopra", "Forni di Sotto", "Lauco", "Ovaro", "Paluzza", "Paularo", "Prato Carnico", "Preone", "Ravascletto", "Raveo", "Rigolato", "Sappada", "Sauris", "Socchieve", "Sutrio", "Tolmezzo", "Treppo Ligosullo", "Verzegnis", "Villa Santina", "Zuglio"],
+  "Comunità di montagna Canal del Ferro e Val Canale": ["Chiusaforte", "Dogna", "Malborghetto Valbruna", "Moggio Udinese", "Pontebba", "Resia", "Resiutta", "Tarvisio"],
+  "Comunità di montagna del Gemonese": ["Artegna", "Bordano", "Gemona del Friuli", "Montenars", "Trasaghis", "Venzone"],
+  "Comunità di montagna del Natisone e Torre": ["Attimis", "Faedis", "Lusevera", "Magnano in Riviera", "Nimis", "Taipana", "Tarcento", "Torreano", "Pulfero", "San Pietro al Natisone", "Savogna", "San Leonardo", "Stregna", "Grimacco", "Drenchia"],
+  "Comunità di montagna delle Prealpi Friulane Orientali": ["Arba", "Castelnovo del Friuli", "Cavasso Nuovo", "Clauzetto", "Fanna", "Maniago", "Meduno", "Montereale Valcellina", "Pinzano al Tagliamento", "Sequals", "Spilimbergo", "Travesio", "Vajont", "Vito d'Asio", "Vivaro"],
+  "Magnifica Comunità di montagna Dolomiti Friulane, Cavallo e Cansiglio": ["Andreis", "Aviano", "Barcis", "Budoia", "Caneva", "Cimolais", "Claut", "Erto e Casso", "Frisanco", "Polcenigo", "Tramonti di Sopra", "Tramonti di Sotto"]
+ },
+ "comunita_collinare": {
+  "Comunità collinare del Friuli": ["Buja", "Colloredo di Monte Albano", "Coseano", "Dignano", "Fagagna", "Flaibano", "Forgaria nel Friuli", "Majano", "Moruzzo", "Osoppo", "Ragogna", "Rive d'Arcano", "San Daniele del Friuli", "San Vito di Fagagna", "Treppo Grande"]
+ },
+ "distretti_sanitari": {
+  "ASUFC": {"nome": "Azienda sanitaria universitaria Friuli Centrale", "fonte": "asufc", "distretti": {
+   "Distretto sociosanitario della Carnia": "Carnia",
+   "Distretto sociosanitario del Gemonese, Canal del Ferro, Val Canale": "Gemonese / Canal del Ferro - Val Canale",
+   "Distretto sociosanitario Collinare": "Collinare",
+   "Distretto sociosanitario Medio Friuli": "Mediofriuli",
+   "Distretto sociosanitario del Torre": "Torre",
+   "Distretto sociosanitario del Natisone": "Natisone",
+   "Distretto sociosanitario Friuli Centrale": "Friuli Centrale",
+   "Distretto sociosanitario Agro Aquileiese": "Agro Aquileiese",
+   "Distretto sociosanitario Riviera Bassa Friulana": "Riviera Bassa Friulana"}},
+  "ASFO": {"nome": "Azienda sanitaria Friuli Occidentale", "fonte": "asfo", "distretti": {
+   "Distretto del Livenza": "Livenza-Cansiglio-Cavallo",
+   "Distretto del Noncello": "Noncello",
+   "Distretto del Sile": "Sile e Meduna",
+   "Distretto del Tagliamento": "Tagliamento",
+   "Distretto delle Dolomiti Friulane": "Valli e Dolomiti friulane"}},
+  "ASUGI": {"nome": "Azienda sanitaria universitaria Giuliano Isontina", "fonte": "asugi", "distretti": {
+   "Distretto Alto Isontino": "Collio - Alto Isonzo",
+   "Distretto Basso Isontino": "Carso Isonzo Adriatico",
+   "Distretto Trieste 1": {"circoscrizioni_trieste": ["Roiano-Gretta-Barcola-Cologna-Scorcola", "Città Nuova-Barriera Nuova-San Vito-Città Vecchia", "Barriera Vecchia-San Giacomo", "San Giovanni-Chiadino-Rozzol"]},
+   "Distretto Trieste 2": {"circoscrizioni_trieste": ["Altipiano Ovest", "Altipiano Est", "Servola-Chiarbola-Valmaura-Borgo San Sergio"], "ambito": "Carso Giuliano"}}}
+ }
+}

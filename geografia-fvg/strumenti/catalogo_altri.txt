@@ -9,3 +9,8 @@ austria_comuni_confinanti|confini|Comuni austriaci confinanti (Carinzia)|OSM
 slovenia_comuni_confinanti|confini|Comuni sloveni confinanti|GISCO
 curve_livello|rilievo|Curve di livello ogni 25 metri|COPERNICUS
 localita_istat_2021|insediamenti|Perimetri di centri abitati, nuclei e località produttive (censimento 2021)|ISTAT_CENS
+comunita_montagna|confini|Comunità di montagna|ENTI
+comunita_collinare|confini|Comunità collinare del Friuli|ENTI
+ambiti_servizio_sociale|confini|Ambiti del Servizio sociale dei Comuni|ENTI
+distretti_sanitari|confini|Distretti sanitari|ENTI
+aziende_sanitarie|confini|Aziende sanitarie|ENTI
