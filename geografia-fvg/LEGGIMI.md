@@ -4,9 +4,9 @@ Raccolta di dati geografici del FVG (Friuli Venezia Giulia) in formato GeoJSON, 
 
 | Voce | Valore |
 |---|---|
-| Livelli | 193 |
-| Elementi geografici | 2.287.094 |
-| File GeoJSON | 831 |
+| Livelli | 194 |
+| Elementi geografici | 2.896.182 |
+| File GeoJSON | 1.046 |
 | Sistema di coordinate | WGS84, longitudine e latitudine (EPSG:4326) |
 | Data di estrazione | 22 novembre 2026 |
 
@@ -21,7 +21,7 @@ L'elenco completo, livello per livello, è in [ELENCO_LIVELLI.md](ELENCO_LIVELLI
 | Monti e rilievo | 21 | curve di livello ogni 25 metri, cime con quota, passi, ghiacciai, grotte, geositi, frane |
 | Natura e aree protette | 27 | parchi, riserve, biotopi, Natura 2000, boschi, prati stabili, uso del suolo, habitat |
 | Strade, ferrovie, ciclovie e sentieri | 35 | grafo stradale, ferrovie, ciclovie regionali, sentieri del CAI (Club alpino italiano), impianti a fune |
-| Centri abitati ed edifici | 14 | 772.028 edifici, 512.753 numeri civici, perimetri dei centri abitati, località |
+| Centri abitati ed edifici | 15 | 772.028 edifici ufficiali, 609.088 edifici di OpenStreetMap, 512.753 numeri civici, perimetri dei centri abitati, località |
 | Servizi e luoghi di interesse | 23 | scuole, municipi, sanità, sicurezza ed emergenza, beni culturali, impianti sportivi |
 
 ## Come sono organizzati i file
@@ -39,7 +39,7 @@ L'elenco completo, livello per livello, è in [ELENCO_LIVELLI.md](ELENCO_LIVELLI
 
 | Versione | Precisione delle coordinate | Semplificazione | Peso complessivo |
 |---|---|---|---|
-| Integrale | 7 decimali, circa 1 centimetro | nessuna | 2,1 GB |
+| Integrale | 7 decimali, circa 1 centimetro | nessuna | 2,3 GB |
 | Leggera | 5 decimali, circa 1 metro | tolleranza di 10 metri, 25 metri per i livelli più pesanti | 0,45 GB |
 
 Nella versione leggera le curve di livello sono solo quelle ogni 100 metri e vengono scartate le forme più corte di un metro (circa 4.500 elementi su 2,3 milioni).
@@ -50,14 +50,14 @@ GitHub non accetta file oltre i 100 megabyte, quindi i livelli più pesanti sono
 
 | Livello | Divisione |
 |---|---|
-| Edifici, numeri civici | un file per comune (nome del file con il codice ISTAT del comune) |
+| Edifici, edifici di OpenStreetMap, numeri civici | un file per comune (nome del file con il codice ISTAT del comune) |
 | Curve di livello, grafo stradale, uso del suolo, boschi, tipologie forestali, habitat | un file per ex provincia (UD, PN, GO, TS) |
 
-Edifici e numeri civici non hanno una versione leggera separata: la mappa usa direttamente i file per comune.
+Edifici, edifici di OpenStreetMap e numeri civici non hanno una versione leggera separata: la mappa usa direttamente i file per comune.
 
 ### Il file unico
 
-`dati/fvg_unico.geojson` (89 MB) riunisce i 151 livelli la cui versione leggera pesa fino a 2,5 megabyte. Il file con tutti i 191 livelli alleggeriti pesa oltre 400 megabyte e non può stare su GitHub; si genera sul proprio computer con:
+`dati/fvg_unico.geojson` (89 MB) riunisce i 151 livelli la cui versione leggera pesa fino a 2,5 megabyte. Il file con tutti i 191 livelli (esclusi i tre divisi per comune) alleggeriti pesa oltre 400 megabyte e non può stare su GitHub; si genera sul proprio computer con:
 
 ```bash
 python3 strumenti/alleggerisci.py dati --unico-completo
@@ -69,7 +69,7 @@ python3 strumenti/alleggerisci.py dati --unico-completo
 |---|---:|---|---|
 | Regione autonoma FVG, catalogo IRDAT (Infrastruttura regionale di dati ambientali e territoriali) | 130 | confini, idrografia, aree protette, edifici, strade, numeri civici, piano paesaggistico | IODL 2.0 (Italian Open Data License) |
 | Unione dei comuni secondo la composizione ufficiale degli enti | 5 | Comunità di montagna, Comunità collinare, ambiti del Servizio sociale dei Comuni, distretti e aziende sanitarie | IODL 2.0 per le forme dei comuni; composizione da atti pubblici |
-| OpenStreetMap e contributori | 48 | strade di ogni classe, sentieri, luoghi, servizi, uso del suolo, confine di Stato | ODbL (Open Database License) |
+| OpenStreetMap e contributori | 49 | strade di ogni classe, sentieri, luoghi, servizi, uso del suolo, confine di Stato | ODbL (Open Database License) |
 | ISTAT (Istituto nazionale di statistica) | 7 | confini al 1 gennaio 2026, comuni veneti confinanti, perimetri dei centri abitati 2021 | CC BY 4.0 (Creative Commons Attribuzione) |
 | Eurostat GISCO | 1 | comuni sloveni confinanti | riuso con citazione della fonte, solo per fini non commerciali (© EuroGeographics) |
 | Copernicus DEM GLO-30 | 1 | modello altimetrico da cui sono ricavate le curve di livello | uso libero con citazione della fonte |
@@ -119,11 +119,14 @@ Punti da tenere presenti:
 
 Il servizio regionale non riesce a restituire i quattro ispettorati insieme. Tre (Tolmezzo, Pordenone, Trieste e Gorizia) sono scaricati uno alla volta con la geometria ufficiale. Per Udine la geometria non è leggibile: il perimetro è ricostruito unendo le giurisdizioni delle sue sette stazioni forestali, e l'elemento lo dichiara nel campo `nota`. Lo stesso metodo, applicato per controllo agli altri tre, differisce dal perimetro ufficiale per meno dello 0,03% della superficie.
 
-## Livelli non disponibili
+## Due livelli di edifici
 
-| Livello | Motivo |
-|---|---|
-| Edifici di OpenStreetMap | esclusi per non duplicare gli edifici ufficiali della Regione |
+| Livello | Elementi | Caratteristiche |
+|---|---:|---|
+| Edifici (`edifici`) | 772.028 | dato ufficiale della Regione, rilevato dalla carta tecnica; è il riferimento per gli usi istituzionali |
+| Edifici di OpenStreetMap (`osm_edifici`) | 609.088 | dato collaborativo, aggiornato al 21 novembre 2026; spesso indica il tipo di edificio e, dove inserito, il nome |
+
+I due livelli descrivono in gran parte gli stessi edifici con forme leggermente diverse: non vanno sommati. Dall'estratto OpenStreetMap sono stati tolti i 56.404 edifici che cadono oltre il confine regionale.
 
 ## Come aggiornare i dati
 

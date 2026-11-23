@@ -9647,6 +9647,1358 @@
    ]
   },
   {
+   "id": "osm_edifici",
+   "gruppo": "insediamenti",
+   "titolo": "Edifici di OpenStreetMap",
+   "fonte": "OSM",
+   "livello_origine": null,
+   "elementi": 609088,
+   "geometrie": {
+    "Polygon": 609061,
+    "MultiPolygon": 27
+   },
+   "riquadro": [
+    12.32855,
+    45.58099,
+    13.91523,
+    46.63867
+   ],
+   "campi": [
+    "osm_id",
+    "categoria",
+    "building",
+    "it:fvg:ctrn:code",
+    "it:fvg:ctrn:revision",
+    "height",
+    "landuse",
+    "man_made",
+    "name",
+    "power",
+    "substation",
+    "amenity",
+    "building:levels",
+    "building:material",
+    "roof:levels",
+    "roof:shape",
+    "religion",
+    "addr:housenumber",
+    "denomination",
+    "addr:postcode",
+    "addr:city",
+    "building:colour",
+    "addr:street",
+    "layer",
+    "operator",
+    "roof:colour",
+    "tower:type",
+    "wikidata",
+    "website",
+    "tourism",
+    "shop",
+    "phone",
+    "addr:place",
+    "check_date",
+    "wheelchair",
+    "source",
+    "historic",
+    "abandoned",
+    "ref",
+    "generator:source"
+   ],
+   "file": [
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030001.geojson",
+     "parte": "030001 AIELLO DEL FRIULI",
+     "elementi": 1529,
+     "byte": 670229
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030002.geojson",
+     "parte": "030002 AMARO",
+     "elementi": 722,
+     "byte": 292044
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030003.geojson",
+     "parte": "030003 AMPEZZO",
+     "elementi": 901,
+     "byte": 373052
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030004.geojson",
+     "parte": "030004 AQUILEIA",
+     "elementi": 1916,
+     "byte": 780837
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030005.geojson",
+     "parte": "030005 ARTA TERME",
+     "elementi": 1879,
+     "byte": 732391
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030006.geojson",
+     "parte": "030006 ARTEGNA",
+     "elementi": 2262,
+     "byte": 892589
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030007.geojson",
+     "parte": "030007 ATTIMIS",
+     "elementi": 1954,
+     "byte": 774436
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030008.geojson",
+     "parte": "030008 BAGNARIA ARSA",
+     "elementi": 2469,
+     "byte": 1043903
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030009.geojson",
+     "parte": "030009 BASILIANO",
+     "elementi": 4160,
+     "byte": 1750293
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030010.geojson",
+     "parte": "030010 BERTIOLO",
+     "elementi": 1573,
+     "byte": 729785
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030011.geojson",
+     "parte": "030011 BICINICCO",
+     "elementi": 1498,
+     "byte": 631428
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030012.geojson",
+     "parte": "030012 BORDANO",
+     "elementi": 526,
+     "byte": 206142
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030013.geojson",
+     "parte": "030013 BUJA",
+     "elementi": 4614,
+     "byte": 1715920
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030014.geojson",
+     "parte": "030014 BUTTRIO",
+     "elementi": 2120,
+     "byte": 903416
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030015.geojson",
+     "parte": "030015 CAMINO AL TAGLIAMENTO",
+     "elementi": 1288,
+     "byte": 561119
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030016.geojson",
+     "parte": "030016 CAMPOFORMIDO",
+     "elementi": 4551,
+     "byte": 1789245
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030018.geojson",
+     "parte": "030018 CARLINO",
+     "elementi": 2230,
+     "byte": 932232
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030019.geojson",
+     "parte": "030019 CASSACCO",
+     "elementi": 2262,
+     "byte": 925271
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030020.geojson",
+     "parte": "030020 CASTIONS DI STRADA",
+     "elementi": 2704,
+     "byte": 1118892
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030021.geojson",
+     "parte": "030021 CAVAZZO CARNICO",
+     "elementi": 914,
+     "byte": 370488
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030022.geojson",
+     "parte": "030022 CERCIVENTO",
+     "elementi": 719,
+     "byte": 283124
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030023.geojson",
+     "parte": "030023 CERVIGNANO DEL FRIULI",
+     "elementi": 4261,
+     "byte": 1776705
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030024.geojson",
+     "parte": "030024 CHIOPRIS-VISCONE",
+     "elementi": 698,
+     "byte": 278269
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030025.geojson",
+     "parte": "030025 CHIUSAFORTE",
+     "elementi": 1175,
+     "byte": 463493
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030026.geojson",
+     "parte": "030026 CIVIDALE DEL FRIULI",
+     "elementi": 5309,
+     "byte": 2284707
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030027.geojson",
+     "parte": "030027 CODROIPO",
+     "elementi": 6953,
+     "byte": 3119189
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030028.geojson",
+     "parte": "030028 COLLOREDO DI MONTE ALBANO",
+     "elementi": 2005,
+     "byte": 809819
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030029.geojson",
+     "parte": "030029 COMEGLIANS",
+     "elementi": 1066,
+     "byte": 408174
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030030.geojson",
+     "parte": "030030 CORNO DI ROSAZZO",
+     "elementi": 1730,
+     "byte": 753789
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030031.geojson",
+     "parte": "030031 COSEANO",
+     "elementi": 1861,
+     "byte": 821509
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030032.geojson",
+     "parte": "030032 DIGNANO",
+     "elementi": 2135,
+     "byte": 903733
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030033.geojson",
+     "parte": "030033 DOGNA",
+     "elementi": 668,
+     "byte": 244792
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030034.geojson",
+     "parte": "030034 DRENCHIA",
+     "elementi": 528,
+     "byte": 204287
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030035.geojson",
+     "parte": "030035 ENEMONZO",
+     "elementi": 1013,
+     "byte": 395166
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030036.geojson",
+     "parte": "030036 FAEDIS",
+     "elementi": 2827,
+     "byte": 1153821
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030037.geojson",
+     "parte": "030037 FAGAGNA",
+     "elementi": 3918,
+     "byte": 1661190
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030039.geojson",
+     "parte": "030039 FLAIBANO",
+     "elementi": 924,
+     "byte": 420739
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030040.geojson",
+     "parte": "030040 FORNI AVOLTRI",
+     "elementi": 1017,
+     "byte": 377710
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030041.geojson",
+     "parte": "030041 FORNI DI SOPRA",
+     "elementi": 1352,
+     "byte": 509380
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030042.geojson",
+     "parte": "030042 FORNI DI SOTTO",
+     "elementi": 754,
+     "byte": 282628
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030043.geojson",
+     "parte": "030043 GEMONA DEL FRIULI",
+     "elementi": 7095,
+     "byte": 2849620
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030044.geojson",
+     "parte": "030044 GONARS",
+     "elementi": 2941,
+     "byte": 1283707
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030045.geojson",
+     "parte": "030045 GRIMACCO",
+     "elementi": 728,
+     "byte": 293755
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030046.geojson",
+     "parte": "030046 LATISANA",
+     "elementi": 6943,
+     "byte": 2846527
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030047.geojson",
+     "parte": "030047 LAUCO",
+     "elementi": 1397,
+     "byte": 549230
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030048.geojson",
+     "parte": "030048 LESTIZZA",
+     "elementi": 2799,
+     "byte": 1230817
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030049.geojson",
+     "parte": "030049 LIGNANO SABBIADORO",
+     "elementi": 5248,
+     "byte": 2618779
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030051.geojson",
+     "parte": "030051 LUSEVERA",
+     "elementi": 1059,
+     "byte": 401816
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030052.geojson",
+     "parte": "030052 MAGNANO IN RIVIERA",
+     "elementi": 1791,
+     "byte": 719134
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030053.geojson",
+     "parte": "030053 MAJANO",
+     "elementi": 4307,
+     "byte": 1728917
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030054.geojson",
+     "parte": "030054 MALBORGHETTO VALBRUNA",
+     "elementi": 1695,
+     "byte": 637245
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030055.geojson",
+     "parte": "030055 MANZANO",
+     "elementi": 4181,
+     "byte": 1780016
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030056.geojson",
+     "parte": "030056 MARANO LAGUNARE",
+     "elementi": 766,
+     "byte": 350498
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030057.geojson",
+     "parte": "030057 MARTIGNACCO",
+     "elementi": 5018,
+     "byte": 1927046
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030058.geojson",
+     "parte": "030058 MERETO DI TOMBA",
+     "elementi": 2303,
+     "byte": 997244
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030059.geojson",
+     "parte": "030059 MOGGIO UDINESE",
+     "elementi": 1807,
+     "byte": 714595
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030060.geojson",
+     "parte": "030060 MOIMACCO",
+     "elementi": 1041,
+     "byte": 445281
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030061.geojson",
+     "parte": "030061 MONTENARS",
+     "elementi": 646,
+     "byte": 251104
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030062.geojson",
+     "parte": "030062 MORTEGLIANO",
+     "elementi": 3117,
+     "byte": 1343320
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030063.geojson",
+     "parte": "030063 MORUZZO",
+     "elementi": 2177,
+     "byte": 849423
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030064.geojson",
+     "parte": "030064 MUZZANA DEL TURGNANO",
+     "elementi": 1722,
+     "byte": 734649
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030065.geojson",
+     "parte": "030065 NIMIS",
+     "elementi": 2519,
+     "byte": 1040050
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030066.geojson",
+     "parte": "030066 OSOPPO",
+     "elementi": 1861,
+     "byte": 745677
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030067.geojson",
+     "parte": "030067 OVARO",
+     "elementi": 2265,
+     "byte": 862098
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030068.geojson",
+     "parte": "030068 PAGNACCO",
+     "elementi": 3792,
+     "byte": 1431077
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030069.geojson",
+     "parte": "030069 PALAZZOLO DELLO STELLA",
+     "elementi": 2285,
+     "byte": 947108
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030070.geojson",
+     "parte": "030070 PALMANOVA",
+     "elementi": 2668,
+     "byte": 1134353
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030071.geojson",
+     "parte": "030071 PALUZZA",
+     "elementi": 2284,
+     "byte": 893590
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030072.geojson",
+     "parte": "030072 PASIAN DI PRATO",
+     "elementi": 5267,
+     "byte": 1997516
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030073.geojson",
+     "parte": "030073 PAULARO",
+     "elementi": 2824,
+     "byte": 1074132
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030074.geojson",
+     "parte": "030074 PAVIA DI UDINE",
+     "elementi": 3846,
+     "byte": 1664273
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030075.geojson",
+     "parte": "030075 POCENIA",
+     "elementi": 2172,
+     "byte": 909329
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030076.geojson",
+     "parte": "030076 PONTEBBA",
+     "elementi": 1973,
+     "byte": 741317
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030077.geojson",
+     "parte": "030077 PORPETTO",
+     "elementi": 2034,
+     "byte": 844877
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030078.geojson",
+     "parte": "030078 POVOLETTO",
+     "elementi": 4336,
+     "byte": 1792250
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030079.geojson",
+     "parte": "030079 POZZUOLO DEL FRIULI",
+     "elementi": 4292,
+     "byte": 1834774
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030080.geojson",
+     "parte": "030080 PRADAMANO",
+     "elementi": 1796,
+     "byte": 757503
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030081.geojson",
+     "parte": "030081 PRATO CARNICO",
+     "elementi": 1565,
+     "byte": 601633
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030082.geojson",
+     "parte": "030082 PRECENICCO",
+     "elementi": 1417,
+     "byte": 573376
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030083.geojson",
+     "parte": "030083 PREMARIACCO",
+     "elementi": 3083,
+     "byte": 1308066
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030084.geojson",
+     "parte": "030084 PREONE",
+     "elementi": 312,
+     "byte": 126205
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030085.geojson",
+     "parte": "030085 PREPOTTO",
+     "elementi": 1157,
+     "byte": 480224
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030086.geojson",
+     "parte": "030086 PULFERO",
+     "elementi": 1825,
+     "byte": 731179
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030087.geojson",
+     "parte": "030087 RAGOGNA",
+     "elementi": 2724,
+     "byte": 1091361
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030088.geojson",
+     "parte": "030088 RAVASCLETTO",
+     "elementi": 1044,
+     "byte": 403926
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030089.geojson",
+     "parte": "030089 RAVEO",
+     "elementi": 447,
+     "byte": 174745
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030090.geojson",
+     "parte": "030090 REANA DEL ROJALE",
+     "elementi": 3631,
+     "byte": 1519037
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030091.geojson",
+     "parte": "030091 REMANZACCO",
+     "elementi": 3404,
+     "byte": 1415964
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030092.geojson",
+     "parte": "030092 RESIA",
+     "elementi": 1995,
+     "byte": 742271
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030093.geojson",
+     "parte": "030093 RESIUTTA",
+     "elementi": 320,
+     "byte": 125885
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030094.geojson",
+     "parte": "030094 RIGOLATO",
+     "elementi": 1178,
+     "byte": 441165
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030095.geojson",
+     "parte": "030095 RIVE D'ARCANO",
+     "elementi": 1916,
+     "byte": 819710
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030097.geojson",
+     "parte": "030097 RONCHIS",
+     "elementi": 1481,
+     "byte": 626299
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030098.geojson",
+     "parte": "030098 RUDA",
+     "elementi": 1873,
+     "byte": 793981
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030099.geojson",
+     "parte": "030099 SAN DANIELE DEL FRIULI",
+     "elementi": 4614,
+     "byte": 1956171
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030100.geojson",
+     "parte": "030100 SAN GIORGIO DI NOGARO",
+     "elementi": 4709,
+     "byte": 2009836
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030101.geojson",
+     "parte": "030101 SAN GIOVANNI AL NATISONE",
+     "elementi": 4144,
+     "byte": 1753908
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030102.geojson",
+     "parte": "030102 SAN LEONARDO",
+     "elementi": 1315,
+     "byte": 535847
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030103.geojson",
+     "parte": "030103 SAN PIETRO AL NATISONE",
+     "elementi": 1702,
+     "byte": 707346
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030104.geojson",
+     "parte": "030104 SANTA MARIA LA LONGA",
+     "elementi": 1623,
+     "byte": 703468
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030105.geojson",
+     "parte": "030105 SAN VITO AL TORRE",
+     "elementi": 1167,
+     "byte": 481197
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030106.geojson",
+     "parte": "030106 SAN VITO DI FAGAGNA",
+     "elementi": 1434,
+     "byte": 595890
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030107.geojson",
+     "parte": "030107 SAURIS",
+     "elementi": 558,
+     "byte": 203377
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030108.geojson",
+     "parte": "030108 SAVOGNA",
+     "elementi": 986,
+     "byte": 380489
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030109.geojson",
+     "parte": "030109 SEDEGLIANO",
+     "elementi": 2851,
+     "byte": 1276159
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030110.geojson",
+     "parte": "030110 SOCCHIEVE",
+     "elementi": 926,
+     "byte": 360818
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030111.geojson",
+     "parte": "030111 STREGNA",
+     "elementi": 774,
+     "byte": 302015
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030112.geojson",
+     "parte": "030112 SUTRIO",
+     "elementi": 953,
+     "byte": 383346
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030113.geojson",
+     "parte": "030113 TAIPANA",
+     "elementi": 1070,
+     "byte": 415445
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030114.geojson",
+     "parte": "030114 TALMASSONS",
+     "elementi": 3011,
+     "byte": 1301622
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030116.geojson",
+     "parte": "030116 TARCENTO",
+     "elementi": 6323,
+     "byte": 2516204
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030117.geojson",
+     "parte": "030117 TARVISIO",
+     "elementi": 3731,
+     "byte": 1417901
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030118.geojson",
+     "parte": "030118 TAVAGNACCO",
+     "elementi": 5704,
+     "byte": 2395119
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030120.geojson",
+     "parte": "030120 TERZO DI AQUILEIA",
+     "elementi": 1399,
+     "byte": 586663
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030121.geojson",
+     "parte": "030121 TOLMEZZO",
+     "elementi": 4679,
+     "byte": 1899840
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030122.geojson",
+     "parte": "030122 TORREANO",
+     "elementi": 2008,
+     "byte": 827953
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030123.geojson",
+     "parte": "030123 TORVISCOSA",
+     "elementi": 1799,
+     "byte": 791020
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030124.geojson",
+     "parte": "030124 TRASAGHIS",
+     "elementi": 2319,
+     "byte": 902055
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030126.geojson",
+     "parte": "030126 TREPPO GRANDE",
+     "elementi": 1432,
+     "byte": 586484
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030127.geojson",
+     "parte": "030127 TRICESIMO",
+     "elementi": 3780,
+     "byte": 1629173
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030128.geojson",
+     "parte": "030128 TRIVIGNANO UDINESE",
+     "elementi": 1594,
+     "byte": 656986
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030129.geojson",
+     "parte": "030129 UDINE",
+     "elementi": 23728,
+     "byte": 10274289
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030130.geojson",
+     "parte": "030130 VARMO",
+     "elementi": 2223,
+     "byte": 962830
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030131.geojson",
+     "parte": "030131 VENZONE",
+     "elementi": 1769,
+     "byte": 690595
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030132.geojson",
+     "parte": "030132 VERZEGNIS",
+     "elementi": 896,
+     "byte": 353743
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030133.geojson",
+     "parte": "030133 VILLA SANTINA",
+     "elementi": 1428,
+     "byte": 573871
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030135.geojson",
+     "parte": "030135 VISCO",
+     "elementi": 644,
+     "byte": 283314
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030136.geojson",
+     "parte": "030136 ZUGLIO",
+     "elementi": 769,
+     "byte": 301815
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030137.geojson",
+     "parte": "030137 FORGARIA NEL FRIULI",
+     "elementi": 2699,
+     "byte": 1062614
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030138.geojson",
+     "parte": "030138 CAMPOLONGO TAPOGLIANO",
+     "elementi": 792,
+     "byte": 346070
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030188.geojson",
+     "parte": "030188 RIVIGNANO TEOR",
+     "elementi": 4385,
+     "byte": 1924322
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030189.geojson",
+     "parte": "030189 SAPPADA",
+     "elementi": 1574,
+     "byte": 476795
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030190.geojson",
+     "parte": "030190 FIUMICELLO VILLA VICENTINA",
+     "elementi": 3577,
+     "byte": 1474638
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_030191.geojson",
+     "parte": "030191 TREPPO LIGOSULLO",
+     "elementi": 1074,
+     "byte": 415442
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031001.geojson",
+     "parte": "031001 CAPRIVA DEL FRIULI",
+     "elementi": 943,
+     "byte": 410214
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031002.geojson",
+     "parte": "031002 CORMONS",
+     "elementi": 3400,
+     "byte": 1560651
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031003.geojson",
+     "parte": "031003 DOBERDO' DEL LAGO",
+     "elementi": 1080,
+     "byte": 446338
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031004.geojson",
+     "parte": "031004 DOLEGNA DEL COLLIO",
+     "elementi": 498,
+     "byte": 217722
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031005.geojson",
+     "parte": "031005 FARRA D'ISONZO",
+     "elementi": 1093,
+     "byte": 463787
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031006.geojson",
+     "parte": "031006 FOGLIANO REDIPUGLIA",
+     "elementi": 1546,
+     "byte": 639652
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031007.geojson",
+     "parte": "031007 GORIZIA",
+     "elementi": 10998,
+     "byte": 4736174
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031008.geojson",
+     "parte": "031008 GRADISCA D'ISONZO",
+     "elementi": 2614,
+     "byte": 1096873
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031009.geojson",
+     "parte": "031009 GRADO",
+     "elementi": 4584,
+     "byte": 1863433
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031010.geojson",
+     "parte": "031010 MARIANO DEL FRIULI",
+     "elementi": 926,
+     "byte": 398861
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031011.geojson",
+     "parte": "031011 MEDEA",
+     "elementi": 595,
+     "byte": 268260
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031012.geojson",
+     "parte": "031012 MONFALCONE",
+     "elementi": 6906,
+     "byte": 3102691
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031013.geojson",
+     "parte": "031013 MORARO",
+     "elementi": 473,
+     "byte": 199793
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031014.geojson",
+     "parte": "031014 MOSSA",
+     "elementi": 971,
+     "byte": 401781
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031015.geojson",
+     "parte": "031015 ROMANS D'ISONZO",
+     "elementi": 1815,
+     "byte": 781295
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031016.geojson",
+     "parte": "031016 RONCHI DEI LEGIONARI",
+     "elementi": 4387,
+     "byte": 1854575
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031017.geojson",
+     "parte": "031017 SAGRADO",
+     "elementi": 1518,
+     "byte": 600685
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031018.geojson",
+     "parte": "031018 SAN CANZIAN D'ISONZO",
+     "elementi": 2963,
+     "byte": 1261861
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031019.geojson",
+     "parte": "031019 SAN FLORIANO DEL COLLIO",
+     "elementi": 640,
+     "byte": 268707
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031020.geojson",
+     "parte": "031020 SAN LORENZO ISONTINO",
+     "elementi": 794,
+     "byte": 345701
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031021.geojson",
+     "parte": "031021 SAN PIER D'ISONZO",
+     "elementi": 1187,
+     "byte": 502729
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031022.geojson",
+     "parte": "031022 SAVOGNA D'ISONZO",
+     "elementi": 1530,
+     "byte": 627780
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031023.geojson",
+     "parte": "031023 STARANZANO",
+     "elementi": 2211,
+     "byte": 956999
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031024.geojson",
+     "parte": "031024 TURRIACO",
+     "elementi": 1252,
+     "byte": 537419
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_031025.geojson",
+     "parte": "031025 VILLESSE",
+     "elementi": 1089,
+     "byte": 459449
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_032001.geojson",
+     "parte": "032001 DUINO-AURISINA",
+     "elementi": 4455,
+     "byte": 2001473
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_032002.geojson",
+     "parte": "032002 MONRUPINO",
+     "elementi": 588,
+     "byte": 248727
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_032003.geojson",
+     "parte": "032003 MUGGIA",
+     "elementi": 5662,
+     "byte": 2392512
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_032004.geojson",
+     "parte": "032004 SAN DORLIGO DELLA VALLE - DOLINA",
+     "elementi": 3557,
+     "byte": 1533385
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_032005.geojson",
+     "parte": "032005 SGONICO",
+     "elementi": 1966,
+     "byte": 815114
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_032006.geojson",
+     "parte": "032006 TRIESTE",
+     "elementi": 25775,
+     "byte": 11728865
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093001.geojson",
+     "parte": "093001 ANDREIS",
+     "elementi": 356,
+     "byte": 141767
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093002.geojson",
+     "parte": "093002 ARBA",
+     "elementi": 1106,
+     "byte": 452038
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093004.geojson",
+     "parte": "093004 AVIANO",
+     "elementi": 7542,
+     "byte": 3070199
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093005.geojson",
+     "parte": "093005 AZZANO DECIMO",
+     "elementi": 9587,
+     "byte": 3932527
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093006.geojson",
+     "parte": "093006 BARCIS",
+     "elementi": 521,
+     "byte": 201296
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093007.geojson",
+     "parte": "093007 BRUGNERA",
+     "elementi": 5158,
+     "byte": 2202253
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093008.geojson",
+     "parte": "093008 BUDOIA",
+     "elementi": 2091,
+     "byte": 901505
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093009.geojson",
+     "parte": "093009 CANEVA",
+     "elementi": 5128,
+     "byte": 2109063
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093010.geojson",
+     "parte": "093010 CASARSA DELLA DELIZIA",
+     "elementi": 3555,
+     "byte": 1564167
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093011.geojson",
+     "parte": "093011 CASTELNOVO DEL FRIULI",
+     "elementi": 1550,
+     "byte": 593728
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093012.geojson",
+     "parte": "093012 CAVASSO NUOVO",
+     "elementi": 1465,
+     "byte": 575112
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093013.geojson",
+     "parte": "093013 CHIONS",
+     "elementi": 3586,
+     "byte": 1475664
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093014.geojson",
+     "parte": "093014 CIMOLAIS",
+     "elementi": 518,
+     "byte": 211139
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093015.geojson",
+     "parte": "093015 CLAUT",
+     "elementi": 1097,
+     "byte": 434240
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093016.geojson",
+     "parte": "093016 CLAUZETTO",
+     "elementi": 1164,
+     "byte": 438512
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093017.geojson",
+     "parte": "093017 CORDENONS",
+     "elementi": 8084,
+     "byte": 3509716
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093018.geojson",
+     "parte": "093018 CORDOVADO",
+     "elementi": 2313,
+     "byte": 910008
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093019.geojson",
+     "parte": "093019 ERTO E CASSO",
+     "elementi": 565,
+     "byte": 224330
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093020.geojson",
+     "parte": "093020 FANNA",
+     "elementi": 1241,
+     "byte": 523701
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093021.geojson",
+     "parte": "093021 FIUME VENETO",
+     "elementi": 7847,
+     "byte": 3099585
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093022.geojson",
+     "parte": "093022 FONTANAFREDDA",
+     "elementi": 6593,
+     "byte": 2750900
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093024.geojson",
+     "parte": "093024 FRISANCO",
+     "elementi": 1107,
+     "byte": 442927
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093025.geojson",
+     "parte": "093025 MANIAGO",
+     "elementi": 6016,
+     "byte": 2472523
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093026.geojson",
+     "parte": "093026 MEDUNO",
+     "elementi": 1997,
+     "byte": 775618
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093027.geojson",
+     "parte": "093027 MONTEREALE VALCELLINA",
+     "elementi": 3908,
+     "byte": 1612169
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093028.geojson",
+     "parte": "093028 MORSANO AL TAGLIAMENTO",
+     "elementi": 2617,
+     "byte": 1070573
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093029.geojson",
+     "parte": "093029 PASIANO DI PORDENONE",
+     "elementi": 5556,
+     "byte": 2267978
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093030.geojson",
+     "parte": "093030 PINZANO AL TAGLIAMENTO",
+     "elementi": 1775,
+     "byte": 695571
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093031.geojson",
+     "parte": "093031 POLCENIGO",
+     "elementi": 3526,
+     "byte": 1454009
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093032.geojson",
+     "parte": "093032 PORCIA",
+     "elementi": 6845,
+     "byte": 2862193
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093033.geojson",
+     "parte": "093033 PORDENONE",
+     "elementi": 14055,
+     "byte": 6185841
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093034.geojson",
+     "parte": "093034 PRATA DI PORDENONE",
+     "elementi": 4275,
+     "byte": 1813603
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093035.geojson",
+     "parte": "093035 PRAVISDOMINI",
+     "elementi": 2280,
+     "byte": 932935
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093036.geojson",
+     "parte": "093036 ROVEREDO IN PIANO",
+     "elementi": 3014,
+     "byte": 1290457
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093037.geojson",
+     "parte": "093037 SACILE",
+     "elementi": 7679,
+     "byte": 3328995
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093038.geojson",
+     "parte": "093038 SAN GIORGIO DELLA RICHINVELDA",
+     "elementi": 4020,
+     "byte": 1687042
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093039.geojson",
+     "parte": "093039 SAN MARTINO AL TAGLIAMENTO",
+     "elementi": 1283,
+     "byte": 538652
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093040.geojson",
+     "parte": "093040 SAN QUIRINO",
+     "elementi": 3365,
+     "byte": 1409964
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093041.geojson",
+     "parte": "093041 SAN VITO AL TAGLIAMENTO",
+     "elementi": 7423,
+     "byte": 3195792
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093042.geojson",
+     "parte": "093042 SEQUALS",
+     "elementi": 1708,
+     "byte": 699271
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093043.geojson",
+     "parte": "093043 SESTO AL REGHENA",
+     "elementi": 5423,
+     "byte": 2223631
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093044.geojson",
+     "parte": "093044 SPILIMBERGO",
+     "elementi": 6933,
+     "byte": 2872848
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093045.geojson",
+     "parte": "093045 TRAMONTI DI SOPRA",
+     "elementi": 678,
+     "byte": 267945
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093046.geojson",
+     "parte": "093046 TRAMONTI DI SOTTO",
+     "elementi": 1015,
+     "byte": 385282
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093047.geojson",
+     "parte": "093047 TRAVESIO",
+     "elementi": 1726,
+     "byte": 700165
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093049.geojson",
+     "parte": "093049 VITO D'ASIO",
+     "elementi": 1892,
+     "byte": 683604
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093050.geojson",
+     "parte": "093050 VIVARO",
+     "elementi": 1309,
+     "byte": 539890
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093051.geojson",
+     "parte": "093051 ZOPPOLA",
+     "elementi": 5301,
+     "byte": 2167517
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093052.geojson",
+     "parte": "093052 VAJONT",
+     "elementi": 775,
+     "byte": 268403
+    },
+    {
+     "percorso": "integrale/insediamenti/osm_edifici/osm_edifici_093053.geojson",
+     "parte": "093053 VALVASONE ARZENE",
+     "elementi": 2989,
+     "byte": 1249282
+    }
+   ]
+  },
+  {
    "id": "osm_aree_militari",
    "gruppo": "insediamenti",
    "titolo": "Aree militari",

@@ -1,6 +1,6 @@
 # Elenco dei livelli
 
-Livelli: 193. Elementi: 2.287.094. File integrali: 639.
+Livelli: 194. Elementi: 2.896.182. File integrali: 854.
 
 ## Confini amministrativi (34 livelli)
 
@@ -183,7 +183,7 @@ Livelli: 193. Elementi: 2.287.094. File integrali: 639.
 | Parcheggi | `osm_parcheggi` | OpenStreetMap | aree, punti | 15.311 | 5,5 | 4,27 | no |
 | Linee elettriche | `osm_linee_elettriche` | OpenStreetMap | linee | 6.241 | 2,72 | 1,75 | sì |
 
-## Centri abitati ed edifici (14 livelli)
+## Centri abitati ed edifici (15 livelli)
 
 | Livello | Identificativo | Fonte | Geometria | Elementi | Integrale (MB) | Leggero (MB) | Nel file unico |
 |---|---|---|---|---:|---:|---:|---|
@@ -199,6 +199,7 @@ Livelli: 193. Elementi: 2.287.094. File integrali: 639.
 | Campeggi | `campeggi` | Regione FVG (IRDAT) | aree | 26 | 0,04 | 0,01 | sì |
 | Cave autorizzate | `cave` | Regione FVG (IRDAT) | aree | 73 | 0,22 | 0,07 | sì |
 | Discariche | `discariche` | Regione FVG (IRDAT) | aree | 335 | 0,2 | 0,13 | sì |
+| Edifici di OpenStreetMap | `osm_edifici` | OpenStreetMap | aree | 609.088 | 254,4 | 254,4 | no |
 | Aree militari | `osm_aree_militari` | OpenStreetMap | aree | 474 | 0,26 | 0,18 | sì |
 | Perimetri di centri abitati, nuclei e località produttive (censimento 2021) | `localita_istat_2021` | ISTAT, censimento 2021 | aree | 1.563 | 7,32 | 3,1 | no |
 
