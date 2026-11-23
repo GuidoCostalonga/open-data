@@ -104,7 +104,16 @@ Punti da tenere presenti:
 - **Distretti di Pordenone:** l'atto aziendale dice che ogni distretto coincide con l'ambito territoriale omonimo, senza elencare i comuni. L'elenco è quello dell'ambito del Servizio sociale dei Comuni corrispondente.
 - **Distretti di Trieste:** il capoluogo è diviso tra due distretti secondo le circoscrizioni comunali, prese da OpenStreetMap. La fonte è l'atto aziendale adottato con decreto n. 454 del 19 maggio 2022, tuttora quello pubblicato dall'azienda; i quattro distretti (Trieste 1, Trieste 2, Alto Isontino, Basso Isontino) sono confermati dall'organigramma del 2 luglio 2026. Le modifiche successive all'atto (decreti n. 925 dell'8 novembre 2023, n. 767 del 4 ottobre 2024, n. 322 del 16 aprile 2025 e n. 496 del 12 giugno 2025) riguardano altre strutture e non toccano i distretti.
 - **Comunità collinare:** i comuni sono 16. Ai quindici elencati dalla legge si aggiunge Pagnacco, entrato con deliberazione dell'Assemblea n. 34 del 23 settembre 2023.
-- **Comunità di montagna:** la composizione degli statuti coincide con le mappe regionali aggiornate al 1 dicembre 2022. Documenti successivi la confermano per Carnia (28 comuni, documento di programmazione 2024-2026), Prealpi Friulane Orientali (15 comuni, documento di programmazione 2025-2027) e Dolomiti Friulane, Cavallo e Cansiglio (12 comuni, atti del 2026). Per Gemonese, Canal del Ferro e Val Canale, Natisone e Torre non risultano variazioni, ma *la conferma con un documento successivo al 2022 è DA VERIFICARE*.
+- **Comunità di montagna:** la composizione degli statuti coincide con le mappe regionali aggiornate al 1 dicembre 2022 ed è confermata da documenti successivi di ogni Comunità.
+
+| Comunità di montagna | Comuni | Documento di conferma |
+|---|---:|---|
+| Carnia | 28 | documento unico di programmazione 2024-2026 |
+| Canal del Ferro e Val Canale | 8 | piano integrato di attività e organizzazione 2025-2027 |
+| Gemonese | 6 | documento unico di programmazione 2026-2028 |
+| Natisone e Torre | 15 | statuto pubblicato sul sito della Comunità; notizie di stampa di marzo e aprile 2026 riferiscono di 15 comuni, senza elencarli |
+| Prealpi Friulane Orientali | 15 | documento unico di programmazione 2025-2027 |
+| Dolomiti Friulane, Cavallo e Cansiglio | 12 | atti del 2026 |
 
 ## Livelli non disponibili
 
