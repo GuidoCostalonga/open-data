@@ -1,0 +1,11 @@
+# id|gruppo|titolo|fonte
+istat_regione|confini|Regione, confini ISTAT al 1 gennaio 2026|ISTAT
+istat_province|confini|Ex province, confini ISTAT al 1 gennaio 2026|ISTAT
+istat_comuni|confini|Comuni, confini ISTAT al 1 gennaio 2026|ISTAT
+confine_veneto|confini|Confine regionale con il Veneto|ISTAT
+veneto_comuni_confinanti|confini|Comuni del Veneto confinanti|ISTAT
+veneto_province_confinanti|confini|Province del Veneto confinanti|ISTAT
+austria_comuni_confinanti|confini|Comuni austriaci confinanti (Carinzia)|OSM
+slovenia_comuni_confinanti|confini|Comuni sloveni confinanti|GISCO
+curve_livello|rilievo|Curve di livello ogni 25 metri|COPERNICUS
+localita_istat_2021|insediamenti|Perimetri di centri abitati, nuclei e località produttive (censimento 2021)|ISTAT_CENS

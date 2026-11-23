@@ -1,0 +1,49 @@
+# id|gruppo|titolo  (livelli ricavati da OpenStreetMap)
+osm_confini_linee|confini|Linee di confine amministrativo (Stato, regione, province, comuni)
+osm_confine_stato|confini|Confine di Stato con Austria e Slovenia
+osm_frazioni_confini|confini|Perimetri di frazioni e circoscrizioni
+osm_luoghi|confini|Capoluoghi, frazioni, borghi e località
+osm_corsi_acqua|acque|Fiumi, torrenti, rogge, canali e fossi
+osm_acque|acque|Laghi, bacini, alvei e specchi d'acqua
+osm_isole|acque|Isole e isolotti
+osm_linea_costa|acque|Linea di costa
+osm_sorgenti|acque|Sorgenti
+osm_cascate|acque|Cascate
+osm_cime|rilievo|Cime con quota
+osm_passi|rilievo|Passi e selle
+osm_creste_pareti|rilievo|Creste e pareti rocciose
+osm_valli|rilievo|Valli
+osm_ghiacciai|rilievo|Ghiacciai
+osm_grotte|rilievo|Ingressi di grotte
+osm_uso_suolo|natura|Uso e copertura del suolo
+osm_aree_protette|natura|Aree protette
+osm_strade_autostrade|trasporti|Autostrade e superstrade
+osm_strade_principali|trasporti|Strade principali, secondarie e terziarie
+osm_strade_locali|trasporti|Strade locali, residenziali e di servizio
+osm_strade_campestri|trasporti|Strade campestri e forestali
+osm_sentieri|trasporti|Sentieri e percorsi pedonali
+osm_piste_ciclabili|trasporti|Piste ciclabili
+osm_percorsi_ciclabili|trasporti|Itinerari ciclabili segnalati
+osm_percorsi_escursionistici|trasporti|Itinerari escursionistici segnalati
+osm_ferrovie|trasporti|Linee ferroviarie e tranviarie
+osm_stazioni|trasporti|Stazioni e fermate ferroviarie
+osm_linee_autobus|trasporti|Linee di autobus
+osm_fermate_autobus|trasporti|Fermate di autobus
+osm_impianti_fune|trasporti|Impianti a fune
+osm_piste_sci|trasporti|Piste da sci
+osm_traghetti|trasporti|Rotte dei traghetti
+osm_aeroporti|trasporti|Aeroporti, aviosuperfici e piste
+osm_porti|trasporti|Porti e approdi
+osm_parcheggi|trasporti|Parcheggi
+osm_linee_elettriche|trasporti|Linee elettriche
+osm_aree_militari|insediamenti|Aree militari
+osm_municipi_uffici|servizi|Municipi e uffici pubblici
+osm_sanita|servizi|Ospedali, ambulatori, farmacie e servizi sociali
+osm_sicurezza_emergenza|servizi|Forze dell'ordine, vigili del fuoco, protezione civile ed emergenza
+osm_istruzione|servizi|Scuole, università e biblioteche
+osm_culto|servizi|Luoghi di culto
+osm_cultura_storia|servizi|Luoghi storici, musei e cultura
+osm_turismo|servizi|Ricettività, rifugi, bivacchi e punti panoramici
+osm_sport_tempo_libero|servizi|Sport, parchi e tempo libero
+osm_commercio_servizi|servizi|Commercio, ristorazione e servizi
+osm_infrastrutture|servizi|Impianti tecnologici e infrastrutture

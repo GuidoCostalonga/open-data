@@ -1,0 +1,12 @@
+{"type": "FeatureCollection", "name": "bocche_lagunari", "titolo": "Bocche lagunari", "gruppo": "acque", "fonte": "Regione autonoma Friuli Venezia Giulia, catalogo IRDAT (Infrastruttura regionale di dati ambientali e territoriali)", "features": [
+{"type":"Feature","properties":{"ELEMENTO":"109094","TIPO":"BOCCA_LAGUNARE","ANGOLO":29,"OBJECTID":1077,"MS_ANGOLO":421},"geometry":{"type":"Point","coordinates":[13.36989,45.67997]}},
+{"type":"Feature","properties":{"ELEMENTO":"109094","TIPO":"BOCCA_LAGUNARE","ANGOLO":30,"OBJECTID":1078,"MS_ANGOLO":420},"geometry":{"type":"Point","coordinates":[13.33593,45.69231]}},
+{"type":"Feature","properties":{"ELEMENTO":"109062","TIPO":"BOCCA_LAGUNARE","ANGOLO":158,"OBJECTID":1079,"MS_ANGOLO":292},"geometry":{"type":"Point","coordinates":[13.4705,45.70487]}},
+{"type":"Feature","properties":{"ELEMENTO":"109062","TIPO":"TRACCIA_BOCCA_LAGUNARE","ANGOLO":27,"OBJECTID":1080,"MS_ANGOLO":423},"geometry":{"type":"Point","coordinates":[13.47934,45.70565]}},
+{"type":"Feature","properties":{"ELEMENTO":"108083","TIPO":"BOCCA_LAGUNARE","ANGOLO":352,"OBJECTID":6002,"MS_ANGOLO":98},"geometry":{"type":"Point","coordinates":[13.25068,45.71202]}},
+{"type":"Feature","properties":{"ELEMENTO":"108101","TIPO":"BOCCA_LAGUNARE","ANGOLO":138,"OBJECTID":6005,"MS_ANGOLO":312},"geometry":{"type":"Point","coordinates":[13.15556,45.69851]}},
+{"type":"Feature","properties":{"ELEMENTO":"108082","TIPO":"BOCCA_LAGUNARE","ANGOLO":226,"OBJECTID":5992,"MS_ANGOLO":224},"geometry":{"type":"Point","coordinates":[13.30476,45.70546]}},
+{"type":"Feature","properties":{"ELEMENTO":"108083","TIPO":"TRACCIA_BOCCA_LAGUNARE","ANGOLO":357,"OBJECTID":5994,"MS_ANGOLO":93},"geometry":{"type":"Point","coordinates":[13.28276,45.71237]}},
+{"type":"Feature","properties":{"ELEMENTO":"108072","TIPO":"BOCCA_LAGUNARE","ANGOLO":164,"OBJECTID":5997,"MS_ANGOLO":286},"geometry":{"type":"Point","coordinates":[13.24699,45.72005]}},
+{"type":"Feature","properties":{"ELEMENTO":"108073","TIPO":"BOCCA_LAGUNARE","ANGOLO":185,"OBJECTID":5998,"MS_ANGOLO":265},"geometry":{"type":"Point","coordinates":[13.17919,45.71281]}}
+]}
