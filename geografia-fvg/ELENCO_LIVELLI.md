@@ -1,8 +1,8 @@
 # Elenco dei livelli
 
-Livelli: 187. Elementi: 2.287.044. File integrali: 633.
+Livelli: 192. Elementi: 2.287.090. File integrali: 638.
 
-## Confini amministrativi (28 livelli)
+## Confini amministrativi (33 livelli)
 
 | Livello | Identificativo | Fonte | Geometria | Elementi | Integrale (MB) | Leggero (MB) | Nel file unico |
 |---|---|---|---|---:|---:|---:|---|
@@ -34,6 +34,11 @@ Livelli: 187. Elementi: 2.287.044. File integrali: 633.
 | Province del Veneto confinanti | `veneto_province_confinanti` | ISTAT, confini 2026 | aree | 3 | 0,78 | 0,24 | sì |
 | Comuni austriaci confinanti (Carinzia) | `austria_comuni_confinanti` | OpenStreetMap | aree | 9 | 0,22 | 0,11 | sì |
 | Comuni sloveni confinanti | `slovenia_comuni_confinanti` | Eurostat GISCO | aree | 14 | 0,02 | 0,02 | sì |
+| Comunità di montagna | `comunita_montagna` | Unione dei comuni, composizione ufficiale | aree | 6 | 3,02 | 0,27 | sì |
+| Comunità collinare del Friuli | `comunita_collinare` | Unione dei comuni, composizione ufficiale | aree | 1 | 0,43 | 0,03 | sì |
+| Ambiti del Servizio sociale dei Comuni | `ambiti_servizio_sociale` | Unione dei comuni, composizione ufficiale | aree | 18 | 8,36 | 0,6 | sì |
+| Distretti sanitari | `distretti_sanitari` | Unione dei comuni, composizione ufficiale | aree | 18 | 8,18 | 0,62 | sì |
+| Aziende sanitarie | `aziende_sanitarie` | Unione dei comuni, composizione ufficiale | aree | 3 | 2,99 | 0,3 | sì |
 
 ## Acque (39 livelli)
 

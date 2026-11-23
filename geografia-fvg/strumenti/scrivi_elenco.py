@@ -13,6 +13,7 @@ GRUPPI = {"confini": "Confini amministrativi", "acque": "Acque", "rilievo": "Mon
           "natura": "Natura e aree protette", "trasporti": "Strade, ferrovie, ciclovie e sentieri",
           "insediamenti": "Centri abitati ed edifici", "servizi": "Servizi e luoghi di interesse"}
 FONTI = {"REGIONE": "Regione FVG (IRDAT)", "ISTAT": "ISTAT, confini 2026", "ISTAT_CENS": "ISTAT, censimento 2021",
+         "ENTI": "Unione dei comuni, composizione ufficiale",
          "OSM": "OpenStreetMap", "GISCO": "Eurostat GISCO", "COPERNICUS": "Copernicus DEM"}
 GEOMETRIE = {"Point": "punti", "MultiPoint": "punti", "LineString": "linee", "MultiLineString": "linee",
              "Polygon": "aree", "MultiPolygon": "aree"}

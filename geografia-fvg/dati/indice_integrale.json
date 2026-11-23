@@ -12,6 +12,10 @@
    "nome": "ISTAT (Istituto nazionale di statistica), basi territoriali del censimento 2021, distribuite dalla Regione FVG; perimetri ottenuti unendo le sezioni di censimento",
    "indirizzo": "https://www.istat.it/notizia/basi-territoriali-e-variabili-censuarie/"
   },
+  "ENTI": {
+   "nome": "Perimetri ottenuti unendo i comuni della Regione FVG (catalogo IRDAT) secondo la composizione ufficiale di ogni ente, indicata nei campi fonte_composizione e indirizzo_fonte",
+   "indirizzo": "https://irdat.regione.fvg.it/"
+  },
   "OSM": {
    "nome": "OpenStreetMap e contributori",
    "indirizzo": "https://www.openstreetmap.org/copyright"
@@ -10723,6 +10727,176 @@
      "percorso": "integrale/insediamenti/localita_istat_2021.geojson",
      "elementi": 1563,
      "byte": 7316366
+    }
+   ]
+  },
+  {
+   "id": "comunita_montagna",
+   "gruppo": "confini",
+   "titolo": "Comunità di montagna",
+   "fonte": "ENTI",
+   "livello_origine": null,
+   "elementi": 6,
+   "geometrie": {
+    "Polygon": 6
+   },
+   "riquadro": [
+    12.32138,
+    45.94426,
+    13.71727,
+    46.64796
+   ],
+   "campi": [
+    "nome",
+    "numero_comuni",
+    "comuni",
+    "codici_istat",
+    "fonte_composizione",
+    "indirizzo_fonte"
+   ],
+   "file": [
+    {
+     "percorso": "integrale/confini/comunita_montagna.geojson",
+     "elementi": 6,
+     "byte": 3022929
+    }
+   ]
+  },
+  {
+   "id": "comunita_collinare",
+   "gruppo": "confini",
+   "titolo": "Comunità collinare del Friuli",
+   "fonte": "ENTI",
+   "livello_origine": null,
+   "elementi": 1,
+   "geometrie": {
+    "Polygon": 1
+   },
+   "riquadro": [
+    12.91476,
+    46.04227,
+    13.17832,
+    46.28347
+   ],
+   "campi": [
+    "nome",
+    "numero_comuni",
+    "comuni",
+    "codici_istat",
+    "fonte_composizione",
+    "indirizzo_fonte"
+   ],
+   "file": [
+    {
+     "percorso": "integrale/confini/comunita_collinare.geojson",
+     "elementi": 1,
+     "byte": 427606
+    }
+   ]
+  },
+  {
+   "id": "ambiti_servizio_sociale",
+   "gruppo": "confini",
+   "titolo": "Ambiti del Servizio sociale dei Comuni",
+   "fonte": "ENTI",
+   "livello_origine": null,
+   "elementi": 18,
+   "geometrie": {
+    "MultiPolygon": 1,
+    "Polygon": 17
+   },
+   "riquadro": [
+    12.32138,
+    45.58088,
+    13.91866,
+    46.64796
+   ],
+   "campi": [
+    "nome",
+    "numero_comuni",
+    "comuni",
+    "codici_istat",
+    "ente_gestore",
+    "fonte_composizione",
+    "indirizzo_fonte"
+   ],
+   "file": [
+    {
+     "percorso": "integrale/confini/ambiti_servizio_sociale.geojson",
+     "elementi": 18,
+     "byte": 8361034
+    }
+   ]
+  },
+  {
+   "id": "distretti_sanitari",
+   "gruppo": "confini",
+   "titolo": "Distretti sanitari",
+   "fonte": "ENTI",
+   "livello_origine": null,
+   "elementi": 18,
+   "geometrie": {
+    "Polygon": 17,
+    "MultiPolygon": 1
+   },
+   "riquadro": [
+    12.32138,
+    45.58088,
+    13.91866,
+    46.64796
+   ],
+   "campi": [
+    "nome",
+    "numero_comuni",
+    "azienda",
+    "sigla_azienda",
+    "fonte_composizione",
+    "indirizzo_fonte",
+    "comuni",
+    "codici_istat",
+    "ambito_servizio_sociale",
+    "circoscrizioni_di_trieste",
+    "nota"
+   ],
+   "file": [
+    {
+     "percorso": "integrale/confini/distretti_sanitari.geojson",
+     "elementi": 18,
+     "byte": 8183609
+    }
+   ]
+  },
+  {
+   "id": "aziende_sanitarie",
+   "gruppo": "confini",
+   "titolo": "Aziende sanitarie",
+   "fonte": "ENTI",
+   "livello_origine": null,
+   "elementi": 3,
+   "geometrie": {
+    "Polygon": 3
+   },
+   "riquadro": [
+    12.32138,
+    45.58088,
+    13.91866,
+    46.64796
+   ],
+   "campi": [
+    "nome",
+    "numero_comuni",
+    "comuni",
+    "codici_istat",
+    "sigla",
+    "ex_province",
+    "fonte_composizione",
+    "indirizzo_fonte"
+   ],
+   "file": [
+    {
+     "percorso": "integrale/confini/aziende_sanitarie.geojson",
+     "elementi": 3,
+     "byte": 2986535
     }
    ]
   }
